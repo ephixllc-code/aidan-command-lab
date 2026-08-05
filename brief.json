@@ -1,0 +1,61 @@
+{
+  "date": "PENDING",
+  "ts": null,
+  "brief": [
+    {
+      "t": "PENDING — no live purchasing data source is connected yet. This is a placeholder brief item so the dashboard can render; replace with a real open-item feed once the Purchasing Agent is built and wired to PLL's PO/vendor tracker.",
+      "hot": false
+    }
+  ],
+  "next": [
+    "PENDING — connect a real purchasing data source (open POs, vendor tracker) before this list is meaningful."
+  ],
+  "kb": [],
+  "signal": null,
+  "redflags": [],
+  "team": [],
+  "pipeline": null,
+  "pipelineDeals": [],
+  "noise": "PENDING — no purchasing noise/backlog feed connected yet.",
+  "teamMembers": {
+    "aidan": {
+      "display_name": "Aidan",
+      "top_task": "PENDING — no purchasing task source connected yet.",
+      "tasks": [],
+      "notes": "Placeholder profile. Populate once Aidan's Purchasing Agent and CRM Agent are live."
+    }
+  },
+  "revenueActions": [
+    {
+      "title": "PENDING — placeholder purchasing action",
+      "why": "No verified purchasing action data is available yet.",
+      "est_value": "UNVERIFIED",
+      "next_step": "PENDING",
+      "owner": "Aidan",
+      "timing": "PENDING",
+      "value": "PENDING"
+    }
+  ],
+  "pipelineStat": {
+    "note": "PLACEHOLDER — purchasing metrics below are intentionally empty/pending. Do not treat as real figures.",
+    "open_purchase_orders": "PENDING",
+    "open_purchase_orders_value": "PENDING",
+    "long_lead_items": [],
+    "unverified_raw_material_prices": [],
+    "overdue_purchasing_tasks": [],
+    "suppliers_awaiting_response": "PENDING",
+    "last_verified": null
+  },
+  "topTasks": [
+    {
+      "rank": 1,
+      "title": "PENDING — placeholder top task",
+      "why": "No live purchasing task data connected yet.",
+      "owner": "Aidan",
+      "due": "PENDING",
+      "priority": "unknown",
+      "revenue": "N/A"
+    }
+  ],
+  "purchasingIntelligence": null
+}

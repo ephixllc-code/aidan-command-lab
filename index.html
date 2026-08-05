@@ -1,0 +1,3189 @@
+<!DOCTYPE html>
+<!--
+  PLL COMMAND CENTER — V5.1 "Agent Comms"  (2026-07-14)
+  Changelog vs V5.0:
+   + Agent Comms panel — group-chat feed (agent-feed.json) with per-agent identities,
+     colors, avatars, alert bubbles, @mention highlight, reply-to quotes, relative time.
+   + "💬 Comms" nav button w/ unread badge (persisted last-seen); polls feed 60s while visible.
+   + Composer posts Sam's messages via EXISTING webhook (additive type:"agent_chat"),
+     optimistic render (sending/sent/failed-retry), de-dupes against fetched feed.
+   + Voice intent: "what are the agents saying" reads last 3 aloud. No other intents changed.
+   * ZERO changes to mic/tap-to-talk, dispatch payload, brief.json, Top Task, or existing intents.
+  --- V5.0 "Company Brain" changelog vs V4.4:
+   + Top Task full-screen takeover ("show me the top task") — huge type, 15s auto-dismiss
+     with countdown ring, exit by tap / ✕ / voice ("go back", "next task").
+   + Team-member queries ("what's Aidan's top task", "Laura's priorities") — structured,
+     flags overdue counts; falls back to KB then agent.
+   + Revenue-action intent ("give me a revenue task I can do now") — cycles with "next".
+   + Pipeline/company-status intent ("what's going on with the company").
+   + Additive brief.json fields: topTasks[], teamMembers{}, revenueActions[], pipelineStat{}.
+     All optional — app degrades gracefully to KB / AI brain / agent when absent.
+   * NO changes to webhook dispatch, tap-to-talk mic model, or existing brief.json keys.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#f8f7f4">
+<title>PLL Purchasing Command Center — Aidan Kraim</title>
+<link rel="manifest" href="manifest.json">
+<style>
+  :root{
+    --bg:#03110a; --bg2:#040d09; --panel:#071911; --panel2:#082014;
+    --line:#0e3d26; --line2:#135636;
+    --cy:#a9ffd2; --cy2:#34ff96; --dim:#3d805c; --dimmer:#285c42;
+    --green:#34ff96; --amber:#ffc14d; --red:#ff5d5d;
+    --glow:rgba(52,255,150,0.25);
+    --mono:'Segoe UI',system-ui,-apple-system,sans-serif;
+    --term:'Courier New',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent;}
+  html,body{height:100%;}
+  body{
+    background:var(--bg); color:var(--cy); font-family:var(--mono);
+    letter-spacing:.4px; height:100vh; overflow:hidden;
+    display:flex; flex-direction:column;
+    background-image:
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(20,80,55,.28), transparent 70%),
+      radial-gradient(ellipse 70% 50% at 50% 120%, rgba(15,60,40,.20), transparent 70%),
+      repeating-linear-gradient(0deg, transparent 0 2px, rgba(120,255,190,.010) 2px 4px);
+  }
+  /* ═══════════ ZONE 1 — TOP STATUS STRIP ═══════════ */
+  .strip{
+    flex:none; display:flex; align-items:center; gap:14px;
+    padding:0 18px; height:60px;
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(9,28,20,.95), rgba(5,15,11,.8));
+    position:relative; z-index:20;
+  }
+  .strip::after{content:''; position:absolute; left:0; bottom:-1px; width:100%; height:1px;
+    background:linear-gradient(90deg, transparent, var(--cy2), transparent); opacity:.4;}
+  .brand{font-size:14px; font-weight:800; letter-spacing:3px; white-space:nowrap;}
+  .brand b{color:#fff;} .brand span{color:var(--cy2);} .brand em{color:var(--dim); font-style:normal; letter-spacing:2px; font-size:10px;}
+  .clockbox{display:flex; flex-direction:column; border-left:1px solid var(--line2); padding-left:16px;}
+  #clock{font-size:28px; line-height:1; color:#dfffef; text-shadow:0 0 16px var(--glow); letter-spacing:4px; font-variant-numeric:tabular-nums;}
+  #dateline{font-size:9px; color:var(--dim); letter-spacing:2px; text-transform:uppercase; margin-top:3px;}
+  .stat{display:flex; flex-direction:column; align-items:center; padding:0 4px; min-width:60px;}
+  .stat .sv{font-size:20px; line-height:1; color:#eaffef; text-shadow:0 0 10px var(--glow); font-variant-numeric:tabular-nums;}
+  .stat .sv.hot{color:var(--amber);} .stat .sv.ok{color:var(--green);}
+  .stat .sl{font-size:8px; letter-spacing:1.5px; color:var(--dim); text-transform:uppercase; margin-top:4px;}
+  .chips{display:flex; gap:6px; margin-left:6px;}
+  .chip{font-size:9px; letter-spacing:1.5px; padding:5px 9px; border:1px solid var(--line2); border-radius:20px; color:var(--dim); background:rgba(10,30,22,.6); text-transform:uppercase; white-space:nowrap; display:flex; gap:5px; align-items:center;}
+  .chip b{font-weight:700;}
+  .chip .ok{color:var(--green);} .chip .err{color:var(--red);} .chip .warn{color:var(--amber);}
+  .linkpill{margin-left:auto; display:flex; align-items:center; gap:7px; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--dim);}
+  .ldot{width:8px;height:8px;border-radius:50%;background:var(--dimmer);}
+  .ldot.on{background:var(--green); box-shadow:0 0 9px var(--green); animation:blink 1.8s infinite;}
+  .ldot.down{background:var(--red); box-shadow:0 0 9px var(--red); animation:blink .9s infinite;}
+  @keyframes blink{50%{opacity:.4}}
+  /* top-strip control buttons */
+  .tbtns{display:flex; gap:6px; margin-left:12px;}
+  .tb{font-family:var(--mono); font-size:10px; letter-spacing:1px; text-transform:uppercase; background:rgba(10,30,22,.8); color:var(--cy); border:1px solid var(--line2); padding:9px 11px; border-radius:6px; cursor:pointer; white-space:nowrap;}
+  .tb:hover{border-color:var(--cy2); color:var(--cy2);}
+  .tb:active{background:rgba(20,60,42,.9);}
+  .tb.primary{border-color:var(--green); color:var(--green); box-shadow:0 0 14px rgba(52,255,150,.18);}
+  .tb.primary.hot{border-color:var(--red); color:var(--red); box-shadow:0 0 14px rgba(255,93,93,.22);}
+  .tb.voicepreset{min-width:126px; text-align:left;}
+  .vpwrap{position:relative; display:inline-block;}
+  .vmenu{display:none; position:absolute; top:calc(100% + 6px); left:0; z-index:60; width:246px;
+    background:rgba(5,16,11,.97); border:1px solid var(--line2); border-radius:8px; padding:6px;
+    box-shadow:0 12px 34px rgba(0,0,0,.55);}
+  .vmenu.show{display:block;}
+  .vm-h{font-family:var(--mono); font-size:9px; letter-spacing:1.4px; text-transform:uppercase;
+    color:var(--cy); opacity:.75; padding:4px 6px 6px;}
+  .vm-i{display:flex; flex-direction:column; align-items:flex-start; gap:2px; width:100%;
+    background:transparent; border:1px solid transparent; border-radius:6px; padding:6px 8px;
+    cursor:pointer; text-align:left;}
+  .vm-i:hover{border-color:var(--cy2); background:rgba(20,60,42,.5);}
+  .vm-i.on{border-color:var(--green); background:rgba(20,70,46,.55);}
+  .vm-i.off{opacity:.38; cursor:not-allowed;}
+  .vm-n{font-family:var(--mono); font-size:11px; letter-spacing:.6px; color:var(--cy2); text-transform:uppercase;}
+  .vm-i.on .vm-n{color:var(--green);}
+  .vm-v{font-family:var(--mono); font-size:9px; letter-spacing:.3px; color:var(--cy); opacity:.65;}
+  .vm-f{font-family:var(--mono); font-size:8.5px; line-height:1.5; letter-spacing:.3px;
+    color:var(--cy); opacity:.5; padding:6px 6px 2px; border-top:1px solid var(--line); margin-top:4px;}
+
+  /* ═══════════ ZONE 2/3/4 — MAIN GRID ═══════════ */
+  .main{flex:1; display:grid; grid-template-columns:310px 1fr 340px; gap:12px; padding:12px 14px; min-height:0; overflow:hidden;}
+  .panel{
+    border:1px solid var(--line); border-radius:8px; overflow:hidden;
+    background:linear-gradient(180deg, rgba(9,24,17,.85), rgba(5,13,10,.92));
+    display:flex; flex-direction:column; min-height:0;
+    position:relative;
+  }
+  .panel h2{
+    font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:#cfffe6;
+    padding:9px 13px; border-bottom:1px solid var(--line); flex:none;
+    display:flex; justify-content:space-between; align-items:center;
+    background:rgba(12,36,26,.55);
+  }
+  .panel h2 small{color:var(--dim); letter-spacing:1px; font-size:9px; font-weight:400;}
+  .pbody{padding:10px 13px; overflow-y:auto; min-height:0;}
+  .pbody::-webkit-scrollbar{width:5px;} .pbody::-webkit-scrollbar-thumb{background:var(--line2); border-radius:3px;}
+  .console::-webkit-scrollbar{width:5px;} .console::-webkit-scrollbar-thumb{background:var(--line2); border-radius:3px;}
+
+  /* section header inside a panel */
+  .seclab{font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--dim); margin:4px 0 7px; display:flex; align-items:center; gap:6px;}
+  .seclab.red{color:var(--red);} .seclab::before{content:''; flex:1; height:1px; background:currentColor; opacity:.25; order:2;}
+  .seclab span{order:1;}
+
+  /* red-flag rows */
+  .flag{display:flex; gap:8px; padding:8px 9px; margin-bottom:6px; font-size:11px; line-height:1.4; color:#ffd9d9;
+    background:rgba(255,93,93,.06); border:1px solid rgba(255,93,93,.28); border-radius:6px;}
+  .flag::before{content:'▲'; color:var(--red); font-size:9px; flex:none; margin-top:2px;}
+  .flag.none{color:var(--dim); background:rgba(52,255,150,.05); border-color:rgba(52,255,150,.2);}
+  .flag.none::before{content:'✓'; color:var(--green);}
+
+  /* pipeline rows */
+  .row{display:flex; align-items:center; gap:8px; padding:7px 0; border-bottom:1px dashed rgba(19,86,54,.4); font-size:11px;}
+  .row:last-child{border-bottom:none;}
+  .row .nm{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#bff8dc;}
+  .row .bar{flex:none; width:64px; height:4px; background:rgba(19,86,54,.5); border-radius:2px; overflow:hidden;}
+  .row .bar i{display:block; height:100%; background:linear-gradient(90deg,var(--cy2),var(--cy)); box-shadow:0 0 6px var(--glow);}
+  .row.hot .bar i{background:linear-gradient(90deg,#ff8c4d,var(--amber));}
+  .row .tag{flex:none; font-size:8px; letter-spacing:1px; color:var(--amber); width:34px;}
+
+  /* ── CENTER STAGE ── */
+  .stage{align-items:stretch;}
+  .stagewrap{position:relative; flex:1; min-height:0; display:flex; flex-direction:column;}
+  #brain,#brain-front{position:absolute; inset:0; width:100%; height:100%; pointer-events:none;}
+  #brain{z-index:1;} #brain-front{z-index:3;}
+  .hud,.statebox,.statusline{z-index:5;}
+  .hud{position:absolute; left:16px; top:14px; z-index:3; border:1px solid var(--line2); background:rgba(6,18,13,.82); border-radius:6px; padding:9px 13px; min-width:120px;}
+  .hud .hl{font-size:8px; letter-spacing:2px; color:var(--dim); text-transform:uppercase;}
+  .hud .hv{font-size:22px; color:#eaffef; letter-spacing:2px; text-shadow:0 0 12px var(--glow); margin-top:3px;}
+  .statebox{position:absolute; right:16px; top:14px; z-index:3; text-align:right;}
+  .statebox .sl{font-size:8px; letter-spacing:2px; color:var(--dim); text-transform:uppercase;}
+  .statebox .sv{font-size:13px; letter-spacing:2px; color:var(--green); text-transform:uppercase; margin-top:4px;}
+  .statebox .sv.hot{color:var(--amber); animation:blink 1.2s infinite;}
+  .statusline{position:relative; z-index:3; margin-top:auto; padding:13px 16px; font-size:13px; letter-spacing:.6px; color:var(--cy);
+    border-top:1px solid var(--line); background:rgba(5,14,10,.86); min-height:48px; display:flex; align-items:center; gap:9px;}
+  .statusline.hot{color:var(--amber);}
+  .statusline::before{content:'▮▶'; color:var(--dimmer); font-size:9px;}
+  .wave{display:none; gap:3px; align-items:center;}
+  .wave.on{display:inline-flex;}
+  .wave span{width:3px; height:11px; background:var(--cy); animation:wv .7s infinite ease-in-out;}
+  .wave span:nth-child(2){animation-delay:.1s}.wave span:nth-child(3){animation-delay:.2s}
+  .wave span:nth-child(4){animation-delay:.3s}.wave span:nth-child(5){animation-delay:.4s}
+  @keyframes wv{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1.6)}}
+
+  /* dispatch log */
+  .dl{padding:7px 0; border-bottom:1px dashed rgba(19,86,54,.4);}
+  .dl:last-child{border-bottom:none;}
+  .dlhead{display:flex; align-items:center; gap:7px; margin-bottom:3px;}
+  .dltime{font-size:9px; color:var(--dimmer); font-family:var(--term);}
+  .dlagent{font-size:9px; letter-spacing:1px; color:var(--cy2); text-transform:uppercase; flex:1;}
+  .dlcmd{font-size:11px; color:#bff8dc; line-height:1.35; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .pill{font-size:8px; letter-spacing:1px; padding:2px 7px; border-radius:9px; font-weight:700; white-space:nowrap;}
+  .pill.ok{background:rgba(52,255,150,.12); color:var(--green); border:1px solid rgba(52,255,150,.4);}
+  .pill.err{background:rgba(255,93,93,.1); color:var(--red); border:1px solid rgba(255,93,93,.4);}
+  .pill.warn{background:rgba(255,193,77,.1); color:var(--amber); border:1px solid rgba(255,193,77,.4);}
+
+  /* agents / team */
+  .agent{display:flex; align-items:center; gap:8px; padding:6px 0; font-size:11px; border-bottom:1px dashed rgba(19,86,54,.4);}
+  .agent:last-child{border-bottom:none;}
+  .agent .adot{width:7px;height:7px;border-radius:50%;flex:none;}
+  .adot.g{background:var(--green); box-shadow:0 0 6px var(--green);}
+  .adot.a{background:var(--amber); box-shadow:0 0 6px var(--amber);}
+  .agent .an{color:#cfffe6;} .agent .ar{color:var(--dim); font-size:9px; margin-left:auto; text-align:right;}
+
+  /* console log */
+  .console{flex:1; min-height:0; overflow-y:auto; font-size:10px; line-height:1.7; padding:8px 13px; font-family:var(--term);}
+  .console div{color:var(--dim); word-break:break-word;}
+  .console div b{color:var(--cy2); font-weight:400;}
+  .console div.hi{color:#bff8dc;}
+  .console div.warn{color:var(--amber);}
+
+  /* ═══════════ ZONE 5 — BOTTOM MISSION DOCK ═══════════ */
+  .dock{flex:none; height:228px; border-top:1px solid var(--line); background:linear-gradient(0deg, rgba(9,26,18,.9), rgba(5,14,10,.6));
+    display:flex; flex-direction:column; padding:11px 14px 13px; position:relative;}
+  .dock::before{content:''; position:absolute; left:0; top:-1px; width:100%; height:1px; background:linear-gradient(90deg,transparent,var(--cy2),transparent); opacity:.45;}
+  .docklab{font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--dim); margin-bottom:9px; display:flex; align-items:center; gap:10px;}
+  .docklab b{color:#cfffe6; font-weight:700;}
+  .docklab .lane{margin-left:auto; color:var(--cy2); letter-spacing:2px;}
+  .missionrow{flex:1; display:flex; gap:12px; min-height:0;}
+  /* hero card */
+  .hero{flex:none; width:44%; min-width:320px; border:1px solid var(--green); border-radius:10px; padding:14px 16px;
+    background:linear-gradient(135deg, rgba(52,255,150,.10), rgba(52,255,150,.02));
+    box-shadow:0 0 26px rgba(52,255,150,.14), inset 0 0 30px rgba(52,255,150,.05);
+    display:flex; flex-direction:column; position:relative; overflow:hidden; animation:heroGlow 3.5s ease-in-out infinite;}
+  @keyframes heroGlow{0%,100%{box-shadow:0 0 22px rgba(52,255,150,.12), inset 0 0 26px rgba(52,255,150,.04);}50%{box-shadow:0 0 34px rgba(52,255,150,.22), inset 0 0 34px rgba(52,255,150,.08);}}
+  .hero.hotcard{border-color:var(--red); background:linear-gradient(135deg, rgba(255,93,93,.11), rgba(255,93,93,.02)); animation:heroGlowHot 2.6s ease-in-out infinite;}
+  @keyframes heroGlowHot{0%,100%{box-shadow:0 0 22px rgba(255,93,93,.14);}50%{box-shadow:0 0 36px rgba(255,93,93,.26);}}
+  .hero .htop{display:flex; align-items:center; gap:9px; margin-bottom:9px;}
+  .hero .hnow{font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--green); font-weight:800; text-shadow:0 0 10px var(--glow);}
+  .hero.hotcard .hnow{color:var(--red);}
+  .hero .hbadge{font-size:8px; letter-spacing:1.5px; padding:3px 8px; border-radius:20px; background:rgba(255,93,93,.15); color:var(--red); border:1px solid rgba(255,93,93,.45); text-transform:uppercase;}
+  .hero .htxt{font-size:15px; line-height:1.45; color:#eaffef; overflow-y:auto; flex:1;}
+  .hero .hnum{position:absolute; right:12px; bottom:6px; font-size:60px; font-weight:800; color:rgba(52,255,150,.09); line-height:1; letter-spacing:-4px;}
+  .hero.hotcard .hnum{color:rgba(255,93,93,.10);}
+  /* queue strip */
+  .queue{flex:1; display:flex; flex-direction:column; min-width:0;}
+  .queuelab{font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--dimmer); margin-bottom:6px;}
+  .qscroll{flex:1; display:flex; flex-wrap:wrap; gap:8px; overflow-y:auto; align-content:flex-start;}
+  .qcard{width:calc(50% - 4px); border:1px solid var(--line2); border-radius:8px; padding:8px 10px; background:rgba(9,24,17,.6);
+    font-size:10.5px; line-height:1.35; color:#a7d9c1; display:flex; gap:7px; opacity:.72; min-height:0;}
+  .qcard:hover{opacity:1;}
+  .qcard .qn{flex:none; font-size:9px; color:var(--dim); font-weight:700; width:16px;}
+  .qcard.hot{border-color:rgba(255,193,77,.4);}
+  .qcard.hot .qn{color:var(--amber);}
+
+  /* ═══════════ MOOD / AMBIENT STATES ═══════════ */
+  #brain,#brain-front{transition:filter 1.2s ease;}
+  body[data-mood="off"] #brain,body[data-mood="off"] #brain-front{filter:saturate(.5) brightness(.6);}
+  body[data-mood="idle"] #brain,body[data-mood="idle"] #brain-front{filter:saturate(1.15);}
+  body[data-mood="awake"] #brain,body[data-mood="awake"] #brain-front{filter:saturate(1.6) brightness(1.14);}
+  body[data-mood="think"] #brain,body[data-mood="think"] #brain-front{filter:saturate(1.7) brightness(1.2);}
+  body[data-mood="speak"] #brain,body[data-mood="speak"] #brain-front{filter:saturate(1.4) brightness(1.32) hue-rotate(-12deg);}
+  body.night{filter:brightness(.95);}
+  body.dimmed .main, body.dimmed .dock{filter:brightness(.5) saturate(.75); transition:filter 1.5s ease;}
+  .main,.dock{transition:filter 1.5s ease;}
+  /* boot flash */
+  body.booting .panel, body.booting .dock{animation:bootIn .8s ease both;}
+  @keyframes bootIn{from{opacity:0; transform:translateY(8px);}to{opacity:1; transform:none;}}
+
+  /* ═══════════ TV MODE V13 — 75" wall display ═══════════ */
+  /* Everything scales from one variable so proportions never drift. Body height
+     is divided by the zoom factor, otherwise 100vh overflows the visible frame. */
+  body.tv{zoom:var(--tvz,1.35); height:calc(100vh / var(--tvz,1.35)); overflow:hidden;}
+  /* Logo grows modestly — the sphere is the hero, the mark stays centred in it. */
+  body.tv .logo-core{width:min(26vh,19vw); top:50%;}
+  body.tv .strip{height:64px;}
+  /* Chrome that earns no space on a wall: hide the link pill's label noise. */
+  body.tv .linkpill{opacity:.75;}
+  #tvBtn.on{border-color:var(--green); color:var(--green); background:rgba(20,70,46,.55);}
+  /* One-tap resume: browsers only grant fullscreen on a real gesture, so a
+     remembered TV preference has to be re-armed by a single deliberate tap. */
+  .tvresume{position:fixed; inset:0; z-index:10000; display:none; flex-direction:column;
+    align-items:center; justify-content:center; gap:22px; background:rgba(3,17,10,.96);
+    text-align:center; padding:30px;}
+  .tvresume.show{display:flex;}
+  .tvresume h3{font-size:34px; letter-spacing:6px; color:#dfffef; text-transform:uppercase; font-weight:800;}
+  .tvresume p{font-size:15px; letter-spacing:2px; color:var(--dim); text-transform:uppercase;}
+  .tvresume button{font-family:var(--mono); font-size:22px; font-weight:800; letter-spacing:4px;
+    color:#03110a; background:var(--green); border:2px solid #fff; border-radius:60px;
+    padding:24px 54px; cursor:pointer; box-shadow:0 0 40px rgba(52,255,150,.5);}
+  .tvresume small{font-size:12px; letter-spacing:2px; color:var(--dimmer); text-transform:uppercase;}
+
+  /* NO-DIM — a 75" wall display must never fade. These override every dimming
+     rule in the base sheet; dormancy stays legible via colour + rotation speed. */
+  body.nodim.dimmed .main, body.nodim.dimmed .dock{filter:none !important;}
+  body.nodim.night{filter:none !important;}
+  body.nodim[data-mood="off"] #brain,
+  body.nodim[data-mood="off"] #brain-front{filter:saturate(1.05) brightness(1.02) !important;}
+  body.nodim[data-mood="off"] .logo-core{filter:none !important; opacity:1 !important;}
+
+  /* ═══════════ RESPONSIVE (TV-first, degrades to scroll) ═══════════ */
+  @media (max-width:1080px){
+    body{height:auto; overflow:auto;}
+    .main{grid-template-columns:1fr 1fr; overflow:visible;}
+    .stage{grid-column:1 / -1; order:-1; min-height:340px;}
+    .pbody,.console{overflow:visible;}
+    .dock{height:auto;}
+  }
+  @media (max-width:680px){
+    .main{grid-template-columns:1fr;}
+    #clock{font-size:22px;}
+    .missionrow{flex-direction:column;} .hero{width:100%; min-width:0;}
+    .qcard{width:100%;}
+    .tbtns{flex-wrap:wrap;}
+    .stage{min-height:280px; touch-action:manipulation;}
+    .stage canvas{touch-action:manipulation;}
+  }
+  /* ═══════════ V5.0 — TOP TASK FULL-SCREEN ═══════════ */
+  #topTaskOverlay{
+    position:fixed; inset:0; z-index:999; display:none;
+    flex-direction:column; align-items:center; justify-content:center;
+    padding:34px 30px; cursor:pointer;
+    background:
+      radial-gradient(ellipse 90% 70% at 50% 0%, rgba(20,90,60,.35), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 50% 120%, rgba(15,60,40,.25), transparent 70%),
+      #03110a;
+    background-color:#03110a;
+    animation:ttFade .28s ease both;
+  }
+  #topTaskOverlay.on{display:flex;}
+  @keyframes ttFade{from{opacity:0; transform:scale(.985);}to{opacity:1; transform:scale(1);}}
+  .ttinner{max-width:1100px; width:100%; text-align:center; pointer-events:none;}
+  .ttkicker{display:flex; gap:12px; align-items:center; justify-content:center; margin-bottom:22px;}
+  #ttRank{font-size:14px; letter-spacing:6px; text-transform:uppercase; color:var(--cy2); text-shadow:0 0 18px var(--glow);}
+  .tthot{font-size:12px; letter-spacing:3px; padding:5px 12px; border-radius:20px; background:rgba(255,93,93,.14); border:1px solid var(--red); color:var(--red); animation:blink 1.2s infinite;}
+  .tttitle{font-size:clamp(30px,6.2vw,74px); line-height:1.08; font-weight:800; color:#eaffef; text-shadow:0 0 30px var(--glow); letter-spacing:.5px;}
+  .ttwhy{font-size:clamp(16px,2.4vw,28px); line-height:1.4; color:var(--cy); margin-top:26px; max-width:900px; margin-left:auto; margin-right:auto;}
+  .ttmeta{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:30px;}
+  .ttmeta .mchip{font-size:clamp(12px,1.5vw,16px); letter-spacing:1.5px; text-transform:uppercase; color:#bff8dc; border:1px solid var(--line2); background:rgba(10,30,22,.6); border-radius:8px; padding:9px 15px;}
+  .ttmeta .mchip b{color:#fff;}
+  .ttmeta .mchip.hi{border-color:var(--amber); color:var(--amber);}
+  .tthint{font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--dim); margin-top:36px;}
+  .ttring{position:absolute; top:26px; left:26px; width:66px; height:66px; pointer-events:none;}
+  .ttring svg{width:100%; height:100%; transform:rotate(-90deg);}
+  .ttring circle{fill:none; stroke-width:5;}
+  .ttring .ttbg{stroke:rgba(19,86,54,.4);}
+  .ttring .ttfg{stroke:var(--cy2); stroke-linecap:round; filter:drop-shadow(0 0 6px var(--glow)); transition:stroke-dashoffset 1s linear;}
+  .ttring #ttCount{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:22px; color:#eaffef; font-variant-numeric:tabular-nums; text-shadow:0 0 12px var(--glow);}
+  .ttclose{position:absolute; top:30px; right:30px; z-index:2; width:52px; height:52px; border-radius:50%; font-size:20px; background:rgba(10,30,22,.85); color:var(--cy); border:1px solid var(--line2); cursor:pointer;}
+  .ttclose:hover{border-color:var(--red); color:var(--red);}
+  @media (max-width:640px){
+    .ttring{top:16px; left:16px; width:52px; height:52px;} .ttring #ttCount{font-size:17px;}
+    .ttclose{top:18px; right:18px; width:44px; height:44px;}
+    .ttwhy{margin-top:18px;} .ttmeta{margin-top:20px;} .tthint{margin-top:24px;}
+  }
+  /* ═══════════ V5.1 — AGENT COMMS PANEL ═══════════ */
+  .tb .badge{display:inline-flex; align-items:center; justify-content:center; min-width:16px; height:16px; padding:0 4px; margin-left:5px;
+    font-size:9px; font-weight:800; line-height:1; border-radius:9px; background:var(--red); color:#fff; box-shadow:0 0 8px rgba(255,93,93,.5);}
+  .tb .badge.hide{display:none;}
+  #commsOverlay{
+    position:fixed; inset:0; z-index:1000; display:none; flex-direction:column;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -5%, rgba(20,80,55,.28), transparent 70%),
+      #03110a;
+    background-color:#03110a; animation:ttFade .24s ease both;
+  }
+  #commsOverlay.on{display:flex;}
+  .cmhead{flex:none; display:flex; align-items:center; gap:12px; padding:0 20px; height:60px;
+    border-bottom:1px solid var(--line); background:linear-gradient(180deg, rgba(9,28,20,.95), rgba(5,15,11,.8)); position:relative;}
+  .cmhead::after{content:''; position:absolute; left:0; bottom:-1px; width:100%; height:1px;
+    background:linear-gradient(90deg, transparent, var(--cy2), transparent); opacity:.4;}
+  .cmhead .cmtitle{font-size:13px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase; color:#dfffef; text-shadow:0 0 14px var(--glow);}
+  .cmhead .cmdot{width:9px; height:9px; border-radius:50%; background:var(--dimmer); flex:none;}
+  .cmhead .cmdot.live{background:var(--green); box-shadow:0 0 9px var(--green); animation:blink 1.8s infinite;}
+  .cmhead .cmdot.amber{background:var(--amber); box-shadow:0 0 9px var(--amber);}
+  .cmhead .cmfresh{font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim);}
+  .cmhead .cmclose{margin-left:auto; width:44px; height:44px; border-radius:50%; font-size:18px; background:rgba(10,30,22,.85);
+    color:var(--cy); border:1px solid var(--line2); cursor:pointer;}
+  .cmhead .cmclose:hover{border-color:var(--red); color:var(--red);}
+  .cmscrollwrap{flex:1; position:relative; min-height:0;}
+  .cmfeed{position:absolute; inset:0; overflow-y:auto; padding:18px 18px 8px; display:flex; flex-direction:column; gap:14px;}
+  .cmfeed::-webkit-scrollbar{width:6px;} .cmfeed::-webkit-scrollbar-thumb{background:var(--line2); border-radius:3px;}
+  .cmempty{margin:auto; text-align:center; color:var(--dim); font-size:12px; letter-spacing:1px; line-height:1.7; max-width:340px;}
+  .cmempty .big{font-size:34px; margin-bottom:10px; opacity:.6;}
+  /* message row */
+  .cmmsg{display:flex; gap:10px; max-width:78%; align-items:flex-start;}
+  .cmmsg.self{align-self:flex-end; flex-direction:row-reverse;}
+  .cmav{flex:none; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:800; color:#03110a; letter-spacing:.5px;}
+  .cmbody{min-width:0; display:flex; flex-direction:column;}
+  .cmmsg.self .cmbody{align-items:flex-end;}
+  .cmmeta{display:flex; gap:7px; align-items:baseline; margin-bottom:4px; flex-wrap:wrap;}
+  .cmmsg.self .cmmeta{flex-direction:row-reverse;}
+  .cmname{font-size:10px; letter-spacing:1.5px; text-transform:uppercase; font-weight:700;}
+  .cmrole{font-size:8.5px; letter-spacing:.5px; text-transform:uppercase; color:var(--dimmer);}
+  .cmtime{font-size:9px; color:var(--dimmer); font-family:var(--term);}
+  .cmquote{font-size:10px; color:var(--dim); border-left:2px solid var(--line2); padding:2px 8px; margin-bottom:4px;
+    max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; opacity:.8;}
+  .cmbubble{font-size:12.5px; line-height:1.5; color:#dff6e8; background:rgba(10,30,22,.7); border:1px solid var(--line2);
+    border-radius:12px; padding:9px 13px; word-break:break-word; white-space:pre-wrap;}
+  .cmmsg.self .cmbubble{background:linear-gradient(135deg, rgba(243,104,224,.16), rgba(243,104,224,.05)); border-color:rgba(243,104,224,.45); color:#ffe6fb;}
+  .cmbubble.alert{border-left:3px solid var(--red); background:rgba(255,93,93,.08); border-color:rgba(255,93,93,.35); color:#ffd9d9;}
+  .cmbubble .men{font-weight:700;}
+  .cmbubble .sendstate{display:block; margin-top:4px; font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--dimmer);}
+  .cmbubble .sendstate.err{color:var(--red); cursor:pointer;}
+  .cmbubble .sendstate.ok{color:var(--green);}
+  /* new-messages pill */
+  .cmpill{position:absolute; left:50%; bottom:14px; transform:translateX(-50%); z-index:3; display:none;
+    font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#03110a; background:var(--cy2);
+    padding:7px 14px; border-radius:20px; cursor:pointer; box-shadow:0 0 16px var(--glow); font-weight:700;}
+  .cmpill.on{display:block;}
+  /* composer */
+  .cmcompose{flex:none; display:flex; gap:9px; align-items:center; padding:12px 16px; border-top:1px solid var(--line);
+    background:linear-gradient(0deg, rgba(9,26,18,.95), rgba(5,14,10,.7)); padding-bottom:max(12px, env(safe-area-inset-bottom));}
+  .cmcompose input{flex:1; background:rgba(10,30,22,.7); border:1px solid var(--line2); border-radius:22px; padding:11px 16px;
+    color:var(--cy); font-family:var(--mono); font-size:13px; letter-spacing:.3px; outline:none;}
+  .cmcompose input:focus{border-color:var(--cy2); box-shadow:0 0 12px rgba(52,255,150,.15);}
+  .cmcompose input::placeholder{color:var(--dimmer);}
+  .cmsend{flex:none; width:46px; height:46px; border-radius:50%; font-size:18px; background:rgba(52,255,150,.12);
+    color:var(--green); border:1px solid var(--green); cursor:pointer; display:flex; align-items:center; justify-content:center;}
+  .cmsend:hover{box-shadow:0 0 14px rgba(52,255,150,.3);}
+  .cmsend:active{background:rgba(52,255,150,.24);}
+  @media (max-width:680px){ .cmmsg{max-width:88%;} }
+
+  /* ═══════════ V6 — PLL PEARL COMMAND SYSTEM ═══════════ */
+  :root{
+    --bg:#f8f7f4; --bg2:#f1f4ef; --panel:rgba(255,255,255,.82); --panel2:#f5f7f3;
+    --line:rgba(45,122,79,.18); --line2:rgba(45,122,79,.34);
+    --cy:#173329; --cy2:#2d7a4f; --dim:#60796e; --dimmer:#8aa096;
+    --green:#2d7a4f; --amber:#b57922; --red:#c84949;
+    --glow:rgba(45,122,79,.22); --blue:#129ed0; --ink:#14251e;
+  }
+  body{
+    color:var(--ink); background-color:var(--bg);
+    background-image:
+      radial-gradient(ellipse 75% 62% at 50% -8%, rgba(45,122,79,.12), transparent 68%),
+      radial-gradient(ellipse 72% 55% at 50% 112%, rgba(18,158,208,.08), transparent 70%),
+      linear-gradient(135deg, rgba(255,255,255,.9), rgba(245,244,239,.94));
+  }
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.24;background-image:linear-gradient(rgba(45,122,79,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(45,122,79,.05) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(circle at 50% 38%,black,transparent 76%);}
+  .strip{background:rgba(255,255,255,.84);border-bottom-color:var(--line);box-shadow:0 8px 28px rgba(20,52,38,.06);backdrop-filter:blur(18px);}
+  .strip::after{background:linear-gradient(90deg,transparent,var(--green),var(--blue),transparent);opacity:.5;}
+  .brand{height:44px;display:flex;align-items:center;gap:10px;letter-spacing:0;}
+  .brand img{width:126px;height:auto;display:block;filter:drop-shadow(0 4px 8px rgba(20,55,38,.08));}
+  .brand-system{border-left:1px solid var(--line2);padding-left:10px;color:var(--green);font-size:9px;font-weight:800;letter-spacing:2.3px;white-space:nowrap;}
+  #clock,.stat .sv,.hud .hv{color:var(--ink);text-shadow:none;}
+  .chip,.tb{background:rgba(255,255,255,.72);color:var(--ink);border-color:var(--line2);box-shadow:0 4px 12px rgba(23,58,42,.035);}
+  .tb:hover{background:#fff;border-color:var(--green);color:var(--green);box-shadow:0 7px 18px rgba(45,122,79,.12);}
+  .tb.primary{background:linear-gradient(135deg,#2d7a4f,#359260);color:#fff;border-color:#2d7a4f;box-shadow:0 7px 18px rgba(45,122,79,.2);}
+  .tb.primary.hot{background:#fff;color:var(--red);}
+  .panel{background:linear-gradient(150deg,rgba(255,255,255,.90),rgba(248,249,246,.76));border-color:var(--line);box-shadow:0 12px 38px rgba(22,55,40,.075),inset 0 1px 0 #fff;backdrop-filter:blur(16px);}
+  .panel h2{color:var(--ink);background:rgba(245,248,244,.72);border-bottom-color:var(--line);}
+  .row{border-color:rgba(45,122,79,.16)} .row .nm,.dlcmd,.agent .an,.console div.hi{color:#294d3d;}
+  .row .bar{background:rgba(45,122,79,.12)}
+  .hud{background:rgba(255,255,255,.76);border-color:var(--line2);box-shadow:0 8px 20px rgba(26,65,46,.08);backdrop-filter:blur(9px);}
+  .statebox .sv{color:var(--green);}
+  .statusline{color:var(--ink);background:rgba(255,255,255,.84);border-top-color:var(--line);backdrop-filter:blur(14px);}
+  .statusline::before{color:var(--green)} .wave span{background:var(--green)}
+  .dock{background:rgba(255,255,255,.66);border-top-color:var(--line);box-shadow:0 -10px 32px rgba(24,58,42,.04);}
+  .dock::before{background:linear-gradient(90deg,transparent,var(--green),var(--blue),transparent);opacity:.45;}
+  .docklab b,.hero .htxt{color:var(--ink)}
+  .hero{border-color:rgba(45,122,79,.52);background:linear-gradient(135deg,rgba(45,122,79,.10),rgba(255,255,255,.65));box-shadow:0 10px 28px rgba(45,122,79,.10);}
+  .qcard{background:rgba(255,255,255,.64);color:#425f52;border-color:var(--line);}
+  .console div{color:#6b8076}.console div b{color:var(--green)}
+  .dl,.agent{border-color:rgba(45,122,79,.14)}
+  .flag{color:#7d3030;background:rgba(200,73,73,.055)} .flag.none{color:var(--dim)}
+  .logo-core{position:absolute;z-index:2;left:50%;top:calc(50% - 23px);width:clamp(112px,16vw,190px);aspect-ratio:1;transform:translate(-50%,-50%);perspective:700px;pointer-events:none;display:grid;place-items:center;}
+  .logo-halo{position:absolute;inset:-16%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.96) 0 37%,rgba(45,122,79,.11) 52%,rgba(18,158,208,.07) 64%,transparent 70%);filter:drop-shadow(0 14px 22px rgba(38,89,62,.15));animation:haloBreath 4s ease-in-out infinite;}
+  .logo-disc{position:absolute;inset:9%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 28%,#fff 0 35%,#f4f8f3 63%,#dfeae2 100%);border:1px solid rgba(45,122,79,.26);box-shadow:inset -12px -14px 24px rgba(45,122,79,.12),inset 8px 9px 18px rgba(255,255,255,.94),0 12px 28px rgba(31,79,52,.18);transform-style:preserve-3d;animation:logoFloat 7s ease-in-out infinite;}
+  .logo-disc::before{content:'';position:absolute;inset:5%;border-radius:50%;border:1px solid rgba(18,158,208,.14);box-shadow:0 0 20px rgba(18,158,208,.08);}
+  .logo-disc img{width:78%;height:78%;object-fit:contain;transform:translateZ(5px);filter:drop-shadow(0 9px 8px rgba(28,76,45,.22)) saturate(1.08);}
+  @keyframes logoFloat{0%,100%{transform:rotateX(4deg) rotateY(-5deg) translateY(0)}50%{transform:rotateX(-3deg) rotateY(6deg) translateY(-5px)}}
+  @keyframes haloBreath{0%,100%{transform:scale(.97);opacity:.74}50%{transform:scale(1.045);opacity:1}}
+  body[data-mood="awake"] .logo-core{filter:drop-shadow(0 0 18px rgba(35,174,77,.28))} body[data-mood="awake"] .logo-halo{animation-duration:1.15s;}
+  body[data-mood="think"] .logo-disc{animation-duration:2.2s} body[data-mood="think"] .logo-halo{background:radial-gradient(circle,rgba(255,255,255,.96) 0 37%,rgba(18,158,208,.14) 52%,rgba(45,122,79,.08) 66%,transparent 71%);animation-duration:1.8s;}
+  body[data-mood="speak"] .logo-halo{animation-duration:.8s;}
+  body[data-mood="off"] .logo-core{filter:grayscale(.25);opacity:.56;}
+  #topTaskOverlay,#commsOverlay{background:radial-gradient(ellipse 80% 65% at 50% 0%,rgba(45,122,79,.13),transparent 70%),#f8f7f4;background-color:#f8f7f4;}
+  .tttitle,.ttwhy,.ttmeta .mchip b,.cmhead .cmtitle{color:var(--ink);text-shadow:none}.ttmeta .mchip{color:#385b4b;background:#fff}.ttclose,.cmhead .cmclose{background:#fff;color:var(--green)}
+  .cmhead,.cmcompose{background:rgba(255,255,255,.9);border-color:var(--line)} .cmbubble{color:#294d3d;background:#fff;border-color:var(--line)} .cmcompose input{background:#fff;color:var(--ink)}
+  @media(max-width:1180px){.brand img{width:105px}.brand-system{display:none}.strip{gap:9px}.tbtns{margin-left:5px}}
+  @media(max-width:680px){.logo-core{width:132px;top:calc(50% - 20px)}.brand img{width:92px}.strip{background:#fff}.hud{left:10px;top:10px}.statebox{right:10px;top:10px}}
+
+</style>
+</head>
+<body class="booting">
+
+<!-- ═══════════ ZONE 1 — STATUS STRIP ═══════════ -->
+<div class="strip">
+  <div class="brand"><img src="pll-logo.png" alt="Private Label Labs"><span class="brand-system">PURCHASING COMMAND CENTER <small style="opacity:.7;font-weight:400">— Aidan Kraim</small></span></div>
+  <div class="clockbox">
+    <div id="clock">00:00:00</div>
+    <div id="dateline">—</div>
+  </div>
+  <div class="stat"><div class="sv hot" id="statHot">0</div><div class="sl">Hot</div></div>
+  <div class="stat"><div class="sv" id="statOpen">0</div><div class="sl">Tasks</div></div>
+  <div class="stat"><div class="sv ok" id="statAgents">3</div><div class="sl">Agents</div></div>
+  <div class="chips">
+    <span class="chip">MIC <b id="chipMic" class="err">OFF</b></span>
+    <span class="chip" id="syncChip">SYNC <b id="syncTag" class="warn">—</b></span>
+    <span class="chip" style="display:none"><b id="chipAgent"></b></span>
+    <span class="chip" style="display:none"><b id="chipBrief"></b></span>
+    <span class="chip" style="display:none"><b id="chipCount"></b></span>
+    <span class="chip" style="display:none"><b id="chipUp"></b></span>
+  </div>
+  <div class="tbtns">
+    <button class="tb primary" id="powerBtn" onclick="togglePower()">⚡ Power</button>
+    <button class="tb" onclick="speakBrief()">Brief</button>
+    <button class="tb" onclick="speakNext()">Next</button>
+    <span class="vpwrap"><button class="tb voicepreset" id="voicePresetBtn" onclick="openVoiceMenu()" title="Change speech style">Voice: Jarvis-style</button><div class="vmenu" id="voiceMenu"></div></span>
+    <button class="tb" id="muteBtn" onclick="toggleMute()">🔊</button>
+    <button class="tb" id="commsBtn" onclick="openComms()">💬 Comms<span class="badge hide" id="commsBadge">0</span></button>
+    <button class="tb" id="tvBtn" onclick="toggleTv()" title="75″ TV mode — fullscreen, bigger everything (F)">📺 TV</button>
+    <button class="tb" onclick="setHook()">Link</button>
+  </div>
+  <div class="linkpill"><span class="ldot" id="linkDot"></span><span id="linkTxt">Link</span></div>
+</div>
+
+<!-- ═══════════ ZONE 2/3/4 — MAIN GRID ═══════════ -->
+<div class="main">
+
+  <!-- LEFT: red flags + pipeline -->
+  <div class="panel">
+    <h2>Situation <small id="sitTag"></small></h2>
+    <div class="pbody">
+      <div class="seclab red"><span>Red Flags</span></div>
+      <div id="redflagList"></div>
+      <div class="seclab" style="margin-top:14px"><span>Pipeline Pulse</span></div>
+      <div id="pipeList"></div>
+    </div>
+  </div>
+
+  <!-- CENTER: the orb -->
+  <div class="panel stage">
+    <div class="stagewrap">
+      <canvas id="brain"></canvas>
+      <div class="logo-core" aria-hidden="true">
+        <div class="logo-halo"></div>
+        <div class="logo-disc"><img src="pll-mark.png" alt=""></div>
+      </div>
+      <canvas id="brain-front" aria-hidden="true"></canvas>
+      <div class="hud">
+        <div class="hl">Today's Lane</div>
+        <div class="hv" id="laneVal">1 / 1</div>
+      </div>
+      <div class="statebox">
+        <div class="sl">Core State</div>
+        <div class="sv" id="coreState">OFFLINE</div>
+      </div>
+      <div class="statusline" id="statusWrap">
+        <span id="statusLine">Standing by — power on, then say “Command Lab”</span>
+        <span class="wave" id="wave"><span></span><span></span><span></span><span></span><span></span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: dispatch + agents + log -->
+  <div class="panel">
+    <h2>Dispatch Log <small>LAST 10</small></h2>
+    <div class="pbody" id="dlog" style="max-height:34%; flex:none;"></div>
+    <h2>Agents</h2>
+    <div class="pbody" style="flex:none;">
+      <div class="agent"><span class="adot g"></span><span class="an">Aidan Consultant Agent</span><span class="ar">LIVE · advisory</span></div>
+      <div class="agent"><span class="adot a"></span><span class="an">Aidan Purchasing Agent</span><span class="ar">materials · suppliers</span></div>
+      <div class="agent"><span class="adot a"></span><span class="an">Aidan CRM Agent</span><span class="ar">CRM tasks</span></div>
+    </div>
+    <div class="pbody" id="svcList" style="display:none"></div>
+    <h2>Ops Log</h2>
+    <div class="console" id="console"></div>
+  </div>
+</div>
+
+<!-- ═══════════ ZONE 5 — MISSION DOCK ═══════════ -->
+<div class="dock">
+  <div class="docklab"><b>TODAY'S MISSION</b> <span>— one lane at a time</span><span class="lane" id="dockLane">LANE 1 OF 1</span></div>
+  <div class="missionrow">
+    <div class="hero" id="missionHero"></div>
+    <div class="queue">
+      <div class="queuelab">On deck</div>
+      <div class="qscroll" id="missionQueue"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ V5.0 — TOP TASK FULL-SCREEN TAKEOVER ═══════════ -->
+<div id="topTaskOverlay" aria-hidden="true" onclick="exitTopTask()">
+  <div class="ttring"><svg viewBox="0 0 120 120"><circle class="ttbg" cx="60" cy="60" r="54"></circle><circle id="ttArc" class="ttfg" cx="60" cy="60" r="54"></circle></svg><span id="ttCount">15</span></div>
+  <button class="ttclose" onclick="exitTopTask()" aria-label="Close">✕</button>
+  <div class="ttinner">
+    <div class="ttkicker"><span id="ttRank">TOP TASK</span><span id="ttHot" class="tthot" style="display:none">HOT</span></div>
+    <div class="tttitle" id="ttTitle">—</div>
+    <div class="ttwhy" id="ttWhy"></div>
+    <div class="ttmeta" id="ttMeta"></div>
+    <div class="tthint">Tap anywhere or say “go back” · say “next task” for the next one</div>
+  </div>
+</div>
+
+<!-- ═══════════ V5.1 — AGENT COMMS PANEL ═══════════ -->
+<div id="commsOverlay" aria-hidden="true">
+  <div class="cmhead">
+    <span class="cmtitle">Agent Comms</span>
+    <span class="cmdot" id="cmDot"></span>
+    <span class="cmfresh" id="cmFresh">—</span>
+    <button class="cmclose" onclick="closeComms()" aria-label="Close">✕</button>
+  </div>
+  <div class="cmscrollwrap">
+    <div class="cmfeed" id="cmFeed"></div>
+    <div class="cmpill" id="cmPill" onclick="commsScrollBottom(true)">↓ New messages</div>
+  </div>
+  <div class="cmcompose">
+    <input id="cmInput" type="text" placeholder="Message the agents…  (@purchasing, @crm, @consultant)" autocomplete="off"
+      onkeydown="if(event.key==='Enter'){commsSend();}">
+    <button class="cmsend" onclick="commsSend()" aria-label="Send">➤</button>
+  </div>
+</div>
+
+<!-- hidden legacy nodes kept for JS compatibility -->
+<div style="display:none">
+  <div id="briefList"></div><div id="nextList"></div><div id="tickState"></div><div id="tickDot"></div>
+</div>
+
+<script>
+// V6.2 routing split: connected agents go straight through the non-AI switchboard.
+// The central line remains only for Consultant and not-yet-connected specialist workflows.
+// TODO(human): replace AIDAN_SWITCHBOARD_URL with the real deployed Cloudflare Worker URL
+// for Aidan's switchboard (see command-router/aidan-switchboard-worker.js). Placeholder only.
+const AIDAN_SWITCHBOARD_URL = 'https://aidan-command-switchboard.privatelabellabsllc.workers.dev/dispatch';
+const DIRECT_SWITCHBOARD = AIDAN_SWITCHBOARD_URL;
+// TODO(human): replace with Aidan's own Tasklet webhook URL (Consultant/general dispatch lane)
+// once that agent + webhook are provisioned. This is a non-functional placeholder.
+const DEFAULT_HOOK = 'https://webhooks.tasklet.ai/v1/public/webhook/a_7hg52h0hcemqas4c2gt2?token=526936fcdc1908e8799aa313d88a9ccd';
+var voiceCache = [];
+var briefOk = null; // null=pending, true/false after fetch
+
+function renderServices(){
+  const items = [
+    ['Dispatch Line', !!hookUrl()],
+    ['Morning Brief', briefOk === null ? 'warn' : briefOk],
+    ['AI Brain', !!hookUrl()],
+    ['CRM Route', !!hookUrl()],
+    ['Mic / Wake Word', !!(window.SpeechRecognition || window.webkitSpeechRecognition)],
+    ['Voice Engine', 'speechSynthesis' in window]
+  ];
+  document.getElementById('svcList').innerHTML = items.map(function(it){
+    const st = it[1];
+    const cls = st === 'warn' ? 'warn' : (st ? 'ok' : 'err');
+    const lbl = st === 'warn' ? 'SYNCING' : (st ? 'CONNECTED' : 'OFFLINE');
+    return '<div class="svc"><span class="sn">'+it[0]+'</span><span class="pill '+cls+'">'+lbl+'</span></div>';
+  }).join('');
+}
+
+function daypart(){ const h = new Date().getHours(); return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening'; }
+function applyNight(){ const h = new Date().getHours(); document.body.classList.toggle('night', h >= 21 || h < 6); }
+applyNight(); setInterval(applyNight, 60000);
+
+// ================= CLOCK =================
+(function(){
+  const c = document.getElementById('clock'), d = document.getElementById('dateline');
+  const days=['SUN','MON','TUE','WED','THU','FRI','SAT'], mos=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  function tick(){
+    const n = new Date();
+    c.textContent = [n.getHours(),n.getMinutes(),n.getSeconds()].map(x=>String(x).padStart(2,'0')).join(':');
+    d.textContent = days[n.getDay()]+'. '+String(n.getDate()).padStart(2,'0')+' '+mos[n.getMonth()]+' '+n.getFullYear();
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+// ================= OPS LOG =================
+function clog(msg, cls){
+  const el = document.getElementById('console');
+  const t = new Date(), ts = [t.getHours(),t.getMinutes(),t.getSeconds()].map(x=>String(x).padStart(2,'0')).join(':');
+  const div = document.createElement('div');
+  if (cls) div.className = cls;
+  div.innerHTML = '<b>'+ts+'</b> ' + msg;
+  el.appendChild(div);
+  while (el.children.length > 60) el.removeChild(el.firstChild);
+  el.scrollTop = el.scrollHeight;
+}
+clog('Command Center initialized.', 'hi');
+
+// ================= CORE STATE =================
+function coreState(txt, mode){ // mode: off|idle|awake|think|speak
+  const cs = document.getElementById('coreState');
+  cs.textContent = txt.toUpperCase();
+  cs.classList.toggle('hot', mode==='awake'||mode==='think'||mode==='speak');
+  const ts = document.getElementById('tickState'); if (ts) ts.textContent = txt.toUpperCase();
+  brainMode = mode || 'off';
+  document.body.dataset.mood = brainMode;
+}
+
+// ---- V14: cached radial-glow dot sprites (replaces canvas shadowBlur) ----
+// Keyed by colour + alpha + glow, so a steady state rebuilds nothing. Alpha is
+// rounded to 2dp because it only changes with mood, not per frame.
+var __orbSprites = {};
+function orbSprite(accent, a, glow, front){
+  a = Math.max(0, Math.min(1, a));
+  var key = accent.join('_')+'|'+a.toFixed(2)+'|'+glow+'|'+(front?1:0);
+  var hit = __orbSprites[key];
+  if (hit) return hit;
+  var S = 24, cv = document.createElement('canvas');
+  cv.width = cv.height = S;
+  var g = cv.getContext('2d'), c = S/2, rgb = accent[0]+','+accent[1]+','+accent[2];
+  var grad = g.createRadialGradient(c,c,0,c,c,c);
+  grad.addColorStop(0,      'rgba('+rgb+','+a+')');
+  grad.addColorStop(0.5,    'rgba('+rgb+','+a+')');            // solid core to S/4
+  grad.addColorStop(0.5001, 'rgba('+rgb+','+(a*glow)+')');     // glow shoulder
+  grad.addColorStop(1,      'rgba('+rgb+',0)');
+  g.fillStyle = grad;
+  g.beginPath(); g.arc(c,c,c,0,Math.PI*2); g.fill();
+  if (Object.keys(__orbSprites).length > 24) __orbSprites = {};  // bounded cache
+  __orbSprites[key] = cv;
+  return cv;
+}
+
+// ================= THE ORB — sphere network + rotating rings + comet + mic-reactive =================
+var brainMode = 'off';
+var micLevel = 0;      // 0..1 live mic amplitude (best-effort; falls back to state animation)
+var burstT = 0;        // >0 while a dispatch comet is flying
+function orbBurst(){ burstT = 1; }
+(function(){
+  const c = document.getElementById('brain'), ctx = c.getContext('2d'), cf = document.getElementById('brain-front'), fctx = cf.getContext('2d');
+  let W,H,CX,CY,R,pts=[];
+  let N = 320;
+  let TVR = 0.30;   // sphere radius as a share of the stage's short edge
+  function resize(){
+    const r = c.parentElement.getBoundingClientRect();
+    const Q = window.__orbQ || 1;   // v14d: backing-store scale; CSS size is untouched
+    W = c.width = cf.width = Math.max(2, Math.round(r.width * devicePixelRatio * Q));
+    H = c.height = cf.height = Math.max(2, Math.round(r.height * devicePixelRatio * Q));
+    CX = W/2;
+    // v14: no vertical bias in TV mode — the canvas centre and the white disc
+    // must coincide exactly or the mark reads off-centre on a 75" panel.
+    CY = H/2 - (window.__noDim ? 0 : 6*devicePixelRatio);
+    R = Math.min(W,H)*TVR;
+    if (!pts.length){
+      for (let i=0;i<N;i++){
+        const th = Math.acos(2*Math.random()-1), ph = Math.random()*Math.PI*2;
+        pts.push({th, ph, rr: 0.78 + Math.random()*0.34, size: 0.75 + Math.random()*0.7});
+      }
+    }
+  }
+  // TV MODE V13 — grow the sphere and thicken the particle field on a wall display.
+  window.__brainScale = function(tv){
+    TVR = tv ? 0.455 : 0.30;
+    N = tv ? 560 : 320;
+    pts = [];        // resize() repopulates when the field is empty
+    actN = N; emaMs = 16; preTrimMs = 0; saturated = false; cdUntil = 0;
+    slowSeen = 0; tuneDone = false; sinceChange = 0; bootAt = 0;   // re-judge the new mode cleanly   // re-open the budget, let the governor re-settle
+    resize();
+  };
+  resize(); addEventListener('resize', resize);
+  let rot = 0, t = 0, ringRot = 0, breathe = 0;
+  // ---- V14b adaptive quality governor ----
+  // Wall displays vary wildly in GPU headroom. Instead of a fixed particle count,
+  // measure real frame time and trim the active prefix of the point pool until
+  // frames land under ~20ms, easing back up when there is room to spare.
+  let actN = N, lastT = 0, emaMs = 16, tuneCd = 0, step = 60;
+  let preTrimMs = 0, saturated = false, cdUntil = 0;   // cdUntil is wall-clock ms
+  let frames = 0, sinceChange = 0, slowSeen = 0, tuneDone = false, bootAt = 0;
+  const WARMUP = 2500;      // ms of boot churn to ignore before judging anything
+  const MINF = 12;          // frames the average must span before any decision
+  const FLOOR = 400;                       // below this the sphere stops reading as dense
+  function governor(now){
+    if (lastT){
+      const dt = now - lastT;
+      if (dt > 0 && dt < 500) emaMs = emaMs*0.75 + dt*0.25;   // settles in ~8 frames, not ~20
+    }
+    lastT = now;
+    frames++; sinceChange++;
+    if (!bootAt) bootAt = now;
+    // Never judge boot churn: layout, fonts and the boot animation all land first.
+    if (now - bootAt < WARMUP) return;
+    if (tuneDone) return;                  // terminal: stop oscillating in front of Sam
+    // Wall-clock gating: a struggling display must converge in ~2s, not ~30s.
+    if (now < cdUntil) return;
+    if (sinceChange < MINF) return;        // the average must actually reflect the change
+    if (saturated){
+      // ---- stage 2: fill-rate relief ----
+      // Particles are proven not to be the bottleneck, so shed pixels instead.
+      var q = window.__orbQ || 1;
+      if (emaMs > 30 && q > 0.8){
+        window.__orbQ = Math.max(0.8, Math.round((q - 0.1)*100)/100);
+        resize(); cdUntil = now + 900; sinceChange = 0;
+      } else if (emaMs > 30 && q <= 0.8){
+        tuneDone = true;   // both levers spent; leave it alone
+      } else if (emaMs < 15 && q < 1){
+        window.__orbQ = Math.min(1, Math.round((q + 0.14)*100)/100);
+        resize(); cdUntil = now + 1500; sinceChange = 0;
+      }
+      return;
+    }
+    if (preTrimMs){
+      // Judge the trim we just made: keep it only if it bought real time.
+      if (emaMs > preTrimMs*0.92){ actN = Math.min(N, actN + step); saturated = true; }
+      preTrimMs = 0; cdUntil = now + 700; sinceChange = 0; return;
+    }
+    if (emaMs > 24){ slowSeen++; } else { slowSeen = 0; }
+    if (emaMs > 24 && slowSeen < 2){ cdUntil = now + 400; return; }
+    if (emaMs > 24 && actN > FLOOR){
+      // Step proportionally: a badly struggling panel should not creep.
+      step = emaMs > 45 ? 160 : emaMs > 32 ? 100 : 60;
+      preTrimMs = emaMs; actN = Math.max(FLOOR, actN - step); cdUntil = now + 700; sinceChange = 0;
+    } else if (emaMs < 13 && actN < N){
+      step = 40; actN = Math.min(N, actN + step); cdUntil = now + 1200; sinceChange = 0;
+    }
+  }
+  function frame(now){
+    governor(now || performance.now());
+    if (actN > N) actN = N;
+    ctx.clearRect(0,0,W,H); fctx.clearRect(0,0,W,H);
+    t += 0.016;
+    const listening = brainMode==='awake';
+    const speed = brainMode==='off' ? 0.0012 : brainMode==='idle' ? 0.003 : brainMode==='think' ? 0.014 : brainMode==='speak' ? 0.009 : 0.006;
+    rot += speed; ringRot += speed*1.6; breathe += 0.02;
+    const alpha = ((brainMode==='off' && !window.__noDim) ? 0.32 : 1) * (window.__noDim ? 1.26 : 1);
+    // pulse: mic amplitude when listening, sine undulation when speaking/thinking, gentle breathe when idle
+    let pulse = 1;
+    if (listening) pulse = 1 + 0.14*micLevel + 0.02*Math.sin(breathe);
+    else if (brainMode==='speak'||brainMode==='think') pulse = 1 + 0.06*Math.sin(t*6);
+    else pulse = 1 + 0.02*Math.sin(breathe);
+
+    const accent = brainMode==='speak' ? [0,145,190] : brainMode==='think' ? [30,135,175] : listening ? [35,174,77] : [45,122,79];
+
+    // ---- concentric rotating ring arcs (mission-control feel) ----
+    ctx.save(); ctx.translate(CX,CY);
+    const rings = [
+      {r:R*1.42, dash:[R*0.5, R*0.28], w:1.1, sp:1,  a:0.30},
+      {r:R*1.66, dash:[R*0.16, R*0.5], w:1.4, sp:-0.7,a:0.22},
+      {r:R*1.92, dash:[R*0.9, R*0.7],  w:1.0, sp:0.4, a:0.16}
+    ];
+    rings.forEach(function(rg){
+      ctx.rotate(ringRot*rg.sp*0.5);
+      ctx.strokeStyle = 'rgba('+accent[0]+','+accent[1]+','+accent[2]+','+(rg.a*alpha)+')';
+      ctx.lineWidth = rg.w*devicePixelRatio;
+      ctx.setLineDash(rg.dash.map(function(d){return d;}));
+      ctx.beginPath(); ctx.arc(0,0,rg.r*pulse,0,Math.PI*2); ctx.stroke();
+    });
+    ctx.setLineDash([]); ctx.restore();
+
+    // ---- sphere network ----
+    const proj = [];
+    const lim = Math.min(actN, pts.length);
+    for (let pi=0; pi<lim; pi++){
+      const p = pts[pi];
+      const rr = R * p.rr * pulse;
+      const x3 = rr*Math.sin(p.th)*Math.cos(p.ph+rot), y3 = rr*Math.cos(p.th), z3 = rr*Math.sin(p.th)*Math.sin(p.ph+rot);
+      const sc = 1 + z3/(R*2.2);
+      proj.push({x: CX + x3*sc, y: CY + y3, z: z3, sc, size:p.size});
+    }
+    // ---- V14 PERF: spatial hash instead of O(N^2) ----
+    // At N=560 the old pairwise scan ran 156,660 hypot() calls and one stroke()
+    // per link every frame, which held the 4K panel to ~10fps. Points are binned
+    // into LINK-sized cells and only the 3x3 neighbourhood is searched.
+    const LINK = R*0.29;
+    ctx.lineWidth = fctx.lineWidth = devicePixelRatio*0.8*(window.__noDim ? 1.38 : 1);
+    const cell = LINK, grid = new Map();
+    for (let i=0;i<proj.length;i++){
+      const gx=Math.floor(proj[i].x/cell), gy=Math.floor(proj[i].y/cell), k=gx+','+gy;
+      let b=grid.get(k); if(!b){ b=[]; grid.set(k,b); } b.push(i);
+    }
+    // Link alphas are quantised into 5 buckets so each bucket is one batched
+    // path + one stroke() — a few dozen GPU calls instead of several thousand.
+    const BK = 5, bF = [], bB = [];
+    for (let k=0;k<BK;k++){ bF.push([]); bB.push([]); }
+    const L2 = LINK*LINK;
+    for (let i=0;i<proj.length;i++){
+      const a=proj[i], gx=Math.floor(a.x/cell), gy=Math.floor(a.y/cell);
+      for (let ox=-1;ox<=1;ox++) for (let oy=-1;oy<=1;oy++){
+        const b=grid.get((gx+ox)+','+(gy+oy)); if(!b) continue;
+        for (let n=0;n<b.length;n++){
+          const j=b[n]; if (j<=i) continue;      // each pair exactly once
+          const o=proj[j], dx=a.x-o.x, dy=a.y-o.y, d2=dx*dx+dy*dy;
+          if (d2>=L2) continue;
+          const d=Math.sqrt(d2), near=1-d/LINK;
+          const bucket=Math.min(BK-1, (near*BK)|0);
+          ((a.z+o.z)>0 ? bF : bB)[bucket].push(a.x,a.y,o.x,o.y);
+        }
+      }
+    }
+    function flush(target, buckets, peak){
+      for (let k=0;k<BK;k++){
+        const seg=buckets[k]; if(!seg.length) continue;
+        const near=(k+0.5)/BK;
+        target.strokeStyle='rgba('+accent[0]+','+accent[1]+','+accent[2]+','+(peak*near*alpha)+')';
+        target.beginPath();
+        for (let s=0;s<seg.length;s+=4){ target.moveTo(seg[s],seg[s+1]); target.lineTo(seg[s+2],seg[s+3]); }
+        target.stroke();
+      }
+    }
+    flush(fctx, bF, 0.185); flush(ctx, bB, 0.105);
+
+    // ---- V14 PERF: pre-rendered glow sprites replace per-dot shadowBlur ----
+    // shadowBlur forces a per-dot software blur; 560 of them per frame dominated
+    // the profile. One cached sprite per (colour, depth, alpha) is drawn instead.
+    var DOTK = window.__noDim ? 1.34 : 1;
+    const sprF = orbSprite(accent, 0.94*alpha, 0.42, true);
+    const sprB = orbSprite([45,142,84], 0.65*alpha, 0.20, false);
+    for (const q of proj){
+      const front=q.z>0, target=front?fctx:ctx, spr=front?sprF:sprB;
+      const rad=(front?2.05:1.35)*DOTK*q.size*devicePixelRatio*q.sc;
+      // sprite core radius is S/4, so 4*rad maps the core onto rad exactly
+      target.drawImage(spr, q.x-2*rad, q.y-2*rad, 4*rad, 4*rad);
+    }
+    // bright core
+    const cg = ctx.createRadialGradient(CX,CY,0,CX,CY,R*0.6);
+    cg.addColorStop(0,'rgba('+accent[0]+','+accent[1]+','+accent[2]+','+(0.22*alpha)+')');
+    cg.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=cg; ctx.beginPath(); ctx.arc(CX,CY,R*0.6,0,Math.PI*2); ctx.fill();
+
+    // ---- dispatch comet: fires from orb toward the right (Dispatch Log) ----
+    if (burstT > 0){
+      burstT -= 0.02;
+      const p = 1 - burstT; // 0..1 progress
+      const x = CX + (W*0.5 + R*1.4)*p;
+      const y = CY - R*0.2*Math.sin(p*Math.PI);
+      ctx.shadowColor='rgba(255,210,120,0.95)'; ctx.shadowBlur=12*devicePixelRatio;
+      ctx.fillStyle='rgba(255,220,150,'+(burstT)+')';
+      ctx.beginPath(); ctx.arc(x,y,3.2*devicePixelRatio,0,Math.PI*2); ctx.fill();
+      // tail
+      ctx.strokeStyle='rgba(255,210,120,'+(0.5*burstT)+')'; ctx.lineWidth=2*devicePixelRatio;
+      ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x-40*devicePixelRatio,y+6*devicePixelRatio); ctx.stroke();
+      ctx.shadowBlur=0;
+      if (burstT < 0) burstT = 0;
+    }
+    requestAnimationFrame(frame);
+  }
+  window.__orbPin = function(n){ actN = n; saturated = true; tuneCd = 1e9; };
+  window.__orbStats = function(){ return {N:N, active:actN, q:(window.__orbQ||1), tuned:tuneDone, sat:saturated, ms:Math.round(emaMs*10)/10, TVR:TVR, R:R, CX:CX, CY:CY, H:H}; };
+  frame();
+})();
+
+// ---- best-effort mic amplitude analyser (independent of SpeechRecognition; degrades silently) ----
+// DISABLED on iOS — getUserMedia fights SpeechRecognition for the mic, causing silent failures
+var micAnalyserOn = false;
+function startMicMeter(){
+  if (micAnalyserOn) return;
+  if (IS_MOBILE) { micAnalyserOn = true; return; } // skip on mobile to avoid mic conflict with SpeechRecognition
+  try {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream){
+      const actx = new AC();
+      const src = actx.createMediaStreamSource(stream);
+      const an = actx.createAnalyser(); an.fftSize = 256;
+      src.connect(an);
+      const buf = new Uint8Array(an.frequencyBinCount);
+      micAnalyserOn = true;
+      (function loop(){
+        an.getByteTimeDomainData(buf);
+        let sum = 0; for (let i=0;i<buf.length;i++){ const v=(buf[i]-128)/128; sum += v*v; }
+        const rms = Math.sqrt(sum/buf.length);
+        micLevel = Math.min(1, micLevel*0.6 + (rms*4)*0.4);
+        requestAnimationFrame(loop);
+      })();
+    }).catch(function(){});
+  } catch(e){}
+}
+
+// ================= DATA (baked at build time) =================
+var BRIEF = [
+  { t: "Valeva backlog — 7 orders unshipped. Booky and warehouse, first thing. Revenue sitting on the floor.", hot: true },
+  { t: "Tiffany is leaving for Africa — lock the call THIS WEEK. 6,400 TikTok videos ready. Do not let this one slip.", hot: true },
+  { t: "Elmar pricing blocked — need Aidan's packaging costs and fill rate before any 65% margin quote goes out.", hot: false },
+  { t: "Aidan: Pure Good + Terra Lotus pricing due July 8. Evelyn: Terra Lotus samples due July 7. Deadlines are watched.", hot: false },
+  { t: "Kristen Reed — $10K baby-safe barrier spray. Laura owes scope and R&D quote.", hot: false },
+  { t: "Sky & Sol sample follow-up Friday July 10 — client back from vacation on the 11th.", hot: false }
+];
+var NEXT = [
+  "One lane: Booky and the Valeva shipments. Nothing else until that's moving.",
+  "Then Tiffany — reply on WhatsApp, lock in the call before she flies.",
+  "Everything else is my problem until those two are done."
+];
+
+// ================= RENDER =================
+function renderLists(){
+  const X = BRIEF_EXTRA || {};
+  // ---- MISSION DOCK: hero (task #1) + queue (rest) ----
+  const hero = document.getElementById('missionHero');
+  if (BRIEF.length){
+    const h = BRIEF[0];
+    hero.className = 'hero' + (h.hot ? ' hotcard' : '');
+    hero.innerHTML =
+      '<div class="htop"><span class="hnow">▶ Do This Now</span>' + (h.hot ? '<span class="hbadge">Hot</span>' : '') + '</div>' +
+      '<div class="htxt">' + h.t + '</div>' +
+      '<div class="hnum">01</div>';
+  } else { hero.innerHTML = '<div class="htxt" style="color:var(--dim)">No mission loaded.</div>'; }
+  const q = document.getElementById('missionQueue');
+  q.innerHTML = BRIEF.slice(1).map(function(b,i){
+    return '<div class="qcard'+(b.hot?' hot':'')+'"><span class="qn">'+String(i+2).padStart(2,'0')+'</span><span>'+b.t+'</span></div>';
+  }).join('') || '<div class="qcard" style="opacity:.5">Nothing else on deck.</div>';
+
+  // ---- LEFT: red flags ----
+  const riskRx = /overdue|blocked|dispute|disputing|angry|refund|silent|stalled|lockout|late|missed|leaving|slip|floor/i;
+  const flags = (X.redflags && X.redflags.length) ? X.redflags
+    : BRIEF.filter(b => b.hot || riskRx.test(b.t)).slice(0,4).map(b => b.t);
+  const rf = document.getElementById('redflagList');
+  rf.innerHTML = flags.length
+    ? flags.map(f => '<div class="flag">'+f+'</div>').join('')
+    : '<div class="flag none">No red flags. All lanes clear.</div>';
+
+  // ---- LEFT: pipeline pulse ----
+  const pl = document.getElementById('pipeList');
+  if (X.pipelineDeals && X.pipelineDeals.length){
+    pl.innerHTML = X.pipelineDeals.map((d,i)=>{
+      const w = Math.max(20, 100 - i*12);
+      return '<div class="row'+(d.hot?' hot':'')+'"><span class="tag">'+(d.tag||'')+'</span><span class="nm" title="'+(d.name||'').replace(/"/g,'&quot;')+'">'+(d.name||'')+'</span><span class="bar"><i style="width:'+w+'%"></i></span></div>';
+    }).join('');
+  } else {
+    // derive from brief items as a proxy
+    pl.innerHTML = BRIEF.map((b,i)=>{
+      const w = Math.max(22, 100 - i*13);
+      const nm = b.t.split(/[—-]/)[0].trim().slice(0,32);
+      return '<div class="row'+(b.hot?' hot':'')+'"><span class="tag">'+(b.hot?'HOT':String(i+1).padStart(2,'0'))+'</span><span class="nm" title="'+b.t.replace(/"/g,'&quot;')+'">'+nm+'</span><span class="bar"><i style="width:'+w+'%"></i></span></div>';
+    }).join('');
+  }
+
+  // ---- headline stats ----
+  const hot = BRIEF.filter(b=>b.hot).length;
+  document.getElementById('statHot').textContent = hot;
+  document.getElementById('statOpen').textContent = BRIEF.length;
+  document.getElementById('laneVal').textContent = '1 / ' + BRIEF.length;
+  document.getElementById('dockLane').textContent = 'LANE 1 OF ' + BRIEF.length;
+  const cc = document.getElementById('chipCount'); if (cc) cc.textContent = hot + '/' + BRIEF.length;
+}
+var BRIEF_DATE = ''; var KB = []; var BRIEF_TS = null; var BRIEF_EXTRA = { purchasingIntelligence: null };
+renderLists();
+renderServices();
+
+function checkFreshness(){
+  const tag = document.getElementById('syncTag');
+  const chip = document.getElementById('syncChip');
+  const sit = document.getElementById('sitTag');
+  let stale = false, ageTxt = BRIEF_DATE || 'OK';
+  if (BRIEF_TS) {
+    const hrs = (Date.now() - new Date(BRIEF_TS).getTime()) / 3600000;
+    stale = hrs > 26; ageTxt = Math.round(hrs) + 'H';
+  } else if (BRIEF_DATE) {
+    const today = new Date().toISOString().slice(0,10);
+    stale = BRIEF_DATE < today;
+  }
+  tag.textContent = (stale ? '⚠ ' + ageTxt : ageTxt);
+  tag.className = stale ? 'warn' : 'ok';
+  if (sit) sit.textContent = stale ? '⚠ STALE' : (BRIEF_DATE || '');
+  if (stale) clog('Data pack is stale (' + ageTxt + ') — ask the agent to refresh the brief.', 'warn');
+}
+function loadBrief(){
+  return fetch('brief.json?v=' + Math.random(), { cache: 'no-store' })
+    .then(r => r.json())
+    .then(d => {
+      if (d && d.brief && d.brief.length) {
+        BRIEF = d.brief; NEXT = d.next || NEXT; BRIEF_DATE = d.date || ''; KB = d.kb || [];
+        BRIEF_TS = d.ts || null;
+        BRIEF_EXTRA = { signal: d.signal, redflags: d.redflags, team: d.team, pipeline: d.pipeline, pipelineDeals: d.pipelineDeals, noise: d.noise,
+          teamMembers: d.teamMembers || null, revenueActions: d.revenueActions || null, pipelineStat: d.pipelineStat || null,
+          topTasks: d.topTasks || null, purchasingIntelligence: d.purchasingIntelligence || BRIEF_EXTRA.purchasingIntelligence || null };
+        renderLists();
+        briefOk = true; renderServices();
+        const cb = document.getElementById('chipBrief'); if (cb){ cb.textContent = 'OK'; cb.className = 'ok'; }
+        checkFreshness();
+        clog('Brief synced' + (BRIEF_DATE ? ' · ' + BRIEF_DATE : '') + ' — ' + BRIEF.length + ' items.', 'hi');
+      }
+    }).catch(function(){
+      briefOk = false; renderServices();
+      const cb = document.getElementById('chipBrief'); if (cb){ cb.textContent = 'ERR'; cb.className = 'err'; }
+      clog('Brief sync failed — using baked data.', 'warn');
+    });
+}
+loadBrief();
+if (localStorage.getItem('aidan_hook')) { const ca=document.getElementById('chipAgent'); if(ca){ca.textContent='LIVE'; ca.className='ok';} }
+
+// ================= VOICE OUT — V7 NATURAL SPEECH =================
+// Spoken normalization is applied ONLY to voice output. Screen text, logs and
+// source data are never modified by this layer.
+let muted = false;
+const SPOKEN_ACRONYMS = [
+  ['GCLID','G C L I D'],['ROAS','__ROAS__'],['CTR','C T R'],['CPC','C P C'],['CPL','C P L'],
+  ['CPA','C P A'],['CPM','C P M'],['ROI','R O I'],['SEO','S E O'],['AEO','A E O'],['GEO','G E O'],
+  ['CRM','C R M'],['GMP','G M P'],['PLL','P L L'],['API','A P I'],['UTM','U T M'],['UTMs','U T Ms'],
+  ['SKU','S K U'],['MOQ','M O Q'],['B2B','B to B'],['PPC','P P C'],['KPI','K P I'],['QC','Q C'],
+  ['DDP','D D P'],['USPS','U S P S'],['UPS','U P S'],['FAQ','F A Q'],['URL','U R L'],
+  ['PMax','P Max'],['OTC','O T C'],['BOM','B O M'],['ID','I D']
+];
+const SPOKEN_MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function spokenMoney(_m, dollars, cents){
+  var d = Number(String(dollars).replace(/,/g,''));
+  if (!isFinite(d)) return _m;
+  var out = (d === 1 ? 'one dollar' : d.toLocaleString('en-US') + ' dollars');
+  if (cents){ var c = Number((cents + '0').slice(0,2)); if (c) out += ' and ' + c + (c === 1 ? ' cent' : ' cents'); }
+  return out;
+}
+function spokenNormalize(text){
+  var s = String(text == null ? '' : text);
+  try {
+    // 1. structural noise that must never be read aloud
+    s = s.replace(/```[\s\S]*?```/g, ' ')
+         .replace(/^\s{0,3}#{1,6}\s*/gm, '')
+         .replace(/(\*\*|__|`|~~)/g, '')
+         .replace(/^\s*[-*\u2022]\s+/gm, '')
+         .replace(/^\s*\d+[.)]\s+/gm, '')
+         .replace(/\|/g, ' ')
+         .replace(/[\u2b50\u26a0\ufe0f\ud83d\udd34\ud83d\udfe2\u2713\u2192\u2190\u25c8]/g, ' ')
+         .replace(/\n+/g, '. ');
+    // 2. ranges, slash shorthand and short dates
+    s = s.replace(/(\d)\s*[\u2013\u2014]\s*(\d)/g, '$1 to $2')
+         .replace(/\b(\d{1,2})\/(\d{1,2})(?:\/\d{2,4})?\b/g, function(m, mo, da){
+            var mi = Number(mo) - 1; return (SPOKEN_MONTHS[mi] ? SPOKEN_MONTHS[mi] + ' ' + Number(da) : m); })
+         .replace(/\s*\/\s*(day|week|month|year|wk|click|lead|call|unit)\b/gi, ' a $1')
+         .replace(/\s+\/\s+/g, ' or ');
+    // 3. money then percentages then decimals
+    s = s.replace(/\$\s?([\d,]+)(?:\.(\d{1,2}))?/g, spokenMoney)
+         .replace(/([\d.,]+)\s?%/g, '$1 percent')
+         .replace(/(\d)\.(\d)/g, '$1 point $2');
+    // 4. business acronyms — exact case, whole word only
+    for (var i = 0; i < SPOKEN_ACRONYMS.length; i++){
+      s = s.replace(new RegExp('\\b' + SPOKEN_ACRONYMS[i][0] + '\\b', 'g'), SPOKEN_ACRONYMS[i][1]);
+    }
+    s = s.replace(/__ROAS__/g, 'row ass');
+    // 5. never read IDs, hashes or raw JSON punctuation aloud
+    s = s.replace(/\b[a-z0-9]{6,}-[a-z0-9]{4,}(?:-[a-z0-9]+)*\b/gi, 'that request')
+         .replace(/\b(request[_ ]?id|campaign[_ ]?id|ad[_ ]?group[_ ]?id|recommendation[_ ]?id)\b[^\d]{0,4}\d+/gi, '')
+         .replace(/[{}\[\]"<>]/g, ' ')
+         .replace(/\s*:\s*/g, ' \u2014 ')
+         .replace(/\s*;\s*/g, '. ')
+         .replace(/\s{2,}/g, ' ')
+         .replace(/\s+([.,!?])/g, '$1')
+         .replace(/\.\s*\./g, '.')
+         .trim();
+  } catch(e){ return String(text == null ? '' : text); }
+  return s;
+}
+// Break long answers into natural sentence groups so delivery is not one flat block
+// and long utterances are not truncated by the browser speech engine.
+function spokenChunks(text){
+  var raw = String(text || '');
+  var sentences = raw.match(/[^.!?]+[.!?]*/g) || [raw];
+  var out = [], buf = '';
+  for (var i = 0; i < sentences.length; i++){
+    var p = sentences[i].trim(); if (!p) continue;
+    if (buf && (buf + ' ' + p).length > 200){ out.push(buf); buf = p; }
+    else buf = buf ? (buf + ' ' + p) : p;
+  }
+  if (buf) out.push(buf);
+  return out.length ? out : [raw];
+}
+// Compact, style-only presets. “Jarvis-style” is a product label, not an actor
+// impersonation: it selects a locally available English system voice and natural tuning.
+const VOICE_PRESETS = [
+  { id:'jarvis', label:'Jarvis-style', sample:'Systems online. Standing by for your command.', rate:0.96, pitch:0.94,
+    prefer:[/microsoft (ryan|thomas|oliver|alfie|elliot|noah)[^,]*online/i,/daniel[^a-z]*\(?enhanced|daniel[^a-z]*\(?premium/i,
+            /\b(arthur|oliver|jamie)\b/i,/microsoft (ryan|thomas|oliver)/i,/\bdaniel\b/i,
+            /google uk english male/i,/(neural|natural|online).*en[- ]?gb/i] },
+  { id:'executive', label:'Executive', sample:'Bottom line. Here is where we stand.', rate:0.98, pitch:0.99,
+    prefer:[/microsoft (andrew|guy|christopher|steffan)[^,]*online/i,/\balex\b(?!a)/i,
+            /(evan|tom|nathan)[^a-z]*\(?(enhanced|premium)/i,/microsoft (andrew|guy|christopher|steffan)/i,
+            /\b(evan|tom|nathan)\b/i,/(neural|natural|online|enhanced|premium)/i] },
+  { id:'narrator', label:'Narrator', sample:'Let me walk you through the numbers.', rate:0.92, pitch:0.90,
+    prefer:[/microsoft (brian|roger|davis|jason)[^,]*online/i,/microsoft (brian|roger|davis|jason)/i,
+            /(reed|rocko)[^a-z]*\(?(enhanced|premium)/i,/\balex\b(?!a)/i,/(neural|natural|online|enhanced|premium)/i] },
+  { id:'warm', label:'Warm', sample:'Good to hear from you. What can I take off your plate?', rate:0.96, pitch:1.04,
+    prefer:[/microsoft (aria|jenny|ava|emma|michelle)[^,]*online/i,/(ava|allison|samantha|zoe)[^a-z]*\(?(enhanced|premium)/i,
+            /microsoft (aria|jenny|ava|emma|michelle)/i,/\b(samantha|allison|susan|nicky)\b/i,/(neural|natural|online|enhanced|premium)/i] },
+  { id:'clear', label:'Clear', sample:'Reporting clearly and precisely.', rate:1.00, pitch:1.01,
+    prefer:[/microsoft (emma|michelle|ana)[^,]*online/i,/google (us|uk) english/i,
+            /(samantha|allison)[^a-z]*\(?(enhanced|premium)/i,/microsoft (emma|michelle)/i,
+            /\b(samantha|allison)\b/i,/(neural|natural|online|enhanced|premium)/i] },
+  { id:'britannia', label:'Britannia', sample:'Very good. Here is the position as it stands.', rate:0.95, pitch:1.00,
+    prefer:[/microsoft (sonia|libby|maisie|abbi|olivia|hollie)[^,]*online/i,/(serena|kate|stephanie)[^a-z]*\(?(enhanced|premium)/i,
+            /microsoft (sonia|libby|olivia)/i,/\b(serena|kate|stephanie)\b/i,/google uk english female/i,/(neural|natural|online).*en[- ]?gb/i] },
+  { id:'sydney', label:'Sydney', sample:'All good. Here is your update.', rate:0.97, pitch:1.00,
+    prefer:[/microsoft (natasha|william|annette|ken|freya)[^,]*online/i,/(karen|matilda|catherine)[^a-z]*\(?(enhanced|premium)/i,
+            /microsoft (natasha|william)/i,/\b(karen|matilda|catherine|lee)\b/i,/(neural|natural|online).*en[- ]?au/i] },
+  { id:'dublin', label:'Dublin', sample:'Right so. Here is where things landed.', rate:0.96, pitch:1.00,
+    prefer:[/microsoft (emily|connor)[^,]*online/i,/(moira|fiona)[^a-z]*\(?(enhanced|premium)/i,
+            /microsoft (emily|connor)/i,/\b(moira|fiona)\b/i,/(neural|natural|online).*en[- ]?ie/i] }
+];
+// Hard quality gate. These engines/voices are the robotic, buzzy or novelty ones —
+// they are never selected unless the device has literally nothing else installed.
+const VOICE_BLOCKLIST = /espeak|festival|pico|flite|robot|compact|\beloquence\b|microsoft (david|zira|mark|hazel|susan|george|sam)\b|^(fred|albert|ralph|kathy|junior|princess|bahh|bells|boing|bubbles|cellos|deranged|good news|bad news|jester|organ|pipe organ|trinoids|whisper|wobble|zarvox|superstar|grandma|grandpa|rocko|shelley|sandy|flo|eddy|reed|bruce|victoria|agnes|vicki|kanya|junior)\b/i;
+function selectedVoicePreset(){
+  var id = null; try { id = localStorage.getItem('aidanVoicePreset'); } catch(e){}
+  return VOICE_PRESETS.filter(function(p){ return p.id === id; })[0] || VOICE_PRESETS[0];
+}
+function freshVoices(){
+  var vs = null;
+  try { vs = speechSynthesis.getVoices(); } catch(e) { vs = null; }
+  // Cache is only a best-effort fallback; all assignments remain guarded because
+  // Chromium can invalidate cached SpeechSynthesisVoice instances.
+  return (vs && vs.length) ? vs : ((voiceCache && voiceCache.length) ? voiceCache : []);
+}
+function englishVoicePool(){
+  var vs = freshVoices();
+  var en = vs.filter(function(v){ return /^en([-_]|$)/i.test(v.lang || ''); });
+  var base = en.length ? en : vs;
+  // Strip robotic/novelty engines. If that empties the pool, keep the raw pool so
+  // the assistant never goes mute on a limited device.
+  var good = base.filter(function(v){ return !VOICE_BLOCKLIST.test(v.name || ''); });
+  return good.length ? good : base;
+}
+function matchPresetVoice(preset){
+  var pool = englishVoicePool();
+  if (!pool.length) return null;
+  for (var i=0; i<preset.prefer.length; i++){
+    var match = pool.filter(function(v){ return preset.prefer[i].test(v.name || ''); })[0];
+    if (match) return match;
+  }
+  return null;
+}
+// A preset is 'available' when this device actually has a voice matching its character.
+function presetAvailability(){
+  return VOICE_PRESETS.map(function(p){
+    var v = matchPresetVoice(p);
+    return { id:p.id, label:p.label, voice: v ? (v.name||'') : '', available: !!v };
+  });
+}
+function preferredVoice(){
+  var pool = englishVoicePool();
+  if (!pool.length) return null;
+  var match = matchPresetVoice(selectedVoicePreset());
+  if (match) return match;
+  // Graceful fallback: best remaining natural voice, then any en-US/en-GB, then anything.
+  return pool.filter(function(v){ return /(neural|natural|online|enhanced|premium)/i.test(v.name || ''); })[0]
+      || pool.filter(function(v){ return /en[-_](US|GB)/i.test(v.lang || ''); })[0] || pool[0] || null;
+}
+function voicePresetSettings(){
+  var p = selectedVoicePreset(); return {rate:p.rate, pitch:p.pitch, label:p.label};
+}
+function updateVoicePresetControl(){
+  var el = document.getElementById('voicePresetBtn');
+  if (el) { var p=selectedVoicePreset(); el.textContent='Voice: '+p.label; el.title='Speech style: '+p.label+'. Click for next preset.'; }
+}
+function cycleVoicePreset(){
+  var current=selectedVoicePreset(), idx=VOICE_PRESETS.indexOf(current);
+  var next=VOICE_PRESETS[(idx+1)%VOICE_PRESETS.length];
+  applyVoicePreset(next.id, true);
+}
+function applyVoicePreset(id, speakSample){
+  var p = VOICE_PRESETS.filter(function(x){ return x.id===id; })[0];
+  if (!p) return;
+  try { localStorage.setItem('aidanVoicePreset', p.id); } catch(e){}
+  updateVoicePresetControl();
+  renderVoiceMenu();
+  status('Voice style: '+p.label, false);
+  if (speakSample !== false) say(p.sample || ('Voice style set to '+p.label+'.'));
+}
+function renderVoiceMenu(){
+  var box = document.getElementById('voiceMenu');
+  if (!box) return;
+  var sel = selectedVoicePreset().id, rows = presetAvailability();
+  var html = '<div class="vm-h">Speech style</div>';
+  for (var i=0;i<rows.length;i++){
+    var r = rows[i];
+    html += '<button class="vm-i'+(r.id===sel?' on':'')+(r.available?'':' off')+'" data-vp="'+r.id+'">'
+          + '<span class="vm-n">'+r.label+'</span>'
+          + '<span class="vm-v">'+(r.available ? r.voice.replace(/\s*\(.*$/,'').slice(0,26) : 'not on this device')+'</span>'
+          + '</button>';
+  }
+  html += '<div class="vm-f">Only natural-sounding system voices are offered. Greyed styles have no matching voice installed here.</div>';
+  box.innerHTML = html;
+  var btns = box.querySelectorAll('button[data-vp]');
+  for (var j=0;j<btns.length;j++){
+    btns[j].onclick = function(){ applyVoicePreset(this.getAttribute('data-vp'), true); closeVoiceMenu(); };
+  }
+}
+function openVoiceMenu(){
+  var box = document.getElementById('voiceMenu'); if (!box) return;
+  if (box.classList.contains('show')) { closeVoiceMenu(); return; }
+  renderVoiceMenu(); box.classList.add('show');
+  setTimeout(function(){ document.addEventListener('click', voiceMenuOutside, true); }, 0);
+}
+function closeVoiceMenu(){
+  var box = document.getElementById('voiceMenu'); if (!box) return;
+  box.classList.remove('show');
+  document.removeEventListener('click', voiceMenuOutside, true);
+}
+function voiceMenuOutside(e){
+  var box = document.getElementById('voiceMenu'), btn = document.getElementById('voicePresetBtn');
+  if (!box) return;
+  if (box.contains(e.target) || (btn && btn.contains(e.target))) return;
+  closeVoiceMenu();
+}
+function sternVoice(){ return preferredVoice(); } // legacy name retained for the voice picker
+var speaking = false, lastSpeechEndTs = 0, speakSeq = 0;
+function say(text, cb){
+  var raw = String(text == null ? '' : text);
+  clog('\u25c8 ' + raw);
+  if (muted || !('speechSynthesis' in window)) { lastSpeechEndTs = Date.now(); if (cb) cb(); return; }
+  var spoken = spokenNormalize(raw);
+  if (!spoken) { lastSpeechEndTs = Date.now(); if (cb) cb(); return; }
+  var seq = ++speakSeq;
+  try { speechSynthesis.cancel(); } catch(e){}
+  var chunks = spokenChunks(spoken), idx = 0, finished = false;
+  speaking = true; wave(true); toMicOff();
+  function finish(){
+    if (finished || seq !== speakSeq) return;
+    finished = true; speaking = false; wave(false); lastSpeechEndTs = Date.now();
+    if (cb) cb();
+    if (micShouldBeLive() && !speaking) setTimeout(pumpMic, 250);
+  }
+  function next(){
+    if (seq !== speakSeq) return;                     // superseded by a newer say()
+    if (idx >= chunks.length) { finish(); return; }
+    var advanced = false;
+    var step = function(){ if (advanced) return; advanced = true; setTimeout(next, 130); };
+    try {
+      var u = new SpeechSynthesisUtterance(chunks[idx++]);
+      // Voice objects can go stale; never let a bad voice abort the whole turn.
+      try { var v = preferredVoice(); if (v) u.voice = v; } catch(e){ voiceCache = null; }
+      var voiceSettings = voicePresetSettings();
+      u.pitch = voiceSettings.pitch; u.rate = voiceSettings.rate; u.volume = 1;
+      u.onend = step; u.onerror = step;
+      speechSynthesis.speak(u);
+    } catch(e){ clog('Speech error: ' + (e && e.message ? e.message : e), 'warn'); step(); }
+  }
+  // Safety net: never leave the state machine stuck in SPEAKING. Some platforms
+  // (no audio route, backgrounded tab, engine glitch) never fire onend/onerror.
+  setTimeout(function(){
+    if (!finished && seq === speakSeq && !(speechSynthesis.speaking || speechSynthesis.pending)) finish();
+  }, 1500 + spoken.length * 95);
+  setTimeout(function(){
+    if (!finished && seq === speakSeq){
+      clog('Speech engine never reported completion — releasing voice state.', 'warn');
+      try { speechSynthesis.cancel(); } catch(e){}
+      finish();
+    }
+  }, 3000 + spoken.length * 130);
+  // next() runs last so a synchronous speech-engine failure can never leave the
+  // speaking latch set without the safety timers already armed.
+  try { next(); } catch(e){ clog('Speech start failed: ' + (e && e.message ? e.message : e), 'warn'); finish(); }
+}
+function wave(on) { document.getElementById('wave').classList.toggle('on', on); }
+function toggleMute() {
+  muted = !muted;
+  document.getElementById('muteBtn').textContent = muted ? '\ud83d\udd07' : '\ud83d\udd0a';
+  if (muted) { speakSeq++; speaking = false; wave(false); lastSpeechEndTs = Date.now(); try { speechSynthesis.cancel(); } catch(e){} }
+}
+
+// ================= BRIEF / NEXT =================
+function kbAnswer(key){
+  const k = (KB || []).find(x => x.keys && x.keys.indexOf(key) !== -1);
+  return k ? k.a : '';
+}
+function speakBrief() {
+  status("Delivering the brief", true);
+  const X = BRIEF_EXTRA || {};
+  const signal = (X.signal && X.signal.length)
+    ? X.signal.slice(0,3).join(' ')
+    : BRIEF.filter(b => b.hot).slice(0,3).map(b => b.t).join(' ');
+  const riskRx = /overdue|blocked|dispute|disputing|angry|refund|silent|stalled|lockout|late|missed/i;
+  const redflags = (X.redflags && X.redflags.length)
+    ? X.redflags.join(' ')
+    : BRIEF.filter(b => riskRx.test(b.t)).slice(0,3).map(b => b.t).join(' ');
+  const team = (X.team && X.team.length) ? X.team.join(' ') : kbAnswer('aidan');
+  const pipeline = X.pipeline || kbAnswer('pipeline');
+  const held = Math.max(0, BRIEF.length - BRIEF.filter(b => b.hot).slice(0,3).length);
+  const noise = X.noise || ("I'm holding " + held + " lower-priority items. Ask if you want them.");
+
+  let script = "Good morning, Aidan. Here's where Private Label Labs purchasing stands today. ";
+  script += "First, your signal — the three that matter most. " + signal + " ";
+  if (redflags) script += "Red flags. " + redflags + " ";
+  if (team) script += "On the team. " + team + " ";
+  if (pipeline) script += "Pipeline. " + pipeline + " ";
+  script += noise + " That's the picture. Let's get after it.";
+  say(script, () => status(awake ? "Awake — listening" : "Standing by", awake));
+}
+function speakAgenda() {
+  status("Reading your top three", true);
+  const top = BRIEF.slice(0, 3).map((b, i) => `Number ${i+1}. ${b.t}`).join(' ');
+  respond(`Here are your three big tasks for today. ${top} Start with number one. One lane at a time.`);
+}
+function speakNext() {
+  status("Assigning your lane", true);
+  say(`Here's your lane. ${NEXT[0]} ${NEXT[1]} ${NEXT[2]} One thing at a time — start with the first.`, () => status(awake ? "Awake — listening" : "Standing by", awake));
+}
+function status(msg, hot) {
+  const el = document.getElementById('statusLine');
+  el.textContent = msg;
+  document.getElementById('statusWrap').classList.toggle('hot', !!hot);
+}
+function showLiveTranscript(t) {
+  const el = document.getElementById('statusLine');
+  if (t) { el.textContent = '“' + t + '…'; document.getElementById('statusWrap').classList.add('hot'); }
+}
+
+// ================= WAKE WORD / VOICE IN — V4 STATE MACHINE =================
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const IS_MOBILE = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const IS_IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+let rec = null, powered = false;
+let awake = false, working = false;            // legacy mirrors of voiceState
+let pendingDispatch = null;
+let voiceState = 'OFF';                          // OFF ASLEEP ATTENTIVE CAPTURING THINKING SPEAKING FOLLOWUP
+let restartInFlight = false, lastStartTs = 0, micLive = false;
+let latestCmd = '', captureStartTs = 0, captureHasFinal = false, finalWaitCount = 0;
+let captureCommitted = '', recSlots = [], recSessionHasWake = false, unresolvedAtRestart = false;
+let committedConfidence = [];
+const ENDPOINT_COMPLETE_MS = 5200;    // complete command: finish promptly
+const ENDPOINT_INCOMPLETE_MS = 9000;  // unfinished clause: keep the correction window open
+const ENDPOINT_EXPLICIT_MS = 1500;    // only after an explicit 'send it/that is all' ending
+const ENDPOINT_CONFIRM_MS = 1100;     // short yes/no replies must not wait on a command timer
+const CONFIRM_WINDOW_MS = 15000;      // how long a yes/no window stays open
+const PENDING_TTL_MS = 180000;        // a captured pending command survives a stand-down this long
+const MAX_CAPTURE_MS = 90000;
+let attentiveTimer = null, endpointTimer = null, followupTimer = null, sleepTimer = null, confirmTimer = null;
+let followupCount = 0;
+let confirmMode = false;
+let lastDispatchSig = '', lastDispatchTs = 0;
+const CC_VOICE_BUILD = 'voice-v8-natural-library';
+const GO = /\b(go for it|go ahead|do it|make it happen|that'?s it|get on it|handle it|run with it|send it|that'?s all)\s*[.!?]?$/;
+
+// ---- confirmation understanding -------------------------------------------------
+// A valid confirmation is never treated as a new incomplete command.
+function confirmIntent(t){
+  var s = normalize(t).replace(/\b(please|sam|command lab|just|then|now|and|uh|um)\b/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!s) return null;
+  if (/\b(no|nope|nah|negative|cancel|stop|forget it|never ?mind|hold off|scratch that|do not|don'?t|dont)\b/.test(s)) return 'no';
+  if (/^(?:(?:yes|yeah|yep|yup|ya|sure|correct|affirmative|absolutely|right|ok|okay|okey|roger|confirmed|approved|approve|proceed|go|go ahead|go for it|do it|do that|send|send it|send that|make it happen|that'?s right|that is right|run it|ship it|fire it)\s*)+$/.test(s)) return 'yes';
+  return null;
+}
+// Inside an open confirmation window, short replies are read generously.
+function confirmIntentLoose(t){
+  var direct = confirmIntent(t); if (direct) return direct;
+  var s = normalize(t), w = s.split(/\s+/).filter(Boolean);
+  if (!w.length || w.length > 6) return null;
+  if (/\b(no|nope|nah|cancel|stop|don'?t|dont|negative|forget)\b/.test(s)) return 'no';
+  if (/\b(yes|yeah|yep|yup|sure|correct|ok|okay|go|send|proceed|approve|approved|right|affirmative)\b/.test(s)) return 'yes';
+  return null;
+}
+// ---- named-agent recognition (routing targets are unchanged) ---------------------
+const AGENT_NAME_RX = /\b(?:purchasing\s+agent|crm\s+(?:developer|dev|engineer)|(?:pll\s+)?consultant)\b/;
+const AGENT_NAMES = [
+  ['Aidan Purchasing Agent', /\bpurchasing\s+agent\b/],
+  ['Aidan CRM Agent',    /\bcrm\s+(?:developer|dev|engineer)\b/],
+  ['Aidan Consultant Agent',   /\b(?:pll\s+)?consultant\b/]
+];
+function namedAgent(t){
+  var s = normalize(t);
+  for (var i = 0; i < AGENT_NAMES.length; i++){ if (AGENT_NAMES[i][1].test(s)) return AGENT_NAMES[i][0]; }
+  return null;
+}
+const DIRECTIVE_RX = /\b(ask|tell|have|get|direct|send|assign|instruct|remind|forward|route|notify|let|pass|push|hand|handoff|loop|give|kick|relay|dispatch|escalate|delegate|shoot|ping)\b/;
+// V9: trailing hand-off shape — the payload comes first and the agent is named last.
+// Matches "...to Aidan Purchasing Agent", "...over to Aidan CRM Agent", "...for the Consultant".
+const HANDOFF_TAIL_RX = /\b(?:to|over to|for|with|through|via)\s+(?:the\s+)?$|\b(route|forward|pass|push|hand|handoff|loop|send|give|relay|dispatch|escalate|delegate|shoot|ping|assign)\b/;
+// Approval-sensitive = an actual mutation/spend verb, not a mere mention of budget
+// or price. Negated constraints such as "without increasing the approved budget"
+// are explicitly NOT approval-sensitive.
+const SENSITIVE_RX = /\b(increase|increases|increasing|raise|raises|raising|decrease|decreasing|lower|lowers|lowering|double|pause|pauses|pausing|unpause|delete|deletes|deleting|remove|removes|removing|approve|approval|authorize|pay|pays|paying|spend|spends|spending|launch|launches|launching|publish|publishes|publishing|refund|charge|discount|wire|transfer|fire|terminate|shut down|turn off|turn on)\b|\bcancel (?:the|that|this|my|our)\b|\b(?:change|set|update|adjust|edit) (?:the )?(?:budget|budgets|bid|bids|price|pricing|cap|caps)\b/;
+const SENSITIVE_NEG_RX = /\b(?:without|not|never|avoid|don'?t|dont|do not|no)\s+(?:\w+\s+){0,3}?(?:increas\w*|rais\w*|lower\w*|decreas\w*|chang\w*|spend\w*|paus\w*|delet\w*|remov\w*|approv\w*|pay\w*|publish\w*|launch\w*)/g;
+function sensitiveOrder(t){ return SENSITIVE_RX.test(String(t||'').replace(SENSITIVE_NEG_RX, ' ')); }
+// A direct, high-confidence named-agent order dispatches without an extra confirmation.
+// V9: a named-agent order is recognised in ALL THREE natural word orders.
+//   leading  — "ask Aidan Purchasing Agent to check the lead time"
+//   trailing — "route the supplier follow-up to Aidan Purchasing Agent"
+//   vocative — "Aidan Purchasing Agent, check the lead time"
+// Before v9 only the leading form routed; trailing and vocative orders were
+// silently dropped, which is how a real command to an agent went nowhere.
+function wordCount(s){ return String(s || '').split(/\s+/).filter(Boolean).length; }
+function directNamedOrder(t){
+  var s = normalize(t);
+  if (/^\s*(what|who|when|where|why|how|does|do|is|are|did|was|were|can|could|should)\b/.test(s)) return null;
+  var agent = namedAgent(s); if (!agent) return null;
+  var m = AGENT_NAME_RX.exec(s); if (!m) return null;
+  var head = s.slice(0, m.index).trim();
+  var tail = s.slice(m.index + m[0].length).trim();
+  var form = null;
+  // vocative: agent name opens the utterance and a payload follows
+  if (m.index === 0 && wordCount(tail.replace(/^[,\s:-]+/, '')) >= 3) form = 'vocative';
+  // leading: directive verb before the name, payload after it
+  else if (DIRECTIVE_RX.test(head) && wordCount(tail) >= 3) form = 'leading';
+  // trailing: payload first, then "... to/for/with (the) <Agent>"
+  else if (wordCount(head) >= 3 && HANDOFF_TAIL_RX.test(head) && wordCount(tail) <= 2) form = 'trailing';
+  // leading directive with the payload only implied is still not enough
+  if (!form) return null;
+  if (knownConfidenceIsPoor()) return null;
+  return { agent: agent, cmd: t, form: form };
+}
+// Spoken-only read-back: collapse an obvious self-correction. The dispatched
+// command always keeps Sam's full original instruction.
+function spokenSummary(t){
+  var s = String(t || '');
+  var parts = s.split(/\b(?:sorry|i mean|scratch that|correction|no wait|make that)\b/i);
+  if (parts.length > 1){
+    var tail = parts[parts.length - 1].replace(/^[\s,;.\-\u2013\u2014]+/, '');
+    if (tail.split(/\s+/).filter(Boolean).length >= 4){
+      s = parts[0].split(/\s+/).slice(0, 4).join(' ') + ' ' + tail;
+    }
+  }
+  return compactSummary(s);
+}
+function setPending(obj){
+  if (!obj) { pendingDispatch = null; return; }
+  obj.ts = Date.now();
+  pendingDispatch = obj;
+}
+function pendingIsFresh(){
+  if (!pendingDispatch) return false;
+  if (typeof pendingDispatch === 'string') return true;
+  return !pendingDispatch.ts || (Date.now() - pendingDispatch.ts) < PENDING_TTL_MS;
+}
+
+// ---- earcons (Web Audio, no files) ----
+let _actx = null;
+function ac(){ if(!_actx){ try{ _actx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } return _actx; }
+function beep(freqs, dur, gain){ const c = ac(); if(!c) return; const now = c.currentTime; freqs.forEach(function(f,i){ const o=c.createOscillator(), g=c.createGain(); o.type='sine'; o.frequency.value=f; o.connect(g); g.connect(c.destination); const t=now+i*(dur*0.55); g.gain.setValueAtTime(0.0001,t); g.gain.linearRampToValueAtTime(gain||0.06,t+0.015); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); o.start(t); o.stop(t+dur+0.02); }); }
+function earcon(kind){ if(muted) return; try{
+  if(kind==='wake') beep([620,940],0.13,0.07);
+  else if(kind==='endpoint') beep([860,430],0.09,0.045);
+  else if(kind==='followup') beep([720],0.08,0.035);
+  else if(kind==='standdown') beep([430,320],0.11,0.04);
+  else if(kind==='error') beep([200,170],0.16,0.06);
+}catch(e){} }
+
+// ---- fuzzy wake-word matching (runs on interim results) ----
+function normalize(t){ return (t||'').toLowerCase().replace(/[^\w\s']/g,' ').replace(/\s+/g,' ').trim(); }
+const WAKE_RX = /\b(command\s*lab|command\s*lap|command\s*lad|command\s*lav|command\s*love|commandlab|come\s*and\s*lab|commander\s*lab|common\s*lab|demand\s*lab|command\s*center|wake\s*up)\b/;
+function lev(a,b){ const m=a.length,n=b.length; if(!m)return n; if(!n)return m; const d=[]; for(let i=0;i<=m;i++)d[i]=[i]; for(let j=0;j<=n;j++)d[0][j]=j; for(let i=1;i<=m;i++)for(let j=1;j<=n;j++){ d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)); } return d[m][n]; }
+function wakeMatch(t){
+  const m = WAKE_RX.exec(t);
+  if(m) return { index: m.index, len: m[0].length };
+  const w = t.split(/\s+/);
+  for(let i=0;i<w.length-1;i++){ if(lev(w[i]+' '+w[i+1],'command lab')<=2) return { index:-1, len:0, fuzzy:true }; }
+  for(let i=0;i<w.length;i++){ if(lev(w[i],'commandlab')<=2) return { index:-1, len:0, fuzzy:true }; }
+  return null;
+}
+function soundsWordy(t){ return t && t.split(/\s+/).filter(Boolean).length >= 2; }
+
+// ---- single mic owner: only the state machine starts/stops the mic ----
+function micShouldBeLive(){
+  if (!powered) return false;
+  // On mobile: never auto-listen in ASLEEP — wake word loop can't survive without user gesture
+  if (IS_MOBILE && voiceState === 'ASLEEP') return false;
+  return voiceState==='ASLEEP'||voiceState==='ATTENTIVE'||voiceState==='CAPTURING'||voiceState==='FOLLOWUP'||voiceState==='CONFIRM';
+}
+var iosRestartFails = 0;  // track consecutive restart failures on iOS
+function pumpMic(){
+  if(!SR||!powered||!micShouldBeLive()||restartInFlight) return;
+  var gap = Date.now()-lastStartTs;
+  if(gap<300){ setTimeout(pumpMic,300-gap); return; }
+  restartInFlight = true;
+  if(!rec) buildRec();
+  try {
+    rec.start(); lastStartTs=Date.now();
+  } catch(e){
+    // On mobile, start() can throw if not in user-gesture context
+    restartInFlight = false;
+    if(IS_IOS || IS_MOBILE){
+      iosRestartFails++;
+      if(iosRestartFails >= 2){
+        showTapPrompt();
+        clog('Mic needs tap to restart (mobile restriction).','warn');
+      }
+    }
+    return;
+  }
+  setTimeout(function(){ restartInFlight=false; },400);
+}
+function toMicOff(){ if(rec){ try{ rec.abort(); }catch(e){} } }
+function toMicOn(){ pumpMic(); }
+// freshMic: abort + explicitly restart (don't rely on async onend alone)
+function freshMic(){
+  if(rec){ try{ rec.abort(); }catch(e){} }
+  // always schedule a restart — don't rely solely on onend which can race on mobile
+  setTimeout(pumpMic, 150);
+}
+function buildRec(){
+  rec = new SR();
+  rec.continuous = !IS_IOS; rec.interimResults = true; rec.lang = 'en-US';
+  rec.onstart = function(){ restartInFlight = false; micLive = true; iosRestartFails = 0; hideTapPrompt(); recSlots = []; recSessionHasWake = false; };
+  rec.onresult = onResult;
+  rec.onend = function(){
+    if(voiceState === 'CAPTURING') commitCurrentSession();
+    recSlots = []; recSessionHasWake = false;
+    restartInFlight = false; micLive = false;
+    if(micShouldBeLive() && !speaking){
+      if(IS_IOS){
+        // iOS: non-user-gesture restart may silently fail — use shorter delay and track failures
+        setTimeout(function(){
+          pumpMic();
+          // If start didn't fire within 600ms, show tap prompt
+          setTimeout(function(){
+            if(!micLive && micShouldBeLive() && !speaking){
+              iosRestartFails++;
+              if(iosRestartFails >= 2) showTapPrompt();
+            }
+          }, 600);
+        }, 200);
+      } else {
+        setTimeout(pumpMic, 250);
+      }
+    }
+  };
+  rec.onerror = function(ev){ restartInFlight = false; micLive = false;
+    if(ev && ev.error === 'aborted') return;
+    if(ev && (ev.error === 'not-allowed' || ev.error === 'service-not-allowed')){ micState('unsupported'); coreState('mic blocked','off'); status('Mic blocked — allow microphone for this site, then tap the orb', false); clog('Mic permission denied. Enable mic, then tap the orb.', 'hi'); return; }
+    if(IS_IOS && ev && ev.error === 'no-speech'){ iosRestartFails++; if(iosRestartFails >= 3){ showTapPrompt(); return; } }
+    if(micShouldBeLive() && !speaking) setTimeout(pumpMic, 300);
+  };
+}
+
+// ---- mobile tap-to-talk prompt (shown when auto-restart fails) ----
+function showTapPrompt(){
+  if(document.getElementById('tapPrompt')) return;
+  var btn = document.createElement('button');
+  btn.id = 'tapPrompt';
+  btn.textContent = '🎤 TAP TO TALK';
+  btn.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:9999;font-family:var(--mono);font-size:16px;font-weight:800;letter-spacing:3px;color:#03110a;background:var(--green);border:2px solid #fff;border-radius:50px;padding:18px 36px;cursor:pointer;box-shadow:0 0 30px rgba(52,255,150,.5);animation:tapPulse 1.5s infinite;-webkit-tap-highlight-color:transparent;';
+  var style = document.createElement('style');
+  style.textContent = '@keyframes tapPulse{0%,100%{box-shadow:0 0 20px rgba(52,255,150,.4);}50%{box-shadow:0 0 40px rgba(52,255,150,.8);}}';
+  document.head.appendChild(style);
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    iosRestartFails = 0;
+    hideTapPrompt();
+    // User gesture context — mic start will succeed
+    try{ var c = ac(); if(c && c.resume) c.resume(); }catch(ex){}
+    if(rec){ try{ rec.abort(); }catch(ex){} }
+    rec = null; buildRec();
+    voiceState = 'ATTENTIVE';
+    micState('awake'); coreState('awake','awake');
+    try {
+      rec.start(); lastStartTs = Date.now();
+      clog('Tap-to-talk — mic started.','hi');
+      status('Listening — go ahead', true);
+    } catch(ex) {
+      clog('Tap-to-talk — mic failed: ' + ex.message,'warn');
+      status('Mic failed — tap again', false);
+      showTapPrompt();
+    }
+    armAttentive();
+  });
+  document.body.appendChild(btn);
+  status('Tap the button or orb to speak', false);
+}
+function hideTapPrompt(){
+  var el = document.getElementById('tapPrompt');
+  if(el) el.remove();
+}
+
+const MIC_OFF = ['OFF','THINKING','SPEAKING'];
+function setVoiceState(next){
+  const prev = voiceState; voiceState = next;
+  awake = (next==='ATTENTIVE'||next==='CAPTURING'||next==='FOLLOWUP'||next==='CONFIRM');
+  working = (next==='THINKING');
+  if(next!=='ATTENTIVE') clearTimeout(attentiveTimer);
+  if(next!=='CAPTURING') clearTimeout(endpointTimer);
+  if(next!=='FOLLOWUP') clearTimeout(followupTimer);
+  if(next!=='CONFIRM' && next!=='CAPTURING') clearTimeout(confirmTimer);
+  updateStateUI(next);
+  if(MIC_OFF.indexOf(next)>=0){ toMicOff(); }
+  else if(MIC_OFF.indexOf(prev)>=0){ toMicOn(); }
+}
+function updateStateUI(s){
+  if(s==='OFF'){ micState('off'); coreState('offline','off'); }
+  else if(s==='ASLEEP'){ micState('listening'); coreState('listening','idle'); }
+  else if(s==='ATTENTIVE'){ micState('awake'); coreState('awake','awake'); status('Listening — go ahead', true); }
+  else if(s==='CAPTURING'){ micState('awake'); coreState('awake','awake'); }
+  else if(s==='THINKING'){ coreState('thinking','think'); status('Thinking…', true); }
+  else if(s==='SPEAKING'){ coreState('speaking','speak'); }
+  else if(s==='FOLLOWUP'){ micState('awake'); coreState('awake','awake'); status('Still listening — follow up or stay quiet', true); }
+  else if(s==='CONFIRM'){ micState('awake'); coreState('awake','awake'); status('Waiting on your yes or no', true); }
+}
+
+function resetCaptureBuffer(clearSession){
+  latestCmd=''; captureCommitted=''; captureHasFinal=false; finalWaitCount=0;
+  unresolvedAtRestart=false; committedConfidence=[];
+  if(clearSession !== false){ recSlots=[]; recSessionHasWake=false; }
+}
+function standDown(){ followupCount = 0; confirmMode = false; clearTimeout(confirmTimer); resetCaptureBuffer(true);
+  // A pending, un-dispatched command is intentionally retained (TTL-limited) so a
+  // dropped confirmation window never loses what Sam already said.
+  if (!pendingIsFresh()) pendingDispatch = null;
+  setVoiceState('ASLEEP'); document.body.classList.add('dimmed');
+  if (IS_MOBILE) { status('Tap the orb to speak', false); clog('Stood down — tap orb to speak.'); showTapPrompt(); }
+  else { status('Powered — say “Command Lab”', false); clog('Stood down — wake word required.'); }
+}
+function armAttentive(){ clearTimeout(attentiveTimer); attentiveTimer = setTimeout(function(){ earcon('standdown'); standDown(); }, 9000); }
+function armFollowup(){ clearTimeout(followupTimer); followupTimer = setTimeout(function(){ earcon('standdown'); standDown(); }, 6000); }
+function mergeRestartFinal(previous, incoming){
+  const a=normalize(previous), b=normalize(incoming);
+  if(!a) return b; if(!b || a===b) return a;
+  if(b.indexOf(a)===0) return b;
+  if(a.indexOf(b)===0 || a.indexOf(b)>=0) return a;
+  if(b.indexOf(a)>=0) return b;
+  const aw=a.split(' '), bw=b.split(' '), limit=Math.min(aw.length,bw.length);
+  for(let n=limit;n>=2;n--){
+    const left=aw.slice(-n), right=bw.slice(0,n); let mismatches=0;
+    for(let i=0;i<n;i++) if(left[i]!==right[i]) mismatches++;
+    if(mismatches<=Math.max(0,Math.floor(n*0.2))) return aw.concat(bw.slice(n)).join(' ');
+  }
+  return a+' '+b;
+}
+function slotText(finalMode){
+  return recSlots.filter(function(x){ return x && (finalMode==='all' || (finalMode==='final' ? x.final : !x.final)); })
+    .map(function(x){ return x.text; }).join(' ').trim();
+}
+function stripSessionWake(text){
+  const t=normalize(text); if(!t) return '';
+  const m=wakeMatch(t);
+  if(m && m.index>=0) return t.slice(m.index+m.len).trim();
+  return t;
+}
+function sessionCommand(finalMode){
+  const t=slotText(finalMode);
+  return recSessionHasWake ? stripSessionWake(t) : t;
+}
+function currentFinalCandidate(){ return mergeRestartFinal(captureCommitted, sessionCommand('final')); }
+function currentPreview(){ return mergeRestartFinal(captureCommitted, sessionCommand('all')); }
+function commitCurrentSession(){
+  const fin=sessionCommand('final'), interim=sessionCommand('interim');
+  if(fin){
+    captureCommitted=mergeRestartFinal(captureCommitted,fin); captureHasFinal=true;
+    recSlots.filter(function(x){return x&&x.final&&x.confidence>0;}).forEach(function(x){
+      committedConfidence.push({confidence:x.confidence,words:Math.max(1,x.text.split(/\s+/).length)});
+    });
+  }
+  unresolvedAtRestart=!!interim;
+}
+function commandLooksComplete(t){
+  const s=normalize(t), words=s.split(/\s+/).filter(Boolean);
+  if(words.length<2) return false;
+  if(/\b(and|but|so|or|the|a|an|to|for|with|that|because|then|also|of|from|at|by|as|into|about|if|when|while|than|you're|we're|they're|i'm|i've|we've|don't|doesn't|isn't|wasn't|would|could|should|will|can|um|uh|actually|correction|i mean)$/.test(s)) return false;
+  if(/^(um|uh|hmm|okay|so|well)(\s+(um|uh|hmm|okay|so|well))*$/.test(s)) return false;
+  return true;
+}
+function knownConfidenceIsPoor(){
+  const vals=committedConfidence.slice();
+  recSlots.filter(function(x){return x&&x.final&&x.confidence>0;}).forEach(function(x){ vals.push({confidence:x.confidence,words:Math.max(1,x.text.split(/\s+/).length)}); });
+  if(!vals.length) return false;
+  if(vals.some(function(x){return x.confidence<0.35 && x.words>=2;})) return true;
+  let total=0, words=0; vals.forEach(function(x){total+=x.confidence*x.words; words+=x.words;});
+  return words>0 && total/words<0.55;
+}
+function armEndpoint(){
+  latestCmd=currentPreview();
+  armSleep(); clearTimeout(endpointTimer); clearTimeout(attentiveTimer); clearTimeout(followupTimer);
+  if(captureStartTs && Date.now()-captureStartTs > MAX_CAPTURE_MS){ endpoint(); return; }
+  const explicitDone=GO.test(latestCmd);
+  const shortConfirm=pendingIsFresh() && !!confirmIntentLoose(latestCmd);
+  let wait;
+  if(shortConfirm) wait=ENDPOINT_CONFIRM_MS;
+  else if(explicitDone) wait=ENDPOINT_EXPLICIT_MS;
+  else if(commandLooksComplete(latestCmd)) wait=ENDPOINT_COMPLETE_MS;
+  else wait=ENDPOINT_INCOMPLETE_MS;
+  status(shortConfirm ? 'Got it…' : (explicitDone ? 'Got it — finishing…' : 'Listening — keep going'), true);
+  endpointTimer=setTimeout(endpoint,wait);
+}
+function transcriptLooksCorrupted(t){
+  const w=normalize(t).split(' ').filter(Boolean);
+  if(w.length<24) return false;
+  const seen={}; let max=0;
+  for(let i=0;i<=w.length-4;i++){ const g=w.slice(i,i+4).join(' '); seen[g]=(seen[g]||0)+1; if(seen[g]>max) max=seen[g]; }
+  return max>=4;
+}
+// Never answer with a bare "I didn't catch that" twice. Show exactly what was
+// captured and ask one precise clarification that keeps the command recoverable.
+function rejectCapture(captured){
+  const t=String(captured||'').replace(/\s+/g,' ').trim();
+  resetCaptureBuffer(true); earcon('error');
+  const words=t.split(/\s+/).filter(Boolean).length;
+  if(words>=3){
+    const agent=targetAgent(t);
+    setPending({ cmd:t, agent:agent, summary:compactSummary(t), unclear:true });
+    showLiveTranscript('Heard: '+t);
+    clog('Low-confidence capture retained: '+t,'warn');
+    askConfirm('I heard: '+spokenSummary(t)+'. Is that right? Yes or no.');
+    return;
+  }
+  showLiveTranscript(t ? ('Heard only: '+t) : 'No usable speech captured — nothing was sent.');
+  respondThenSleep(t ? ('All I caught was “'+t+'”. Wake me and give me the whole instruction — nothing was sent.')
+                     : 'I did not capture any speech, so nothing was sent. Wake me and say it again.');
+}
+function endpoint(){
+  let cmd=currentFinalCandidate().trim();
+  let unresolved=sessionCommand('interim');
+  const confirming = pendingIsFresh();
+  // Do not commit while meaningful interim words are still unresolved — but never
+  // throw the captured words away either.
+  if(unresolved && finalWaitCount<3 && !confirming){
+    finalWaitCount++; status('Finishing voice capture…',true); endpointTimer=setTimeout(endpoint,700); return;
+  }
+  if(!cmd && unresolved && finalWaitCount<3){
+    finalWaitCount++; status('Finishing voice capture…',true); endpointTimer=setTimeout(endpoint,700); return;
+  }
+  if(unresolved) cmd=mergeRestartFinal(cmd,unresolved).trim();
+  finalWaitCount=0;
+  if(!cmd){ rejectCapture(''); return; }
+  cmd=cmd.replace(GO,'').trim() || cmd;
+  if(confirming){
+    // A valid yes/no bypasses command-completeness gates entirely.
+    if(confirmIntentLoose(cmd)){
+      confirmMode=false; clearTimeout(confirmTimer);
+      resetCaptureBuffer(true); earcon('endpoint'); showLiveTranscript(cmd);
+      setVoiceState('THINKING'); handleSpeech(cmd); return;
+    }
+  }
+  confirmMode=false; clearTimeout(confirmTimer);
+  if(transcriptLooksCorrupted(cmd)){ rejectCapture(cmd); return; }
+  if(!commandLooksComplete(cmd) || knownConfidenceIsPoor()){ rejectCapture(cmd); return; }
+  resetCaptureBuffer(true); earcon('endpoint'); showLiveTranscript(cmd); setVoiceState('THINKING'); handleSpeech(cmd);
+}
+// One wake-up handles one completed exchange. Once Command Lab answers, it
+// immediately returns to wake-word-only standby so nearby conversation cannot
+// become an accidental follow-up command.
+function respond(text){ setVoiceState('SPEAKING'); say(text, standDown); }
+function respondThenSleep(text){ setVoiceState('SPEAKING'); say(text, standDown); }
+// Confirmation is the sole exception: the task is not dispatched yet, so a short
+// yes/no window opens only AFTER the spoken confirmation has actually finished.
+function askConfirm(text){
+  setVoiceState('SPEAKING');
+  say(text, function(){ if(!powered){ setVoiceState('OFF'); return; } enterConfirm(); });
+}
+function respondForConfirmation(text){ askConfirm(text); }
+function enterConfirm(){
+  confirmMode = true;
+  setVoiceState('CONFIRM'); earcon('followup');
+  freshMic();                                  // clean session so a one-word reply is heard
+  clearTimeout(confirmTimer);
+  confirmTimer = setTimeout(function(){
+    if(voiceState!=='CONFIRM') return;
+    earcon('standdown'); confirmMode = false;
+    status('No yes or no — nothing was sent', false);
+    clog('Confirmation window closed. Pending command retained; say the wake word then “yes” to send it.','warn');
+    standDown();
+  }, CONFIRM_WINDOW_MS);
+}
+function enterFollowup(){ followupCount++; if(followupCount > 1){ standDown(); return; } setVoiceState('FOLLOWUP'); earcon('followup'); armFollowup(); }
+
+function armSleep() {
+  document.body.classList.remove('dimmed');
+  clearTimeout(sleepTimer);
+  sleepTimer = setTimeout(function(){ if (awake) standDown(); }, 90000);
+}
+
+function togglePower() {
+  if (!powered) {
+    powered = true;
+    document.getElementById('powerBtn').textContent = '⏻ Off';
+    document.getElementById('powerBtn').classList.add('hot');
+    if ('speechSynthesis' in window) { speechSynthesis.getVoices(); }
+    try { const c = ac(); if (c && c.resume) c.resume(); } catch(e){}
+    startMicMeter();
+    if (SR) { setVoiceState('ASLEEP'); } else { micState('unsupported'); }
+    bootSeq();
+  } else {
+    powered = false; clearTimeout(sleepTimer); clearTimeout(confirmTimer);
+    speakSeq++; speaking = false; confirmMode = false; wave(false); lastSpeechEndTs = 0;
+    document.getElementById('powerBtn').textContent = '⚡ Power';
+    document.getElementById('powerBtn').classList.remove('hot');
+    setVoiceState('OFF');
+    if (rec) { try { rec.abort(); } catch(e){} }
+    speechSynthesis.cancel();
+    document.body.classList.remove('dimmed'); renderServices();
+    status('Standing by — power on, then say “Command Lab”', false);
+    clog('Power OFF.');
+  }
+}
+
+// Tap-to-talk: tapping the orb wakes it straight to attentive (skips wake word).
+// IMPORTANT: Do NOT use a touchend→synthetic .click() bounce — synthetic clicks
+// are NOT user gestures on mobile, so rec.start() silently fails.
+// touch-action:manipulation on .stage already kills the 300ms click delay.
+document.querySelector('.stage').addEventListener('click', function(e) {
+  if (speaking || working) return;
+  if (!powered) { togglePower(); return; }
+  // Resume AudioContext on user gesture (required by mobile browsers)
+  try { var c = ac(); if (c && c.resume) c.resume(); } catch(ex){}
+  iosRestartFails = 0; hideTapPrompt();
+  earcon('wake'); followupCount = 0;
+  // Kill existing rec and build fresh — critical for mobile user-gesture context
+  if (rec) { try { rec.abort(); } catch(ex){} }
+  rec = null;
+  buildRec();
+  // Set state directly to avoid setVoiceState side-effects triggering toMicOn/pumpMic
+  voiceState = 'ATTENTIVE';
+  micState('awake'); coreState('awake','awake');
+  // Start mic DIRECTLY in this user-gesture call stack — don't go through
+  // pumpMic() which has throttling/guards that can swallow the start
+  try {
+    rec.start(); lastStartTs = Date.now();
+    clog('Tap-to-talk — mic started.', 'hi');
+    status('Listening — go ahead', true);
+  } catch(ex) {
+    clog('Tap-to-talk — mic failed: ' + ex.message, 'warn');
+    status('Mic failed — tap again', false);
+    showTapPrompt();
+  }
+  armAttentive();
+});
+
+function bootSeq(){
+  document.body.classList.remove('dimmed');
+  coreState('booting','think');
+  const lines = [
+    ['CORE ONLINE — spinning up neural lattice…','hi'],
+    ['Dispatch line… ' + (hookUrl() ? 'CONNECTED' : 'OFFLINE'), hookUrl() ? 'hi' : 'warn'],
+    ['Morning brief… ' + (briefOk ? 'SYNCED — ' + BRIEF.length + ' items' : briefOk === null ? 'SYNCING' : 'BAKED FALLBACK'), 'hi'],
+    ['Agent grid… 3 AGENTS ON CALL','hi'],
+    ['Voice systems… ' + ('speechSynthesis' in window ? 'LIVE' : 'N/A'),'hi'],
+    ['All systems nominal.','hi']
+  ];
+  lines.forEach(function(l, i){ setTimeout(function(){ clog(l[0], l[1]); }, 250 + i*350); });
+  setTimeout(function(){
+    renderServices();
+    if (!SR) { coreState('no mic','idle'); status('Mic not supported in this browser — buttons still work', false); return; }
+    if (IS_MOBILE) {
+      coreState('tap to talk','idle');
+      status('Tap the orb to speak', false);
+      say(daypart() + ", Aidan. Purchasing Command Center online. Tap the orb to talk.");
+    } else {
+      coreState('listening','idle');
+      status('Powered — say “Command Lab”', false);
+      say(daypart() + ", Aidan. Purchasing Command Center online.");
+    }
+  }, 250 + lines.length*350);
+}
+
+function micState(s) {
+  const chip = document.getElementById('chipMic');
+  if (s === 'listening') { chip.textContent = 'LIVE'; chip.className = 'ok'; }
+  else if (s === 'awake') { chip.textContent = 'AWAKE'; chip.className = 'warn'; }
+  else if (s === 'unsupported') { chip.textContent = 'N/A'; chip.className = 'err'; }
+  else { chip.textContent = 'OFF'; chip.className = 'err'; }
+}
+
+function dedupeStutter(t) {
+  const w = t.split(/\s+/).filter(Boolean); const out = [];
+  for (let i = 0; i < w.length; i++) {
+    let dup = false;
+    for (let n = Math.min(6, out.length); n >= 1; n--) {
+      if (i + n <= w.length && out.slice(-n).join(' ') === w.slice(i, i + n).join(' ')) { i += n - 1; dup = true; break; }
+    }
+    if (!dup) out.push(w[i]);
+  }
+  return out.join(' ');
+}
+
+function soundsComplete(t) { return commandLooksComplete(t); }
+
+function fireGo(cmd){
+  clearTimeout(endpointTimer);
+  if(cmd){ latestCmd=cmd; endpoint(); }
+}
+
+function correctCommandTerms(t){
+  // Small, explicit PLL command vocabulary; do not broadly rewrite ordinary speech.
+  return t.replace(/\bun\s+shrink\b/g,'unshrink')
+          .replace(/\b(?:unsh|unstr)\b(?=\s+(?:it|that|this)\b)/g,'unshrink');
+}
+function onResult(e){
+  // Echo guard: never transcribe our own speech synthesis back into a command.
+  if (speaking) return;
+  if (lastSpeechEndTs && (Date.now() - lastSpeechEndTs) < 350) return;
+  const start=Number.isInteger(e.resultIndex) ? e.resultIndex : 0;
+  for(let i=start;i<e.results.length;i++){
+    const alt=e.results[i][0];
+    recSlots[i]={text:correctCommandTerms(normalize(alt.transcript)),final:!!e.results[i].isFinal,confidence:Number(alt.confidence)||0};
+  }
+  recSlots.length=e.results.length;
+  if(voiceState==='CAPTURING' && unresolvedAtRestart && sessionCommand('final')) unresolvedAtRestart=false;
+  const full=slotText('all'); if(!full) return;
+
+  if(voiceState==='ASLEEP'){
+    const m=wakeMatch(full); if(!m) return;
+    resetCaptureBuffer(false); recSessionHasWake=true;
+    earcon('wake'); followupCount=0; armSleep(); clog('Wake word detected.','hi');
+    const trailing=stripSessionWake(full);
+    if(soundsWordy(trailing)){
+      setVoiceState('CAPTURING'); captureStartTs=Date.now(); showLiveTranscript(trailing); armEndpoint();
+    } else { setVoiceState('ATTENTIVE'); armAttentive(); }
+    return;
+  }
+
+  if(voiceState==='ATTENTIVE' || voiceState==='CAPTURING'){
+    const cmd=sessionCommand('all'); if(!cmd) return;
+    if(voiceState==='ATTENTIVE'){
+      setVoiceState('CAPTURING'); captureStartTs=Date.now(); finalWaitCount=0;
+    }
+    if(sessionCommand('final')) captureHasFinal=true;
+    latestCmd=currentPreview(); showLiveTranscript(latestCmd); armEndpoint(); return;
+  }
+
+  if(voiceState==='FOLLOWUP' || voiceState==='CONFIRM'){
+    const wasConfirm = (voiceState==='CONFIRM');
+    resetCaptureBuffer(false);
+    const cmd=sessionCommand('all'); if(!cmd) return;
+    if(wasConfirm) confirmMode = true;          // keep the confirmation context alive
+    setVoiceState('CAPTURING'); captureStartTs=Date.now(); finalWaitCount=0;
+    if(sessionCommand('final')) captureHasFinal=true;
+    latestCmd=currentPreview(); showLiveTranscript(latestCmd); armEndpoint(); return;
+  }
+}
+function startListening(){ freshMic(); }
+
+function handleSpeech(heard) {
+  clog('› ' + heard, 'hi');
+  if (pendingDispatch && !pendingIsFresh()) pendingDispatch = null;
+  if (pendingRetry && /\b(retry|try again|resend|send it again)\b/.test(heard)) {
+    const q = pendingRetry; pendingRetry = null; dispatch(q); return;
+  }
+  if (pendingDispatch) {
+    const inConfirmWindow = (voiceState === 'CONFIRM' || voiceState === 'FOLLOWUP' || voiceState === 'THINKING');
+    const ci = inConfirmWindow ? confirmIntentLoose(heard) : confirmIntent(heard);
+    if (ci === 'yes') {
+      const pd = (typeof pendingDispatch === 'string')
+        ? { cmd: pendingDispatch, agent: targetAgent(pendingDispatch) }
+        : pendingDispatch;
+      pendingDispatch = null; confirmMode = false; clearTimeout(confirmTimer);
+      // The stored original command and target are dispatched — never the summary.
+      dispatch(pd.cmd, { confirmed: true, approved: true, agent: pd.agent || targetAgent(pd.cmd), recommendationId: pd.recommendationId || null }); return;
+    }
+    if (ci === 'no') {
+      pendingDispatch = null; confirmMode = false; clearTimeout(confirmTimer);
+      respond("Okay — I won't send it."); return;
+    }
+    // Not a confirmation: this is a new instruction, so drop the stale pending item.
+    pendingDispatch = null; confirmMode = false; clearTimeout(confirmTimer);
+  }
+  if (/stand\s*down|go to sleep|power down|sleep now|stop listening|be quiet|shut up|that'?s all|that is all/.test(heard)) {
+    respondThenSleep("Standing down. I'll be right here when you need me.");
+    return;
+  }
+  // Direct, high-confidence named-agent order → dispatch once, no confirmation loop.
+  // Approval-sensitive wording still gets exactly one yes/no.
+  const dno = directNamedOrder(heard);
+  if (dno) {
+    if (sensitiveOrder(normalize(heard))) {
+      setPending({ cmd: heard, agent: dno.agent, summary: spokenSummary(heard) });
+      askConfirm('I understand — ' + spokenSummary(heard) + '. Send this to ' + dno.agent + '? Yes or no.');
+      return;
+    }
+    dispatch(heard, { confirmed: true, agent: dno.agent }); return;
+  }
+  // V5.4: summarize once, then ask before sending an action or update.
+  // After Sam says yes, do not repeat the command again.
+  if (isActionCommand(heard)) {
+    const confirmAgent = targetAgent(heard);
+    const summary = spokenSummary(heard);
+    setPending({ cmd: heard, agent: confirmAgent, summary: summary });
+    askConfirm("I understand — " + summary + ". Send this to " + confirmAgent + "? Yes or no.");
+    return;
+  }
+  // V9 SAFETY NET: an utterance that names an agent must never die in silence.
+  // If we reach here, nothing routed and nothing was answered from cache. Say so,
+  // and hold it so a bare "send it" routes immediately.
+  if (namedAgent(heard) && wordCount(heard) >= 4) {
+    var nAgent = namedAgent(heard);
+    setPending({ cmd: heard, agent: nAgent, summary: spokenSummary(heard) });
+    clog('Unrouted named-agent utterance held for confirmation: ' + nAgent, 'warn');
+    askConfirm("I did not send that to " + nAgent + ". Say send it and I'll route it now.");
+    return;
+  }
+
+  // ===== V5.0 — ONBOARD COMPANY-BRAIN INTENTS (answer instantly, no dispatch) =====
+  // Public utility questions must never enter the asynchronous agent router.
+  if (/\b(weather|temperature|forecast)\b/.test(heard)) { answerWeather(heard); return; }
+  // If we're already in top-task full-screen, capture navigation words first.
+  if (topTaskActive) {
+    if (/\b(go back|back to (the )?dashboard|dismiss|close|exit|done)\b/.test(heard)) { exitTopTask(); return; }
+    if (/\b(next( task| one)?|another|after that|forward)\b/.test(heard)) { enterTopTask(topTaskIdx + 1); return; }
+  }
+  // Top Task → full-screen takeover (skip if the ask is about a specific person)
+  if (/\b(top|number ?one|number 1|no\.? ?1|#?1|single most|most important|biggest|main|first)\b[\s\w']{0,26}\b(task|priority|thing|focus|move|to ?do)\b/.test(heard)
+      && !/\b(three|3|list|all|every|next three)\b/.test(heard)
+      && !detectTeamMember(heard)) {
+    enterTopTask(0); return;
+  }
+  // Revenue-generating action I can do now
+  if (/\b(revenue|money|cash|income|earn\w*|profit)\b/.test(heard)
+      || /\bwhat (can|should) i do (right )?now\b/.test(heard)
+      || /\bmake (me |some )?money\b/.test(heard)
+      || /\b(generat\w*)\b[\s\w']{0,20}\b(task|activit\w*|revenue)\b/.test(heard)) {
+    speakRevenue(0); return;
+  }
+  // "next" while cycling revenue actions
+  if (revActive && /\b(next|another|one more|after that)\b/.test(heard)) { speakRevenue(revIdx + 1); return; }
+  // Team member's tasks / priorities
+  var tm = detectTeamMember(heard);
+  if (tm && /\b(task|tasks|priorit\w*|working on|on (his|her|their) plate|to ?do|doing|top|overdue|status|up to|handling)\b/.test(heard)) {
+    speakTeamMember(tm); return;
+  }
+  // Pipeline / company status
+  if (/\b(what'?s going on|going on)\b.{0,20}\b(company|business|shop|pll)\b/.test(heard)
+      || /\bpipeline\b/.test(heard)
+      || /\bhow (are|is|'?s) (the )?(deals?|business|company|pipeline|things|we)\b/.test(heard)
+      || /\bcompany (status|update|overview)\b|\bstate of (the )?(company|business)\b/.test(heard)) {
+    speakPipeline(); return;
+  }
+
+  // V5.1 — Agent Comms read-back
+  if (/\bread (me )?(the )?chat\b|\bany (agent )?messages\b|\bwhat are the agents saying\b|\bagent (chat|comms|messages)\b|\bwhat'?s in (the )?(comms|chat)\b/.test(heard)) {
+    speakChat(); return;
+  }
+
+  if (KB.length) {
+    let best = null, bestScore = 0;
+    KB.forEach(k => {
+      let score = 0;
+      k.keys.forEach(kw => { if (heard.includes(kw)) score += kw.length; });
+      if (score > bestScore) { bestScore = score; best = k; }
+    });
+    if (best && bestScore >= 4) { respond(best.a); return; }
+  }
+  if (/agenda|top (three|3)|three (things|tasks)|what('| i)?s on|on my plate|main tasks|big (three|3)|today'?s tasks|what'?s today|what is today|(my |the )?tasks?( for)? (today|tomorrow)|tomorrow'?s tasks|what'?s first|top (task|priority)|what should i (do|work)/.test(heard)) { speakAgenda(); return; }
+  if (/brief|briefing|state of|rundown|update me|my day|where do (we|things) stand/.test(heard)) { speakBrief(); return; }
+  if (/what'?s next|tackle|priorit|focus|my lane/.test(heard)) { speakNext(); return; }
+  if (/who('| i)?s connected|agents|status report|systems/.test(heard)) {
+    respond("Three agents on the grid. Aidan Consultant Agent — live. Aidan Purchasing Agent and Aidan CRM Agent — routed through the consultant. Dispatch runs from the Tasklet deck. This is the field unit.");
+    return;
+  }
+  if (/thank|good work|nice job|appreciate/.test(heard)) { respond("Anytime. Now go close those deals."); return; }
+  const words = heard.split(/\s+/).filter(Boolean).length;
+  if (words < 2) { setVoiceState('FOLLOWUP'); armFollowup(); return; }
+  askBrain(heard);
+}
+
+// ═══════════ V5.0 — COMPANY-BRAIN HELPERS ═══════════
+// Top tasks: prefer rich topTasks[], else derive from the mission brief.
+function getTopTasks(){
+  var X = BRIEF_EXTRA || {};
+  if (X.topTasks && X.topTasks.length) return X.topTasks;
+  return (BRIEF || []).map(function(b, i){
+    var seg = (b.t || '').split(/[—–-]/);
+    var title = (seg.length > 1 ? seg[0] : (b.t || '')).replace(/^(fire|task)\s*(one|two|three|four|five|\d+)[.:]?\s*/i, '').trim();
+    if (title.length > 64) title = title.slice(0, 64).trim() + '…';
+    return { rank: i + 1, title: title || ('Task ' + (i + 1)), why: b.t || '', hot: !!b.hot };
+  });
+}
+// ---- Top Task full-screen mode ----
+var topTaskActive = false, topTaskIdx = 0, ttTimer = null, ttCountTimer = null;
+function enterTopTask(idx){
+  var list = getTopTasks();
+  if (!list.length) { pendingDispatch = "what's my top task"; respondForConfirmation("I don't have a top task loaded yet. Want me to ask the agent? Yes or no."); return; }
+  if (idx < 0) idx = 0;
+  if (idx >= list.length) { respond("That's the end of the list — that was the last task."); return; }
+  topTaskIdx = idx; topTaskActive = true;
+  var t = list[idx];
+  var rank = t.rank ? ('#' + t.rank + ' — Top Task') : (idx === 0 ? 'TOP TASK' : 'TASK ' + (idx + 1));
+  document.getElementById('ttRank').textContent = rank;
+  document.getElementById('ttHot').style.display = t.hot ? 'inline-block' : 'none';
+  document.getElementById('ttTitle').textContent = t.title || t.t || '—';
+  document.getElementById('ttWhy').textContent = t.why || '';
+  var meta = '';
+  if (t.owner) meta += '<span class="mchip">Owner: <b>' + esc(t.owner) + '</b></span>';
+  if (t.due) meta += '<span class="mchip">Due: <b>' + esc(t.due) + '</b></span>';
+  if (t.priority) meta += '<span class="mchip' + (/high|urgent/i.test(t.priority) ? ' hi' : '') + '">' + esc(t.priority) + '</span>';
+  if (t.revenue) meta += '<span class="mchip hi">Revenue</span>';
+  document.getElementById('ttMeta').innerHTML = meta;
+  var ov = document.getElementById('topTaskOverlay');
+  ov.classList.add('on'); ov.setAttribute('aria-hidden', 'false');
+  startTtCountdown();
+  respond((idx === 0 ? "Your top task. " : "Next up. ") + (t.title || '') + ". " + (t.why || ''));
+}
+function startTtCountdown(){
+  clearTimeout(ttTimer); clearInterval(ttCountTimer);
+  var secs = 15, arc = document.getElementById('ttArc'), lbl = document.getElementById('ttCount');
+  var C = 2 * Math.PI * 54; arc.style.strokeDasharray = C; arc.style.strokeDashoffset = 0;
+  lbl.textContent = secs;
+  ttCountTimer = setInterval(function(){
+    secs--; if (secs < 0) secs = 0; lbl.textContent = secs;
+    arc.style.strokeDashoffset = C * (1 - secs / 15);
+  }, 1000);
+  ttTimer = setTimeout(exitTopTask, 15000);
+}
+function exitTopTask(){
+  if (!topTaskActive) return;
+  topTaskActive = false;
+  clearTimeout(ttTimer); clearInterval(ttCountTimer);
+  var ov = document.getElementById('topTaskOverlay');
+  ov.classList.remove('on'); ov.setAttribute('aria-hidden', 'true');
+  status(awake ? 'Awake — listening' : 'Standing by', awake);
+}
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+// ---- Revenue-generating action right now ----
+var revActive = false, revIdx = 0;
+function speakRevenue(idx){
+  var list = (BRIEF_EXTRA && BRIEF_EXTRA.revenueActions) || null;
+  if (!list || !list.length) {
+    // Fallback: first hot brief item is the money move.
+    var hot = (BRIEF || []).filter(function(b){ return b.hot; });
+    if (hot.length) { revActive = true; revIdx = 0; respond("Revenue move you can do right now. " + hot[0].t + (hot.length > 1 ? " Say 'next' for another." : "")); return; }
+    pendingDispatch = "what revenue task can I do now"; respondForConfirmation("I don't have a revenue action loaded yet. Want me to ask the agent? Yes or no."); return;
+  }
+  if (idx < 0) idx = 0;
+  if (idx >= list.length) { respond("That's every revenue action I've got queued."); return; }
+  revActive = true; revIdx = idx;
+  var a = list[idx];
+  var s = "Revenue move" + (idx === 0 ? " you can do right now. " : " number " + (idx + 1) + ". ") + (a.title || '') + ". ";
+  if (a.why) s += a.why + " ";
+  if (a.est_value) s += "Worth about " + a.est_value + ". ";
+  if (a.next_step) s += "Next step: " + a.next_step + ". ";
+  if (idx < list.length - 1) s += "Say 'next' for another.";
+  respond(s.trim());
+}
+
+// ---- Team member tasks / priorities ----
+function teamKeyList(){
+  var tm = (BRIEF_EXTRA && BRIEF_EXTRA.teamMembers) || null;
+  if (tm) return Object.keys(tm);
+  return ['aidan','laura','ronald','evelyn','steve','max','aaron','courtney'];
+}
+function detectTeamMember(heard){
+  var keys = teamKeyList();
+  var words = heard.split(/\s+/).filter(Boolean);
+  // exact/substring first
+  for (var i = 0; i < keys.length; i++){ if (heard.indexOf(keys[i]) !== -1) return keys[i]; }
+  // fuzzy (aiden->aidan, ronny->ronald, etc.)
+  for (var w = 0; w < words.length; w++){
+    if (words[w].length < 3) continue;
+    for (var k = 0; k < keys.length; k++){
+      if (lev(words[w], keys[k]) <= 1) return keys[k];
+    }
+  }
+  return null;
+}
+function speakTeamMember(key){
+  var tm = (BRIEF_EXTRA && BRIEF_EXTRA.teamMembers) || null;
+  if (tm && tm[key]) {
+    var m = tm[key];
+    var name = m.display_name || (key.charAt(0).toUpperCase() + key.slice(1));
+    var s = name + "'s ";
+    if (m.top_task) s += "top task is: " + m.top_task + ". ";
+    var tasks = m.tasks || [];
+    if (tasks.length) {
+      s += (m.top_task ? "Also on " : "On ") + name + "'s plate: ";
+      s += tasks.slice(0, 5).map(function(t){
+        var line = t.title || '';
+        if (t.overdue_days && t.overdue_days > 0) line += ", " + t.overdue_days + " days overdue";
+        else if (t.due) line += ", due " + t.due;
+        return line;
+      }).join('. ') + ". ";
+    }
+    if (m.notes) s += m.notes;
+    respond(s.trim());
+    return;
+  }
+  // Fallback to the knowledge base entry for that name.
+  var kb = kbAnswer(key);
+  if (kb) { respond(kb); return; }
+  respondForConfirmation("I don't have " + (key.charAt(0).toUpperCase() + key.slice(1)) + "'s tasks loaded yet. Want me to ask the agent? Yes or no.");
+  pendingDispatch = "what are " + key + "'s tasks today";
+}
+
+// ---- Pipeline / company status ----
+function speakPipeline(){
+  var X = BRIEF_EXTRA || {};
+  var p = X.pipelineStat || null;
+  if (p) {
+    var s = "Here's the company picture. ";
+    if (p.total_value) s += "Pipeline is " + p.total_value + " across " + (p.active_deals || 'several') + " active deals. ";
+    if (p.hot && p.hot.length) s += "Hot right now: " + p.hot.join(', ') + ". ";
+    if (p.stalled && p.stalled.length) s += "Stalled and needs a push: " + p.stalled.join(', ') + ". ";
+    respond(s.trim());
+    return;
+  }
+  if (X.pipeline) { respond("Company picture. " + X.pipeline); return; }
+  var kb = kbAnswer('pipeline');
+  if (kb) { respond("Company picture. " + kb); return; }
+  pendingDispatch = "what's the pipeline status";
+  respondForConfirmation("I don't have the pipeline numbers loaded yet. Want me to ask the agent? Yes or no.");
+}
+
+// ===== INSTANT PUBLIC UTILITIES =====
+function weatherCodeLabel(c){
+  if (c === 0) return 'clear';
+  if (c <= 3) return 'partly cloudy';
+  if (c === 45 || c === 48) return 'foggy';
+  if (c >= 51 && c <= 67) return 'rainy';
+  if (c >= 71 && c <= 77) return 'snowy';
+  if (c >= 80 && c <= 82) return 'showery';
+  if (c >= 95) return 'stormy';
+  return 'mixed conditions';
+}
+function answerWeather(heard){
+  var m = heard.match(/\b(?:in|for|around|near)\s+([a-z][a-z .'-]{1,50})/i);
+  var place = m ? m[1].replace(/\b(today|tonight|tomorrow|right now|this morning|this afternoon)\b.*$/i,'').trim() : 'Farmington Hills, Michigan';
+  if (!place || /^(michigan|mi)$/i.test(place)) place = 'Farmington Hills, Michigan';
+  setVoiceState('THINKING'); status('Checking live weather…', true); coreState('working','think');
+  fetch('https://geocoding-api.open-meteo.com/v1/search?count=1&language=en&format=json&name=' + encodeURIComponent(place))
+    .then(function(r){ if(!r.ok) throw new Error('geo'); return r.json(); })
+    .then(function(g){
+      if(!g.results || !g.results.length) throw new Error('place');
+      var p=g.results[0];
+      var u='https://api.open-meteo.com/v1/forecast?latitude='+p.latitude+'&longitude='+p.longitude+'&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto&forecast_days=1';
+      return fetch(u).then(function(r){ if(!r.ok) throw new Error('forecast'); return r.json(); }).then(function(w){ return {p:p,w:w}; });
+    })
+    .then(function(x){
+      var p=x.p,w=x.w,c=w.current||{},d=w.daily||{};
+      var loc=(p.name||place)+(p.admin1 ? ', '+p.admin1 : '');
+      var text='In '+loc+', it is '+Math.round(c.temperature_2m)+' degrees and '+weatherCodeLabel(c.weather_code)+'. It feels like '+Math.round(c.apparent_temperature)+' degrees. Today’s high is '+Math.round(d.temperature_2m_max[0])+' and the low is '+Math.round(d.temperature_2m_min[0])+'. Rain chance is '+Math.round(d.precipitation_probability_max[0]||0)+' percent.';
+      respond(text);
+    })
+    .catch(function(){ respond('I could not load the live weather just now. I did not send that question to an agent.'); });
+}
+
+// ===== AI BRAIN — business-safe hybrid =====
+// Known business questions answer instantly from the onboard brief/KB above.
+// Open-ended questions go directly to Tasklet's Aidan Consultant Agent without an extra yes/no step.
+function askBrain(heard){
+  dispatch(heard, { question: true, agent: targetAgent(heard) });
+}
+function askConsultantFallback(heard){
+  dispatch(heard, { question: true, agent: 'Aidan Consultant Agent' });
+}
+
+// ===== VOICE PRESET CONTROL =====
+// Kept as a compatibility alias for older inline references; it now cycles the
+// four small, persisted speech-style presets rather than raw system voices.
+function cycleVoice(){ cycleVoicePreset(); }
+function loadVoices(){
+  try { var v = speechSynthesis.getVoices(); if (v.length) voiceCache = v; } catch(e){}
+  updateVoicePresetControl();
+}
+if ('speechSynthesis' in window) { speechSynthesis.onvoiceschanged = loadVoices; loadVoices(); setTimeout(loadVoices, 500); setTimeout(loadVoices, 1500); }
+
+// ================= LIVE DISPATCH =================
+function hookUrl(){ return localStorage.getItem('aidan_hook') || DEFAULT_HOOK; }
+function setHook(){
+  const u = prompt('Paste the Command Center dispatch link (webhook URL from Tasklet):', hookUrl());
+  if (u && u.startsWith('http')) {
+    localStorage.setItem('aidan_hook', u.trim());
+    const ca=document.getElementById('chipAgent'); if(ca){ca.textContent='LIVE'; ca.className='ok';}
+    updateLink();
+    say('Dispatch line connected. Every command you give me now reaches the team.');
+  }
+}
+function targetAgent(t){
+  t = (t || '').toLowerCase();
+  if (/crm|developer|bug|fix|broken|feature|pipeline build|ticket|crm task/.test(t)) return 'Aidan CRM Agent';
+  if (/purchasing|raw material|ingredient|supplier|vendor|lead time|moq|purchase order|\bpo\b|quote|reorder|restock|cost of goods|price increase|price quote/.test(t)) return 'Aidan Purchasing Agent';
+  return 'Aidan Consultant Agent';
+}
+function targetKey(agent){
+  if (agent === 'Aidan CRM Agent') return 'crm';
+  if (agent === 'Aidan Purchasing Agent') return 'purchasing';
+  return 'consultant';
+}
+function wantsConsultantOversight(t){
+  t = String(t || '').toLowerCase();
+  return /\b(pll consultant|consultant)\b/.test(t)
+    && /\b(also|copy|cc|oversee|oversight|supervise|review|watch|keep an eye)\b/.test(t);
+}
+function compactSummary(t){
+  var s = String(t || '').trim().replace(/\s+/g, ' ');
+  // Common multi-task narration: keep the meaning, drop verbal scaffolding.
+  if (/unshrink/i.test(s) && /hawk media/i.test(s)) return 'prioritize the Unshrink It quote first, then give Hawk Media the information they need today';
+  s = s.replace(/^(okay|alright|so|hey|just)[:, ]+/i, '')
+       .replace(/^(i need you to|can you please|please|we need to|i want you to)\s+/i, '')
+       .replace(/\b(you know|basically|kind of|sort of)\b/gi, '')
+       .replace(/\s+/g, ' ').trim();
+  if (s.length > 190) {
+    var cut = s.lastIndexOf(' ', 190);
+    s = s.slice(0, cut > 120 ? cut : 190).trim() + '…';
+  }
+  return s.charAt(0).toLowerCase() + s.slice(1);
+}
+function isChangeCommand(t){
+  return /\b(add|create|assign|mark|update|set|log|make|remind|tell|send|delete|remove|schedule|reschedule|book|complete|draft|put|give|get|have|open|file|push|move|enter|start)\b/.test(t);
+}
+// V5.2: Sam also narrates facts and outcomes. These are day-record updates,
+// not questions, so they must reach the Consultant instead of the generic answer brain.
+function isOperationalUpdate(t){
+  return /\b(postponed|rescheduled|cancelled|canceled|delayed|moved to|pushed to)\b/.test(t)
+    || /\b(was|is|got|has been|have been)\s+(postponed|rescheduled|cancelled|canceled|delayed|completed|finished|sent|paid|shipped|delivered|booked|confirmed|resolved|approved|rejected|closed)\b/.test(t)
+    || /\b(i|we) (just )?(called|spoke|emailed|texted|sent|paid|finished|completed|handled|resolved|confirmed|booked|met|delivered|shipped|decided|agreed|committed|promised)\b/.test(t)
+    || /\b(that'?s|that is|it'?s|it is|we'?re|we are) (done|finished|complete|all set)\b/.test(t)
+    || /\b(meeting|call|task|quote|order|sample|shipment|payment|deadline)\b.{0,45}\b(today|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/.test(t)
+    || /\b(this is|just) an? update\b|\b(just )?letting you know\b/.test(t);
+}
+// Single source of truth for action/update-vs-question routing.
+// Questions (interrogative openers, incl. "give me"/"show me" forms) are never actions.
+function isActionCommand(t){
+  if (/^\s*(what('?s| is| are| was)?|who('?s)?|when|where|why|how|does|do (we|i|you)|is\b|are\b|did\b|was\b|were\b|can you (tell|show|read|give) me|tell me|show me|read me|give me)/.test(t)) return false;
+  return isChangeCommand(t) || isOperationalUpdate(t)
+    || /add a task|create a task|task (in )?for|put in a task|tell the|update the crm|crm update|send an email|remind|log this|make a note|dispatch|route this|open a ticket|file a bug|follow up with|kick off|check.*(inbox|mail|outlook)/.test(t);
+}
+var pendingRetry = null;
+function requestId(){ return 'cmd_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2,9); }
+function contextRead(){
+  try { var x=JSON.parse(localStorage.getItem('aidan_chatContext')||'[]'); return Array.isArray(x)?x.slice(-8):[]; }
+  catch(e){ return []; }
+}
+function contextAdd(role, text, request_id, agent){
+  var x=contextRead(); x.push({role:role,text:String(text||'').slice(0,600),request_id:request_id||null,agent:agent||null,ts:new Date().toISOString()});
+  localStorage.setItem('aidan_chatContext',JSON.stringify(x.slice(-8)));
+}
+// V9: map switchboard error codes to plain, accurate spoken English.
+function switchboardFailureText(body, agent, status){
+  var code = (body && (body.error || body.code)) ? String(body.error || body.code) : '';
+  if (code === 'target_not_connected')
+    return agent + "'s line isn't connected on the switchboard yet, so nothing was sent. That's a setup fix, not a retry.";
+  if (code === 'overseer_not_connected' || code === 'overseer_rejected' || code === 'overseer_unreachable')
+    return "Aidan Consultant Agent oversight couldn't be registered, so nothing was sent to " + agent + ".";
+  if (code === 'agent_unreachable')
+    return "I couldn't reach " + agent + ". Nothing was sent. Say retry and I'll try again.";
+  if (code === 'agent_rejected')
+    return agent + " didn't accept that. Nothing was sent. Say retry and I'll try again.";
+  if (code === 'origin_denied' || code === 'json_required' || code === 'invalid_json' ||
+      code === 'invalid_request_id' || code === 'invalid_command' || code === 'not_found')
+    return "The switchboard refused that request. Nothing was sent to " + agent + ".";
+  return "That didn't go through to " + agent + " — error " + (status || 'unknown') + ". Nothing was sent. Say retry and I'll send it again.";
+}
+function dispatch(heard, opts){
+  opts = opts || {};
+  const agent = opts.agent || targetAgent(heard);
+  const tgt = targetKey(agent);
+  // Duplicate protection: the same instruction to the same agent cannot be routed twice.
+  const dsig = agent + '|' + normalize(heard);
+  // V10: the signature includes the command text, so back-to-back DIFFERENT commands
+  // (even to the same agent) always pass. Only a true repeat inside 10s is suppressed.
+  if (dsig === lastDispatchSig && (Date.now() - lastDispatchTs) < 10000) {
+    clog('Duplicate dispatch suppressed for ' + agent + '.', 'warn');
+    status('Already routed to ' + agent, true);
+    return;
+  }
+  lastDispatchSig = dsig; lastDispatchTs = Date.now();
+  // Purchasing and CRM have private receiving lines behind the secure switchboard.
+  // Everything else stays on the existing central lane until that specialist
+  // has a verified private receiving line; never pretend an unconnected route is direct.
+  const url = (tgt === 'purchasing' || tgt === 'crm') ? DIRECT_SWITCHBOARD : hookUrl();
+  if (!url) { respond("I heard you, but that dispatch line isn't connected yet."); return; }
+  const rid = requestId();
+  const priorContext = contextRead();
+  // V11 GUARANTEED ANSWER: every dispatched lane is copied to Aidan Consultant Agent under the same
+  // request_id. The Consultant does not take the work away from the named agent - it only
+  // guarantees Sam gets an answer if that agent never reports. Silence is no longer possible.
+  const overseer = (tgt === 'purchasing' || tgt === 'crm') ? 'consultant' : null;
+  contextAdd('sam', heard, rid, agent);
+  const logId = dlogAdd(heard, agent);
+  setVoiceState('THINKING');
+  orbBurst();
+  // V10: the ack confirms ACCEPTANCE only, and is deliberately short so the mic is
+  // free again fast. Never promise a wait time here.
+  // V11: oversight is now always on, so it is no longer worth saying out loud every time.
+  // Only mention it when Sam explicitly asked for it.
+  const ack = (overseer && wantsConsultantOversight(heard))
+                ? ("Sent to " + agent + " with Consultant oversight.")
+                : ("Sent to " + agent + ".");
+  dlogSet(logId, 'DISPATCHED');
+  status('Routing to ' + agent + (overseer ? ' + Aidan Consultant Agent oversight' : '') + '…', true); coreState('working','think');
+  clog('→ Route [' + agent + ' · ' + tgt + (overseer ? ' · overseen' : '') + ' · ' + rid + ']: ' + heard, 'warn');
+  // Watchdog input: track this dispatch as in-flight until the HTTP call settles.
+  var dispatchSettled = false;
+  function dispatchDone(){ if (!dispatchSettled) { dispatchSettled = true; inflightDispatches = Math.max(0, inflightDispatches - 1); } }
+  inflightDispatches++;
+  fetch(url, { method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ source: 'aidan-command-lab', request_id: rid, command: heard, intent: opts.question ? 'question' : (isOperationalUpdate(heard) ? 'day_update' : 'action'), target: tgt, routed_to: agent, overseer: overseer, sam_approved: !!opts.approved, recommendation_id: opts.recommendationId || null, context: priorContext, ts: new Date().toISOString() }) })
+  .then(r => { dispatchDone();
+               if (r.ok) {
+                 // V10: SEND AND WAIT ARE SEPARATE. Acceptance by the switchboard ends the
+                 // interactive turn. The mic comes straight back so Sam can issue the next
+                 // command to a different agent while this one is still working.
+                 dlogSet(logId, 'ROUTED');
+                 startAnswerWatcher(heard, logId, rid, agent);   // background from birth
+                 inflightNote();
+                 say(ack);
+                 releaseSession('sent-nonblocking');
+                 return;
+               }
+               // V9: say what actually went wrong. "Rejected" is not the same as
+               // "that agent's line was never connected", and Sam can only act on the truth.
+               dlogSet(logId, 'FAILED'); pendingRetry = heard; releaseSession('dispatch-rejected');
+               r.json().then(function(b){ respondForConfirmation(switchboardFailureText(b, agent, r.status)); })
+                .catch(function(){ respondForConfirmation(switchboardFailureText(null, agent, r.status)); }); })
+  .catch(() => { dispatchDone(); dlogSet(logId, 'FAILED'); pendingRetry = heard; releaseSession('dispatch-failed'); respondForConfirmation('Could not reach the router. Say "retry" and I\'ll send it again — I\'ll keep it queued.'); });
+}
+
+// ===== ANSWER READ-BACK (V7 — per-request answers, multi-watch, guaranteed release) =====
+// Live channel is raw.githubusercontent (no Pages build, no CDN wait); Pages answers.json
+// remains the durable archive. Every dispatch gets its own watch entry so a second command
+// can never destroy the first. Every terminal path funnels through releaseSession().
+// TODO(human): replace with the raw.githubusercontent.com URL for Aidan's own GitHub Pages
+// repo (org/repo/branch), once created. Placeholder only — do not reuse Sam's repo.
+var ANSWER_RAW_BASE = 'https://raw.githubusercontent.com/ephixllc-code/aidan-command-lab/main/';
+var WATCH_KEY = 'pll_watchList';
+var WATCH_MAX = 8;
+var WATCH_GIVEUP_MS = 1800000;    // 30 min — no callback
+var WATCH_HEADSUP_MS = 180000;    // 3 min — background handoff
+var watchTimers = {};             // requestId -> setTimeout handle (in-memory)
+var pendingSpokenQueue = [];       // FIFO of answers queued because voice was busy
+var inflightDispatches = 0;        // dispatch fetches currently in flight (watchdog input)
+
+// ---------- session release (the "bricked after timeout" fix) ----------
+function releaseSession(reason){
+  try {
+    working = false;
+    var ci = document.getElementById('cmdInput') || document.getElementById('chatInput');
+    if (ci && ci.disabled) ci.disabled = false;
+    if (voiceState === 'THINKING') {
+      // standDown() -> setVoiceState('ASLEEP'); leaving MIC_OFF re-arms the mic via toMicOn().
+      standDown();
+    } else if (voiceState === 'ASLEEP') {
+      if (powered && !speaking) toMicOn();
+    }
+    // Never cancels background watchers — they live in watchTimers/localStorage.
+    if (reason) clog('Session released (' + reason + ').');
+  } catch(e){ /* release must never throw */ }
+}
+
+// ---------- watch list persistence ----------
+function watchListRead(){
+  try { var x = JSON.parse(localStorage.getItem(WATCH_KEY) || '[]'); return Array.isArray(x) ? x : []; }
+  catch(e){ return []; }
+}
+function watchListWrite(list){
+  try { localStorage.setItem(WATCH_KEY, JSON.stringify(list.slice(-WATCH_MAX))); } catch(e){}
+}
+function watchGet(rid){
+  var l = watchListRead();
+  for (var i=0;i<l.length;i++) if (l[i].requestId === rid) return l[i];
+  return null;
+}
+function watchUpsert(entry){
+  var l = watchListRead(), found = false;
+  for (var i=0;i<l.length;i++){ if (l[i].requestId === entry.requestId){ l[i] = entry; found = true; } }
+  if (!found) l.push(entry);
+  while (l.length > WATCH_MAX) l.shift();   // drop oldest
+  watchListWrite(l);
+}
+function watchRemove(rid){
+  var l = watchListRead(), out = [];
+  for (var i=0;i<l.length;i++) if (l[i].requestId !== rid) out.push(l[i]);
+  watchListWrite(out);
+  if (watchTimers[rid]) { clearTimeout(watchTimers[rid]); delete watchTimers[rid]; }
+}
+function fmtElapsed(ms){
+  var s = Math.max(0, Math.floor(ms/1000));
+  return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0');
+}
+
+// ---------- answer identity ----------
+function markSpoken(a){
+  if (a && a.id) localStorage.setItem('aidan_lastAnswerId', a.id);
+  if (a && a.ts) localStorage.setItem('aidan_lastAnswerTs', a.ts);
+}
+// Per-request file: by definition this file IS the answer for that request_id.
+// Accept on .text, but keep the staleness guard and the spoken-once dedupe.
+function isDirectAnswer(a, startedAt, requestId){
+  if (!a || !a.text) return false;
+  if (startedAt && a.ts) {
+    var answerMs = Date.parse(a.ts);
+    if (isFinite(answerMs) && answerMs < startedAt - 5000) return false;
+  }
+  if (a.id && a.id === localStorage.getItem('aidan_lastAnswerId')) return false;
+  return true;
+}
+function isNewAnswer(a, startedAt, requestId, pendingCmdIn){
+  if (!a || !a.text) return false;
+  // V6.2: exact request IDs remain the rule. The only exception is an explicitly
+  // published recovery for a case where the primary agent finished but failed
+  // to POST its callback. Keep this narrow so unrelated replies can never attach.
+  if (requestId && a.request_id !== requestId) {
+    var pendingCmd = '';
+    try {
+      pendingCmd = String(pendingCmdIn || (watchGet(requestId) || {}).cmd || '').toLowerCase();
+    } catch(e){}
+    var isPendingAdsOptimization = /\b(ads?|adwords|ppc|campaigns?)\b/.test(pendingCmd) && /\b(suggest|recommend|improv|optim|better|what should|next)\b/.test(pendingCmd);
+    if (!(a.recovery_for === 'ads_optimization' && isPendingAdsOptimization)) return false;
+  }
+  // V5.3: never attach an older agent reply to the command Sam just spoke.
+  if (startedAt && a.ts) {
+    var ms = Date.parse(a.ts);
+    if (isFinite(ms) && ms < startedAt - 5000) return false;
+  }
+  if (a.id) { return a.id !== localStorage.getItem('aidan_lastAnswerId'); }
+  if (a.ts) { return a.ts !== localStorage.getItem('aidan_lastAnswerTs'); }
+  return false;
+}
+function voiceReadyText(text){
+  // Fallback for older agent replies that do not yet provide spoken_text.
+  return String(text || '')
+    .replace(/\*\*|__|`/g, '')
+    .replace(/^\s{0,3}#{1,6}\s*/gm, '')
+    .replace(/^\s*[-•*]\s+/gm, '')
+    .replace(/^\s*\d+[.)]\s+/gm, '')
+    .replace(/\n+/g, '. ')
+    .replace(/\s*:\s*/g, ' is ')
+    .replace(/\s+/g, ' ')
+    .replace(/\.\s*\./g, '.')
+    .trim();
+}
+
+// ---------- read-back ----------
+function shortRef(cmd){
+  var c = String(cmd || '').replace(/\s+/g,' ').trim();
+  if (!c) return '';
+  var w = c.split(' ');
+  return w.length > 8 ? w.slice(0,8).join(' ') : c;
+}
+function speakAnswer(a, entry){
+  var logId = entry && entry.logId;
+  if (logId) dlogSet(logId, String(a.status || 'ANSWERED').toUpperCase());
+  contextAdd('agent', a.text, a.request_id, a.agent || (entry && entry.agent) || null);
+  var who = a.agent || (entry && entry.agent) || 'the agent';
+  status('Reply received from ' + who + ' ✓', true);
+  clog('← Reply received from ' + who + '.', 'hi');
+  var ref = shortRef(entry && entry.cmd);
+  var prefix = 'Answer from ' + who + (ref ? (' on your request: ' + ref + '. ') : '. ');
+  var spoken = prefix + voiceReadyText(a.spoken_text || a.text);
+  // Defer if the user is mid-interaction; deliver the moment we're free. FIFO so two
+  // late answers cannot clobber each other.
+  if (voiceState === 'CAPTURING' || voiceState === 'SPEAKING') { pendingSpokenQueue.push(spoken); return; }
+  earcon('wake');
+  respond(spoken);
+}
+// Flush deferred answers once the mic frees up.
+setInterval(function(){
+  if (pendingSpokenQueue.length && voiceState !== 'CAPTURING' && voiceState !== 'SPEAKING') {
+    var t = pendingSpokenQueue.shift();
+    earcon('wake'); respond(t);
+  }
+}, 1000);
+
+// ---------- polling ----------
+function watchDelayFor(elapsed){
+  // V10: most answers land in the first two minutes, so poll hard there and back off
+  // afterwards. 1.5s against raw.githubusercontent means an answer is spoken within
+  // roughly two seconds of being published.
+  if (elapsed < 120000) return 1500;    // 0–2 min  — fast lane
+  if (elapsed < 600000) return 5000;    // 2–10 min
+  return 15000;                          // 10–30 min
+}
+// Try sources in order; first valid matching answer wins. Any failure falls through
+// silently to the next source, and total failure just reschedules the next tick.
+function fetchAnswerSources(entry, cb){
+  var rid = entry.requestId, sources = [];
+  if (rid) sources.push({ url: ANSWER_RAW_BASE + 'answers/' + encodeURIComponent(rid) + '.json?t=' + Date.now(), direct: true });
+  sources.push({ url: ANSWER_RAW_BASE + 'answers.json?t=' + Date.now(), direct: false });
+  sources.push({ url: 'answers.json?v=' + Date.now(), direct: false });
+  var i = 0;
+  function next(){
+    if (i >= sources.length) { try { cb(null); } catch(e){} return; }
+    var s = sources[i++];
+    try {
+      fetch(s.url, { cache: 'no-store' })
+        .then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+        .then(function(a){
+          var ok = s.direct ? isDirectAnswer(a, entry.startedAt, rid)
+                            : isNewAnswer(a, entry.startedAt, rid, entry.cmd);
+          if (ok) { try { cb(a); } catch(e){} } else next();
+        })
+        .catch(function(){ next(); });
+    } catch(e){ next(); }
+  }
+  next();
+}
+function scheduleWatch(entry, delay){
+  if (watchTimers[entry.requestId]) { clearTimeout(watchTimers[entry.requestId]); }
+  watchTimers[entry.requestId] = setTimeout(function(){ watchTick(entry.requestId); }, delay);
+}
+function watchTick(rid){
+  if (watchTimers[rid]) { clearTimeout(watchTimers[rid]); delete watchTimers[rid]; }
+  var entry = watchGet(rid);
+  if (!entry) return;
+  try {
+    var elapsed = Date.now() - entry.startedAt;
+    if (elapsed > WATCH_GIVEUP_MS) {                      // 30 min — no callback ever arrived
+      watchRemove(rid);
+      if (entry.logId) dlogSet(entry.logId, 'NO CALLBACK');
+      status(entry.agent + ' — NO CALLBACK RECEIVED', false);
+      clog('NO CALLBACK RECEIVED from ' + entry.agent + ' after 30 minutes (' + rid + ').', 'warn');
+      releaseSession('no-callback');
+      if (voiceState === 'ASLEEP' || voiceState === 'FOLLOWUP') respond('No answer came back from ' + entry.agent + ". I've flagged it.");
+      return;
+    }
+    if (!entry.headsUp && elapsed >= WATCH_HEADSUP_MS) {   // 3 min — hand off to background watch, once
+      // V10: the session was already released at send time. This is a single courtesy
+      // notice, spoken once, and only if it will not interrupt anything.
+      entry.headsUp = true; watchUpsert(entry);
+      status(entry.agent + ' still working — ' + fmtElapsed(elapsed), true);
+      clog(entry.agent + ' still working (' + fmtElapsed(elapsed) + ').', 'warn');
+      if (voiceState !== 'CAPTURING' && voiceState !== 'SPEAKING' && !speaking) {
+        respond(entry.agent + " is still working. I'll tell you the moment it's back.");
+      }
+    }
+    fetchAnswerSources(entry, function(a){
+      if (a) {
+        watchRemove(rid); markSpoken(a);
+        // V10: only recover the session if it is genuinely stuck. If Sam is speaking or
+        // the mic is capturing a new command, touching the session would eat that command.
+        if (voiceState === 'THINKING') releaseSession('answer-received');
+        speakAnswer(a, entry);
+        inflightNote();
+        return;
+      }
+      scheduleWatch(entry, watchDelayFor(Date.now() - entry.startedAt));
+    });
+  } catch(e){
+    clog('Answer watcher error: ' + (e && e.message ? e.message : e), 'warn');
+    releaseSession('watcher-error');
+    try { scheduleWatch(entry, watchDelayFor(Date.now() - entry.startedAt)); } catch(e2){}
+  }
+}
+// V10: on-screen count of everything currently in flight. The voice stays short;
+// the screen carries the detail.
+function inflightNote(){
+  try {
+    var list = watchListRead();
+    var n = list.length;
+    var el = document.getElementById('chipAgent');
+    if (el) { el.textContent = n ? ('LIVE · ' + n + ' IN FLIGHT') : 'LIVE'; el.className = n ? 'warn' : 'ok'; }
+    if (n > 1) {
+      clog('In flight (' + n + '): ' + list.map(function(e){
+        return e.agent + ' · ' + fmtElapsed(Date.now() - e.startedAt);
+      }).join(' | '));
+    }
+  } catch(e){}
+}
+setInterval(inflightNote, 5000);
+
+function startAnswerWatcher(cmd, logId, requestId, agent){
+  var entry = {
+    requestId: requestId || ('local_' + Date.now().toString(36)),
+    cmd: cmd || '', agent: agent || 'the agent', logId: logId || null,
+    startedAt: Date.now(), headsUp: false,
+    background: true            // V10: never blocks the interactive session
+  };
+  watchUpsert(entry);
+  status('Sent to ' + entry.agent + ' — tracking in background', true);
+  scheduleWatch(entry, 1200);   // V10: first look almost immediately; fast agents answer fast
+}
+// On-screen working indicator (elapsed mm:ss for the oldest pending entry), 15s+.
+setInterval(function(){
+  var l = watchListRead();
+  if (!l.length) return;
+  if (voiceState === 'CAPTURING' || voiceState === 'SPEAKING' || voiceState === 'ATTENTIVE' || voiceState === 'CONFIRM' || voiceState === 'FOLLOWUP') return;
+  var oldest = l[0];
+  for (var i=1;i<l.length;i++) if (l[i].startedAt < oldest.startedAt) oldest = l[i];
+  var el = Date.now() - oldest.startedAt;
+  if (el < 15000) return;   // 0–15s stays silent
+  status(oldest.agent + (oldest.background ? ' still working — ' : ' working — ') + fmtElapsed(el), true);
+}, 1000);
+
+// Immediate refresh of every watcher when the TV tab comes back to the foreground.
+function pokeAnswerWatcher(){
+  var l = watchListRead();
+  for (var i=0;i<l.length;i++){
+    var e = l[i];
+    if (Date.now() - e.startedAt > WATCH_GIVEUP_MS) { watchRemove(e.requestId); continue; }
+    scheduleWatch(e, 200);
+  }
+}
+function resumeAllWatchers(){
+  var l = watchListRead();
+  for (var i=0;i<l.length;i++){
+    var e = l[i];
+    if (Date.now() - e.startedAt > WATCH_GIVEUP_MS) { watchRemove(e.requestId); continue; }
+    if (!watchTimers[e.requestId]) {
+      clog('Resuming watch for ' + e.agent + ' — still listening for the reply.', 'warn');
+      scheduleWatch(e, 1500);
+    }
+  }
+}
+// Migrate the legacy single-slot key, then restore watchers on load.
+(function migrateAndResumeWatchers(){
+  var raw = localStorage.getItem('aidan_pendingDispatch');
+  if (raw) {
+    try {
+      var p = JSON.parse(raw);
+      if (p && p.requestId && (Date.now() - p.t) < WATCH_GIVEUP_MS) {
+        watchUpsert({ requestId: p.requestId, cmd: p.cmd || '', agent: 'the agent',
+                      logId: null, startedAt: p.t, headsUp: false, background: true });
+      }
+    } catch(e){}
+    localStorage.removeItem('aidan_pendingDispatch');
+  }
+  resumeAllWatchers();
+})();
+// WATCHDOG: the Command Center must never need a page reload to recover.
+var wdLastState = null, wdLastStateTs = Date.now();
+setInterval(function(){
+  if (voiceState !== wdLastState) { wdLastState = voiceState; wdLastStateTs = Date.now(); return; }
+  if (voiceState === 'THINKING' && !speaking && inflightDispatches === 0 && (Date.now() - wdLastStateTs) > 60000) {
+    clog('Watchdog: stuck in THINKING with no in-flight dispatch — forcing session release.', 'warn');
+    releaseSession('watchdog');
+    wdLastState = voiceState; wdLastStateTs = Date.now();
+  }
+}, 15000);
+
+// ================= DISPATCH LOG (status chips) =================
+var dlogItems = [];
+function dlogAdd(cmd, agent){
+  const id = 'd' + Date.now() + Math.floor(Math.random()*1000);
+  dlogItems.unshift({ id: id, cmd: cmd, agent: agent, state: 'HEARD', t: new Date() });
+  while (dlogItems.length > 10) dlogItems.pop();
+  dlogRender();
+  return id;
+}
+function dlogSet(id, state){
+  const it = dlogItems.find(x => x.id === id);
+  if (it) { it.state = state; dlogRender(); }
+}
+function dlogRender(){
+  const el = document.getElementById('dlog');
+  if (!el) return;
+  if (!dlogItems.length){ el.innerHTML = '<div style="color:var(--dimmer);font-size:10px;letter-spacing:1px">No commands yet.</div>'; return; }
+  el.innerHTML = dlogItems.map(function(it){
+    const ts = [it.t.getHours(),it.t.getMinutes()].map(x=>String(x).padStart(2,'0')).join(':');
+    const cls = it.state==='FAILED' ? 'err' : (it.state==='ANSWERED'||it.state==='DELIVERED') ? 'ok' : 'warn';
+    const cmd = it.cmd.length > 46 ? it.cmd.slice(0,46)+'…' : it.cmd;
+    return '<div class="dl"><div class="dlhead"><span class="dltime">'+ts+'</span>'+
+      '<span class="dlagent">'+it.agent+'</span>'+
+      '<span class="pill '+cls+'">'+it.state+'</span></div>'+
+      '<div class="dlcmd" title="'+it.cmd.replace(/"/g,'&quot;')+'">'+cmd+'</div></div>';
+  }).join('');
+}
+dlogRender();
+
+// ================= LINK PILL =================
+function updateLink(){
+  const dot = document.getElementById('linkDot'), txt = document.getElementById('linkTxt');
+  if (hookUrl()) { dot.className = 'ldot on'; txt.textContent = 'Link Up'; }
+  else { dot.className = 'ldot down'; txt.textContent = 'Link Down'; }
+}
+updateLink();
+
+// ================= KIOSK RESILIENCE =================
+setInterval(function(){
+  const n = new Date();
+  if (n.getHours() === 4 && n.getMinutes() < 2) { clog('Nightly refresh.', 'hi'); setTimeout(function(){ location.reload(); }, 1500); }
+}, 60000);
+document.addEventListener('visibilitychange', function(){
+  if (!document.hidden) { try { pokeAnswerWatcher(); } catch(e){} }
+  if (!document.hidden && powered && !speaking && !working && SR) {
+    try { if (rec) rec.abort(); } catch(e){}
+    setTimeout(function(){ try { startListening(); } catch(e){} }, 200);
+    clog('Tab active — mic re-armed.');
+  }
+});
+// Keep the cached business and Ads intelligence current while Command Center stays open.
+setInterval(function(){ if (!document.hidden) loadBrief(); }, 60*1000);
+
+// hourly pulse ping so an idle deck shows it's alive
+setInterval(function(){ if (!speaking && !working) clog('Hourly pulse — systems nominal.'); }, 3600000);
+
+// ═══════════════════════════════════════════════════════════════════
+// V5.1 — AGENT COMMS PANEL  (group chat feed; front-end only)
+// Reads agent-feed.json (same dir as brief.json), polls 60s while visible.
+// Posts Sam's messages via the EXISTING webhook with an ADDITIVE payload.
+// Zero impact on mic / dispatch / brief code paths.
+// ═══════════════════════════════════════════════════════════════════
+var COMMS_DEFAULT_AGENTS = [
+  { id:'consultant', name:'Aidan Consultant Agent',   role:'Accountability & advisory',        color:'#7c5cff' },
+  { id:'purchasing', name:'Aidan Purchasing Agent', role:'Materials, suppliers, lead times', color:'#ff9f43' },
+  { id:'crm',        name:'Aidan CRM Agent',    role:'Creates & completes CRM tasks',    color:'#54a0ff' },
+  { id:'aidan',      name:'Aidan',            role:'Purchasing Manager',               color:'#f368e0' }
+];
+var FEED = { updated:null, agents:[], messages:[] };
+var commsOptimistic = [];   // Sam's un-confirmed sends {id,text,ts,state:'sending|sent|failed'}
+var commsOpen = false;
+var commsUserScrolledUp = false;
+var commsFeedEverLoaded = false;
+
+function commsHashColor(id){
+  var s = String(id||''); var h = 0;
+  for (var i=0;i<s.length;i++){ h = (h*31 + s.charCodeAt(i)) & 0xffffff; }
+  var hue = h % 360;
+  return 'hsl('+hue+',55%,60%)';
+}
+function commsAgent(id){
+  var a = (FEED.agents||[]).find(function(x){ return x && x.id === id; });
+  if (!a) a = COMMS_DEFAULT_AGENTS.find(function(x){ return x.id === id; });
+  if (a) return { id:id, name:a.name||id, role:a.role||'', color:a.color||commsHashColor(id) };
+  return { id:id, name:id||'unknown', role:'', color:commsHashColor(id) };
+}
+function commsInitials(name){
+  var parts = String(name||'?').trim().split(/\s+/).filter(Boolean);
+  if (!parts.length) return '?';
+  if (parts.length === 1) return parts[0].slice(0,2).toUpperCase();
+  return (parts[0][0]+parts[parts.length-1][0]).toUpperCase();
+}
+function commsRelTime(ts){
+  if (!ts) return '';
+  var t = new Date(ts).getTime(); if (isNaN(t)) return '';
+  var diff = Date.now() - t;
+  if (diff < 60000) return 'now';
+  if (diff < 3600000) return Math.floor(diff/60000)+'m';
+  if (diff < 86400000) return Math.floor(diff/3600000)+'h';
+  var d = new Date(t);
+  var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var h = d.getHours(), m = String(d.getMinutes()).padStart(2,'0');
+  var ap = h >= 12 ? 'PM' : 'AM'; h = h % 12; if (h === 0) h = 12;
+  return days[d.getDay()]+' '+h+':'+m+' '+ap;
+}
+// highlight @mentions matching a known agent id or name
+function commsRenderText(text){
+  var safe = esc(text||'');
+  var known = (FEED.agents && FEED.agents.length ? FEED.agents : COMMS_DEFAULT_AGENTS);
+  return safe.replace(/@([A-Za-z0-9_]+)/g, function(full, word){
+    var lw = word.toLowerCase();
+    var hit = known.find(function(a){
+      if (!a) return false;
+      if (String(a.id).toLowerCase() === lw) return true;
+      var nm = String(a.name||'').toLowerCase().replace(/\s+/g,'');
+      return nm === lw || nm.split(' ')[0] === lw;
+    });
+    if (hit){ var c = hit.color || commsHashColor(hit.id); return '<span class="men" style="color:'+c+'">'+full+'</span>'; }
+    return full;
+  });
+}
+// merged, chronological view: feed messages + still-pending optimistic sends
+function commsMergedMessages(){
+  var msgs = (FEED.messages||[]).slice();
+  // drop optimistic entries the backend has already folded in (text+ts within 5 min)
+  commsOptimistic = commsOptimistic.filter(function(o){
+    if (o.state === 'failed') return true; // keep visible so Sam can retry
+    var matched = msgs.some(function(m){
+      if (m.agent !== 'sam' || !m.text) return false;
+      if (m.text.trim() !== o.text.trim()) return false;
+      var dt = Math.abs(new Date(m.ts||0).getTime() - new Date(o.ts).getTime());
+      return dt < 300000;
+    });
+    return !matched;
+  });
+  var virt = commsOptimistic.map(function(o){
+    return { id:o.id, agent:'sam', ts:o.ts, text:o.text, kind:'message', reply_to:null, _opt:o };
+  });
+  return msgs.concat(virt).sort(function(a,b){
+    return new Date(a.ts||0).getTime() - new Date(b.ts||0).getTime();
+  });
+}
+function commsFindMsg(id){ return (FEED.messages||[]).find(function(m){ return m && m.id === id; }); }
+
+function renderComms(){
+  var feed = document.getElementById('cmFeed'); if (!feed) return;
+  var list = commsMergedMessages();
+  if (!list.length){
+    feed.innerHTML = '<div class="cmempty"><div class="big">💬</div>No agent chatter yet.<br>Your agents will report here.</div>';
+    return;
+  }
+  var html = list.map(function(m){
+    var ag = commsAgent(m.agent);
+    var isSelf = (m.agent === 'sam');
+    var kind = (m.kind === 'alert') ? 'alert' : 'message';
+    var quote = '';
+    if (m.reply_to){
+      var q = commsFindMsg(m.reply_to);
+      if (q){ var qa = commsAgent(q.agent); quote = '<div class="cmquote">'+esc(qa.name)+': '+esc(String(q.text||'').slice(0,90))+'</div>'; }
+    }
+    var metaRole = ag.role ? '<span class="cmrole">'+esc(ag.role)+'</span>' : '';
+    var metaTime = m.ts ? '<span class="cmtime">'+commsRelTime(m.ts)+'</span>' : '';
+    var body = (kind === 'alert' ? '⚠ ' : '') + commsRenderText(m.text);
+    var sendState = '';
+    if (m._opt){
+      if (m._opt.state === 'sending') sendState = '<span class="sendstate">sending…</span>';
+      else if (m._opt.state === 'sent') sendState = '<span class="sendstate ok">sent ✓</span>';
+      else if (m._opt.state === 'failed') sendState = '<span class="sendstate err" onclick="commsRetry(\''+m._opt.id+'\')">failed — tap to retry</span>';
+    }
+    return '<div class="cmmsg'+(isSelf?' self':'')+'">'+
+      '<div class="cmav" style="background:'+ag.color+'">'+esc(commsInitials(ag.name))+'</div>'+
+      '<div class="cmbody">'+
+        '<div class="cmmeta"><span class="cmname" style="color:'+ag.color+'">'+esc(ag.name)+'</span>'+metaRole+metaTime+'</div>'+
+        quote+
+        '<div class="cmbubble'+(kind==='alert'?' alert':'')+'">'+body+sendState+'</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+  feed.innerHTML = html;
+  if (!commsUserScrolledUp) commsScrollBottom(false);
+}
+
+function commsScrollBottom(force){
+  var feed = document.getElementById('cmFeed'); if (!feed) return;
+  feed.scrollTop = feed.scrollHeight;
+  commsUserScrolledUp = false;
+  var pill = document.getElementById('cmPill'); if (pill) pill.classList.remove('on');
+}
+(function bindCommsScroll(){
+  var feed = document.getElementById('cmFeed'); if (!feed) return;
+  feed.addEventListener('scroll', function(){
+    var nearBottom = (feed.scrollHeight - feed.scrollTop - feed.clientHeight) < 40;
+    commsUserScrolledUp = !nearBottom;
+    var pill = document.getElementById('cmPill');
+    if (pill && nearBottom) pill.classList.remove('on');
+  });
+})();
+
+function commsFreshness(){
+  var dot = document.getElementById('cmDot'), fresh = document.getElementById('cmFresh');
+  if (!dot || !fresh) return;
+  if (!FEED.updated){ dot.className='cmdot'; fresh.textContent = commsFeedEverLoaded ? 'idle' : 'no feed yet'; return; }
+  var mins = (Date.now() - new Date(FEED.updated).getTime()) / 60000;
+  if (mins < 5){ dot.className='cmdot live'; fresh.textContent='live'; }
+  else if (mins < 60){ dot.className='cmdot amber'; fresh.textContent=Math.round(mins)+'m ago'; }
+  else { dot.className='cmdot'; fresh.textContent = Math.round(mins/60)+'h ago'; }
+}
+
+function commsUnread(){
+  var lastSeen = localStorage.getItem('aidan_comms_last_seen');
+  var msgs = (FEED.messages||[]).filter(function(m){ return m && m.agent !== 'sam'; });
+  if (!msgs.length) return 0;
+  if (!lastSeen) return msgs.length;
+  var idx = -1;
+  var all = (FEED.messages||[]);
+  for (var i=0;i<all.length;i++){ if (all[i].id === lastSeen){ idx = i; break; } }
+  if (idx === -1) return msgs.length;
+  var after = all.slice(idx+1).filter(function(m){ return m.agent !== 'sam'; });
+  return after.length;
+}
+function updateCommsBadge(){
+  var b = document.getElementById('commsBadge'); if (!b) return;
+  var n = commsUnread();
+  if (n > 0 && !commsOpen){ b.textContent = n > 99 ? '99+' : n; b.classList.remove('hide'); }
+  else { b.classList.add('hide'); }
+}
+function commsMarkSeen(){
+  var all = (FEED.messages||[]);
+  if (all.length){ localStorage.setItem('aidan_comms_last_seen', all[all.length-1].id || ''); }
+  updateCommsBadge();
+}
+
+function loadFeed(){
+  return fetch('agent-feed.json?t=' + Date.now(), { cache:'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('nofeed'); return r.json(); })
+    .then(function(d){
+      commsFeedEverLoaded = true;
+      var prevCount = (FEED.messages||[]).length;
+      FEED = {
+        updated: (d && d.updated) || null,
+        agents: (d && Array.isArray(d.agents)) ? d.agents : [],
+        messages: (d && Array.isArray(d.messages)) ? d.messages : []
+      };
+      if (commsOpen) renderComms();
+      commsFreshness();
+      updateCommsBadge();
+      // nudge: if new messages arrived while open & user scrolled up, show pill
+      if (commsOpen && commsUserScrolledUp && FEED.messages.length > prevCount){
+        var pill = document.getElementById('cmPill'); if (pill) pill.classList.add('on');
+      }
+    })
+    .catch(function(){
+      // 404 / offline / malformed — never crash; render empty if open
+      commsFreshness();
+      if (commsOpen) renderComms();
+    });
+}
+
+function openComms(){
+  commsOpen = true;
+  var o = document.getElementById('commsOverlay'); if (o){ o.classList.add('on'); o.setAttribute('aria-hidden','false'); }
+  commsUserScrolledUp = false;
+  renderComms();
+  commsFreshness();
+  loadFeed().then(function(){ renderComms(); commsScrollBottom(false); commsMarkSeen(); });
+  setTimeout(function(){ commsScrollBottom(false); }, 60);
+}
+function closeComms(){
+  commsOpen = false;
+  var o = document.getElementById('commsOverlay'); if (o){ o.classList.remove('on'); o.setAttribute('aria-hidden','true'); }
+  commsMarkSeen();
+}
+
+function commsSend(){
+  var inp = document.getElementById('cmInput'); if (!inp) return;
+  var text = (inp.value||'').trim(); if (!text) return;
+  inp.value = '';
+  var o = { id:'opt_'+Date.now()+'_'+Math.floor(Math.random()*1000), text:text, ts:new Date().toISOString(), state:'sending' };
+  commsOptimistic.push(o);
+  renderComms(); commsScrollBottom(true);
+  commsPost(o);
+}
+function commsRetry(id){
+  var o = commsOptimistic.find(function(x){ return x.id === id; });
+  if (!o) return;
+  o.state = 'sending'; o.ts = new Date().toISOString();
+  renderComms();
+  commsPost(o);
+}
+function commsPost(o){
+  var url = hookUrl();
+  if (!url){ o.state = 'failed'; renderComms(); return; }
+  fetch(url, { method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ source:'aidan-command-lab', type:'agent_chat', message:o.text, ts:o.ts }) })
+  .then(function(r){ o.state = r.ok ? 'sent' : 'failed'; renderComms(); })
+  .catch(function(){ o.state = 'failed'; renderComms(); });
+}
+
+// Voice intent: read the last 3 messages aloud.
+function speakChat(){
+  var list = (FEED.messages||[]).filter(function(m){ return m && m.text; });
+  if (!list.length){ respond("No agent messages yet. Your agents will report in the comms channel when there's news."); return; }
+  var last3 = list.slice(-3);
+  var script = last3.map(function(m){ var ag = commsAgent(m.agent); return ag.name + ' says: ' + m.text; }).join('. ');
+  respond("Here's the latest from the agents. " + script);
+}
+
+// 60s polling — only while the tab is visible.
+setInterval(function(){ if (document.visibilityState === 'visible') loadFeed(); }, 60000);
+document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'visible') loadFeed(); });
+loadFeed();
+
+// drop the boot-in animation class after first paint
+setTimeout(function(){ document.body.classList.remove('booting'); }, 1200);
+
+// ═══════════ TV MODE V13 ENGINE ═══════════
+// A 75" wall display needs three things a laptop does not: no OS taskbar,
+// text sized for ten feet, and a screen that refuses to sleep.
+var TV_KEY = 'pll_tv_mode';
+var tvOn = false, tvWakeLock = null;
+
+function tvZoomFor(w, h){
+  h = h || window.innerHeight;
+  // Height is the binding constraint: measured on a 3840x2160 panel, 2.0x clipped
+  // the bottom On Deck cards by 64px while 1.8x fit cleanly. So scale by whichever
+  // axis runs out first (1440x1180 design baseline) and hard-cap at 1.85.
+  return Math.max(1.0, Math.min(1.85, Math.min(w / 1440, h / 1180)));
+}
+
+async function tvWakeLockOn(){
+  try{
+    if ('wakeLock' in navigator && !tvWakeLock){
+      tvWakeLock = await navigator.wakeLock.request('screen');
+      tvWakeLock.addEventListener('release', function(){ tvWakeLock = null; });
+    }
+  }catch(e){ /* denied or unsupported — display may sleep, everything else works */ }
+}
+function tvWakeLockOff(){ try{ if (tvWakeLock) tvWakeLock.release(); }catch(e){} tvWakeLock = null; }
+
+function tvApply(on, opts){
+  opts = opts || {};
+  tvOn = !!on;
+  var b = document.body;
+  b.style.setProperty('--tvz', String(tvZoomFor(window.innerWidth, window.innerHeight)));
+  b.classList.toggle('tv', tvOn);
+  // Sam's rule: a TV never dims. Stand-down, dormant and night all stay bright.
+  b.classList.toggle('nodim', tvOn);
+  window.__noDim = tvOn;
+  var btn = document.getElementById('tvBtn');
+  if (btn){ btn.classList.toggle('on', tvOn); btn.textContent = tvOn ? '\uD83D\uDCFA TV ON' : '\uD83D\uDCFA TV'; }
+  if (window.__brainScale) window.__brainScale(tvOn);
+  setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 60);
+  if (tvOn) tvWakeLockOn(); else tvWakeLockOff();
+  if (!opts.skipStore){ try{ localStorage.setItem(TV_KEY, tvOn ? '1' : '0'); }catch(e){} }
+}
+
+function tvFullscreen(want){
+  try{
+    var el = document.documentElement;
+    if (want && !document.fullscreenElement){
+      (el.requestFullscreen || el.webkitRequestFullscreen || function(){}).call(el);
+    } else if (!want && document.fullscreenElement){
+      (document.exitFullscreen || document.webkitExitFullscreen || function(){}).call(document);
+    }
+  }catch(e){}
+}
+
+function toggleTv(){
+  var next = !tvOn;
+  tvApply(next);
+  tvFullscreen(next);          // must ride the same click to satisfy the browser
+  if (typeof log === 'function') log(next ? 'TV mode on \u2014 fullscreen, large scale' : 'TV mode off', 'hi');
+}
+
+function tvResumeGo(){
+  var o = document.getElementById('tvResume');
+  if (o) o.classList.remove('show');
+  tvApply(true);
+  tvFullscreen(true);
+}
+
+// Re-scale the zoom when the display or window geometry changes.
+addEventListener('resize', function(){
+  if (tvOn) document.body.style.setProperty('--tvz', String(tvZoomFor(window.innerWidth, window.innerHeight)));
+});
+
+// Esc drops fullscreen without silently lying about the button state.
+document.addEventListener('fullscreenchange', function(){
+  var btn = document.getElementById('tvBtn');
+  if (!document.fullscreenElement && tvOn && btn) btn.textContent = '\uD83D\uDCFA TV \u2014 tap';
+  else if (document.fullscreenElement && btn && tvOn) btn.textContent = '\uD83D\uDCFA TV ON';
+});
+
+// F toggles, but never while typing into Comms.
+addEventListener('keydown', function(e){
+  if (e.key !== 'f' && e.key !== 'F') return;
+  var a = document.activeElement;
+  if (a && (a.tagName === 'INPUT' || a.tagName === 'TEXTAREA' || a.isContentEditable)) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  toggleTv();
+});
+
+// Restore a remembered preference. Layout and sphere scale apply immediately;
+// only the fullscreen call has to wait for a tap.
+(function tvBoot(){
+  var want = false;
+  try{ want = localStorage.getItem(TV_KEY) === '1'; }catch(e){}
+  if (!want) return;
+  tvApply(true, {skipStore:true});
+  var o = document.getElementById('tvResume');
+  if (o) o.classList.add('show');
+})();
+
+</script>
+<div class="tvresume" id="tvResume">
+  <h3>TV Mode</h3>
+  <p>Fullscreen needs one tap to arm</p>
+  <button onclick="tvResumeGo()">▶ GO FULLSCREEN</button>
+  <small>F toggles — Esc exits</small>
+</div>
+
+<script>
+// Installable app. Scoped to this directory so it cannot claim any sibling app
+// sharing the same origin.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
