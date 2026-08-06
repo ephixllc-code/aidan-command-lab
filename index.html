@@ -603,6 +603,9 @@
 // for Aidan's switchboard (see command-router/aidan-switchboard-worker.js). Placeholder only.
 const AIDAN_SWITCHBOARD_URL = 'https://aidan-command-switchboard.privatelabellabsllc.workers.dev/dispatch';
 const DIRECT_SWITCHBOARD = AIDAN_SWITCHBOARD_URL;
+// Live read channel: the switchboard KV store is the primary source for brief / answers /
+// feed. GitHub repo files remain as a fallback if the switchboard is ever unreachable.
+const SWITCHBOARD_BASE = 'https://aidan-command-switchboard.privatelabellabsllc.workers.dev';
 // TODO(human): replace with Aidan's own Tasklet webhook URL (Consultant/general dispatch lane)
 // once that agent + webhook are provisioned. This is a non-functional placeholder.
 const DEFAULT_HOOK = 'https://webhooks.tasklet.ai/v1/public/webhook/a_7hg52h0hcemqas4c2gt2?token=526936fcdc1908e8799aa313d88a9ccd';
@@ -1021,7 +1024,9 @@ function checkFreshness(){
   if (stale) clog('Data pack is stale (' + ageTxt + ') — ask the agent to refresh the brief.', 'warn');
 }
 function loadBrief(){
-  return fetch('brief.json?v=' + Math.random(), { cache: 'no-store' })
+  return fetch(SWITCHBOARD_BASE + '/brief.json?v=' + Math.random(), { cache: 'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('sb ' + r.status); return r; })
+    .catch(function(){ return fetch('brief.json?v=' + Math.random(), { cache: 'no-store' }); })
     .then(r => r.json())
     .then(d => {
       if (d && d.brief && d.brief.length) {
@@ -2602,6 +2607,7 @@ function watchDelayFor(elapsed){
 // silently to the next source, and total failure just reschedules the next tick.
 function fetchAnswerSources(entry, cb){
   var rid = entry.requestId, sources = [];
+  if (rid) sources.push({ url: SWITCHBOARD_BASE + '/answers/' + encodeURIComponent(rid) + '?t=' + Date.now(), direct: true });
   if (rid) sources.push({ url: ANSWER_RAW_BASE + 'answers/' + encodeURIComponent(rid) + '.json?t=' + Date.now(), direct: true });
   sources.push({ url: ANSWER_RAW_BASE + 'answers.json?t=' + Date.now(), direct: false });
   sources.push({ url: 'answers.json?v=' + Date.now(), direct: false });
@@ -2988,7 +2994,9 @@ function commsMarkSeen(){
 }
 
 function loadFeed(){
-  return fetch('agent-feed.json?t=' + Date.now(), { cache:'no-store' })
+  return fetch(SWITCHBOARD_BASE + '/agent-feed.json?t=' + Date.now(), { cache:'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('sb ' + r.status); return r; })
+    .catch(function(){ return fetch('agent-feed.json?t=' + Date.now(), { cache:'no-store' }); })
     .then(function(r){ if (!r.ok) throw new Error('nofeed'); return r.json(); })
     .then(function(d){
       commsFeedEverLoaded = true;
