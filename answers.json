@@ -1,6 +1,6 @@
 {
   "request_id": "cmd_20261002_0700_et_status",
-  "status": "blocked",
-  "routed_to": "purchasing",
-  "summary": "Verified Oct 2, 2026 at 7:02 AM ET: no connections, uploads, or live supplier, material, PO, COA/SDS, QC, delivery, lead-time, production-commitment, or waiting-party records are available. The Sep 18 oil-pad file is research only and no RFQ was sent. Open items, QC blocks, delivery risks, exact dates, and waiting parties cannot be verified. No records changed. Owner: Aidan. Deadline: today. Next action: upload current purchasing, QC, delivery, and production exception exports."
+  "status": "completed",
+  "routed_to": "email",
+  "summary": "As of Oct 2 at 7:00 AM ET, no current substantive drafts. Act now: Enso Brands and Gilad requested an immediate FBA shipment, creative update, and call on Oct 1; no later Aidan reply was found. Ari at DEWPAD requested a firm pre-production sample date on Sep 29; none was supplied, though China pads were estimated near Oct 13. ActivePeptide invoice is due Oct 2 and Aidan already sent its PO. Heirloom's Oct 2 QA commitment is not owned by Aidan."
 }
