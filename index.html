@@ -1025,9 +1025,11 @@ function checkFreshness(){
 }
 function loadBrief(){
   return fetch(SWITCHBOARD_BASE + '/brief.json?v=' + Math.random(), { cache: 'no-store' })
-    .then(function(r){ if (!r.ok) throw new Error('sb ' + r.status); return r; })
-    .catch(function(){ return fetch('brief.json?v=' + Math.random(), { cache: 'no-store' }); })
-    .then(r => r.json())
+    .then(function(r){ if (!r.ok) throw new Error('sb ' + r.status); return r.json(); })
+    .catch(function(){
+      return fetch('brief.json?v=' + Math.random(), { cache: 'no-store' })
+        .then(function(r){ if (!r.ok) throw new Error('local ' + r.status); return r.json(); });
+    })
     .then(d => {
       if (d && d.brief && d.brief.length) {
         BRIEF = d.brief; NEXT = d.next || NEXT; BRIEF_DATE = d.date || ''; KB = d.kb || [];
