@@ -1,60 +1,122 @@
 {
-  "date": "PENDING",
-  "ts": null,
+  "date": "2026-10-02",
+  "ts": "2026-10-02T07:15:00-04:00",
   "brief": [
     {
-      "t": "PENDING — no live purchasing data source is connected yet. This is a placeholder brief item so the dashboard can render; replace with a real open-item feed once the Purchasing Agent is built and wired to PLL's PO/vendor tracker.",
-      "hot": false
+      "t": "START HERE: Have Aaron and Evelyn finish the Heirloom packaging compatibility check and send Hina the go or no go today.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 1: Heirloom primary packaging is waiting on Aaron and Evelyn's compatibility QA, promised for today. Hina is waiting to place the order; 0 days overdue. Send: Aaron and Evelyn, please finish the compatibility check today and send Hina the go or no go.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 2: DEWPAD still lacks a firm pre production sample date after Ari's September 29 request. Ari is waiting; no committed due date exists, and the China pads are only estimated near October 13. Send Ari: I am confirming the China pad tracking and firm pre production sample date now, and I will send both today.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 3: Enso's October 1 call was missed, and Gilad is still waiting for FBA shipment status and the creative asset ETA. Gilad has waited 1 calendar day. Send: Gilad, sorry we missed you. I am confirming the FBA shipment status and creative asset ETA and will update you today.",
+      "hot": true
     }
   ],
   "next": [
-    "PENDING — connect a real purchasing data source (open POs, vendor tracker) before this list is meaningful."
+    "Recommendation: Clear Heirloom QA first because today's go or no go can release the primary packaging order.",
+    "Scheduled: At least 2 explicit Outlook commitments are due today. The nearest deadlines are the Heirloom QA decision and ActivePeptide invoice on October 2.",
+    "Noise: Exact count unavailable because Outlook searches reached the 50 result limit and did not cover the full review window.",
+    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing replied but had no current operational records available. Email replied and identified the open threads used in this brief."
   ],
   "kb": [],
-  "signal": null,
-  "redflags": [],
+  "signal": "Heirloom packaging QA, DEWPAD sample timing, and Enso fulfillment follow through are today's clearest revenue and operational signals.",
+  "redflags": [
+    "Heirloom packaging ordering is blocked pending compatibility QA due today.",
+    "DEWPAD tracking and a firm sample date remain unverified.",
+    "CRM and WhatsApp were unavailable for this run."
+  ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "PENDING — no purchasing noise/backlog feed connected yet.",
+  "noise": "Exact count unavailable because Outlook searches reached the 50 result limit and full window coverage was incomplete.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "PENDING — no purchasing task source connected yet.",
-      "tasks": [],
-      "notes": "Placeholder profile. Populate once Aidan's Purchasing Agent and CRM Agent are live."
+      "top_task": "Get the Heirloom packaging QA decision today.",
+      "tasks": [
+        "Obtain Heirloom packaging QA go or no go",
+        "Confirm DEWPAD tracking and firm sample date",
+        "Return Enso's FBA shipment and creative asset status"
+      ],
+      "notes": "CRM and WhatsApp unavailable. Purchasing had no current records; Email returned open-thread findings."
     }
   },
   "revenueActions": [
     {
-      "title": "PENDING — placeholder purchasing action",
-      "why": "No verified purchasing action data is available yet.",
+      "title": "Release the Heirloom packaging decision",
+      "why": "Hina is waiting to order primary packaging, and QA was promised today.",
       "est_value": "UNVERIFIED",
-      "next_step": "PENDING",
+      "next_step": "Have Aaron and Evelyn complete compatibility QA and send the go or no go today.",
       "owner": "Aidan",
-      "timing": "PENDING",
-      "value": "PENDING"
+      "timing": "Today",
+      "value": "Production readiness"
+    },
+    {
+      "title": "Lock DEWPAD sample timing",
+      "why": "Ari requested a firm pre production sample date and only an estimated pad arrival is available.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Confirm China pad tracking and provide a firm sample date today.",
+      "owner": "Aidan",
+      "timing": "Today",
+      "value": "Revenue opportunity advancement"
+    },
+    {
+      "title": "Recover Enso follow through",
+      "why": "Gilad is waiting after a missed call for FBA shipment status and creative asset timing.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Confirm both statuses and update Gilad today.",
+      "owner": "Aidan",
+      "timing": "Today",
+      "value": "Customer commitment protection"
     }
   ],
   "pipelineStat": {
-    "note": "PLACEHOLDER — purchasing metrics below are intentionally empty/pending. Do not treat as real figures.",
-    "open_purchase_orders": "PENDING",
-    "open_purchase_orders_value": "PENDING",
-    "long_lead_items": [],
+    "note": "Verified from Outlook and the Email lane only. CRM and WhatsApp were unavailable.",
+    "open_purchase_orders": "UNVERIFIED",
+    "open_purchase_orders_value": "UNVERIFIED",
+    "long_lead_items": [
+      "DEWPAD China pads, estimated near October 13; tracking unverified",
+      "ActivePeptide shipment promised by October 8"
+    ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
-    "suppliers_awaiting_response": "PENDING",
-    "last_verified": null
+    "suppliers_awaiting_response": "UNVERIFIED",
+    "last_verified": "2026-10-02T07:15:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "PENDING — placeholder top task",
-      "why": "No live purchasing task data connected yet.",
+      "title": "Get Heirloom packaging QA decision",
+      "why": "Primary packaging ordering is waiting on today's compatibility decision.",
       "owner": "Aidan",
-      "due": "PENDING",
-      "priority": "unknown",
-      "revenue": "N/A"
+      "due": "Today",
+      "priority": "critical",
+      "revenue": "Production readiness"
+    },
+    {
+      "rank": 2,
+      "title": "Give DEWPAD a firm sample date",
+      "why": "Critical pad tracking and the sample date remain unverified.",
+      "owner": "Aidan",
+      "due": "Today",
+      "priority": "high",
+      "revenue": "Opportunity advancement"
+    },
+    {
+      "rank": 3,
+      "title": "Update Enso on FBA and creative assets",
+      "why": "A missed call and unanswered status questions are one day old.",
+      "owner": "Aidan",
+      "due": "Today",
+      "priority": "high",
+      "revenue": "Customer commitment protection"
     }
   ],
   "purchasingIntelligence": null
