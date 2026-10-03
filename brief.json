@@ -1,80 +1,80 @@
 {
-  "date": "2026-10-02",
-  "ts": "2026-10-02T07:15:00-04:00",
+  "date": "2026-10-03",
+  "ts": "2026-10-03T07:15:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Have Aaron and Evelyn finish the Heirloom packaging compatibility check and send Hina the go or no go today.",
+      "t": "START HERE: Pull the Polo 4PL invoice for container EMCU8614105, verify whether it has been paid, and send the receipt so clearance can begin.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Heirloom primary packaging is waiting on Aaron and Evelyn's compatibility QA, promised for today. Hina is waiting to place the order; 0 days overdue. Send: Aaron and Evelyn, please finish the compatibility check today and send Hina the go or no go.",
+      "t": "ACT NOW 1: Container EMCU8614105 is blocked from duties, tax payment, and release until PLL confirms the Polo 4PL invoice payment and sends the receipt. 4PL Accounting is waiting; 0 days overdue by a stated deadline. Send: Erik, I am confirming the invoice payment and will send the receipt. Please confirm clearance and the pickup ETA once duties are paid.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: DEWPAD still lacks a firm pre production sample date after Ari's September 29 request. Ari is waiting; no committed due date exists, and the China pads are only estimated near October 13. Send Ari: I am confirming the China pad tracking and firm pre production sample date now, and I will send both today.",
+      "t": "ACT NOW 2: Kenna's Et-VC package was reported delivered to PLL on September 16, but forwarding status remains unanswered after the October 2 follow-up. Mel is waiting; 0 days overdue by a stated deadline and 17 calendar days have elapsed since reported arrival. Send: Mel, I am locating the Et-VC package and will send the forwarding tracking and status today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Enso's October 1 call was missed, and Gilad is still waiting for FBA shipment status and the creative asset ETA. Gilad has waited 1 calendar day. Send: Gilad, sorry we missed you. I am confirming the FBA shipment status and creative asset ETA and will update you today.",
+      "t": "ACT NOW 3: FSS order 162946 is paid, and the supplier offered to expedite it Monday, October 5, but no ship or delivery date is confirmed. PLL is waiting on the raw material; 0 days overdue. Send: Phillip, please confirm Monday's expedited dispatch and send tracking.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Clear Heirloom QA first because today's go or no go can release the primary packaging order.",
-    "Scheduled: At least 2 explicit Outlook commitments are due today. The nearest deadlines are the Heirloom QA decision and ActivePeptide invoice on October 2.",
-    "Noise: Exact count unavailable because Outlook searches reached the 50 result limit and did not cover the full review window.",
-    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing replied but had no current operational records available. Email replied and identified the open threads used in this brief."
+    "Recommendation: Resolve the Polo 4PL invoice first because the container cannot advance to clearance or release without the payment receipt.",
+    "Scheduled: 4 dated items surfaced. The nearest is a Sam-owned agreement reply due October 4; the next Aidan-side supplier milestone is the FSS expedite on October 5.",
+    "Noise: 71 unique Outlook items surfaced and 37 unread hits were returned; the exact noise count is unavailable because Outlook did not return a total and results include routine and sent-thread items.",
+    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing accepted the request but did not reply within 10 minutes. Email replied with no substantive drafts or overdue dated commitments."
   ],
   "kb": [],
-  "signal": "Heirloom packaging QA, DEWPAD sample timing, and Enso fulfillment follow through are today's clearest revenue and operational signals.",
+  "signal": "Polo 4PL container release, Kenna package forwarding, and FSS raw-material dispatch are today's clearest operational and revenue-protection signals.",
   "redflags": [
-    "Heirloom packaging ordering is blocked pending compatibility QA due today.",
-    "DEWPAD tracking and a firm sample date remain unverified.",
+    "Container EMCU8614105 cannot proceed to clearance and release until invoice payment is confirmed and the receipt is sent.",
+    "The Et-VC package has lacked verified forwarding status for 17 days since reported delivery.",
     "CRM and WhatsApp were unavailable for this run."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "Exact count unavailable because Outlook searches reached the 50 result limit and full window coverage was incomplete.",
+  "noise": "Exact noise count unavailable. Outlook surfaced 71 unique items and 37 unread hits, including routine and sent-thread items.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Get the Heirloom packaging QA decision today.",
+      "top_task": "Verify the Polo 4PL invoice payment and release container EMCU8614105.",
       "tasks": [
-        "Obtain Heirloom packaging QA go or no go",
-        "Confirm DEWPAD tracking and firm sample date",
-        "Return Enso's FBA shipment and creative asset status"
+        "Confirm Polo 4PL payment and send the receipt",
+        "Locate and forward the Kenna Et-VC package",
+        "Confirm Monday's FSS expedited dispatch"
       ],
-      "notes": "CRM and WhatsApp unavailable. Purchasing had no current records; Email returned open-thread findings."
+      "notes": "CRM and WhatsApp unavailable. Purchasing did not reply within 10 minutes; Email returned no overdue dated commitment."
     }
   },
   "revenueActions": [
     {
-      "title": "Release the Heirloom packaging decision",
-      "why": "Hina is waiting to order primary packaging, and QA was promised today.",
+      "title": "Release container EMCU8614105",
+      "why": "The shipment cannot proceed to duties, clearance, and release until payment is confirmed and the receipt is sent.",
       "est_value": "UNVERIFIED",
-      "next_step": "Have Aaron and Evelyn complete compatibility QA and send the go or no go today.",
+      "next_step": "Verify the invoice payment and send the receipt to Polo 4PL.",
       "owner": "Aidan",
       "timing": "Today",
-      "value": "Production readiness"
+      "value": "Supply continuity"
     },
     {
-      "title": "Lock DEWPAD sample timing",
-      "why": "Ari requested a firm pre production sample date and only an estimated pad arrival is available.",
+      "title": "Recover the Kenna package handoff",
+      "why": "The Et-VC package was reported delivered September 16, and forwarding remains unverified.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm China pad tracking and provide a firm sample date today.",
-      "owner": "Aidan",
-      "timing": "Today",
-      "value": "Revenue opportunity advancement"
-    },
-    {
-      "title": "Recover Enso follow through",
-      "why": "Gilad is waiting after a missed call for FBA shipment status and creative asset timing.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Confirm both statuses and update Gilad today.",
+      "next_step": "Locate the package and provide forwarding tracking and status.",
       "owner": "Aidan",
       "timing": "Today",
       "value": "Customer commitment protection"
+    },
+    {
+      "title": "Lock the FSS raw-material dispatch",
+      "why": "The paid order is supposed to receive expedited handling Monday, but shipment timing is not confirmed.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Confirm Monday dispatch and obtain tracking.",
+      "owner": "Aidan",
+      "timing": "By Monday, October 5",
+      "value": "Production continuity"
     }
   ],
   "pipelineStat": {
@@ -82,41 +82,41 @@
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "DEWPAD China pads, estimated near October 13; tracking unverified",
-      "ActivePeptide shipment promised by October 8"
+      "FSS order 162946, expedited dispatch expected October 5; delivery date unverified",
+      "ActivePeptide PO, shipment promised October 6; tracking pending"
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-02T07:15:00-04:00"
+    "last_verified": "2026-10-03T07:15:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Get Heirloom packaging QA decision",
-      "why": "Primary packaging ordering is waiting on today's compatibility decision.",
+      "title": "Release container EMCU8614105",
+      "why": "Clearance cannot proceed without verified payment and the receipt.",
       "owner": "Aidan",
       "due": "Today",
       "priority": "critical",
-      "revenue": "Production readiness"
+      "revenue": "Supply continuity"
     },
     {
       "rank": 2,
-      "title": "Give DEWPAD a firm sample date",
-      "why": "Critical pad tracking and the sample date remain unverified.",
-      "owner": "Aidan",
-      "due": "Today",
-      "priority": "high",
-      "revenue": "Opportunity advancement"
-    },
-    {
-      "rank": 3,
-      "title": "Update Enso on FBA and creative assets",
-      "why": "A missed call and unanswered status questions are one day old.",
+      "title": "Forward the Kenna Et-VC package",
+      "why": "Forwarding remains unverified 17 days after reported delivery.",
       "owner": "Aidan",
       "due": "Today",
       "priority": "high",
       "revenue": "Customer commitment protection"
+    },
+    {
+      "rank": 3,
+      "title": "Confirm FSS expedited dispatch",
+      "why": "The paid raw-material order has no confirmed delivery date.",
+      "owner": "Aidan",
+      "due": "Monday, October 5",
+      "priority": "high",
+      "revenue": "Production continuity"
     }
   ],
   "purchasingIntelligence": null
