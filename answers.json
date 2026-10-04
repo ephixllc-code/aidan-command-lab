@@ -1,6 +1,6 @@
 {
   "request_id": "cmd_20261004_0700_et_status",
-  "status": "blocked",
-  "routed_to": "purchasing",
-  "summary": "Verified Oct 4, 2026 at 7:01 AM ET: no current supplier, COA/SDS, raw-material, packaging, inventory, lead-time, production, or sold-job records are available. The Sep 18 oil-pad file is research only and no RFQ was sent. Open items, shortages, owners, due dates, and threats cannot be verified. Owner: Aidan. Due today. Next action: upload the current purchasing, document, inventory, and production exception exports. No customer pricing was used."
+  "status": "completed",
+  "routed_to": "email",
+  "summary": "As of Oct 4, 2026 at 7:00 AM ET, no substantive drafts await Aidan and no qualifying email thread is past a stated due date. Weston's Oct 2 facial-pad sample follow-up remains open but has no deadline, so it is not overdue. ActivePeptide's paid order ships Oct 6. Peter Clarkson owes Sam an agreement reply Sunday evening, Oct 4; Sam owns it and the deadline is still future. Aidan action: none."
 }
