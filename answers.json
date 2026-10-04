@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261003_0700_et_status",
-  "status": "completed",
-  "routed_to": "email",
-  "summary": "No substantive drafts or inbound replies await Aidan, and no dated commitments are overdue. ActivePeptide confirmed the paid PO ships Tuesday, Oct 6. The Kobo meeting is Tuesday, Oct 6 at 11:00 AM. Bella at Weston still owes an undated response to Aidan's Oct 2 request for a completion photo and confirmation of 30 facial-pad samples per material at 70 mm. Peter Clarkson owes Sam an agreement reply by Sunday, Oct 4; Sam owns that item."
+  "request_id": "cmd_20261004_0700_et_status",
+  "status": "blocked",
+  "routed_to": "purchasing",
+  "summary": "Verified Oct 4, 2026 at 7:01 AM ET: no current supplier, COA/SDS, raw-material, packaging, inventory, lead-time, production, or sold-job records are available. The Sep 18 oil-pad file is research only and no RFQ was sent. Open items, shortages, owners, due dates, and threats cannot be verified. Owner: Aidan. Due today. Next action: upload the current purchasing, document, inventory, and production exception exports. No customer pricing was used."
 }
