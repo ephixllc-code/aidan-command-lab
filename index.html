@@ -1024,13 +1024,13 @@ function checkFreshness(){
   if (stale) clog('Data pack is stale (' + ageTxt + ') — ask the agent to refresh the brief.', 'warn');
 }
 function loadBrief(){
-  return fetch(SWITCHBOARD_BASE + '/brief.json?v=' + Math.random(), { cache: 'no-store' })
-    .then(function(r){ if (!r.ok) throw new Error('sb ' + r.status); return r.json(); })
-    .then(function(d){ if (!d || !Array.isArray(d.brief)) throw new Error('sb invalid brief schema'); return d; })
+  return fetch('brief.json?v=' + Math.random(), { cache: 'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error('local ' + r.status); return r.json(); })
+    .then(function(d){ if (!d || !Array.isArray(d.brief)) throw new Error('local invalid brief schema'); return d; })
     .catch(function(){
-      return fetch('brief.json?v=' + Math.random(), { cache: 'no-store' })
-        .then(function(r){ if (!r.ok) throw new Error('local ' + r.status); return r.json(); })
-        .then(function(d){ if (!d || !Array.isArray(d.brief)) throw new Error('local invalid brief schema'); return d; });
+      return fetch(SWITCHBOARD_BASE + '/brief.json?v=' + Math.random(), { cache: 'no-store' })
+        .then(function(r){ if (!r.ok) throw new Error('sb ' + r.status); return r.json(); })
+        .then(function(d){ if (!d || !Array.isArray(d.brief)) throw new Error('sb invalid brief schema'); return d; });
     })
     .then(d => {
       if (d && d.brief && d.brief.length) {
