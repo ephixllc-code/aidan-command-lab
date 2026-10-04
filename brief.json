@@ -1,41 +1,41 @@
 {
-  "date": "2026-10-03",
-  "ts": "2026-10-03T07:15:00-04:00",
+  "date": "2026-10-04",
+  "ts": "2026-10-04T07:07:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Pull the Polo 4PL invoice for container EMCU8614105, verify whether it has been paid, and send the receipt so clearance can begin.",
+      "t": "START HERE: Pull the Polo 4PL invoice for container EMCU8614105, verify whether it was paid, and send the receipt so clearance can begin.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Container EMCU8614105 is blocked from duties, tax payment, and release until PLL confirms the Polo 4PL invoice payment and sends the receipt. 4PL Accounting is waiting; 0 days overdue by a stated deadline. Send: Erik, I am confirming the invoice payment and will send the receipt. Please confirm clearance and the pickup ETA once duties are paid.",
+      "t": "ACT NOW 1: Clearance and release for container EMCU8614105 remain unverified because PLL has not confirmed the Polo 4PL invoice payment or receipt in the available sources. 4PL Accounting is waiting; no stated deadline, and the blocker has remained open 1 calendar day since it surfaced. Send: Erik, I am confirming the invoice payment and will send the receipt. Please confirm clearance and the pickup ETA once duties are paid.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Kenna's Et-VC package was reported delivered to PLL on September 16, but forwarding status remains unanswered after the October 2 follow-up. Mel is waiting; 0 days overdue by a stated deadline and 17 calendar days have elapsed since reported arrival. Send: Mel, I am locating the Et-VC package and will send the forwarding tracking and status today.",
+      "t": "ACT NOW 2: Kenna's Et-VC package forwarding remains unverified 18 calendar days after its reported September 16 delivery. Mel is waiting; no stated deadline. Send: Mel, I am locating the Et-VC package and will send the forwarding tracking and status today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: FSS order 162946 is paid, and the supplier offered to expedite it Monday, October 5, but no ship or delivery date is confirmed. PLL is waiting on the raw material; 0 days overdue. Send: Phillip, please confirm Monday's expedited dispatch and send tracking.",
+      "t": "ACT NOW 3: FSS order 162946 is paid and expected to receive expedited handling tomorrow, October 5, but dispatch and tracking remain unverified. PLL is waiting on the raw material; 0 days overdue. Send: Phillip, please confirm tomorrow's expedited dispatch and send tracking.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve the Polo 4PL invoice first because the container cannot advance to clearance or release without the payment receipt.",
-    "Scheduled: 4 dated items surfaced. The nearest is a Sam-owned agreement reply due October 4; the next Aidan-side supplier milestone is the FSS expedite on October 5.",
-    "Noise: 71 unique Outlook items surfaced and 37 unread hits were returned; the exact noise count is unavailable because Outlook did not return a total and results include routine and sent-thread items.",
-    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing accepted the request but did not reply within 10 minutes. Email replied with no substantive drafts or overdue dated commitments."
+    "Recommendation: Resolve the Polo 4PL payment receipt first because the container cannot advance to clearance or release without it.",
+    "Scheduled: At least 2 supplier milestones are dated. The nearest is the FSS expedite tomorrow, October 5; ActivePeptide is scheduled to ship October 6.",
+    "Noise: 12 exact-window Outlook items surfaced, none urgent; exact mailbox totals are unavailable.",
+    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing replied that it has no current operational records to verify open supplier or production risks. Email reported no substantive drafts or qualifying overdue threads."
   ],
   "kb": [],
-  "signal": "Polo 4PL container release, Kenna package forwarding, and FSS raw-material dispatch are today's clearest operational and revenue-protection signals.",
+  "signal": "Polo 4PL container release, Kenna package forwarding, and FSS raw-material dispatch remain the clearest operational and revenue-protection signals.",
   "redflags": [
-    "Container EMCU8614105 cannot proceed to clearance and release until invoice payment is confirmed and the receipt is sent.",
-    "The Et-VC package has lacked verified forwarding status for 17 days since reported delivery.",
+    "Container EMCU8614105 cannot proceed to clearance and release until payment is confirmed and the receipt is sent.",
+    "The Et-VC package has lacked verified forwarding status for 18 days since reported delivery.",
     "CRM and WhatsApp were unavailable for this run."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "Exact noise count unavailable. Outlook surfaced 71 unique items and 37 unread hits, including routine and sent-thread items.",
+  "noise": "12 exact-window Outlook items surfaced, none urgent. Exact mailbox totals are unavailable because Outlook returned capped results with no total.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
@@ -43,9 +43,9 @@
       "tasks": [
         "Confirm Polo 4PL payment and send the receipt",
         "Locate and forward the Kenna Et-VC package",
-        "Confirm Monday's FSS expedited dispatch"
+        "Confirm the October 5 FSS expedited dispatch"
       ],
-      "notes": "CRM and WhatsApp unavailable. Purchasing did not reply within 10 minutes; Email returned no overdue dated commitment."
+      "notes": "CRM and WhatsApp unavailable. Purchasing lacks current operational records. Email found no qualifying overdue thread."
     }
   },
   "revenueActions": [
@@ -69,26 +69,27 @@
     },
     {
       "title": "Lock the FSS raw-material dispatch",
-      "why": "The paid order is supposed to receive expedited handling Monday, but shipment timing is not confirmed.",
+      "why": "The paid order is expected to receive expedited handling October 5, but dispatch and tracking are unverified.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm Monday dispatch and obtain tracking.",
+      "next_step": "Confirm the October 5 dispatch and obtain tracking.",
       "owner": "Aidan",
       "timing": "By Monday, October 5",
       "value": "Production continuity"
     }
   ],
   "pipelineStat": {
-    "note": "Verified from Outlook and the Email lane only. CRM and WhatsApp were unavailable.",
+    "note": "Verified from Outlook and the agent lanes only. CRM and WhatsApp were unavailable.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "FSS order 162946, expedited dispatch expected October 5; delivery date unverified",
-      "ActivePeptide PO, shipment promised October 6; tracking pending"
+      "FSS order 162946, expedited dispatch expected October 5; tracking unverified",
+      "ActivePeptide paid order, shipment promised October 6; tracking pending",
+      "Jedwards order W01276121, released to warehouse; ship date unverified"
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-03T07:15:00-04:00"
+    "last_verified": "2026-10-04T07:07:00-04:00"
   },
   "topTasks": [
     {
@@ -103,7 +104,7 @@
     {
       "rank": 2,
       "title": "Forward the Kenna Et-VC package",
-      "why": "Forwarding remains unverified 17 days after reported delivery.",
+      "why": "Forwarding remains unverified 18 days after reported delivery.",
       "owner": "Aidan",
       "due": "Today",
       "priority": "high",
@@ -112,7 +113,7 @@
     {
       "rank": 3,
       "title": "Confirm FSS expedited dispatch",
-      "why": "The paid raw-material order has no confirmed delivery date.",
+      "why": "The paid raw-material order still lacks verified dispatch and tracking.",
       "owner": "Aidan",
       "due": "Monday, October 5",
       "priority": "high",
