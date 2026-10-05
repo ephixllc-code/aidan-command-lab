@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-04",
-  "ts": "2026-10-04T07:07:00-04:00",
+  "date": "2026-10-05",
+  "ts": "2026-10-05T07:10:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Pull the Polo 4PL invoice for container EMCU8614105, verify whether it was paid, and send the receipt so clearance can begin.",
+      "t": "START HERE: Pull the Polo 4PL invoice for container EMCU8614105, verify payment status, and send Erik the receipt so clearance can begin.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Clearance and release for container EMCU8614105 remain unverified because PLL has not confirmed the Polo 4PL invoice payment or receipt in the available sources. 4PL Accounting is waiting; no stated deadline, and the blocker has remained open 1 calendar day since it surfaced. Send: Erik, I am confirming the invoice payment and will send the receipt. Please confirm clearance and the pickup ETA once duties are paid.",
+      "t": "ACT NOW 1: Clearance and release for container EMCU8614105 remain blocked because payment confirmation and the receipt are still unverified. Erik and 4PL Accounting are waiting; no stated deadline, and the blocker has remained open 3 calendar days since October 2. Send: Erik, I am confirming the invoice payment now and will send the receipt. Please confirm clearance and the pickup ETA once duties are paid.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Kenna's Et-VC package forwarding remains unverified 18 calendar days after its reported September 16 delivery. Mel is waiting; no stated deadline. Send: Mel, I am locating the Et-VC package and will send the forwarding tracking and status today.",
+      "t": "ACT NOW 2: FSS order 162946 was paid and the supplier said it could be expedited today, October 5, but dispatch and tracking remain unverified. PLL is waiting on the raw material; 0 days overdue. Send: Phillip, please confirm today's expedited dispatch and send tracking.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: FSS order 162946 is paid and expected to receive expedited handling tomorrow, October 5, but dispatch and tracking remain unverified. PLL is waiting on the raw material; 0 days overdue. Send: Phillip, please confirm tomorrow's expedited dispatch and send tracking.",
+      "t": "ACT NOW 3: Kenna's Et-VC package forwarding remains unverified 19 calendar days after its reported September 16 delivery. Mel is waiting; no stated deadline. Send: Mel, I am locating the Et-VC package and will send the forwarding tracking and status today.",
       "hot": true
     }
   ],
   "next": [
     "Recommendation: Resolve the Polo 4PL payment receipt first because the container cannot advance to clearance or release without it.",
-    "Scheduled: At least 2 supplier milestones are dated. The nearest is the FSS expedite tomorrow, October 5; ActivePeptide is scheduled to ship October 6.",
-    "Noise: 12 exact-window Outlook items surfaced, none urgent; exact mailbox totals are unavailable.",
-    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing replied that it has no current operational records to verify open supplier or production risks. Email reported no substantive drafts or qualifying overdue threads."
+    "Scheduled: 3 email-derived milestones. The nearest is the signature-required HyloGlo HA delivery today between 10:30 AM and 2:30 PM; assign someone to receive PO-2026-0023. ActivePeptide ships October 6.",
+    "Noise: 12 exact-window Outlook items, none urgent.",
+    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing did not reply within 10 minutes. Email reported no substantive drafts; its only overdue commitment belongs to Sam, not Aidan."
   ],
   "kb": [],
-  "signal": "Polo 4PL container release, Kenna package forwarding, and FSS raw-material dispatch remain the clearest operational and revenue-protection signals.",
+  "signal": "Polo 4PL container release, FSS raw-material dispatch, and Kenna package forwarding remain the clearest operational and revenue-protection signals.",
   "redflags": [
     "Container EMCU8614105 cannot proceed to clearance and release until payment is confirmed and the receipt is sent.",
-    "The Et-VC package has lacked verified forwarding status for 18 days since reported delivery.",
+    "FSS order 162946 reached its promised expedite date without verified dispatch or tracking.",
     "CRM and WhatsApp were unavailable for this run."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "12 exact-window Outlook items surfaced, none urgent. Exact mailbox totals are unavailable because Outlook returned capped results with no total.",
+  "noise": "14 unique inbound Outlook messages arrived in the exact window; 12 were noise. Eleven of the 14 were unread.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
       "top_task": "Verify the Polo 4PL invoice payment and release container EMCU8614105.",
       "tasks": [
         "Confirm Polo 4PL payment and send the receipt",
-        "Locate and forward the Kenna Et-VC package",
-        "Confirm the October 5 FSS expedited dispatch"
+        "Confirm today's FSS expedited dispatch",
+        "Locate and forward the Kenna Et-VC package"
       ],
-      "notes": "CRM and WhatsApp unavailable. Purchasing lacks current operational records. Email found no qualifying overdue thread."
+      "notes": "CRM and WhatsApp unavailable. Purchasing did not reply within 10 minutes. Email found no Aidan-owned overdue thread."
     }
   },
   "revenueActions": [
@@ -53,43 +53,43 @@
       "title": "Release container EMCU8614105",
       "why": "The shipment cannot proceed to duties, clearance, and release until payment is confirmed and the receipt is sent.",
       "est_value": "UNVERIFIED",
-      "next_step": "Verify the invoice payment and send the receipt to Polo 4PL.",
+      "next_step": "Verify the invoice payment and send the receipt to Erik at Polo 4PL.",
       "owner": "Aidan",
       "timing": "Today",
       "value": "Supply continuity"
     },
     {
+      "title": "Lock the FSS raw-material dispatch",
+      "why": "The paid order reached its promised expedite date today, but dispatch and tracking are unverified.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Confirm today's dispatch with Phillip and obtain tracking.",
+      "owner": "Aidan",
+      "timing": "Today, October 5",
+      "value": "Production continuity"
+    },
+    {
       "title": "Recover the Kenna package handoff",
-      "why": "The Et-VC package was reported delivered September 16, and forwarding remains unverified.",
+      "why": "The Et-VC package was reported delivered September 16, and forwarding remains unverified 19 days later.",
       "est_value": "UNVERIFIED",
       "next_step": "Locate the package and provide forwarding tracking and status.",
       "owner": "Aidan",
       "timing": "Today",
       "value": "Customer commitment protection"
-    },
-    {
-      "title": "Lock the FSS raw-material dispatch",
-      "why": "The paid order is expected to receive expedited handling October 5, but dispatch and tracking are unverified.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Confirm the October 5 dispatch and obtain tracking.",
-      "owner": "Aidan",
-      "timing": "By Monday, October 5",
-      "value": "Production continuity"
     }
   ],
   "pipelineStat": {
-    "note": "Verified from Outlook and the agent lanes only. CRM and WhatsApp were unavailable.",
+    "note": "Verified from Outlook and the Email lane only. CRM and WhatsApp were unavailable, and Purchasing did not reply within 10 minutes.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "FSS order 162946, expedited dispatch expected October 5; tracking unverified",
+      "FSS order 162946, expedited dispatch due October 5; tracking unverified",
       "ActivePeptide paid order, shipment promised October 6; tracking pending",
-      "Jedwards order W01276121, released to warehouse; ship date unverified"
+      "DEWPAD China pads expected October 6 through October 13; arrival unverified"
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-04T07:07:00-04:00"
+    "last_verified": "2026-10-05T07:10:00-04:00"
   },
   "topTasks": [
     {
@@ -103,21 +103,21 @@
     },
     {
       "rank": 2,
+      "title": "Confirm FSS expedited dispatch",
+      "why": "The paid raw-material order reached today's expedite date without verified dispatch or tracking.",
+      "owner": "Aidan",
+      "due": "Today, October 5",
+      "priority": "high",
+      "revenue": "Production continuity"
+    },
+    {
+      "rank": 3,
       "title": "Forward the Kenna Et-VC package",
-      "why": "Forwarding remains unverified 18 days after reported delivery.",
+      "why": "Forwarding remains unverified 19 days after reported delivery.",
       "owner": "Aidan",
       "due": "Today",
       "priority": "high",
       "revenue": "Customer commitment protection"
-    },
-    {
-      "rank": 3,
-      "title": "Confirm FSS expedited dispatch",
-      "why": "The paid raw-material order still lacks verified dispatch and tracking.",
-      "owner": "Aidan",
-      "due": "Monday, October 5",
-      "priority": "high",
-      "revenue": "Production continuity"
     }
   ],
   "purchasingIntelligence": null
