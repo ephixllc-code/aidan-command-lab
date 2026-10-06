@@ -1,119 +1,119 @@
 {
-  "date": "2026-10-05",
-  "ts": "2026-10-05T07:10:00-04:00",
+  "date": "2026-10-06",
+  "ts": "2026-10-06T07:11:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Pull the Polo 4PL invoice for container EMCU8614105, verify payment status, and send Erik the receipt so clearance can begin.",
+      "t": "START HERE: Go to the bank, resolve the Polo exam-fee payment method for container EMCU8614105, then send Erik proof of payment and obtain release confirmation.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Clearance and release for container EMCU8614105 remain blocked because payment confirmation and the receipt are still unverified. Erik and 4PL Accounting are waiting; no stated deadline, and the blocker has remained open 3 calendar days since October 2. Send: Erik, I am confirming the invoice payment now and will send the receipt. Please confirm clearance and the pickup ETA once duties are paid.",
+      "t": "ACT NOW 1: Polo and terminal fees for container EMCU8614105 must be cleared through today, October 6. No payment receipt or release confirmation is in Outlook. Erik, Polo Accounting, and the terminal/broker are waiting; 0 days overdue. Send: Erik, I am completing payment this morning. Please confirm whether the $602.91 exam charge belongs on the revised invoice or should be paid directly, then confirm clearance and release when you receive the receipt.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: FSS order 162946 was paid and the supplier said it could be expedited today, October 5, but dispatch and tracking remain unverified. PLL is waiting on the raw material; 0 days overdue. Send: Phillip, please confirm today's expedited dispatch and send tracking.",
+      "t": "ACT NOW 2: Ecoori can arrange only a 50g Natori PDRN sample and is waiting for the client profile, launch timing, dosage, and demand details. Aidan requested 300 to 500g for an R&D pilot tied to a large prospect; no deadline is stated. Send: Jolene, this is for an R&D pilot for a large prospective client. I will confirm launch timing, dosage, demand, and the minimum quantity needed for the pilot today. Please also confirm whether you can supply more than 50g.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Kenna's Et-VC package forwarding remains unverified 19 calendar days after its reported September 16 delivery. Mel is waiting; no stated deadline. Send: Mel, I am locating the Et-VC package and will send the forwarding tracking and status today.",
+      "t": "ACT NOW 3: Mark Scafolla asked yesterday when he would receive the promised R&D-and-fill proposal and how kickoff works. No reply was found, making the commitment 1 calendar day overdue. Mark is waiting. Send: Mark, I am confirming the proposal delivery timing and kickoff steps with Sam this morning and will give you a firm update today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve the Polo 4PL payment receipt first because the container cannot advance to clearance or release without it.",
-    "Scheduled: 3 email-derived milestones. The nearest is the signature-required HyloGlo HA delivery today between 10:30 AM and 2:30 PM; assign someone to receive PO-2026-0023. ActivePeptide ships October 6.",
-    "Noise: 12 exact-window Outlook items, none urgent.",
-    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing did not reply within 10 minutes. Email reported no substantive drafts; its only overdue commitment belongs to Sam, not Aidan."
+    "Recommendation: Resolve the Polo payment and receipt first because today is the stated fee-clearance date and the container still cannot advance.",
+    "Scheduled: At least 3 email-derived milestones. ActivePeptide shipment is promised today, and the nearest timed item is the Kobo meeting at 11:00 AM; the Teams invite was still missing.",
+    "Noise: 42 exact-window Outlook messages, none urgent.",
+    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing had no source records to verify its assigned items. Email reported no substantive drafts. Calendar was not scanned."
   ],
   "kb": [],
-  "signal": "Polo 4PL container release, FSS raw-material dispatch, and Kenna package forwarding remain the clearest operational and revenue-protection signals.",
+  "signal": "Polo container release is the immediate logistics risk; the Natori PDRN sample advances a large prospective client; Mark's promised proposal needs a firm handoff to Sam.",
   "redflags": [
-    "Container EMCU8614105 cannot proceed to clearance and release until payment is confirmed and the receipt is sent.",
-    "FSS order 162946 reached its promised expedite date without verified dispatch or tracking.",
+    "Container EMCU8614105 has fees due through October 6 but no verified payment receipt or release confirmation.",
+    "Customer proposal pricing is Sam's lane; Aidan should obtain timing and kickoff direction rather than set pricing.",
     "CRM and WhatsApp were unavailable for this run."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "14 unique inbound Outlook messages arrived in the exact window; 12 were noise. Eleven of the 14 were unread.",
+  "noise": "64 unique inbound Outlook messages arrived in the exact window; 44 were unread and 42 were noise.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Verify the Polo 4PL invoice payment and release container EMCU8614105.",
+      "top_task": "Pay the Polo charges and release container EMCU8614105.",
       "tasks": [
-        "Confirm Polo 4PL payment and send the receipt",
-        "Confirm today's FSS expedited dispatch",
-        "Locate and forward the Kenna Et-VC package"
+        "Complete Polo payment and send the receipt",
+        "Confirm the Natori PDRN pilot requirements and sample quantity",
+        "Get Sam's proposal timing and update Mark"
       ],
-      "notes": "CRM and WhatsApp unavailable. Purchasing did not reply within 10 minutes. Email found no Aidan-owned overdue thread."
+      "notes": "FSS order 162946 shipped under FedEx tracking 878182106058. Kenna Et-VC forwarding remains open 20 days after reported arrival. ActivePeptide shipment is promised today but tracking is unverified."
     }
   },
   "revenueActions": [
     {
       "title": "Release container EMCU8614105",
-      "why": "The shipment cannot proceed to duties, clearance, and release until payment is confirmed and the receipt is sent.",
+      "why": "Payment and the receipt are required before duties, clearance, and release can advance.",
       "est_value": "UNVERIFIED",
-      "next_step": "Verify the invoice payment and send the receipt to Erik at Polo 4PL.",
+      "next_step": "Resolve the exam-fee payment method, pay, send the receipt, and obtain release confirmation.",
       "owner": "Aidan",
-      "timing": "Today",
+      "timing": "Today, October 6",
       "value": "Supply continuity"
     },
     {
-      "title": "Lock the FSS raw-material dispatch",
-      "why": "The paid order reached its promised expedite date today, but dispatch and tracking are unverified.",
+      "title": "Secure the Natori PDRN pilot sample",
+      "why": "The sample supports an R&D pilot for a large prospective client, but Ecoori needs project details and currently offers only 50g.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm today's dispatch with Phillip and obtain tracking.",
-      "owner": "Aidan",
-      "timing": "Today, October 5",
-      "value": "Production continuity"
-    },
-    {
-      "title": "Recover the Kenna package handoff",
-      "why": "The Et-VC package was reported delivered September 16, and forwarding remains unverified 19 days later.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Locate the package and provide forwarding tracking and status.",
+      "next_step": "Provide the requested project details and confirm whether more than 50g is available.",
       "owner": "Aidan",
       "timing": "Today",
+      "value": "Prospective revenue"
+    },
+    {
+      "title": "Recover the overdue Mark proposal handoff",
+      "why": "Mark expected the R&D-and-fill proposal yesterday and is waiting for kickoff steps.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Get firm proposal timing and kickoff direction from Sam, then update Mark.",
+      "owner": "Aidan",
+      "timing": "1 calendar day overdue",
       "value": "Customer commitment protection"
     }
   ],
   "pipelineStat": {
-    "note": "Verified from Outlook and the Email lane only. CRM and WhatsApp were unavailable, and Purchasing did not reply within 10 minutes.",
+    "note": "Verified from Outlook and agent-lane replies only. CRM and WhatsApp were unavailable.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "FSS order 162946, expedited dispatch due October 5; tracking unverified",
-      "ActivePeptide paid order, shipment promised October 6; tracking pending",
-      "DEWPAD China pads expected October 6 through October 13; arrival unverified"
+      "ActivePeptide shipment promised October 6; tracking unverified",
+      "Kenna Et-VC forwarding remains unverified 20 days after reported arrival",
+      "Polo container EMCU8614105 pending payment receipt and release"
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-05T07:10:00-04:00"
+    "last_verified": "2026-10-06T07:11:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
       "title": "Release container EMCU8614105",
-      "why": "Clearance cannot proceed without verified payment and the receipt.",
+      "why": "Fees are due through today and release remains blocked without payment proof.",
       "owner": "Aidan",
-      "due": "Today",
+      "due": "Today, October 6",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
     {
       "rank": 2,
-      "title": "Confirm FSS expedited dispatch",
-      "why": "The paid raw-material order reached today's expedite date without verified dispatch or tracking.",
+      "title": "Secure the Natori PDRN sample",
+      "why": "R&D needs a usable pilot quantity for a large prospective client.",
       "owner": "Aidan",
-      "due": "Today, October 5",
+      "due": "Today",
       "priority": "high",
-      "revenue": "Production continuity"
+      "revenue": "Prospective revenue"
     },
     {
       "rank": 3,
-      "title": "Forward the Kenna Et-VC package",
-      "why": "Forwarding remains unverified 19 days after reported delivery.",
+      "title": "Update Mark on the proposal",
+      "why": "The promised proposal and kickoff guidance are one day overdue.",
       "owner": "Aidan",
       "due": "Today",
       "priority": "high",
