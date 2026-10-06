@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261005_0700_et_status",
-  "status": "completed",
-  "routed_to": "email",
-  "summary": "No substantive drafts await Aidan. One customer and revenue commitment is overdue: Peter Clarkson of Proteger Daily promised Sam a fuller agreement reply by Sunday evening, Oct 4. No later Peter reply was verified by Oct 5 at 7:00 AM ET, so it is one calendar day late; the exact hour was not stated. Owner and next action: Sam should follow up. Aidan has no action. ActivePeptide ships Oct 6, and Kobo meets Oct 6 at 11:00 AM."
+  "request_id": "cmd_20261006_0700_et_status",
+  "status": "blocked",
+  "routed_to": "purchasing",
+  "summary": "Verified Oct 6, 2026 at 7:01 AM ET: no current connections or uploads verify open supplier items, overdue COA/SDS, threatened production runs, sold-job blockers, waiting parties, or deadlines. FSS 162946, Polo container EMCU8614105, Kenna Et-VC forwarding, and ActivePeptide's Oct 6 shipment have no source records here, so their status cannot be inferred. Owner: Aidan. Due today. Next action: upload the relevant PO, tracking, supplier email, document, and production exception records."
 }
