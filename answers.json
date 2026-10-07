@@ -1,6 +1,6 @@
 {
   "request_id": "cmd_20261007_0700_et_status",
-  "status": "blocked",
-  "routed_to": "purchasing",
-  "summary": "Verified Oct 7, 2026 at 7:01 AM ET: no current connections or uploads verify supplier or material items, sold-job risk, overdue COA/SDS, threatened lead times, inventory gaps, owners, waiting parties, or exact due dates. Polo EMCU8614105 payment and release, the Natori PDRN sample, ActivePeptide tracking, and Kenna Et-VC forwarding remain unverified. Owner: Aidan. Due today. Next action: upload the related PO, release, sample, tracking, forwarding, QC, inventory, and production records."
+  "status": "completed",
+  "routed_to": "email",
+  "summary": "ActivePeptide shipment tracking was due October 6 and remains unconfirmed. Aidan should request shipment confirmation and tracking today. Polo pickup and demurrage are due October 7, not overdue. Luke Rozansky's June 26 QC draft remains unsent, but relevance is unverified and customer follow-up belongs to Sam. Natori, Kenna, and Mark have no verified overdue commitment."
 }
