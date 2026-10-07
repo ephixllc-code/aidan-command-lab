@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261006_0700_et_status",
-  "status": "completed",
-  "routed_to": "email",
-  "summary": "No substantive drafts await Aidan. Act now: Polo and FTL fees for container EMCU8614105 are due Oct 6; pay them, send the receipt, and answer the exam-charge invoicing question. FSS order 162946 is shipping by FedEx under tracking 878182106058; track receipt. Kenna Et-VC forwarding remains open without a deadline; locate it, forward it, and provide tracking. ActivePeptide promised shipment Oct 6; monitor for tracking and follow up if it remains unconfirmed."
+  "request_id": "cmd_20261007_0700_et_status",
+  "status": "blocked",
+  "routed_to": "purchasing",
+  "summary": "Verified Oct 7, 2026 at 7:01 AM ET: no current connections or uploads verify supplier or material items, sold-job risk, overdue COA/SDS, threatened lead times, inventory gaps, owners, waiting parties, or exact due dates. Polo EMCU8614105 payment and release, the Natori PDRN sample, ActivePeptide tracking, and Kenna Et-VC forwarding remain unverified. Owner: Aidan. Due today. Next action: upload the related PO, release, sample, tracking, forwarding, QC, inventory, and production records."
 }
