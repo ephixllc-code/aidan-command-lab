@@ -1,36 +1,36 @@
 {
-  "date": "2026-10-07",
-  "ts": "2026-10-07T07:12:00-04:00",
+  "date": "2026-10-08",
+  "ts": "2026-10-08T07:03:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Call Solabia, confirm immediate Estogel availability for the open 2 kg and 30 kg requests, then alert Sam that the quoted 10 to 12 week lead time may threaten the live 2,000 unit Roon run.",
+      "t": "START HERE: Call Solabia and obtain confirmed stock and earliest ship dates for both the open 2 kg and 30 kg Estogel requests, then alert Sam today that the stated 10 to 12 week lead time may threaten the live Roon run.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Estogel is a live production risk. The September 24 snapshot showed 0.978 kg on hand versus 2.88 kg needed for one 2,000 unit Roon run. The October 1 request for 2 kg and October 5 request for 30 kg have no confirmed availability or ship date, while Solabia quoted 10 to 12 weeks. PLL Production and the Roon commitment are waiting; no formal due date, 0 days overdue, but the lead time threatens a live job. Send: Please confirm stock and the earliest ship date for both the 2 kg and 30 kg quantities today, including whether either can ship immediately.",
+      "t": "ACT NOW 1: Estogel remains a live production risk. Current Purchasing records do not verify an owner, waiting party, due date, availability, or shipment status for the 2 kg and 30 kg requests; the stated lead time is 10 to 12 weeks. The live Roon run may be exposed. No formal due date is verified. Send: Please confirm stock and the earliest ship date for both the 2 kg and 30 kg quantities today, including whether either can ship immediately.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Container EMCU8614105 is scheduled for pickup today. Aidan reported paying $35,090.78, including the $602.91 exam fee, but Price Transfer still needs demurrage cleared through October 7 and says the appointment is not guaranteed. Price Transfer, dispatch, and PLL are waiting; due today, 0 days overdue. Send: Please confirm demurrage through October 7 is cleared and the container remains on today's pickup appointment.",
+      "t": "ACT NOW 2: Container EMCU8614105 was scheduled for pickup October 7, but pickup and release are still unverified. Polo, dispatch, and PLL may be waiting; the scheduled date was yesterday, so confirmation is 1 day late. Send: Please confirm whether EMCU8614105 was released and picked up yesterday and provide the current status and any remaining charges today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Josh is waiting for the verified Roon R7 process details, including mix times and speed, temperatures, stability data, and ingredient suppliers and trade names. His latest follow up arrived October 6; no formal due date, 0 days overdue. Send: I am pulling the verified batch record and source list from Production this morning and will send the confirmed process, stability, and supplier details today.",
+      "t": "ACT NOW 3: ActivePeptide tracking remains unverified after the supplier's October 6 shipment commitment. PLL is waiting for shipment proof; tracking confirmation is 2 days late. Send: Please confirm the shipment status and send the carrier and tracking number today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve Estogel first and alert Sam because the verified inventory gap plus the quoted 10 to 12 week lead time may threaten the live Roon commitment.",
-    "Scheduled: 6 Outlook calendar events through October 17. The nearest is Coast Southwest at PLL today from noon to 12:30 PM; the nearest operational deadline is the Polo pickup today.",
-    "Noise: 48 exact window Outlook messages, none urgent.",
-    "Source gaps: CRM browser session signed out. WhatsApp Web signed out. Purchasing did not produce a visible reply within the 10 minute collection window. Email replied; calendar and Outlook were scanned."
+    "Recommendation: Resolve Estogel first and escalate the live Roon material risk to Sam today.",
+    "Scheduled: current calendar count is unavailable; the nearest known operational checkpoint is immediate confirmation of the October 7 Polo pickup.",
+    "Noise: count unavailable from the Purchasing lane.",
+    "Source gaps: Purchasing reported no connections, uploads, or records verifying owners, waiting parties, due dates, or current status for Estogel, Polo, ActivePeptide, Natori PDRN, or Kenna Et VC. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Estogel availability may threaten the live Roon run; Polo pickup remains contingent on confirmed demurrage clearance; Josh needs verified Roon production and source details.",
+  "signal": "Estogel availability may threaten the live Roon run; Polo pickup and release remain unverified; ActivePeptide tracking is two days past the promised ship date.",
   "redflags": [
-    "Estogel inventory and Solabia lead time may threaten a live 2,000 unit Roon commitment; escalate to Sam immediately.",
-    "Container EMCU8614105 has a pickup appointment today, but demurrage clearance and pickup remain unconfirmed.",
-    "CRM and WhatsApp were unavailable for this run."
+    "Estogel's stated 10 to 12 week lead time may threaten a live Roon commitment; escalate to Sam today.",
+    "Container EMCU8614105 release and October 7 pickup remain unverified.",
+    "Purchasing has no connected records or uploads for the named open items."
   ],
   "team": [],
   "pipeline": null,
@@ -42,62 +42,63 @@
       "top_task": "Confirm immediate Estogel stock and escalate the live Roon supply risk to Sam.",
       "tasks": [
         "Call Solabia about the 2 kg and 30 kg Estogel requests",
-        "Confirm demurrage clearance and today's Polo pickup",
-        "Get the verified Roon batch record and source list from Production"
+        "Confirm EMCU8614105 release and October 7 pickup",
+        "Obtain ActivePeptide shipment tracking"
       ],
-      "notes": "ActivePeptide tracking remains unconfirmed one day after the promised October 6 ship date. Kenna Et VC forwarding remains unverified 21 days after reported arrival."
+      "notes": "Natori PDRN sample and Kenna Et VC forwarding remain unverified. Upload the related POs, supplier emails, tracking, inventory, QC, and production records today."
     }
   },
   "revenueActions": [
     {
       "title": "Protect the Roon run from an Estogel shortage",
-      "why": "Verified on hand inventory is below the stated requirement for one 2,000 unit run, and Solabia quoted a 10 to 12 week lead time.",
+      "why": "The stated 10 to 12 week lead time may threaten a live run, and current availability is unverified.",
       "est_value": "UNVERIFIED",
-      "next_step": "Call Solabia for immediate availability on both open quantities and alert Sam to the live job risk.",
+      "next_step": "Call Solabia for immediate availability on both open quantities and alert Sam today.",
       "owner": "Aidan",
       "timing": "Today",
       "value": "Production continuity"
     },
     {
-      "title": "Complete the Polo container pickup",
-      "why": "Pickup is scheduled today but remains contingent on confirmed demurrage clearance and appointment retention.",
+      "title": "Verify the Polo container movement",
+      "why": "The October 7 pickup and release remain unverified.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm demurrage through October 7 is cleared and obtain pickup confirmation.",
+      "next_step": "Confirm release, pickup, and any remaining charges for EMCU8614105.",
       "owner": "Aidan",
-      "timing": "Today, October 7",
+      "timing": "Today",
       "value": "Supply continuity"
     },
     {
-      "title": "Deliver the verified Roon R7 production information",
-      "why": "Josh is waiting for process, stability, and ingredient source details needed to advance the customer commitment.",
+      "title": "Recover ActivePeptide shipment visibility",
+      "why": "Tracking is still unverified two days after the promised shipment date.",
       "est_value": "UNVERIFIED",
-      "next_step": "Pull the verified batch record and source list from Production and send confirmed details today.",
+      "next_step": "Request the carrier and tracking number today.",
       "owner": "Aidan",
       "timing": "Today",
-      "value": "Customer commitment protection"
+      "value": "Supply continuity"
     }
   ],
   "pipelineStat": {
-    "note": "Verified from Outlook, Outlook Calendar, and the Email lane only. CRM and WhatsApp were unavailable; Purchasing produced no visible reply in the collection window.",
+    "note": "Purchasing reported no connections, uploads, or records for the named open items. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "Estogel quoted at 10 to 12 weeks with immediate availability unconfirmed",
-      "ActivePeptide tracking unconfirmed after the October 6 promised ship date",
-      "Kenna Et VC forwarding unverified 21 days after reported arrival"
+      "Estogel stated at 10 to 12 weeks; current availability unverified",
+      "ActivePeptide tracking unverified after October 6 commitment",
+      "Kenna Et VC forwarding unverified"
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [
-      "ActivePeptide shipment confirmation and tracking, 1 day past promised ship date"
+      "Polo EMCU8614105 pickup confirmation, 1 day past scheduled date",
+      "ActivePeptide shipment confirmation and tracking, 2 days past promised ship date"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-07T07:12:00-04:00"
+    "last_verified": "2026-10-08T07:02:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
       "title": "Confirm immediate Estogel availability",
-      "why": "The inventory gap and 10 to 12 week lead time may threaten a live Roon run.",
+      "why": "The stated lead time may threaten a live Roon run.",
       "owner": "Aidan",
       "due": "Today",
       "priority": "critical",
@@ -105,21 +106,21 @@
     },
     {
       "rank": 2,
-      "title": "Confirm Polo clearance and pickup",
-      "why": "The container has a pickup appointment today, but demurrage clearance and pickup are not confirmed.",
+      "title": "Confirm Polo release and pickup",
+      "why": "The October 7 container movement remains unverified.",
       "owner": "Aidan",
-      "due": "Today, October 7",
+      "due": "1 day late",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
     {
       "rank": 3,
-      "title": "Send verified Roon R7 production details",
-      "why": "Josh is waiting for the batch process, stability, and ingredient source information.",
+      "title": "Obtain ActivePeptide tracking",
+      "why": "Shipment proof is unverified after the October 6 commitment.",
       "owner": "Aidan",
-      "due": "Today",
+      "due": "2 days late",
       "priority": "high",
-      "revenue": "Customer commitment protection"
+      "revenue": "Supply continuity"
     }
   ],
   "purchasingIntelligence": null
