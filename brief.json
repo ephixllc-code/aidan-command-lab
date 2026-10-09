@@ -1,43 +1,58 @@
 {
   "date": "2026-10-09",
-  "ts": "2026-10-09T07:01:00-04:00",
+  "ts": "2026-10-09T07:07:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Upload or connect today’s current POs, supplier emails, QC documents, inventory report, tracking, and production exception records so purchasing risks can be verified before action is assigned.",
+      "t": "START HERE: Tell Sam that Peter Clarkson’s promised Proteger agreement comments are now 5 days overdue and ask Sam to request them today.",
       "hot": true
     },
     {
-      "t": "NOTHING BURNING VERIFIED: The Purchasing lane could not verify any open supplier item, overdue COA or SDS, threatened lead time, inventory risk, or sold-job blocker from current source records. Missing data is not zero.",
-      "hot": false
+      "t": "ACT NOW 1: Peter Clarkson promised Sam a fuller Proteger agreement reply by Sunday evening, October 4. No agreement response is verified; Peter’s October 5 email only confirms sample receipt. Sam owns this customer thread. Send Sam: Peter’s fuller Proteger agreement response was due October 4 and is now 5 days late. His October 5 note only confirms sample receipt. Please request the agreement comments today.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 2: Purchasing visibility is blocked. Current POs, supplier emails, QC documents, inventory reports, tracking, and production exception records were unavailable, so supplier and sold-job risks cannot be ruled out. Upload or connect those records today.",
+      "hot": true
     }
   ],
   "next": [
-    "Recommendation: Restore current purchasing visibility first; do not treat the lack of verified records as proof that no risks exist.",
-    "Scheduled: count and nearest deadline unavailable.",
-    "Noise: count unavailable from the Purchasing lane.",
-    "Source gap: Current POs, supplier emails, QC documents, inventory reports, tracking, and production exception records were unavailable to the Purchasing lane as of 7:01 AM ET."
+    "Recommendation: Alert Sam about the overdue Proteger agreement response first, then restore purchasing visibility.",
+    "Scheduled: No current substantive email drafts await Aidan; October 7 drafts are signature-only. Purchasing deadline count is unavailable.",
+    "Noise: No other revenue or operations email thread is verified quiet past an explicit due date; purchasing noise count unavailable.",
+    "Source gap: Current purchasing records were unavailable. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "No purchasing risk could be verified because current source records were unavailable. Missing data is not zero.",
+  "signal": "The Proteger agreement response promised to Sam is 5 days overdue and remains unverified. Purchasing risk visibility is blocked by unavailable current records.",
   "redflags": [
+    "Proteger agreement comments promised by October 4 are now 5 days overdue; Sam owns follow-up.",
     "Purchasing visibility is blocked; sold-job, supply, QC, and lead-time risks cannot be ruled out."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "UNVERIFIED",
+  "noise": "No other revenue or operations email thread is verified quiet past an explicit due date. Purchasing noise count unavailable.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Restore current purchasing visibility by supplying the source records needed for verification.",
+      "top_task": "Alert Sam that the Proteger agreement comments are 5 days overdue.",
       "tasks": [
-        "Upload current POs and supplier correspondence",
-        "Upload current QC, inventory, tracking, and production exception records"
+        "Notify Sam about the overdue Proteger agreement comments",
+        "Upload current purchasing source records"
       ],
-      "notes": "No open supplier issue or sold-job blocker was verified today. This is a source gap, not confirmation that none exist."
+      "notes": "No current substantive drafts await Aidan. October 7 drafts are signature-only. Customer follow-up remains in Sam’s lane."
     }
   },
-  "revenueActions": [],
+  "revenueActions": [
+    {
+      "title": "Protect the Proteger agreement follow-up",
+      "why": "Peter Clarkson’s promised agreement comments are 5 days overdue and no substantive response is verified.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Aidan alerts Sam; Sam requests the agreement comments today.",
+      "owner": "Sam",
+      "timing": "Today",
+      "value": "Customer commitment"
+    }
+  ],
   "pipelineStat": {
     "note": "Current purchasing source records were unavailable. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
@@ -46,11 +61,20 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-09T07:01:00-04:00"
+    "last_verified": "2026-10-09T07:07:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
+      "title": "Alert Sam about overdue Proteger comments",
+      "why": "The fuller agreement response promised for October 4 remains unverified.",
+      "owner": "Aidan to alert Sam; Sam owns follow-up",
+      "due": "5 days late",
+      "priority": "critical",
+      "revenue": "Customer commitment"
+    },
+    {
+      "rank": 2,
       "title": "Restore purchasing source visibility",
       "why": "Without current records, supplier, QC, inventory, lead-time, and sold-job risks cannot be verified.",
       "owner": "Aidan",

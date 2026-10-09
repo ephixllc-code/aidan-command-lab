@@ -1,6 +1,6 @@
 {
   "request_id": "cmd_20261009_0700_et_status",
-  "status": "blocked",
-  "routed_to": "purchasing",
-  "summary": "No purchasing risk can be verified from current source records. Restore visibility today by uploading current POs, supplier emails, QC documents, inventory reports, tracking, and production exception records. Missing data is not zero."
+  "status": "completed",
+  "routed_to": "email",
+  "summary": "Peter Clarkson’s fuller Proteger agreement response promised for October 4 is 5 days overdue; his October 5 email only confirms sample receipt. Sam owns customer follow-up, so Aidan should alert Sam today. No substantive drafts currently await Aidan, and no other revenue or operations thread is verified overdue."
 }
