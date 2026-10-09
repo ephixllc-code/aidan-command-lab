@@ -1,111 +1,62 @@
 {
-  "date": "2026-10-08",
-  "ts": "2026-10-08T07:10:00-04:00",
+  "date": "2026-10-09",
+  "ts": "2026-10-09T07:01:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Call Solabia and obtain confirmed stock and earliest ship dates for both the open 2 kg and 30 kg Estogel requests, then alert Sam today that the stated 10 to 12 week lead time may threaten the live Roon run.",
+      "t": "START HERE: Upload or connect today’s current POs, supplier emails, QC documents, inventory report, tracking, and production exception records so purchasing risks can be verified before action is assigned.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Estogel remains a live production risk. An update is due today, October 8, but is not late. Availability and shipment status for the 2 kg and 30 kg requests remain unverified, and the stated lead time is 10 to 12 weeks. The live Roon run may be exposed. Send: Please confirm stock and the earliest ship date for both the 2 kg and 30 kg quantities today, including whether either can ship immediately.",
-      "hot": true
-    },
-    {
-      "t": "ACT NOW 2: Container EMCU8614105 was scheduled for pickup October 7. Demurrage was cleared and dispatchers were notified, but pickup, release, and ETA remain unverified. Aidan is 1 day past the scheduled pickup date. Send: Please confirm whether EMCU8614105 was released and picked up yesterday and provide its current ETA today.",
-      "hot": true
+      "t": "NOTHING BURNING VERIFIED: The Purchasing lane could not verify any open supplier item, overdue COA or SDS, threatened lead time, inventory risk, or sold-job blocker from current source records. Missing data is not zero.",
+      "hot": false
     }
   ],
   "next": [
-    "Recommendation: Resolve Estogel first and escalate the live Roon material risk to Sam today.",
-    "Scheduled: ActivePeptide tracking is now available as FedEx 878283823471. Estogel update is due today and is not late.",
+    "Recommendation: Restore current purchasing visibility first; do not treat the lack of verified records as proof that no risks exist.",
+    "Scheduled: count and nearest deadline unavailable.",
     "Noise: count unavailable from the Purchasing lane.",
-    "Source gaps: Polo pickup completion remains unverified. Natori PDRN and Kenna Et VC have no verified past due commitment. Missing data is not zero."
+    "Source gap: Current POs, supplier emails, QC documents, inventory reports, tracking, and production exception records were unavailable to the Purchasing lane as of 7:01 AM ET."
   ],
   "kb": [],
-  "signal": "Estogel availability may threaten the live Roon run; Polo demurrage is cleared, but pickup, release, and ETA remain unverified. ActivePeptide tracking is confirmed as FedEx 878283823471.",
+  "signal": "No purchasing risk could be verified because current source records were unavailable. Missing data is not zero.",
   "redflags": [
-    "Estogel stated at 10 to 12 weeks may threaten a live Roon commitment; escalate to Sam today.",
-    "Container EMCU8614105 pickup, release, and ETA remain unverified despite demurrage clearance and dispatcher notification."
+    "Purchasing visibility is blocked; sold-job, supply, QC, and lead-time risks cannot be ruled out."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "91 distinct inbound Outlook messages arrived in the exact window; 64 were unread and 48 were noise.",
+  "noise": "UNVERIFIED",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Confirm immediate Estogel stock and escalate the live Roon supply risk to Sam.",
+      "top_task": "Restore current purchasing visibility by supplying the source records needed for verification.",
       "tasks": [
-        "Call Solabia about the 2 kg and 30 kg Estogel requests",
-        "Confirm EMCU8614105 release, pickup, and ETA",
-        "Monitor ActivePeptide shipment using FedEx 878283823471"
+        "Upload current POs and supplier correspondence",
+        "Upload current QC, inventory, tracking, and production exception records"
       ],
-      "notes": "ActivePeptide tracking is confirmed as FedEx 878283823471. Natori PDRN sample and Kenna Et VC forwarding have no verified past due commitment. The June ripped inserts draft is stale and belongs to Sam’s customer follow up lane."
+      "notes": "No open supplier issue or sold-job blocker was verified today. This is a source gap, not confirmation that none exist."
     }
   },
-  "revenueActions": [
-    {
-      "title": "Protect the Roon run from an Estogel shortage",
-      "why": "The stated 10 to 12 week lead time may threaten a live run, and current availability is unverified.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Call Solabia for immediate availability on both open quantities and alert Sam today.",
-      "owner": "Aidan",
-      "timing": "Today",
-      "value": "Production continuity"
-    },
-    {
-      "title": "Verify the Polo container movement",
-      "why": "Demurrage was cleared and dispatchers were notified, but the October 7 pickup, release, and ETA remain unverified.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Confirm release, pickup, and ETA for EMCU8614105.",
-      "owner": "Aidan",
-      "timing": "Today",
-      "value": "Supply continuity"
-    }
-  ],
+  "revenueActions": [],
   "pipelineStat": {
-    "note": "Purchasing reported no connections, uploads, or records for the named open items. Missing data is not zero.",
+    "note": "Current purchasing source records were unavailable. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
-    "long_lead_items": [
-      "Estogel stated at 10 to 12 weeks; current availability unverified",
-      "ActivePeptide shipment trackable via FedEx 878283823471",
-      "Kenna Et VC forwarding unverified"
-    ],
+    "long_lead_items": [],
     "unverified_raw_material_prices": [],
-    "overdue_purchasing_tasks": [
-      "Polo EMCU8614105 pickup confirmation, 1 day past scheduled date"
-    ],
+    "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-08T07:09:00-04:00"
+    "last_verified": "2026-10-09T07:01:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Confirm immediate Estogel availability",
-      "why": "The stated lead time may threaten a live Roon run.",
+      "title": "Restore purchasing source visibility",
+      "why": "Without current records, supplier, QC, inventory, lead-time, and sold-job risks cannot be verified.",
       "owner": "Aidan",
-      "due": "Today, not late",
+      "due": "Today",
       "priority": "critical",
-      "revenue": "Production continuity"
-    },
-    {
-      "rank": 2,
-      "title": "Confirm Polo release, pickup, and ETA",
-      "why": "Demurrage is cleared and dispatchers were notified, but movement completion remains unverified.",
-      "owner": "Aidan",
-      "due": "1 day late",
-      "priority": "critical",
-      "revenue": "Supply continuity"
-    },
-    {
-      "rank": 3,
-      "title": "Monitor ActivePeptide tracking",
-      "why": "Tracking is confirmed as FedEx 878283823471; monitor movement rather than request tracking again.",
-      "owner": "Aidan",
-      "due": "Scheduled",
-      "priority": "normal",
-      "revenue": "Supply continuity"
+      "revenue": "Risk visibility"
     }
   ],
   "purchasingIntelligence": null

@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261007_0700_et_status",
-  "status": "completed",
-  "routed_to": "email",
-  "summary": "ActivePeptide shipment tracking was due October 6 and remains unconfirmed. Aidan should request shipment confirmation and tracking today. Polo pickup and demurrage are due October 7, not overdue. Luke Rozansky's June 26 QC draft remains unsent, but relevance is unverified and customer follow-up belongs to Sam. Natori, Kenna, and Mark have no verified overdue commitment."
+  "request_id": "cmd_20261009_0700_et_status",
+  "status": "blocked",
+  "routed_to": "purchasing",
+  "summary": "No purchasing risk can be verified from current source records. Restore visibility today by uploading current POs, supplier emails, QC documents, inventory reports, tracking, and production exception records. Missing data is not zero."
 }
