@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261009_0700_et_status",
+  "request_id": "cmd_20261010_0700_et_status",
   "status": "completed",
-  "routed_to": "email",
-  "summary": "Peter Clarkson’s fuller Proteger agreement response promised for October 4 is 5 days overdue; his October 5 email only confirms sample receipt. Sam owns customer follow-up, so Aidan should alert Sam today. No substantive drafts currently await Aidan, and no other revenue or operations thread is verified overdue."
+  "routed_to": "purchasing",
+  "summary": "Purchasing result captured. No current records verify open supplier items, overdue COAs, inventory risks, or lead-time threats. Missing data is not zero. Aidan must restore current PO, supplier, QC, inventory, tracking, and production-exception visibility before risk can be ruled out."
 }
