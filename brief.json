@@ -1,112 +1,123 @@
 {
   "date": "2026-10-10",
-  "ts": "2026-10-10T07:06:00-04:00",
+  "ts": "2026-10-10T07:13:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Confirm that Polo’s October 9 pickup was completed and obtain the release status today.",
+      "t": "START HERE: Open the TALOVA fulfillment record, then call Production to confirm whether the requested 500 lip balms can ship and obtain proof of delivery for the earlier 15,000 units.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Polo’s October 9 3:30 AM pickup appointment has no verified completion. Polo or Price Transfer may be waiting; confirmation is 1 day late. Send: Please confirm whether the October 9 pickup was completed, whether the container was released, and the current status today.",
+      "t": "ACT NOW 1: TALOVA reported a stockout and requested another 500 lip balms, while delivery of the earlier 15,000 units remained unverified. Marcello is waiting. The request is 1 calendar day old, and no completion is visible in the available sources. Send: I am checking delivery proof for the 15,000 and our stock and build timing for the 500 now, and I will confirm the next ship date today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Peter Clarkson’s fuller Proteger agreement comments promised to Sam by October 4 remain unverified and are 6 calendar days late. Sam owns the customer thread. Send Sam: Peter’s promised Proteger agreement comments are now 6 days overdue. His October 5 email only confirmed sample receipt. Please request the agreement comments today.",
+      "t": "ACT NOW 2: Solabia is waiting for confirmation that PLL's bill-to address should change to 24600 N. Industrial Dr. before the 6 kg Estogel Max PO can move cleanly. A firm ship date is still missing, and the remaining 14 kg path is unverified. The reply is 1 calendar day old with no stated deadline. Send: Please update our bill-to address to 24600 N. Industrial Dr., confirm receipt of the 6 kg PO, and send the earliest firm ship date.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Purchasing visibility remains blocked. No current records verify supplier items, overdue COAs, inventory risks, or lead-time threats. Upload or connect current POs, supplier correspondence, QC documents, inventory, tracking, and production exceptions today.",
+      "t": "ACT NOW 3: Polo container TR#47618 was scheduled for pickup October 9 with no holds reported, but pickup and release remain unconfirmed. Dispatch is waiting on closure. The scheduled pickup is 1 calendar day overdue unless completed. Send: Please confirm TR#47618 was picked up and released yesterday, or send the new appointment time and current blocker.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Verify Polo pickup and release first, then alert Sam about the overdue Proteger agreement comments.",
-    "Scheduled: Count unavailable; no other verified deadline was supplied.",
-    "Noise: Count unavailable.",
-    "Source gap: Current purchasing records are unavailable. Missing data is not zero."
+    "Recommendation: Close TALOVA first because the customer is already out of stock, then remove the Estogel address and ship-date blockers.",
+    "Scheduled: 5 email-derived milestones. The nearest is Jedwards shipment 384100536855, estimated for delivery October 12 between 10:30 AM and 2:30 PM.",
+    "Noise: 40 Outlook messages, none urgent.",
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing has no current source records to verify open supplier, QC, inventory, or lead-time risks. The Email lane reports the Proteger agreement response is 6 calendar days overdue and belongs to Sam's lane. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Polo pickup and release remain unverified after the October 9 appointment. Proteger agreement comments are 6 days overdue. Purchasing risk visibility is blocked.",
+  "signal": "TALOVA fulfillment remains unverified after a reported stockout. Solabia needs the corrected PLL bill-to address and has not supplied a firm Estogel Max ship date. Polo container pickup remains unconfirmed.",
   "redflags": [
-    "Polo pickup and release are unverified one day after the scheduled appointment.",
-    "Proteger agreement comments promised by October 4 are 6 calendar days overdue; Sam owns follow-up.",
-    "Purchasing visibility is blocked, so supplier, QC, inventory, and sold-job risks cannot be ruled out."
+    "TALOVA's requested 500-unit replenishment and proof of delivery for 15,000 prior units remain unverified.",
+    "The Estogel Max 6 kg PO lacks a firm ship date, and the remaining 14 kg supply path is unverified.",
+    "CRM and WhatsApp could not be scanned because both browser sessions are signed out."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "Count unavailable from current source results.",
+  "noise": "50 unique inbound Outlook messages arrived in the exact window; 33 were unread and 40 were noise.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Confirm Polo pickup and release status.",
+      "top_task": "Verify TALOVA inventory, build timing, and delivery proof for the prior 15,000 units.",
       "tasks": [
-        "Confirm Polo pickup and release",
-        "Alert Sam about overdue Proteger comments",
-        "Restore purchasing source visibility"
+        "Confirm TALOVA stock and replenishment timing",
+        "Confirm Solabia address update and Estogel Max ship date",
+        "Close Polo container TR#47618 pickup"
       ],
-      "notes": "The June 27 Ripped inserts draft predates Luke’s later replacement and reject-count request and has no due date. Sam owns that customer follow-up."
+      "notes": "Lucas Meyer acknowledged sample order 16622499, but official ship dates remain missing for some lines. Hawke's labeled-sample commitment is October 16. Customer pricing remains Sam's lane."
     }
   },
   "revenueActions": [
     {
-      "title": "Verify Polo container movement",
-      "why": "The October 9 pickup appointment has no verified completion or release status.",
+      "title": "Restore TALOVA lip balm inventory",
+      "why": "TALOVA reported a stockout and requested 500 additional units.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm pickup, release, and current status with Polo or Price Transfer today.",
+      "next_step": "Verify current stock, build timing, and delivery proof for the prior 15,000 units, then confirm the next ship date.",
       "owner": "Aidan",
-      "timing": "1 day late",
-      "value": "Supply continuity"
+      "timing": "Today",
+      "value": "Customer fulfillment"
     },
     {
-      "title": "Protect the Proteger agreement follow-up",
-      "why": "Peter Clarkson’s promised agreement comments are 6 days overdue.",
+      "title": "Release the Estogel Max PO",
+      "why": "Solabia needs the corrected bill-to address and has not provided a firm ship date for the 6 kg PO.",
       "est_value": "UNVERIFIED",
-      "next_step": "Aidan alerts Sam; Sam requests the agreement comments today.",
-      "owner": "Sam",
-      "timing": "6 calendar days late",
-      "value": "Customer commitment"
+      "next_step": "Confirm the address, PO receipt, and earliest firm ship date; alert Sam if timing threatens the live run.",
+      "owner": "Aidan",
+      "timing": "Today",
+      "value": "Production continuity"
+    },
+    {
+      "title": "Close Polo container pickup",
+      "why": "TR#47618 was scheduled for October 9, but pickup and release are not confirmed.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Obtain pickup confirmation or a new appointment and blocker from dispatch.",
+      "owner": "Aidan",
+      "timing": "Today",
+      "value": "Inbound logistics"
     }
   ],
   "pipelineStat": {
-    "note": "Current purchasing source records are unavailable. Missing data is not zero.",
+    "note": "Purchasing has no current source records to verify open supplier, QC, inventory, or lead-time risks. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
-    "long_lead_items": [],
-    "unverified_raw_material_prices": [],
-    "overdue_purchasing_tasks": [
-      "Polo October 9 pickup and release confirmation, 1 day late"
+    "long_lead_items": [
+      "Estogel Max: 6 kg PO submitted; firm ship date and remaining 14 kg path unverified",
+      "Lucas Meyer sample order 16622499: October 13 estimate appears for one EcoSlim line; other line dates unverified",
+      "Mibelle PO 2026-00-0027: acknowledged; earliest ship date unverified"
     ],
-    "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-10T07:06:00-04:00"
+    "unverified_raw_material_prices": [],
+    "overdue_purchasing_tasks": [],
+    "suppliers_awaiting_response": "Solabia is awaiting confirmation of PLL's corrected bill-to address",
+    "last_verified": "2026-10-10T07:13:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Confirm Polo pickup and release",
-      "why": "The October 9 appointment has no verified completion.",
+      "title": "Verify TALOVA fulfillment and replenishment",
+      "why": "The customer reported a stockout and requested another 500 lip balms.",
       "owner": "Aidan",
-      "due": "1 day late",
+      "due": "1 calendar day old; completion unverified",
       "priority": "critical",
-      "revenue": "Supply continuity"
+      "revenue": "Customer fulfillment"
     },
     {
       "rank": 2,
-      "title": "Alert Sam about overdue Proteger comments",
-      "why": "The agreement response promised for October 4 remains unverified.",
-      "owner": "Aidan to alert Sam; Sam owns follow-up",
-      "due": "6 calendar days late",
+      "title": "Confirm Estogel Max address and ship date",
+      "why": "The 6 kg PO lacks a firm ship date and the remaining 14 kg path is unverified.",
+      "owner": "Aidan",
+      "due": "Today; no formal supplier deadline",
       "priority": "critical",
-      "revenue": "Customer commitment"
+      "revenue": "Production continuity"
     },
     {
       "rank": 3,
-      "title": "Restore purchasing source visibility",
-      "why": "Without current records, supplier, QC, inventory, lead-time, and sold-job risks cannot be verified.",
+      "title": "Close Polo container TR#47618 pickup",
+      "why": "The October 9 pickup and release are not confirmed.",
       "owner": "Aidan",
-      "due": "Today",
-      "priority": "critical",
-      "revenue": "Risk visibility"
+      "due": "1 calendar day overdue unless completed",
+      "priority": "high",
+      "revenue": "Inbound logistics"
     }
   ],
   "purchasingIntelligence": null
