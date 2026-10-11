@@ -1,124 +1,124 @@
 {
   "date": "2026-10-11",
-  "ts": "2026-10-11T07:09:00-04:00",
+  "ts": "2026-10-11T07:11:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Confirm the bill to details with Solabia now so the available 6 kg of Estogel can ship within two weeks, then verify whether that timing protects the Roon run.",
+      "t": "START HERE: Call Polo 4PL and confirm whether TR#47618 / EMCU8614105 was physically picked up before the free-time extension ends October 12.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Solabia has 6 kg of Estogel available to ship within two weeks, but bill to confirmation is blocking progress and Roon timing remains unresolved. PLL and the Roon run may be waiting; no formal due date is verified. Send: Please use the confirmed PLL bill to details and release the 6 kg Estogel order. Please also confirm the exact ship date and delivery estimate today.",
+      "t": "ACT NOW 1: Polo container TR#47618 / EMCU8614105 had an October 9 pickup appointment, but physical pickup and release remain unconfirmed. Polo and dispatch are waiting on closure. The appointment was 2 calendar days ago, and the free-time extension ends tomorrow, October 12. Send: Vic, please confirm whether TR#47618 / EMCU8614105 was physically picked up on the October 9 appointment; if not, what is today's recovery plan, and is storage waived through October 12?",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Polo TR#47618 was scheduled for pickup October 9 at 3:30 AM, but completion remains unverified. Polo, Price Transfer, or PLL may be waiting; confirmation is 2 days late. Send: Please confirm whether TR#47618 was picked up on October 9, whether it was released, and its current status today.",
+      "t": "ACT NOW 2: TALOVA reported a lip balm stockout and requested 500 more units; delivery of the earlier 15,000 units remains unverified. Marcello is waiting. The request is about 2 calendar days old with no stated deadline. Send: Marcello, we are checking availability and a ship date for the additional 500 and verifying delivery of the 15,000, 5,000 per scent; I will confirm both today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Peter Clarkson's fuller Proteger agreement reply promised to Sam by October 4 remains unverified and is 7 calendar days late. Sam owns the customer thread. Send Sam: Peter's promised Proteger agreement comments are now 7 days overdue. His October 5 email only confirmed sample receipt. Please request the agreement comments today.",
+      "t": "ACT NOW 3: Solabia needs confirmation of PLL's Farmington Hills bill-to address before the 6 kg Estogel Max PO can move cleanly. PO acceptance, a firm ship date, and the remaining 14 kg path are unverified. Solabia is waiting, and no missed supplier commitment is confirmed. Send: Joella and Darren, please update billing to our Farmington Hills address, confirm receipt of PO-2026-0026 for 6 kg, and provide the earliest ship date and lead time for the balance.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Unblock the 6 kg Estogel shipment first and confirm whether its delivery timing protects the Roon run.",
-    "Scheduled: BulkNatural ETA is October 12, the nearest verified checkpoint.",
-    "Noise: Count unavailable.",
-    "Source gap: Current purchasing records do not verify the Estogel order status, remaining 14 kg, broader supplier items, COA or SDS gaps, inventory risk, or production exceptions. Missing data is not zero."
+    "Recommendation: Close the Polo pickup first because the free-time extension ends tomorrow, then resolve TALOVA and Estogel before Monday production planning.",
+    "Scheduled: 5 email-derived milestones. The nearest is the Polo free-time extension ending October 12; shipment 384100536855 is also expected October 12 based on the latest available carrier notice.",
+    "Noise: 6 Outlook messages, none urgent.",
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing has no current source records to verify open supplier, QC, inventory, or lead-time risks. The Email lane reports the Sam-owned Proteger agreement response is 7 calendar days overdue. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Estogel can move once bill to details are confirmed, but Roon timing is unresolved. Polo pickup remains unverified. Proteger agreement comments are 7 days overdue.",
+  "signal": "Polo pickup remains unconfirmed one day before free time ends. TALOVA's stockout and 500-unit replenishment remain unresolved. Solabia still needs the billing update and a firm Estogel Max ship date.",
   "redflags": [
-    "The 6 kg Estogel shipment is blocked by bill to confirmation, and its ability to protect the Roon run is unresolved.",
-    "Polo TR#47618 pickup and release remain unverified two days after the scheduled appointment.",
-    "Proteger agreement comments promised by October 4 are 7 calendar days overdue; Sam owns follow up."
+    "Polo physical pickup is unverified and free time ends October 12.",
+    "TALOVA's requested 500-unit replenishment and proof of delivery for the prior 15,000 units remain unverified.",
+    "The Estogel Max 6 kg PO lacks confirmed acceptance and a firm ship date; the remaining 14 kg path is unverified.",
+    "CRM and WhatsApp could not be scanned because both browser sessions are signed out."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "Count unavailable from current source results.",
+  "noise": "7 inbound Outlook messages arrived in 7 unique conversations during the exact review window; 5 were unread and 6 were noise.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Confirm Solabia bill to details and obtain the exact Estogel ship date.",
+      "top_task": "Confirm Polo container pickup before the October 12 free-time extension ends.",
       "tasks": [
-        "Release the 6 kg Estogel order and confirm timing against the Roon run",
-        "Confirm Polo TR#47618 pickup and release",
-        "Alert Sam about overdue Proteger agreement comments"
+        "Confirm Polo TR#47618 pickup and storage status",
+        "Verify TALOVA inventory, ship timing, and prior delivery",
+        "Confirm Solabia billing update, PO acceptance, and ship date"
       ],
-      "notes": "ActivePeptide sent tracking October 7. BulkNatural ETA is October 12. TALOVA requested 500 units without a due date and Sam owns that customer follow up. No actionable supplier draft is waiting."
+      "notes": "Bulk Natural Oils reported that 3.5 kg Mixed Tocopherols 95% Non-GMO shipped under tracking 384100536855 with a lot COA attached; receipt and COA review are unverified. Customer pricing remains Sam's lane."
     }
   },
   "revenueActions": [
     {
-      "title": "Protect the Roon run with available Estogel",
-      "why": "Solabia has 6 kg available, but bill to confirmation blocks shipment and Roon timing remains unresolved.",
+      "title": "Close Polo container pickup",
+      "why": "The October 9 appointment is past and free time ends October 12.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm bill to details and obtain exact ship and delivery dates today.",
+      "next_step": "Obtain physical pickup confirmation or today's recovery plan and confirm storage remains waived.",
+      "owner": "Aidan",
+      "timing": "Today",
+      "value": "Inbound logistics"
+    },
+    {
+      "title": "Restore TALOVA lip balm inventory",
+      "why": "TALOVA reported a stockout and requested 500 additional units.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Verify current stock, build timing, and delivery proof for the prior 15,000 units, then confirm the next ship date.",
+      "owner": "Aidan",
+      "timing": "Today",
+      "value": "Customer fulfillment"
+    },
+    {
+      "title": "Release the Estogel Max PO",
+      "why": "Solabia needs the corrected bill-to address and has not provided a firm ship date for the 6 kg PO.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Confirm the address, PO receipt, earliest firm ship date, and balance lead time; alert Sam if timing threatens the Roon run.",
       "owner": "Aidan",
       "timing": "Today",
       "value": "Production continuity"
-    },
-    {
-      "title": "Verify Polo container movement",
-      "why": "TR#47618 pickup and release remain unverified after the October 9 appointment.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Confirm pickup, release, and current status with Polo or Price Transfer today.",
-      "owner": "Aidan",
-      "timing": "2 days late",
-      "value": "Supply continuity"
-    },
-    {
-      "title": "Protect the Proteger agreement follow up",
-      "why": "Peter Clarkson's promised agreement comments are 7 days overdue.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Aidan alerts Sam; Sam requests the agreement comments today.",
-      "owner": "Sam",
-      "timing": "7 calendar days late",
-      "value": "Customer commitment"
     }
   ],
   "pipelineStat": {
-    "note": "Current purchasing records are unavailable for broader verification. Missing data is not zero.",
+    "note": "Purchasing has no current source records to verify open supplier, QC, inventory, or lead-time risks. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "Estogel 6 kg can ship within two weeks after bill to confirmation; remaining 14 kg status is unverified",
-      "Roon timing remains unresolved"
+      "Estogel Max: 6 kg PO submitted; PO acceptance, firm ship date, and remaining 14 kg path unverified",
+      "Lucas Meyer sample order 16622499: October 13 estimate appears for one EcoSlim line; other line dates unverified",
+      "Mibelle PO 2026-00-0027: acknowledged; earliest ship date unverified"
     ],
     "unverified_raw_material_prices": [],
-    "overdue_purchasing_tasks": [
-      "Polo TR#47618 pickup confirmation, 2 days past scheduled date"
-    ],
-    "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-11T07:09:00-04:00"
+    "overdue_purchasing_tasks": [],
+    "suppliers_awaiting_response": "Solabia is awaiting confirmation of PLL's corrected bill-to address",
+    "last_verified": "2026-10-11T07:11:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Release the 6 kg Estogel shipment",
-      "why": "Bill to confirmation is blocking available material and Roon timing remains unresolved.",
+      "title": "Confirm Polo TR#47618 pickup",
+      "why": "The October 9 appointment is past and free time ends October 12.",
       "owner": "Aidan",
-      "due": "Today",
+      "due": "2 calendar days after appointment; free time ends in 1 day",
       "priority": "critical",
-      "revenue": "Production continuity"
+      "revenue": "Inbound logistics"
     },
     {
       "rank": 2,
-      "title": "Confirm Polo TR#47618 pickup and release",
-      "why": "The October 9 movement remains unverified.",
+      "title": "Verify TALOVA fulfillment and replenishment",
+      "why": "The customer reported a stockout and requested another 500 lip balms.",
       "owner": "Aidan",
-      "due": "2 days late",
+      "due": "About 2 calendar days old; completion unverified",
       "priority": "critical",
-      "revenue": "Supply continuity"
+      "revenue": "Customer fulfillment"
     },
     {
       "rank": 3,
-      "title": "Alert Sam about overdue Proteger comments",
-      "why": "The agreement response promised for October 4 remains unverified.",
-      "owner": "Aidan to alert Sam; Sam owns follow up",
-      "due": "7 calendar days late",
+      "title": "Confirm Estogel Max address and ship date",
+      "why": "The 6 kg PO lacks confirmed acceptance and a firm ship date, and the remaining 14 kg path is unverified.",
+      "owner": "Aidan",
+      "due": "Today; no missed supplier commitment confirmed",
       "priority": "critical",
-      "revenue": "Customer commitment"
+      "revenue": "Production continuity"
     }
   ],
   "purchasingIntelligence": null
