@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261010_0700_et_status",
+  "request_id": "cmd_20261011_0700_et_status",
   "status": "completed",
-  "routed_to": "email",
-  "summary": "Morning brief consolidated. Aidan should first confirm Polo’s October 9 pickup and release, then alert Sam that Peter Clarkson’s promised Proteger agreement comments are 6 calendar days overdue. Purchasing visibility remains blocked by unavailable current records."
+  "routed_to": "purchasing",
+  "summary": "Purchasing result captured. Current records do not verify open supplier items, overdue COAs or SDS, production-threatening inventory or lead-time risks, or the Estogel Max 6 kg order and remaining 14 kg. Missing data is not zero. Restore current PO, supplier, QC, inventory, tracking, and production-exception visibility before ruling out risk."
 }
