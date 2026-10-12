@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261011_0700_et_status",
+  "request_id": "cmd_20261012_0700_et_status",
   "status": "completed",
-  "routed_to": "email",
-  "summary": "Morning brief consolidated. First confirm Solabia's bill to details so 6 kg of Estogel can ship within two weeks and resolve whether that timing protects the Roon run. Then confirm Polo TR#47618 pickup completion and alert Sam that Proteger agreement comments are 7 calendar days overdue."
+  "routed_to": "purchasing",
+  "summary": "Purchasing result captured. Current records do not verify open supplier items, overdue COAs, shortages, or lead-time threats. Polo TR#47618 pickup, TALOVA 500-unit replenishment, Estogel Max PO-2026-0026, delivery 384100536855, and the Chemspire Guaiazulene quote or live-job PO need remain unverified. Missing data is not zero; restore current purchasing records before ruling out risk."
 }
