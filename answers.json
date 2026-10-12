@@ -1,6 +1,6 @@
 {
   "request_id": "cmd_20261012_0700_et_status",
   "status": "completed",
-  "routed_to": "purchasing",
-  "summary": "Purchasing result captured. Current records do not verify open supplier items, overdue COAs, shortages, or lead-time threats. Polo TR#47618 pickup, TALOVA 500-unit replenishment, Estogel Max PO-2026-0026, delivery 384100536855, and the Chemspire Guaiazulene quote or live-job PO need remain unverified. Missing data is not zero; restore current purchasing records before ruling out risk."
+  "routed_to": "email",
+  "summary": "Morning brief consolidated. First verify FedEx delivery 384100536855 after today's reattempt. Then confirm Polo TR#47618 pickup and release, now 3 calendar days past its appointment, and alert Sam that Peter Clarkson's Proteger agreement comments are 8 calendar days overdue. Estogel remains inside its stated two-week ship window; current purchasing records are unavailable, so broader risk remains unverified."
 }
