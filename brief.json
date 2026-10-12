@@ -1,63 +1,73 @@
 {
-  "date": "2026-10-11",
-  "ts": "2026-10-11T07:11:00-04:00",
+  "date": "2026-10-12",
+  "ts": "2026-10-12T07:06:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Call Polo 4PL and confirm whether TR#47618 / EMCU8614105 was physically picked up before the free-time extension ends October 12.",
+      "t": "START HERE: Call Polo 4PL now and confirm whether TR#47618 / EMCU8614105 was physically picked up before free time expires today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Polo container TR#47618 / EMCU8614105 had an October 9 pickup appointment, but physical pickup and release remain unconfirmed. Polo and dispatch are waiting on closure. The appointment was 2 calendar days ago, and the free-time extension ends tomorrow, October 12. Send: Vic, please confirm whether TR#47618 / EMCU8614105 was physically picked up on the October 9 appointment; if not, what is today's recovery plan, and is storage waived through October 12?",
+      "t": "ACT NOW 1: Polo container TR#47618 / EMCU8614105 had an October 9 pickup appointment, but physical pickup and release remain unconfirmed. Polo and dispatch are waiting on closure. The appointment was 3 calendar days ago, and the free-time extension expires today, October 12. Send: Vic, please confirm whether TR#47618 / EMCU8614105 was physically picked up; if not, send today's recovery appointment and confirm storage remains waived through release.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: TALOVA reported a lip balm stockout and requested 500 more units; delivery of the earlier 15,000 units remains unverified. Marcello is waiting. The request is about 2 calendar days old with no stated deadline. Send: Marcello, we are checking availability and a ship date for the additional 500 and verifying delivery of the 15,000, 5,000 per scent; I will confirm both today.",
+      "t": "ACT NOW 2: FedEx could not deliver Jedwards shipment 384100536855 because the recipient was unavailable. The 8 lb shipment references MIXTOPH and PO W01276441, and FedEx says it will reattempt the next business day, today. Receiving is waiting on the material; the failed attempt is 1 calendar day old. Send: Please make sure someone can receive FedEx shipment 384100536855 today and confirm receipt of the MIXTOPH material and COA as soon as it arrives.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Solabia needs confirmation of PLL's Farmington Hills bill-to address before the 6 kg Estogel Max PO can move cleanly. PO acceptance, a firm ship date, and the remaining 14 kg path are unverified. Solabia is waiting, and no missed supplier commitment is confirmed. Send: Joella and Darren, please update billing to our Farmington Hills address, confirm receipt of PO-2026-0026 for 6 kg, and provide the earliest ship date and lead time for the balance.",
+      "t": "ACT NOW 3: TALOVA reported a lip balm stockout and requested 500 more units; delivery of the earlier 15,000 units remains unverified. Marcello is waiting. The request is about 3 calendar days old with no completion visible. Send: Marcello, we are checking availability and the ship date for the additional 500 and verifying delivery of the prior 15,000; I will confirm both today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Close the Polo pickup first because the free-time extension ends tomorrow, then resolve TALOVA and Estogel before Monday production planning.",
-    "Scheduled: 5 email-derived milestones. The nearest is the Polo free-time extension ending October 12; shipment 384100536855 is also expected October 12 based on the latest available carrier notice.",
-    "Noise: 6 Outlook messages, none urgent.",
-    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing has no current source records to verify open supplier, QC, inventory, or lead-time risks. The Email lane reports the Sam-owned Proteger agreement response is 7 calendar days overdue. Missing data is not zero."
+    "Recommendation: Close Polo first because free time expires today, then secure the FedEx redelivery before resolving TALOVA.",
+    "Estogel was displaced from Act Now by the failed FedEx delivery because the material is already at the final receiving step and redelivery is due today.",
+    "Scheduled: 6 email-derived milestones. The nearest is FedEx shipment 384100536855, due for reattempt today.",
+    "Noise: 7 Outlook messages, none urgent.",
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing has no current source records to verify open supplier, QC, inventory, or lead-time risks. The Email lane was connected and the request routed, but no fresh reply was captured during this run. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Polo pickup remains unconfirmed one day before free time ends. TALOVA's stockout and 500-unit replenishment remain unresolved. Solabia still needs the billing update and a firm Estogel Max ship date.",
+  "signal": "Polo pickup remains unconfirmed on the free-time deadline. FedEx missed delivery of MIXTOPH material and plans to reattempt today. TALOVA's stockout and 500-unit replenishment remain unresolved.",
   "redflags": [
-    "Polo physical pickup is unverified and free time ends October 12.",
+    "Polo physical pickup is unverified and free time expires today, October 12.",
+    "FedEx shipment 384100536855 containing MIXTOPH material was not delivered and is due for reattempt today.",
     "TALOVA's requested 500-unit replenishment and proof of delivery for the prior 15,000 units remain unverified.",
-    "The Estogel Max 6 kg PO lacks confirmed acceptance and a firm ship date; the remaining 14 kg path is unverified.",
     "CRM and WhatsApp could not be scanned because both browser sessions are signed out."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "7 inbound Outlook messages arrived in 7 unique conversations during the exact review window; 5 were unread and 6 were noise.",
+  "noise": "9 inbound Outlook messages arrived during the exact review window; 7 were noise and 2 carried actionable purchasing or receiving information.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Confirm Polo container pickup before the October 12 free-time extension ends.",
+      "top_task": "Confirm Polo container pickup before the October 12 free-time extension expires.",
       "tasks": [
         "Confirm Polo TR#47618 pickup and storage status",
-        "Verify TALOVA inventory, ship timing, and prior delivery",
-        "Confirm Solabia billing update, PO acceptance, and ship date"
+        "Ensure FedEx 384100536855 is received and verify MIXTOPH material and COA",
+        "Verify TALOVA inventory, ship timing, and prior delivery"
       ],
-      "notes": "Bulk Natural Oils reported that 3.5 kg Mixed Tocopherols 95% Non-GMO shipped under tracking 384100536855 with a lot COA attached; receipt and COA review are unverified. Customer pricing remains Sam's lane."
+      "notes": "Chemspire confirmed the Guaiazulene ChemColor quote remains active and requested a PO for 250 g at orders@chemspireingredients.com. Aidan had stated he was ready to order, but no live-job dependency was verified, so it remains scheduled rather than Act Now. Customer pricing remains Sam's lane."
     }
   },
   "revenueActions": [
     {
       "title": "Close Polo container pickup",
-      "why": "The October 9 appointment is past and free time ends October 12.",
+      "why": "The October 9 appointment is past and free time expires today.",
       "est_value": "UNVERIFIED",
-      "next_step": "Obtain physical pickup confirmation or today's recovery plan and confirm storage remains waived.",
+      "next_step": "Obtain physical pickup confirmation or today's recovery appointment and confirm storage remains waived through release.",
+      "owner": "Aidan",
+      "timing": "Now",
+      "value": "Inbound logistics"
+    },
+    {
+      "title": "Secure MIXTOPH redelivery",
+      "why": "FedEx could not deliver Jedwards shipment 384100536855 and plans to reattempt today.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Ensure receiving coverage, then confirm receipt of the material and COA.",
       "owner": "Aidan",
       "timing": "Today",
-      "value": "Inbound logistics"
+      "value": "Production continuity"
     },
     {
       "title": "Restore TALOVA lip balm inventory",
@@ -67,15 +77,6 @@
       "owner": "Aidan",
       "timing": "Today",
       "value": "Customer fulfillment"
-    },
-    {
-      "title": "Release the Estogel Max PO",
-      "why": "Solabia needs the corrected bill-to address and has not provided a firm ship date for the 6 kg PO.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Confirm the address, PO receipt, earliest firm ship date, and balance lead time; alert Sam if timing threatens the Roon run.",
-      "owner": "Aidan",
-      "timing": "Today",
-      "value": "Production continuity"
     }
   ],
   "pipelineStat": {
@@ -89,36 +90,36 @@
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
-    "suppliers_awaiting_response": "Solabia is awaiting confirmation of PLL's corrected bill-to address",
-    "last_verified": "2026-10-11T07:11:00-04:00"
+    "suppliers_awaiting_response": "Chemspire is awaiting a 250 g Guaiazulene PO; Solabia is awaiting confirmation of PLL's corrected bill-to address",
+    "last_verified": "2026-10-12T07:06:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
       "title": "Confirm Polo TR#47618 pickup",
-      "why": "The October 9 appointment is past and free time ends October 12.",
+      "why": "The October 9 appointment is past and free time expires today.",
       "owner": "Aidan",
-      "due": "2 calendar days after appointment; free time ends in 1 day",
+      "due": "3 calendar days after appointment; free time expires today",
       "priority": "critical",
       "revenue": "Inbound logistics"
     },
     {
       "rank": 2,
-      "title": "Verify TALOVA fulfillment and replenishment",
-      "why": "The customer reported a stockout and requested another 500 lip balms.",
+      "title": "Receive Jedwards MIXTOPH shipment",
+      "why": "FedEx missed delivery and plans to reattempt today.",
       "owner": "Aidan",
-      "due": "About 2 calendar days old; completion unverified",
+      "due": "Failed attempt 1 calendar day old; reattempt today",
       "priority": "critical",
-      "revenue": "Customer fulfillment"
+      "revenue": "Production continuity"
     },
     {
       "rank": 3,
-      "title": "Confirm Estogel Max address and ship date",
-      "why": "The 6 kg PO lacks confirmed acceptance and a firm ship date, and the remaining 14 kg path is unverified.",
+      "title": "Verify TALOVA fulfillment and replenishment",
+      "why": "The customer reported a stockout and requested another 500 lip balms.",
       "owner": "Aidan",
-      "due": "Today; no missed supplier commitment confirmed",
+      "due": "About 3 calendar days old; completion unverified",
       "priority": "critical",
-      "revenue": "Production continuity"
+      "revenue": "Customer fulfillment"
     }
   ],
   "purchasingIntelligence": null
