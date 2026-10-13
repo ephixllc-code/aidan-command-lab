@@ -1,40 +1,127 @@
 {
-  "date": "2026-10-12",
-  "ts": "2026-10-12T07:13:00-04:00",
+  "date": "2026-10-13",
+  "ts": "2026-10-13T07:10:00-04:00",
   "brief": [
-    {"t": "START HERE: Verify whether FedEx delivery 384100536855 succeeds on today's reattempt and record the actual delivery status.", "hot": true},
-    {"t": "ACT NOW 1: FedEx delivery 384100536855 is due for reattempt today, but completion is not yet verified. PLL may be waiting for the material; it is due today. Send: Please confirm whether shipment 384100536855 was delivered on today's reattempt and provide the current delivery status.", "hot": true},
-    {"t": "ACT NOW 2: Polo TR#47618 was scheduled for pickup October 9 at 3:30 AM, but pickup and release remain unverified. Polo, Price Transfer, or PLL may be waiting; confirmation is 3 calendar days late. Send: Please confirm whether TR#47618 was picked up on October 9, whether it was released, and its current status today.", "hot": true},
-    {"t": "ACT NOW 3: Peter Clarkson's fuller Proteger agreement reply promised to Sam by October 4 remains unverified and is 8 calendar days late. Sam owns the customer follow up. Send Sam: Peter's promised Proteger agreement comments are now 8 days overdue. His October 5 email only confirmed sample receipt. Please request the agreement comments today.", "hot": true}
+    {
+      "t": "START HERE: Call Vic at Polo 4PL and obtain the physical location and release status of TR#47618 / EMCU8614105 now.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 1: Polo container TR#47618 / EMCU8614105 had an October 9 pickup appointment, but no later pickup or release confirmation is visible. Polo and PLL are waiting on closure. The appointment was 4 calendar days ago, and the October 12 free-time extension has expired. Send: Vic, please confirm the container's physical location, whether it was picked up and released, and any storage or demurrage now accruing; if it is still at the terminal, send today's recovery appointment.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 2: TALOVA reported a lip balm stockout and requested 500 additional units; delivery of the prior 15,000 units remains unverified. Marcello is waiting. The request is 4 calendar days old with no completion visible. Send: Marcello, I am confirming stock and build timing for the additional 500 and delivery proof for the prior 15,000 now, and I will give you both answers today.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 3: Roon Body asked for production timing for the initial 500 to 600 pieces and the remaining 2,000 pieces after being told the first weekly target may slip. Josh and Sam are waiting. The request is 6 calendar days old with no later production date visible. Send: Josh, I am confirming the current completed quantity and production schedule with the floor this morning, and I will send firm dates for the first 500 to 600 and the remaining 2,000 today.",
+      "hot": true
+    }
   ],
   "next": [
-    "Recommendation: Verify today's FedEx reattempt first, then close the Polo pickup visibility gap.",
-    "Scheduled: Estogel PO remains inside its stated two-week ship window; the exact ship and delivery dates remain unverified.",
-    "Noise: Count unavailable.",
-    "Source gap: Current purchasing records do not verify the named supplier, shipment, COA, SDS, inventory, or production risks. Missing data is not zero."
+    "Recommendation: Close Polo first because the free-time extension has expired, then protect the two customer commitments in order: TALOVA and Roon Body.",
+    "Roon Body displaced MIXTOPH from Act Now because FedEx shows the material delivered yesterday while Roon still lacks a production commitment for a live job. Physical receipt and COA verification remain scheduled.",
+    "Scheduled: 6 operational items. The nearest is NatureInBottle vanilla infused oil shipment 384094781681, expected October 14 between 9:40 AM and 1:40 PM.",
+    "Noise: 40 other Outlook messages, none urgent.",
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing has no current source records to verify supplier, QC, inventory, or lead-time risks. The Email lane was connected and the request routed, but no fresh reply was captured during the run. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "FedEx 384100536855 is due for reattempt today. Polo pickup remains unverified three days after its appointment. Proteger agreement comments are eight days overdue.",
+  "signal": "Polo container movement remains unverified after free time expired. TALOVA's stockout and 500-unit request are four days old. Roon Body still lacks dates for the first 500 to 600 and remaining 2,000 pieces.",
   "redflags": [
-    "FedEx delivery 384100536855 requires same-day delivery verification.",
-    "Polo TR#47618 pickup and release remain unverified three days after the scheduled appointment.",
-    "Proteger agreement comments are 8 calendar days overdue; Sam owns follow up."
+    "Polo pickup and release are unverified, and the October 12 free-time extension has expired.",
+    "TALOVA's requested 500-unit replenishment and proof of delivery for the prior 15,000 units remain unverified.",
+    "Roon Body has no verified production dates for the first 500 to 600 pieces or the remaining 2,000 pieces.",
+    "CRM and WhatsApp could not be scanned because both browser sessions are signed out."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "Count unavailable from current source results.",
-  "teamMembers": {"aidan": {"display_name": "Aidan", "top_task": "Verify FedEx delivery 384100536855 after today's reattempt.", "tasks": ["Confirm FedEx delivery 384100536855", "Confirm Polo TR#47618 pickup and release", "Alert Sam about overdue Proteger agreement comments"], "notes": "Estogel remains inside its stated two-week ship window. TALOVA and Chemspire have no verified deadline. No current supplier draft is waiting."}},
+  "noise": "50 inbound Outlook messages arrived during the exact review window; 40 were noise and 10 carried operational, supplier, logistics, or customer context.",
+  "teamMembers": {
+    "aidan": {
+      "display_name": "Aidan",
+      "top_task": "Obtain the physical location and release status of Polo TR#47618 now.",
+      "tasks": [
+        "Confirm Polo TR#47618 pickup, release, and current charges",
+        "Verify TALOVA stock, build timing, and prior delivery proof",
+        "Obtain firm Roon Body production dates"
+      ],
+      "notes": "FedEx reports MIXTOPH shipment 384100536855 delivered October 12 at 3:00 PM; physical receipt and COA verification remain required. NatureInBottle vanilla infused oil is expected October 14. Bulk Naturals order 99139 for 64 oz Vitamin E T50 oil is expected October 16. Aidan corrected Solabia's Estogel bill-to and ship-to address October 12; PO acceptance and a firm ship date remain unverified. Chemspire's best offer for 250 g Guaiazulene is $500 and awaits Aidan's purchase decision. Loutra agreement preparation and Milk of Venus commercial terms remain Sam's lane."
+    }
+  },
   "revenueActions": [
-    {"title": "Verify today's FedEx delivery", "why": "Shipment 384100536855 is due for reattempt today and completion remains unverified.", "est_value": "UNVERIFIED", "next_step": "Confirm delivery status and record proof today.", "owner": "Aidan", "timing": "Today", "value": "Supply continuity"},
-    {"title": "Verify Polo container movement", "why": "TR#47618 pickup and release remain unverified after the October 9 appointment.", "est_value": "UNVERIFIED", "next_step": "Confirm pickup, release, and current status today.", "owner": "Aidan", "timing": "3 calendar days late", "value": "Supply continuity"},
-    {"title": "Protect the Proteger agreement follow up", "why": "Peter Clarkson's promised agreement comments are 8 days overdue.", "est_value": "UNVERIFIED", "next_step": "Aidan alerts Sam; Sam requests the agreement comments today.", "owner": "Sam", "timing": "8 calendar days late", "value": "Customer commitment"}
+    {
+      "title": "Recover Polo container visibility",
+      "why": "The October 9 pickup remains unverified and the free-time extension expired October 12.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Call Vic for the container's physical location, release status, current charges, and today's recovery appointment if needed.",
+      "owner": "Aidan",
+      "timing": "Now",
+      "value": "Inbound logistics"
+    },
+    {
+      "title": "Restore TALOVA lip balm inventory",
+      "why": "The customer reported a stockout and requested 500 more units four days ago.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Call Production for stock and build timing, verify delivery proof for the prior 15,000 units, and reply to Marcello today.",
+      "owner": "Aidan",
+      "timing": "4 calendar days old",
+      "value": "Customer fulfillment"
+    },
+    {
+      "title": "Commit Roon Body production dates",
+      "why": "The customer is waiting for timing on an initial 500 to 600 pieces and the remaining 2,000 pieces.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Get the completed quantity and firm floor schedule, then send Josh and Sam the dates today.",
+      "owner": "Aidan",
+      "timing": "6 calendar days old",
+      "value": "Production commitment"
+    }
   ],
-  "pipelineStat": {"note": "Current purchasing records are unavailable for broader verification. Missing data is not zero.", "open_purchase_orders": "UNVERIFIED", "open_purchase_orders_value": "UNVERIFIED", "long_lead_items": ["Estogel PO remains inside its stated two-week ship window; exact timing is unverified"], "unverified_raw_material_prices": [], "overdue_purchasing_tasks": ["Polo TR#47618 pickup confirmation, 3 calendar days past scheduled date"], "suppliers_awaiting_response": "UNVERIFIED", "last_verified": "2026-10-12T07:13:00-04:00"},
+  "pipelineStat": {
+    "note": "Purchasing has no current source records to verify broader supplier, QC, inventory, or lead-time risks. Missing data is not zero.",
+    "open_purchase_orders": "UNVERIFIED",
+    "open_purchase_orders_value": "UNVERIFIED",
+    "long_lead_items": [
+      "Estogel Max: 6 kg PO submitted and address corrected; PO acceptance and firm ship date remain unverified",
+      "Polo TR#47618 / EMCU8614105: physical pickup and release remain unverified after free time expired"
+    ],
+    "unverified_raw_material_prices": [],
+    "overdue_purchasing_tasks": [
+      "Polo TR#47618 pickup confirmation, 4 calendar days after the scheduled appointment"
+    ],
+    "suppliers_awaiting_response": "Chemspire is awaiting a decision on its $500 offer for 250 g Guaiazulene; Solabia has not provided a visible PO acceptance or firm Estogel ship date",
+    "last_verified": "2026-10-13T07:10:00-04:00"
+  },
   "topTasks": [
-    {"rank": 1, "title": "Verify FedEx delivery 384100536855", "why": "The shipment is due for reattempt today and completion is unverified.", "owner": "Aidan", "due": "Today", "priority": "critical", "revenue": "Supply continuity"},
-    {"rank": 2, "title": "Confirm Polo TR#47618 pickup and release", "why": "The October 9 movement remains unverified.", "owner": "Aidan", "due": "3 calendar days late", "priority": "critical", "revenue": "Supply continuity"},
-    {"rank": 3, "title": "Alert Sam about overdue Proteger comments", "why": "The agreement response promised for October 4 remains unverified.", "owner": "Aidan to alert Sam; Sam owns follow up", "due": "8 calendar days late", "priority": "critical", "revenue": "Customer commitment"}
+    {
+      "rank": 1,
+      "title": "Confirm Polo TR#47618 location and release",
+      "why": "The October 9 appointment is past and the free-time extension expired October 12.",
+      "owner": "Aidan",
+      "due": "4 calendar days after appointment; free time expired 1 calendar day ago",
+      "priority": "critical",
+      "revenue": "Inbound logistics"
+    },
+    {
+      "rank": 2,
+      "title": "Verify TALOVA fulfillment and replenishment",
+      "why": "The customer reported a stockout and requested 500 additional lip balms.",
+      "owner": "Aidan",
+      "due": "4 calendar days old",
+      "priority": "critical",
+      "revenue": "Customer fulfillment"
+    },
+    {
+      "rank": 3,
+      "title": "Commit Roon Body production dates",
+      "why": "The customer lacks dates for the first 500 to 600 pieces and the remaining 2,000 pieces.",
+      "owner": "Aidan",
+      "due": "6 calendar days old",
+      "priority": "critical",
+      "revenue": "Production commitment"
+    }
   ],
   "purchasingIntelligence": null
 }
