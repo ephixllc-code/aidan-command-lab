@@ -1,6 +1,6 @@
 {
   "request_id": "cmd_20261013_0700_et_status",
   "status": "completed",
-  "routed_to": "purchasing",
-  "summary": "Purchasing result captured. Current records do not verify open supplier items, overdue COAs or SDS, inventory shortages, lead-time threats, or R&D and Production requests needing purchasing action. Current POs, supplier communications, QC files, inventory, shipment tracking, production exceptions, and internal requests are unavailable. Missing data is not zero; broader purchasing risk remains unverified."
+  "routed_to": "email",
+  "summary": "Morning brief consolidated. First verify Buffman delivery, now 9 calendar days past its stated ETA. Then confirm Polo TR#47618 pickup and release, 4 calendar days after its appointment, and alert Sam that Peter Clarkson's Proteger agreement comments are 9 calendar days overdue. Estogel remains inside its stated two-week ship window and vanilla oil is due October 14. Broader purchasing risk remains unverified because current records are unavailable."
 }
