@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261012_0700_et_status",
+  "request_id": "cmd_20261013_0700_et_status",
   "status": "completed",
-  "routed_to": "email",
-  "summary": "Morning brief consolidated. First verify FedEx delivery 384100536855 after today's reattempt. Then confirm Polo TR#47618 pickup and release, now 3 calendar days past its appointment, and alert Sam that Peter Clarkson's Proteger agreement comments are 8 calendar days overdue. Estogel remains inside its stated two-week ship window; current purchasing records are unavailable, so broader risk remains unverified."
+  "routed_to": "purchasing",
+  "summary": "Purchasing result captured. Current records do not verify open supplier items, overdue COAs or SDS, inventory shortages, lead-time threats, or R&D and Production requests needing purchasing action. Current POs, supplier communications, QC files, inventory, shipment tracking, production exceptions, and internal requests are unavailable. Missing data is not zero; broader purchasing risk remains unverified."
 }
