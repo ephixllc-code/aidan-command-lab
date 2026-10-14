@@ -1,57 +1,124 @@
 {
   "date": "2026-10-14",
-  "ts": "2026-10-14T07:10:00-04:00",
+  "ts": "2026-10-14T07:14:00-04:00",
   "brief": [
-    {"t": "START HERE: Call Jedwards and obtain the lot-specific Tocopherol COA, then forward it to Evelyn before the material is used.", "hot": true},
-    {"t": "ACT NOW 1: Tocopherol has arrived, but Evelyn is waiting for the COA and could not verify receipt of it. The request is 1 calendar day old and the missing document may block QC release. Send: Alexandra, please send the lot-specific COA for the Tocopherol shipment now so QC can release the material today.", "hot": true},
-    {"t": "ACT NOW 2: Polo TR#47618 / EMCU8614105 was scheduled for pickup October 9, but pickup, release, and current location remain unverified. Polo or PLL may be waiting; confirmation is 5 calendar days late and free time expired October 12. Send: Vic, please confirm the container's physical location, pickup and release status, and any storage or demurrage now accruing. If it remains at the terminal, send today's recovery appointment.", "hot": true},
-    {"t": "ACT NOW 3: Marcello requested 500 additional TALOVA lip balms, while delivery of the prior 15,000 units remains unverified. Marcello has been waiting 5 calendar days. Send: Marcello, I am confirming stock and build timing for the additional 500 and delivery proof for the prior 15,000 now. I will give you both answers today.", "hot": true}
+    {
+      "t": "START HERE: Contact Buffman and obtain proof of delivery or the shipment's current location and revised ETA.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 1: The Buffman shipment's October 4 ETA is 10 calendar days past and delivery remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Buffman shipment was delivered, provide proof of delivery, or send its current location and revised ETA today.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 2: ActivePeptide was scheduled to ship October 6 and tracking was issued October 7, but movement remains unverified 8 calendar days after the ship date. PLL may be waiting for the material. Send: Please confirm the ActivePeptide shipment's latest carrier scan, current location, and revised delivery date today.",
+      "hot": true
+    },
+    {
+      "t": "ACT NOW 3: Polo TR#47618 was scheduled for pickup October 9, but pickup and release remain unverified 5 calendar days later. Polo, Price Transfer, or PLL may be waiting. Send: Please confirm whether TR#47618 was picked up on October 9, whether it was released, and its current status today.",
+      "hot": true
+    }
   ],
   "next": [
-    "Recommendation: Clear the Tocopherol COA first because material is physically on site but may remain unusable, then close Polo and TALOVA.",
-    "Displaced: Roon Body moved below Act Now because the new Tocopherol documentation gap may block QC release today.",
-    "Scheduled: 7 operational items. The nearest dated milestone is Bulk Naturals shipment 99139, expected October 16; facial-pad samples are expected October 19 under tracking 8784 2707 2819.",
-    "Noise: At least 38 Outlook messages, none operationally urgent.",
-    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing has no current records to rule out other supplier, QC, inventory, or lead-time risks. The Email lane did not return a fresh reply during the response window. Missing data is not zero."
+    "Recommendation: Verify Buffman first, then close the ActivePeptide and Polo shipment visibility gaps.",
+    "Scheduled: 5 other dated or undated items, with the nearest future date being Weston's October 19 ETA. None displaced the three shipment risks above.",
+    "Noise: Count unavailable.",
+    "Source gap: Current POs, supplier communications, QC files, inventory, tracking, production exceptions, and internal requests remain unavailable. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Tocopherol is on site without a verified COA. Polo container movement remains unverified five days after pickup. TALOVA's additional 500-unit need and prior delivery remain unresolved.",
+  "signal": "Buffman delivery is unverified 10 days after ETA. ActivePeptide movement is unverified 8 days after its ship date. Polo pickup remains unverified 5 days after its appointment.",
   "redflags": [
-    "Tocopherol COA is missing after physical receipt, creating a possible QC release block.",
-    "Polo TR#47618 / EMCU8614105 pickup and release remain unverified 5 calendar days after the appointment and 2 days after free time expired.",
-    "TALOVA's request for 500 additional lip balms is 5 calendar days old; delivery of the prior 15,000 remains unverified."
+    "Buffman delivery remains unverified 10 calendar days after its stated ETA.",
+    "ActivePeptide carrier movement remains unverified 8 calendar days after its scheduled ship date.",
+    "Polo TR#47618 pickup and release remain unverified 5 calendar days after the scheduled appointment."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "At least 38 Outlook messages were non-operational noise; the search result cap prevents claiming a complete inbox count.",
+  "noise": "Count unavailable from current source results.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Obtain the Tocopherol COA and forward it to Evelyn.",
-      "tasks": ["Obtain and forward Tocopherol COA", "Confirm Polo container pickup and release", "Resolve TALOVA stock and delivery status"],
-      "notes": "Roon Body was displaced by the Tocopherol QC-document gap. CRM and WhatsApp remain signed out."
+      "top_task": "Verify Buffman delivery and obtain proof or a revised ETA.",
+      "tasks": [
+        "Confirm Buffman delivery status",
+        "Confirm ActivePeptide carrier movement",
+        "Confirm Polo TR#47618 pickup and release"
+      ],
+      "notes": "Five other dated or undated items remain below the Act Now cutoff. Weston has the nearest future date, October 19. Broader purchasing risk is unverified because current operational records are unavailable."
     }
   },
   "revenueActions": [
-    {"title": "Release Tocopherol through QC", "why": "The material is physically received but its lot-specific COA is not verified.", "est_value": "UNVERIFIED", "next_step": "Call Jedwards, obtain the COA, and forward it to Evelyn today.", "owner": "Aidan", "timing": "1 calendar day old", "value": "Production continuity"},
-    {"title": "Verify Polo container movement", "why": "Pickup, release, and location remain unverified after the October 9 appointment.", "est_value": "UNVERIFIED", "next_step": "Obtain physical location, release status, and any storage or demurrage today.", "owner": "Aidan", "timing": "5 calendar days late", "value": "Supply continuity"},
-    {"title": "Resolve TALOVA stockout", "why": "Marcello needs 500 more units and prior delivery is not verified.", "est_value": "UNVERIFIED", "next_step": "Confirm stock or build timing and proof of delivery today.", "owner": "Aidan", "timing": "5 calendar days old", "value": "Customer commitment"}
+    {
+      "title": "Verify Buffman delivery",
+      "why": "The shipment is 10 calendar days past its stated ETA and delivery remains unverified.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Obtain proof of delivery or the current location and revised ETA today.",
+      "owner": "Aidan",
+      "timing": "10 calendar days late",
+      "value": "Supply continuity"
+    },
+    {
+      "title": "Verify ActivePeptide movement",
+      "why": "Tracking was issued, but carrier movement remains unverified 8 calendar days after the scheduled ship date.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Obtain the latest carrier scan, current location, and revised delivery date today.",
+      "owner": "Aidan",
+      "timing": "8 calendar days after ship date",
+      "value": "Supply continuity"
+    },
+    {
+      "title": "Verify Polo container movement",
+      "why": "TR#47618 pickup and release remain unverified after the October 9 appointment.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Confirm pickup, release, and current status today.",
+      "owner": "Aidan",
+      "timing": "5 calendar days late",
+      "value": "Supply continuity"
+    }
   ],
   "pipelineStat": {
     "note": "Current purchasing records are unavailable for broader verification. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
-    "long_lead_items": ["Facial-pad samples expected October 19 under tracking 8784 2707 2819"],
+    "long_lead_items": [],
     "unverified_raw_material_prices": [],
-    "overdue_purchasing_tasks": ["Tocopherol COA missing after receipt", "Polo TR#47618 movement confirmation, 5 calendar days late"],
+    "overdue_purchasing_tasks": [
+      "Buffman delivery confirmation, 10 calendar days past ETA",
+      "ActivePeptide movement confirmation, 8 calendar days after ship date",
+      "Polo TR#47618 pickup confirmation, 5 calendar days past scheduled date"
+    ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-14T07:10:00-04:00"
+    "last_verified": "2026-10-14T07:14:00-04:00"
   },
   "topTasks": [
-    {"rank": 1, "title": "Obtain Tocopherol COA", "why": "Material is received but may remain blocked from use without its COA.", "owner": "Aidan", "due": "Today", "priority": "critical", "revenue": "Production continuity"},
-    {"rank": 2, "title": "Confirm Polo container pickup and release", "why": "The October 9 movement remains unverified after free time expired.", "owner": "Aidan", "due": "5 calendar days late", "priority": "critical", "revenue": "Supply continuity"},
-    {"rank": 3, "title": "Resolve TALOVA stock and delivery status", "why": "The additional 500-unit request and prior delivery both remain unresolved.", "owner": "Aidan", "due": "5 calendar days old", "priority": "critical", "revenue": "Customer commitment"}
+    {
+      "rank": 1,
+      "title": "Verify Buffman delivery",
+      "why": "The October 4 ETA passed and delivery remains unverified.",
+      "owner": "Aidan",
+      "due": "10 calendar days late",
+      "priority": "critical",
+      "revenue": "Supply continuity"
+    },
+    {
+      "rank": 2,
+      "title": "Confirm ActivePeptide carrier movement",
+      "why": "The October 6 ship date passed and tracking movement remains unverified.",
+      "owner": "Aidan",
+      "due": "8 calendar days after ship date",
+      "priority": "critical",
+      "revenue": "Supply continuity"
+    },
+    {
+      "rank": 3,
+      "title": "Confirm Polo TR#47618 pickup and release",
+      "why": "The October 9 movement remains unverified.",
+      "owner": "Aidan",
+      "due": "5 calendar days late",
+      "priority": "critical",
+      "revenue": "Supply continuity"
+    }
   ],
   "purchasingIntelligence": null
 }
