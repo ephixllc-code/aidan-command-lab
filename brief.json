@@ -1,36 +1,36 @@
 {
-  "date": "2026-10-14",
-  "ts": "2026-10-14T07:14:00-04:00",
+  "date": "2026-10-15",
+  "ts": "2026-10-15T07:09:00-04:00",
   "brief": [
     {
       "t": "START HERE: Contact Buffman and obtain proof of delivery or the shipment's current location and revised ETA.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: The Buffman shipment's October 4 ETA is 10 calendar days past and delivery remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Buffman shipment was delivered, provide proof of delivery, or send its current location and revised ETA today.",
+      "t": "ACT NOW 1: The Buffman shipment's October 4 ETA is 11 calendar days past and delivery remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Buffman shipment was delivered, provide proof of delivery, or send its current location and revised ETA today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: ActivePeptide was scheduled to ship October 6 and tracking was issued October 7, but movement remains unverified 8 calendar days after the ship date. PLL may be waiting for the material. Send: Please confirm the ActivePeptide shipment's latest carrier scan, current location, and revised delivery date today.",
+      "t": "ACT NOW 2: ActivePeptide was scheduled to ship October 6 and tracking was issued October 7, but movement remains unverified 9 calendar days after the ship date. PLL may be waiting for the material. Send: Please confirm the ActivePeptide shipment's latest carrier scan, current location, and revised delivery date today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Polo TR#47618 was scheduled for pickup October 9, but pickup and release remain unverified 5 calendar days later. Polo, Price Transfer, or PLL may be waiting. Send: Please confirm whether TR#47618 was picked up on October 9, whether it was released, and its current status today.",
+      "t": "ACT NOW 3: Polo TR#47618 reached Price Transfer on October 10 and today's check-back is due, but its current status remains unverified. Price Transfer or PLL may be waiting. Send: Please confirm TR#47618's current status, release readiness, and expected delivery timing today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Verify Buffman first, then close the ActivePeptide and Polo shipment visibility gaps.",
-    "Scheduled: 5 other dated or undated items, with the nearest future date being Weston's October 19 ETA. None displaced the three shipment risks above.",
+    "Recommendation: Verify Buffman first, then close the ActivePeptide gap and complete today's Polo check-back.",
+    "Scheduled: 5 other dated or undated items remain below the Act Now cutoff; no reliable future deadline is available from the current records.",
     "Noise: Count unavailable.",
     "Source gap: Current POs, supplier communications, QC files, inventory, tracking, production exceptions, and internal requests remain unavailable. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Buffman delivery is unverified 10 days after ETA. ActivePeptide movement is unverified 8 days after its ship date. Polo pickup remains unverified 5 days after its appointment.",
+  "signal": "Buffman delivery is unverified 11 days after ETA. ActivePeptide movement is unverified 9 days after its ship date. Polo TR#47618 requires its scheduled check-back today.",
   "redflags": [
-    "Buffman delivery remains unverified 10 calendar days after its stated ETA.",
-    "ActivePeptide carrier movement remains unverified 8 calendar days after its scheduled ship date.",
-    "Polo TR#47618 pickup and release remain unverified 5 calendar days after the scheduled appointment."
+    "Buffman delivery remains unverified 11 calendar days after its stated ETA.",
+    "ActivePeptide carrier movement remains unverified 9 calendar days after its scheduled ship date.",
+    "Polo TR#47618 reached Price Transfer October 10, but its status remains unverified on the October 15 check-back date."
   ],
   "team": [],
   "pipeline": null,
@@ -43,37 +43,37 @@
       "tasks": [
         "Confirm Buffman delivery status",
         "Confirm ActivePeptide carrier movement",
-        "Confirm Polo TR#47618 pickup and release"
+        "Complete today's Polo TR#47618 check-back"
       ],
-      "notes": "Five other dated or undated items remain below the Act Now cutoff. Weston has the nearest future date, October 19. Broader purchasing risk is unverified because current operational records are unavailable."
+      "notes": "Five other dated or undated items remain below the Act Now cutoff. Broader purchasing risk is unverified because current operational records are unavailable."
     }
   },
   "revenueActions": [
     {
       "title": "Verify Buffman delivery",
-      "why": "The shipment is 10 calendar days past its stated ETA and delivery remains unverified.",
+      "why": "The shipment is 11 calendar days past its stated ETA and delivery remains unverified.",
       "est_value": "UNVERIFIED",
       "next_step": "Obtain proof of delivery or the current location and revised ETA today.",
       "owner": "Aidan",
-      "timing": "10 calendar days late",
+      "timing": "11 calendar days late",
       "value": "Supply continuity"
     },
     {
       "title": "Verify ActivePeptide movement",
-      "why": "Tracking was issued, but carrier movement remains unverified 8 calendar days after the scheduled ship date.",
+      "why": "Tracking was issued, but carrier movement remains unverified 9 calendar days after the scheduled ship date.",
       "est_value": "UNVERIFIED",
       "next_step": "Obtain the latest carrier scan, current location, and revised delivery date today.",
       "owner": "Aidan",
-      "timing": "8 calendar days after ship date",
+      "timing": "9 calendar days after ship date",
       "value": "Supply continuity"
     },
     {
-      "title": "Verify Polo container movement",
-      "why": "TR#47618 pickup and release remain unverified after the October 9 appointment.",
+      "title": "Complete Polo check-back",
+      "why": "TR#47618 reached Price Transfer October 10 and the scheduled check-back is due today.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm pickup, release, and current status today.",
+      "next_step": "Confirm current status, release readiness, and expected delivery timing today.",
       "owner": "Aidan",
-      "timing": "5 calendar days late",
+      "timing": "Due today",
       "value": "Supply continuity"
     }
   ],
@@ -84,12 +84,12 @@
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [
-      "Buffman delivery confirmation, 10 calendar days past ETA",
-      "ActivePeptide movement confirmation, 8 calendar days after ship date",
-      "Polo TR#47618 pickup confirmation, 5 calendar days past scheduled date"
+      "Buffman delivery confirmation, 11 calendar days past ETA",
+      "ActivePeptide movement confirmation, 9 calendar days after ship date",
+      "Polo TR#47618 status check, due today"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-14T07:14:00-04:00"
+    "last_verified": "2026-10-15T07:09:00-04:00"
   },
   "topTasks": [
     {
@@ -97,7 +97,7 @@
       "title": "Verify Buffman delivery",
       "why": "The October 4 ETA passed and delivery remains unverified.",
       "owner": "Aidan",
-      "due": "10 calendar days late",
+      "due": "11 calendar days late",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
@@ -106,16 +106,16 @@
       "title": "Confirm ActivePeptide carrier movement",
       "why": "The October 6 ship date passed and tracking movement remains unverified.",
       "owner": "Aidan",
-      "due": "8 calendar days after ship date",
+      "due": "9 calendar days after ship date",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
     {
       "rank": 3,
-      "title": "Confirm Polo TR#47618 pickup and release",
-      "why": "The October 9 movement remains unverified.",
+      "title": "Complete Polo TR#47618 check-back",
+      "why": "The October 15 check-back is due and current status remains unverified.",
       "owner": "Aidan",
-      "due": "5 calendar days late",
+      "due": "Today",
       "priority": "critical",
       "revenue": "Supply continuity"
     }
