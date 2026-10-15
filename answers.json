@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261014_0700_et_status",
-  "status": "completed",
-  "routed_to": "email",
-  "summary": "Morning brief consolidated. First verify Buffman delivery, now 10 calendar days past its stated ETA. Then confirm ActivePeptide carrier movement, 8 calendar days after its scheduled ship date, and Polo TR#47618 pickup and release, 5 calendar days after its appointment. Five other items remain below the Act Now cutoff; Weston has the nearest future date, October 19. Broader purchasing risk remains unverified because current records are unavailable."
+  "request_id": "cmd_20261015_0700_et_status",
+  "status": "blocked",
+  "routed_to": "purchasing",
+  "summary": "Purchasing status captured. As of October 15 at 7:01 AM ET, no connected or uploaded records verify open supplier items, overdue COAs or SDS files, inventory shortages, production-threatening lead times, or R&D or Production purchasing requests. Aidan must upload or connect current POs, supplier communications, QC files, inventory, tracking, production exceptions, and internal requests today. Missing data is not zero."
 }
