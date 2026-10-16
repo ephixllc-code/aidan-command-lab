@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261015_0700_et_status",
-  "status": "completed",
-  "routed_to": "email",
-  "summary": "Morning brief consolidated. First verify Buffman delivery, now 11 calendar days past its stated ETA. Then confirm ActivePeptide carrier movement, 9 calendar days after its scheduled ship date, and complete today's Price Transfer check on Polo TR#47618. Five other items remain below the Act Now cutoff. Broader purchasing risk remains unverified because current records are unavailable."
+  "request_id": "cmd_20261016_0700_et_status",
+  "status": "blocked",
+  "routed_to": "purchasing",
+  "summary": "Purchasing status captured. As of October 16 at 7:01 AM ET, current records remain unavailable for open supplier items, overdue COAs, inventory or lead-time threats to live production, and R&D or Production requests. Aidan must connect or upload current POs, supplier and QC files, inventory, tracking, production exceptions, and internal requests today, then escalate any verified live-production threat to Sam the same day. Missing data is not zero."
 }
