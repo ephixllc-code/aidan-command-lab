@@ -1,72 +1,72 @@
 {
-  "date": "2026-10-15",
-  "ts": "2026-10-15T07:11:00-04:00",
+  "date": "2026-10-16",
+  "ts": "2026-10-16T07:09:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Call Price Transfer CET now and confirm whether EMCU8614105 has cleared its customs exam and can be released today.",
+      "t": "START HERE: Put Roon Body's ready 2,000-unit run onto the production schedule and give Josh a firm start and completion date now.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Polo container EMCU8614105 arrived at Price Transfer October 10 and is still pending customs exam 5 calendar days later. Gaby said to check back today. Send: Gaby, please confirm whether EMCU8614105 has cleared the exam, whether it is available for release, and the earliest pickup time today.",
+      "t": "ACT NOW 1: Josh confirmed PLL has all 2,000 tubes and bottom stickers, while Roon Body remains backlogged across inventory. His written recap is 1 calendar day old and he also needs a mid-November slot for the next 10,000 units. Send: Josh, I am locking the 2,000-unit run into the floor schedule this morning and will send you the firm start and completion dates, plus the mid-November 10,000-unit slot, today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Tocopherol is physically at PLL, but Evelyn still has no verified lot-specific COA. The request is 2 calendar days old and may block QC release. Send: Alexandra, please send the lot-specific COA for the Tocopherol shipment now so QC can release the material today.",
+      "t": "ACT NOW 2: Polo container EMCU8614105 has been at Price Transfer pending customs exam since October 10, now 6 calendar days. Gaby asked Aidan to check back October 15, but no clearance or release update is visible. Send: Gaby, please confirm whether EMCU8614105 has cleared the exam, whether it is available for release, and the earliest pickup time today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Marcello requested 500 additional TALOVA lip balms after a stockout and asked for delivery confirmation on the prior 15,000 units. No later resolution is visible 6 calendar days later. Send: Marcello, I am confirming stock and build timing for the additional 500 and proof of delivery for the prior 15,000 now. I will give you both answers today.",
+      "t": "ACT NOW 3: Marcello requested 500 additional TALOVA lip balms after a stockout and proof of delivery for the prior 15,000 units. No later resolution is visible 7 calendar days later. Send: Marcello, I am confirming stock or build timing for the additional 500 and proof of delivery for the prior 15,000 now. I will give you both answers today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Clear the customs exam first, then release Tocopherol through QC and close TALOVA's stockout.",
-    "Displaced: Buffman, ActivePeptide, and Roon Body remain below Act Now because today's direct evidence gives Polo, Tocopherol, and TALOVA clearer live operational blocks; their movement or production status is still unverified.",
-    "Scheduled: 10 other operational items. The nearest dated milestone is Bulk Naturals order 99139, expected October 16; New Directions order 826890 is due October 20 and Mibelle PO 2026-00-0027 is due November 3.",
-    "Noise: At least 38 Outlook messages, none operationally urgent.",
-    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing returned no current records to rule out other supplier, QC, inventory, or lead-time risks. The Email lane replied, but its Buffman and ActivePeptide status remains unsupported by current connected records. Missing data is not zero."
+    "Recommendation: Commit Roon Body's production dates first, then close the Polo customs exam and TALOVA stockout.",
+    "Displaced: Tocopherol moved below Act Now because its COA remains unverified, but no specific live production run was confirmed against it; Roon Body has all inputs on site and a documented inventory backlog.",
+    "Scheduled: 11 other operational items. Bulk Naturals order 99139 is out for delivery today; Roon Body's inbound 10,000 tubes are ready for freight pickup, and FedEx shipment 533066816125 is due October 19.",
+    "Noise: 50+ Outlook messages were below the operational cutoff.",
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing returned no current records to rule out additional supplier, QC, inventory, or lead-time risks. The Email lane did not return a fresh update within the run window. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Polo's container is pending customs exam at Price Transfer. Tocopherol remains on site without a verified COA. TALOVA's stockout and prior delivery remain unresolved.",
+  "signal": "Roon Body has all inputs on site and needs production dates. Polo's container remains pending customs exam. TALOVA's stockout and prior delivery remain unresolved.",
   "redflags": [
-    "EMCU8614105 has been at Price Transfer pending customs exam for 5 calendar days.",
-    "Tocopherol may remain blocked from QC release without its lot-specific COA.",
-    "TALOVA's additional 500-unit need and prior 15,000-unit delivery remain unverified 6 calendar days after the request."
+    "Roon Body is backlogged while the ready 2,000-unit run has no verified floor dates.",
+    "EMCU8614105 has been at Price Transfer pending customs exam for 6 calendar days.",
+    "TALOVA's additional 500-unit need and prior 15,000-unit delivery remain unverified 7 calendar days after the request."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "At least 38 Outlook messages were below the operational cutoff; the 50-message result cap prevents claiming a complete inbox count.",
+  "noise": "50+ Outlook messages were below the operational cutoff; the October 15 result set hit the 50-message cap, so this is a minimum rather than a complete count.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Confirm customs exam clearance and release for EMCU8614105.",
+      "top_task": "Commit the ready Roon Body 2,000-unit run to firm production dates.",
       "tasks": [
+        "Commit Roon Body production dates",
         "Confirm Polo customs exam clearance",
-        "Obtain Tocopherol COA",
         "Resolve TALOVA stock and delivery status"
       ],
-      "notes": "Buffman, ActivePeptide, Roon Body, Aranve, Estogel, and Venom require follow-through below the Act Now cutoff. CRM and WhatsApp remain signed out."
+      "notes": "Tocopherol COA, Roon Body freight, New Directions delivery, JUJE receiving, Ecoslim tracking, and other operational follow-through remain below the Act Now cutoff. CRM and WhatsApp are signed out."
     }
   },
   "revenueActions": [
+    {
+      "title": "Commit Roon Body production dates",
+      "why": "All inputs for 2,000 units are on site and the customer remains backlogged across inventory.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Put the 2,000-unit run on the floor schedule and confirm the mid-November 10,000-unit slot today.",
+      "owner": "Aidan",
+      "timing": "1 calendar day since written recap",
+      "value": "Production and customer continuity"
+    },
     {
       "title": "Release Polo container from customs exam",
       "why": "The container has been at Price Transfer pending exam since October 10.",
       "est_value": "UNVERIFIED",
       "next_step": "Call Price Transfer CET and obtain clearance, release, and pickup status today.",
       "owner": "Aidan",
-      "timing": "5 calendar days pending exam",
+      "timing": "6 calendar days pending exam",
       "value": "Supply continuity"
-    },
-    {
-      "title": "Release Tocopherol through QC",
-      "why": "The material is physically received but its lot-specific COA is not verified.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Obtain the COA from Jedwards and forward it to Evelyn today.",
-      "owner": "Aidan",
-      "timing": "2 calendar days old",
-      "value": "Production continuity"
     },
     {
       "title": "Resolve TALOVA stockout",
@@ -74,7 +74,7 @@
       "est_value": "UNVERIFIED",
       "next_step": "Confirm stock or build timing and proof of delivery today.",
       "owner": "Aidan",
-      "timing": "6 calendar days old",
+      "timing": "7 calendar days old",
       "value": "Customer commitment"
     }
   ],
@@ -83,7 +83,8 @@
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "Mibelle PO 2026-00-0027 estimated delivery November 3"
+      "Roon Body's next 10,000-unit packaging is in production and targeted to arrive within four weeks",
+      "Mibelle PO 2026-00-0027 was previously estimated for November 3"
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [
@@ -92,33 +93,33 @@
       "TALOVA stock and delivery confirmation"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-15T07:11:00-04:00"
+    "last_verified": "2026-10-16T07:09:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
+      "title": "Commit Roon Body production dates",
+      "why": "All 2,000-unit inputs are on site while the customer remains backlogged.",
+      "owner": "Aidan",
+      "due": "Today",
+      "priority": "critical",
+      "revenue": "Production continuity"
+    },
+    {
+      "rank": 2,
       "title": "Confirm Polo customs clearance",
-      "why": "The container remains pending exam at Price Transfer five days after arrival.",
+      "why": "The container remains pending exam at Price Transfer six days after arrival.",
       "owner": "Aidan",
       "due": "Today",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
     {
-      "rank": 2,
-      "title": "Obtain Tocopherol COA",
-      "why": "Material is received but may remain blocked from use without its COA.",
-      "owner": "Aidan",
-      "due": "2 calendar days old",
-      "priority": "critical",
-      "revenue": "Production continuity"
-    },
-    {
       "rank": 3,
       "title": "Resolve TALOVA stock and delivery status",
       "why": "The additional 500-unit request and prior delivery both remain unresolved.",
       "owner": "Aidan",
-      "due": "6 calendar days old",
+      "due": "7 calendar days old",
       "priority": "critical",
       "revenue": "Customer commitment"
     }
