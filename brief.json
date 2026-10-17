@@ -1,123 +1,127 @@
 {
-  "date": "2026-10-16",
-  "ts": "2026-10-16T07:09:00-04:00",
+  "date": "2026-10-17",
+  "ts": "2026-10-17T07:03:09-04:00",
   "brief": [
     {
-      "t": "START HERE: Contact Buffman and obtain proof of delivery or the shipment's current location and revised ETA.",
+      "t": "START HERE: Put Roon Body's immediate 1,500-unit run on the floor schedule and send Josh firm start and completion dates now.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: The Buffman shipment's October 4 ETA is 12 calendar days past and delivery remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Buffman shipment was delivered, provide proof of delivery, or send its current location and revised ETA today.",
+      "t": "ACT NOW 1: Josh confirmed PLL has all inputs for the immediate Roon Body run and remains backlogged. He narrowed the urgent need to about 1,500 units and is waiting 1 calendar day for a timeline. Send: Josh, I am putting the immediate 1,500-unit run on the floor schedule now and will send you firm start and completion dates today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Polo TR#47618's October 15 check-back is 1 calendar day past with no later customs status. PLL may be waiting for release. Send: Please confirm whether TR#47618 remains under exam, whether it has been released, all current charges, and expected delivery timing today.",
+      "t": "ACT NOW 2: Polo container EMCU8614105 has been at Price Transfer pending customs exam since October 10, now 7 calendar days. Price Transfer asked who the broker is yesterday, and no reply or release is visible. Send: Roxi, the broker is [BROKER NAME]. Please confirm the exam status, release status, current charges, and earliest pickup time today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: ActivePeptide was scheduled to ship October 6 and tracking was issued October 7, but delivery remains unverified 10 calendar days after the ship date. PLL may be waiting for the material. Send: Please confirm the ActivePeptide shipment's latest carrier scan, current location, and delivery date today.",
+      "t": "ACT NOW 3: Marcello requested 500 additional TALOVA lip balms after a stockout and proof of delivery for the prior 15,000 units. No reply or resolution is visible 8 calendar days later. Send: Marcello, I am confirming stock or build timing for the additional 500 and proof of delivery for the prior 15,000 now. I will give you both answers today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Verify Buffman first, then close Polo's overdue customs check-back and confirm ActivePeptide delivery.",
-    "Scheduled: 4 other known items remain below the Act Now cutoff; no reliable future deadline is available from the current records.",
-    "Noise: Count unavailable.",
-    "Source gap: Current POs, supplier and QC files, inventory, tracking, production exceptions, and internal requests remain unavailable. Missing data is not zero."
+    "Recommendation: Commit Roon Body's production dates first, identify Polo's customs broker second, then close TALOVA's stockout.",
+    "Displaced: Lice Sisters stays below Act Now because Evelyn identified material gaps, but no production due date or live floor slot is verified. The assessment calls for 4 kg Polysorbate 20, 14 kg Sodium Chloride USP, 14 kg Benzyl Alcohol NF, 2 kg Peppermint EO Supreme, and 400 kg water; the salt and benzyl alcohol must match the approved sources.",
+    "Scheduled: 12 other known operational items, none confirmed urgent. The nearest verified future delivery is FedEx shipment 533066816125 on October 19.",
+    "Noise: At least 50 Outlook messages were below the operational cutoff; the result set hit the 50-message cap.",
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing returned no current records to verify broader supplier, QC, inventory, inbound, or lead-time risks. The Email lane did not return a fresh reply within the run window. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Buffman delivery is unverified 12 days after ETA. Polo TR#47618's customs check-back is 1 day overdue. ActivePeptide delivery is unverified 10 days after its ship date.",
+  "signal": "Roon Body's ready immediate run still needs dates. Polo's container is pending exam and Price Transfer needs the broker identified. TALOVA's stockout remains unresolved.",
   "redflags": [
-    "Buffman delivery remains unverified 12 calendar days after its stated ETA.",
-    "Polo TR#47618 has no later customs status 1 calendar day after the scheduled check-back.",
-    "ActivePeptide delivery remains unverified 10 calendar days after its scheduled ship date."
+    "Roon Body is backlogged while an immediate 1,500-unit run has no verified floor dates.",
+    "EMCU8614105 has been pending exam for 7 calendar days, and the broker question is unanswered.",
+    "TALOVA's additional 500-unit need and prior 15,000-unit delivery remain unverified 8 calendar days after the request."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "Count unavailable from current source results.",
+  "noise": "At least 50 Outlook messages were below the operational cutoff; the result set hit the 50-message cap.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Verify Buffman delivery and obtain proof or a revised ETA.",
+      "top_task": "Commit the ready Roon Body 1,500-unit run to firm production dates.",
       "tasks": [
-        "Confirm Buffman delivery status",
-        "Confirm Polo TR#47618 customs and release status",
-        "Confirm ActivePeptide delivery status"
+        "Commit Roon Body production dates",
+        "Identify Polo broker and confirm customs release",
+        "Resolve TALOVA stock and delivery status"
       ],
-      "notes": "Four other known items remain below the Act Now cutoff. Broader purchasing risk is unverified because current operational records are unavailable."
+      "notes": "Lice Sisters material gaps, Tocopherol COA, ActivePeptide delivery, Buffman delivery, and other operational follow-through remain below the Act Now cutoff. CRM and WhatsApp are signed out."
     }
   },
   "revenueActions": [
     {
-      "title": "Verify Buffman delivery",
-      "why": "The shipment is 12 calendar days past its stated ETA and delivery remains unverified.",
+      "title": "Commit Roon Body production dates",
+      "why": "All inputs for the immediate run are on site and the customer remains backlogged.",
       "est_value": "UNVERIFIED",
-      "next_step": "Obtain proof of delivery or the current location and revised ETA today.",
+      "next_step": "Put about 1,500 units on the floor schedule and send firm dates today.",
       "owner": "Aidan",
-      "timing": "12 calendar days late",
+      "timing": "1 calendar day waiting for timeline",
+      "value": "Production and customer continuity"
+    },
+    {
+      "title": "Release Polo container",
+      "why": "The container has been pending customs exam since October 10, and Price Transfer is waiting for the broker identity.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Identify the broker and obtain exam, release, charge, and pickup status today.",
+      "owner": "Aidan",
+      "timing": "7 calendar days pending exam",
       "value": "Supply continuity"
     },
     {
-      "title": "Close Polo customs status gap",
-      "why": "TR#47618's October 15 check-back is 1 calendar day past with no later exam or release status.",
+      "title": "Resolve TALOVA stockout",
+      "why": "Marcello needs 500 more units and delivery of the prior 15,000 remains unverified.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm exam status, release, charges, and expected delivery timing today.",
+      "next_step": "Confirm stock or build timing and proof of delivery today.",
       "owner": "Aidan",
-      "timing": "1 calendar day late",
-      "value": "Supply continuity"
-    },
-    {
-      "title": "Verify ActivePeptide delivery",
-      "why": "Tracking was issued, but delivery remains unverified 10 calendar days after the scheduled ship date.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Obtain the latest carrier scan, current location, and delivery date today.",
-      "owner": "Aidan",
-      "timing": "10 calendar days after ship date",
-      "value": "Supply continuity"
+      "timing": "8 calendar days old",
+      "value": "Customer commitment"
     }
   ],
   "pipelineStat": {
-    "note": "Current purchasing records are unavailable for broader verification. Missing data is not zero.",
+    "note": "Current purchasing and CRM records are unavailable for broader verification. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
-    "long_lead_items": [],
+    "long_lead_items": [
+      "Roon Body's next 10,000-unit packaging is expected within four weeks",
+      "Mibelle PO 2026-00-0027 was previously estimated for November 3"
+    ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [
-      "Buffman delivery confirmation, 12 calendar days past ETA",
-      "Polo TR#47618 customs check-back, 1 calendar day late",
-      "ActivePeptide delivery confirmation, 10 calendar days after ship date"
+      "Polo broker identification and customs release confirmation",
+      "TALOVA stock and delivery confirmation",
+      "Tocopherol lot-specific COA remains unverified"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-16T07:09:00-04:00"
+    "last_verified": "2026-10-17T07:03:09-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Verify Buffman delivery",
-      "why": "The October 4 ETA passed and delivery remains unverified.",
+      "title": "Commit Roon Body production dates",
+      "why": "All immediate-run inputs are on site while the customer remains backlogged.",
       "owner": "Aidan",
-      "due": "12 calendar days late",
+      "due": "Today",
       "priority": "critical",
-      "revenue": "Supply continuity"
+      "revenue": "Production continuity"
     },
     {
       "rank": 2,
-      "title": "Confirm Polo TR#47618 customs status",
-      "why": "The October 15 check-back passed without a later exam or release update.",
+      "title": "Identify Polo broker and confirm release",
+      "why": "The container remains pending exam and Price Transfer is waiting for the broker identity.",
       "owner": "Aidan",
-      "due": "1 calendar day late",
+      "due": "7 calendar days pending exam",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
     {
       "rank": 3,
-      "title": "Confirm ActivePeptide delivery",
-      "why": "The October 6 ship date passed and delivery remains unverified.",
+      "title": "Resolve TALOVA stock and delivery status",
+      "why": "The additional 500-unit request and prior delivery both remain unresolved.",
       "owner": "Aidan",
-      "due": "10 calendar days after ship date",
+      "due": "8 calendar days old",
       "priority": "critical",
-      "revenue": "Supply continuity"
+      "revenue": "Customer commitment"
     }
   ],
   "purchasingIntelligence": null
