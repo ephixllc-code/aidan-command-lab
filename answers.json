@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261016_0700_et_status",
-  "status": "completed",
-  "routed_to": "email",
-  "summary": "Email status captured and consolidated. Priority follow-up is Buffman proof of delivery or revised ETA, followed by Polo TR#47618 customs exam, release, and charges, then ActivePeptide delivery status. J&J visit results and installed quote, Estogel prepaid receipt, Roon pickup, and a stale Polo draft remain below the top-three cutoff."
+  "request_id": "cmd_20261017_0700_et_status",
+  "status": "blocked",
+  "routed_to": "purchasing",
+  "summary": "Purchasing status captured. As of October 17 at 7:00 AM ET, records remain unavailable for open supplier items, overdue COAs or SDS, inventory gaps, inbound shipments, and lead times threatening live production. Aidan must connect or upload current POs, supplier and QC files, inventory, tracking, production exceptions, and purchasing requests today, then escalate any verified live-production threat to Sam the same day. Missing data is not zero."
 }
