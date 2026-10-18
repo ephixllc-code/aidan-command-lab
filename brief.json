@@ -1,52 +1,51 @@
 {
-  "date": "2026-10-17",
-  "ts": "2026-10-17T07:05:00-04:00",
+  "date": "2026-10-18",
+  "ts": "2026-10-18T07:02:14-04:00",
   "brief": [
     {
-      "t": "START HERE: Put Roon Body's immediate 1,500-unit run on the floor schedule and send Josh firm start and completion dates now.",
+      "t": "START HERE: Lock Roon Body's immediate 1,500-unit run into the next available floor slot and send Josh firm start and completion dates now.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Josh confirmed PLL has all inputs for the immediate Roon Body run and remains backlogged. He narrowed the urgent need to about 1,500 units and is waiting 1 calendar day for a timeline. Send: Josh, I am putting the immediate 1,500-unit run on the floor schedule now and will send you firm start and completion dates today.",
+      "t": "ACT NOW 1: Josh confirmed PLL has all inputs for the immediate Roon Body run and remains backlogged. He has waited 2 calendar days for a production timeline, and no follow-through is visible. Send: Josh, I am locking the immediate 1,500-unit run into the next available floor slot now and will send you firm start and completion dates today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Polo container EMCU8614105 has been pending customs exam since October 10, now 7 calendar days. Price Transfer's October 15 checkback is 2 days overdue, and its October 16 request for Aidan's broker contact remains unanswered. Send: Roxi, the broker contact is [NAME, EMAIL, PHONE]. Please confirm the exam status, release status, current charges, and earliest pickup time today.",
+      "t": "ACT NOW 2: Polo container EMCU8614105 has been pending customs exam since October 10, now 8 calendar days. Price Transfer's request for Aidan's broker contact remains unanswered, and no release is visible. Send: Roxi, the broker contact is [NAME, EMAIL, PHONE]. Please confirm the exam status, release status, current charges, and earliest pickup time today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Marcello requested 500 additional TALOVA lip balms after a stockout and proof of delivery for the prior 15,000 units. No reply or resolution is visible 8 calendar days later. Send: Marcello, I am confirming stock or build timing for the additional 500 and proof of delivery for the prior 15,000 now. I will give you both answers today.",
+      "t": "ACT NOW 3: Marcello requested 500 additional TALOVA lip balms after a stockout and proof of delivery for the prior 15,000 units. No reply or resolution is visible 9 calendar days later. Send: Marcello, I am confirming stock or build timing for the additional 500 and proof of delivery for the prior 15,000 now. I will give you both answers today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Commit Roon Body's production dates first, identify Polo's customs broker second, then close TALOVA's stockout.",
-    "Displaced: Lice Sisters stays below Act Now because Evelyn identified material gaps, but no production due date or live floor slot is verified. The assessment calls for 4 kg Polysorbate 20, 14 kg Sodium Chloride USP, 14 kg Benzyl Alcohol NF, 2 kg Peppermint EO Supreme, and 400 kg water; the salt and benzyl alcohol must match the approved sources.",
-    "Scheduled: 12 other known operational items, none confirmed urgent. The nearest verified future delivery is FedEx shipment 533066816125 on October 19.",
-    "Noise: At least 50 Outlook messages were below the operational cutoff; the result set hit the 50-message cap.",
-    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing returned no current records to verify broader supplier, QC, inventory, inbound, or lead-time risks. The Email lane returned current status at 7:05 AM; multiple supplier, delivery, and visit outcomes remain unverified. Missing data is not zero."
+    "Recommendation: Commit Roon Body's production dates first, send Price Transfer the Polo broker contact second, then close TALOVA's stockout.",
+    "Scheduled: 12 other known operational items, none confirmed urgent. The nearest verified delivery is FedEx shipment 533066816125 on October 19.",
+    "Noise: 11 new Outlook messages since the prior run, none operationally urgent.",
+    "Source gaps: CRM and WhatsApp browser sessions remain signed out. Purchasing and Email lanes were connected and dispatched but did not return a fresh reply during the run. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Roon Body's ready immediate run still needs dates. Polo's container is pending exam and Price Transfer needs Aidan's broker contact. TALOVA's stockout remains unresolved.",
+  "signal": "No new verified operational signal displaced the existing top three. Roon Body still needs dates, Polo is awaiting broker contact and customs release, and TALOVA's stockout remains unresolved.",
   "redflags": [
     "Roon Body is backlogged while an immediate 1,500-unit run has no verified floor dates.",
-    "EMCU8614105 has been pending exam for 7 calendar days; Price Transfer's October 15 checkback is 2 days overdue and its broker-contact request remains unanswered.",
-    "TALOVA's additional 500-unit need and prior 15,000-unit delivery remain unverified 8 calendar days after the request."
+    "EMCU8614105 has been pending exam for 8 calendar days and Price Transfer's broker-contact request remains unanswered.",
+    "TALOVA's additional 500-unit need and prior 15,000-unit delivery remain unverified 9 calendar days after the request."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "At least 50 Outlook messages were below the operational cutoff; the result set hit the 50-message cap.",
+  "noise": "11 new Outlook messages since the prior run, none operationally urgent.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
       "top_task": "Commit the ready Roon Body 1,500-unit run to firm production dates.",
       "tasks": [
         "Commit Roon Body production dates",
-        "Identify Polo broker and confirm customs release",
+        "Send Polo broker contact and confirm customs release",
         "Resolve TALOVA stock and delivery status"
       ],
-      "notes": "Lice Sisters material gaps, Tocopherol COA, ActivePeptide delivery, Buffman delivery, LMC Ecoslim tracking, Estogel ship-to correction, and the J&J visit result remain below the Act Now cutoff. Cycloretin is due October 20. CRM and WhatsApp are signed out."
+      "notes": "12 other known operational items remain below the Act Now cutoff. CRM and WhatsApp are signed out, and no fresh lane reply arrived during the run."
     }
   },
   "revenueActions": [
@@ -54,9 +53,9 @@
       "title": "Commit Roon Body production dates",
       "why": "All inputs for the immediate run are on site and the customer remains backlogged.",
       "est_value": "UNVERIFIED",
-      "next_step": "Put about 1,500 units on the floor schedule and send firm dates today.",
+      "next_step": "Put about 1,500 units into the next available floor slot and send firm dates today.",
       "owner": "Aidan",
-      "timing": "1 calendar day waiting for timeline",
+      "timing": "2 calendar days waiting for timeline",
       "value": "Production and customer continuity"
     },
     {
@@ -65,7 +64,7 @@
       "est_value": "UNVERIFIED",
       "next_step": "Send Price Transfer the broker name, email, and phone, then obtain exam, release, charge, and pickup status today.",
       "owner": "Aidan",
-      "timing": "7 calendar days pending exam",
+      "timing": "8 calendar days pending exam",
       "value": "Supply continuity"
     },
     {
@@ -74,29 +73,26 @@
       "est_value": "UNVERIFIED",
       "next_step": "Confirm stock or build timing and proof of delivery today.",
       "owner": "Aidan",
-      "timing": "8 calendar days old",
+      "timing": "9 calendar days old",
       "value": "Customer commitment"
     }
   ],
   "pipelineStat": {
-    "note": "Current purchasing records remain unavailable for broader verification. The Email lane supplied current follow-up status. Missing data is not zero.",
+    "note": "Current purchasing and CRM records remain unavailable for broader verification. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "Roon Body's next 10,000-unit packaging is expected within four weeks",
+      "Roon Body's next 10,000-unit packaging was expected within four weeks",
       "Mibelle PO 2026-00-0027 was previously estimated for November 3"
     ],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [
       "Polo broker identification and customs release confirmation",
       "TALOVA stock and delivery confirmation",
-      "Tocopherol lot-specific COA remains unverified",
-      "LMC Ecoslim shipment was estimated for October 15; tracking remains unverified",
-      "Buffman delivery and J&J visit outcome remain unverified",
-      "Estogel prepaid PO awaits payment and the invoice ship-to needs verification"
+      "Tocopherol lot-specific COA remains unverified"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-17T07:05:00-04:00"
+    "last_verified": "2026-10-18T07:02:14-04:00"
   },
   "topTasks": [
     {
@@ -110,10 +106,10 @@
     },
     {
       "rank": 2,
-      "title": "Identify Polo broker and confirm release",
-      "why": "The container remains pending exam, the October 15 checkback is 2 days overdue, and Price Transfer is waiting for Aidan's broker contact.",
+      "title": "Send Polo broker contact and confirm release",
+      "why": "The container remains pending exam and Price Transfer is waiting for Aidan's broker contact.",
       "owner": "Aidan",
-      "due": "7 calendar days pending exam",
+      "due": "8 calendar days pending exam",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
@@ -122,7 +118,7 @@
       "title": "Resolve TALOVA stock and delivery status",
       "why": "The additional 500-unit request and prior delivery both remain unresolved.",
       "owner": "Aidan",
-      "due": "8 calendar days old",
+      "due": "9 calendar days old",
       "priority": "critical",
       "revenue": "Customer commitment"
     }
