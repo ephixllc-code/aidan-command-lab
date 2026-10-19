@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_20261017_0700_et_status",
-  "status": "blocked",
-  "routed_to": "purchasing",
-  "summary": "Purchasing status captured. As of October 17 at 7:00 AM ET, records remain unavailable for open supplier items, overdue COAs or SDS, inventory gaps, inbound shipments, and lead times threatening live production. Aidan must connect or upload current POs, supplier and QC files, inventory, tracking, production exceptions, and purchasing requests today, then escalate any verified live-production threat to Sam the same day. Missing data is not zero."
+  "request_id": "cmd_pad_kanmine_20261019_0938",
+  "status": "completed",
+  "routed_to": "email",
+  "summary": "Follow up sent to Wendy Zhang in the existing Kanmine cosmetic pad thread. The message asks her to confirm shipment today, provide the carrier and tracking number, and verify that the package contains 40 Option B pads with one textured side and one smooth side. The PLL text signature was used because the approved logo file was unavailable."
 }
