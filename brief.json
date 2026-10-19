@@ -1,124 +1,123 @@
 {
   "date": "2026-10-19",
-  "ts": "2026-10-19T07:04:00-04:00",
+  "ts": "2026-10-19T07:10:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Put Roon Body's immediate 1,500-unit run into the next available floor slot and send Josh firm start and completion dates now.",
+      "t": "START HERE: Send Price Transfer Aidan's broker contact details now, then request TR#47618's current exam, release, charges, and delivery status.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Roon Body's inputs were confirmed available, but Josh has waited 3 calendar days for the immediate 1,500-unit production timeline. Josh is waiting. Send: Josh, I am locking the immediate 1,500 unit run into the next available floor slot now and will send you firm start and completion dates today.",
+      "t": "ACT NOW 1: Polo TR#47618's October 15 customs check-back is 4 calendar days past, and Price Transfer has been waiting since October 16 for Aidan's broker details. Price Transfer is waiting. Send: Here are my broker's contact details. Please coordinate directly and confirm TR#47618's current exam status, release status, charges, and expected delivery date today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Polo container EMCU8614105 remains on a stale customs-exam status, and Price Transfer has waited 3 calendar days for Aidan's broker contact. Price Transfer and Polo are waiting. Send: Roxi, the broker contact is [NAME, EMAIL, PHONE]. Please confirm the current exam status, release status, charges, and earliest pickup time today.",
+      "t": "ACT NOW 2: Buffman's October 4 ETA is 15 calendar days past and delivery remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Buffman shipment was delivered, provide proof of delivery, or send its current location and revised ETA today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: TALOVA's request for 500 additional lip balms and proof of delivery for the prior 15,000 units remains unanswered 10 calendar days later. Marcello is waiting. Send: Marcello, I am confirming stock or build timing for the additional 500 and proof of delivery for the prior 15,000 now. I will give you both answers today.",
+      "t": "ACT NOW 3: LMC Ecoslim's October 15 estimated ship date is 4 calendar days past and shipment status remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Ecoslim shipment has left, provide tracking, and confirm its delivery date today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Commit Roon Body first, send Polo's broker contact second, then close TALOVA.",
-    "Displaced: Amazon order 112-3262580-7035450 for a TIJ740 coding-machine ink cartridge has a declined $115.54 payment, but it stays below Act Now because no live line stoppage is verified.",
-    "Scheduled: 5 other verified Outlook follow-ups remain below the Act Now cutoff; the nearest is the declined Amazon payment requiring review today.",
-    "Noise: 12 new Outlook messages were below the operational cutoff.",
-    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing and Email were connected and the fresh requests routed, but neither returned a reply during this run. Missing data is not zero."
+    "Recommendation: Unblock Price Transfer first, then verify Buffman delivery and obtain LMC Ecoslim tracking.",
+    "Scheduled: 4 other known follow-up items remain below the Act Now cutoff; the nearest dated milestone is already past, with J&J's October 9 visit result still unverified.",
+    "Noise: 1 known Sam-lane item; broader noise count unavailable.",
+    "Source gap: Current POs, supplier and QC files, inventory, shipment tracking, production exceptions, WhatsApp, and CRM task results remain unavailable. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Roon Body needs a production commitment, Price Transfer needs Polo's broker contact, and TALOVA's stockout request remains unanswered.",
+  "signal": "Price Transfer is waiting for broker details while Polo TR#47618's customs check-back is 4 days late. Buffman delivery is unverified 15 days after ETA. LMC Ecoslim is 4 days past its estimated ship date with no verified shipment status.",
   "redflags": [
-    "Roon Body has waited 3 calendar days for the immediate 1,500-unit production timeline.",
-    "Price Transfer has waited 3 calendar days for the broker contact while Polo container EMCU8614105 remains on a stale exam status.",
-    "TALOVA's request remains unanswered 10 calendar days later."
+    "Polo TR#47618's customs check-back is 4 calendar days late and Price Transfer is waiting for Aidan's broker details.",
+    "Buffman delivery remains unverified 15 calendar days after ETA.",
+    "LMC Ecoslim is 4 calendar days past its estimated ship date with no verified shipment status."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "12 new Outlook messages were below the operational cutoff.",
+  "noise": "1 known Sam-lane item; broader count unavailable from current source results.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Commit Roon Body's immediate 1,500-unit production dates.",
+      "top_task": "Send Price Transfer the broker contact details and close the Polo customs status gap.",
       "tasks": [
-        "Commit Roon Body's start and completion dates",
-        "Send Polo's broker contact and confirm container status",
-        "Confirm TALOVA stock or build timing and prior delivery proof"
+        "Send Price Transfer broker details and confirm Polo TR#47618 status",
+        "Verify Buffman delivery",
+        "Obtain LMC Ecoslim tracking"
       ],
-      "notes": "Five other verified Outlook follow-ups remain below the Act Now cutoff. CRM, WhatsApp, and fresh agent replies are unavailable."
+      "notes": "Four other known follow-up items remain below the Act Now cutoff. Broader purchasing risk is unverified because current operational records are unavailable."
     }
   },
   "revenueActions": [
     {
-      "title": "Commit Roon Body production dates",
-      "why": "All inputs were reported available and Josh has waited 3 calendar days for the immediate 1,500-unit timeline.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Lock the next floor slot and send firm start and completion dates today.",
-      "owner": "Aidan",
-      "timing": "3 calendar days waiting",
-      "value": "Sold-job fulfillment"
-    },
-    {
       "title": "Unblock Polo customs coordination",
-      "why": "Price Transfer has waited 3 calendar days for broker details and container EMCU8614105 still has no verified release.",
+      "why": "TR#47618's October 15 check-back is 4 calendar days late, and Price Transfer has been waiting since October 16 for broker details.",
       "est_value": "UNVERIFIED",
-      "next_step": "Send the broker contact and obtain exam, release, charges, and pickup status today.",
+      "next_step": "Send broker details and obtain current exam, release, charges, and delivery status today.",
       "owner": "Aidan",
-      "timing": "3 calendar days waiting",
+      "timing": "4 calendar days late",
       "value": "Supply continuity"
     },
     {
-      "title": "Resolve TALOVA stockout",
-      "why": "The additional 500 lip balms and proof of delivery for the prior 15,000 units remain unresolved 10 calendar days after Marcello's request.",
+      "title": "Verify Buffman delivery",
+      "why": "The shipment is 15 calendar days past its stated ETA and delivery remains unverified.",
       "est_value": "UNVERIFIED",
-      "next_step": "Confirm stock or build timing and delivery proof today.",
+      "next_step": "Obtain proof of delivery or the current location and revised ETA today.",
       "owner": "Aidan",
-      "timing": "10 calendar days waiting",
-      "value": "Customer continuity"
+      "timing": "15 calendar days late",
+      "value": "Supply continuity"
+    },
+    {
+      "title": "Obtain LMC Ecoslim tracking",
+      "why": "The October 15 estimated ship date is 4 calendar days past and shipment status remains unverified.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Confirm shipment, tracking, and delivery date today.",
+      "owner": "Aidan",
+      "timing": "4 calendar days past estimated ship date",
+      "value": "Supply continuity"
     }
   ],
   "pipelineStat": {
-    "note": "CRM, WhatsApp, current purchasing records, and fresh agent replies are unavailable. Missing data is not zero.",
+    "note": "Current purchasing records are unavailable for broader verification. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [
-      "Roon Body production timeline, 3 calendar days waiting",
-      "Polo broker contact and customs status, 3 calendar days waiting",
-      "TALOVA stockout response, 10 calendar days waiting"
+      "Polo TR#47618 customs check-back, 4 calendar days late",
+      "Buffman delivery confirmation, 15 calendar days past ETA",
+      "LMC Ecoslim tracking, 4 calendar days past estimated ship date"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-19T07:04:00-04:00"
+    "last_verified": "2026-10-19T07:10:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Commit Roon Body production dates",
-      "why": "Inputs are available and Josh is waiting for the immediate 1,500-unit timeline.",
+      "title": "Send broker details and confirm Polo TR#47618 status",
+      "why": "Price Transfer is waiting and the customs check-back is 4 calendar days late.",
       "owner": "Aidan",
-      "due": "3 calendar days waiting",
+      "due": "4 calendar days late",
       "priority": "critical",
-      "revenue": "Sold-job fulfillment"
+      "revenue": "Supply continuity"
     },
     {
       "rank": 2,
-      "title": "Send Polo's broker contact and confirm container status",
-      "why": "Price Transfer is waiting and the customs status is stale.",
+      "title": "Verify Buffman delivery",
+      "why": "The October 4 ETA passed and delivery remains unverified.",
       "owner": "Aidan",
-      "due": "3 calendar days waiting",
+      "due": "15 calendar days late",
       "priority": "critical",
       "revenue": "Supply continuity"
     },
     {
       "rank": 3,
-      "title": "Resolve TALOVA's stockout request",
-      "why": "The customer requested 500 more units and proof of delivery 10 calendar days ago.",
+      "title": "Obtain LMC Ecoslim tracking",
+      "why": "The October 15 estimated ship date passed and shipment status remains unverified.",
       "owner": "Aidan",
-      "due": "10 calendar days waiting",
+      "due": "4 calendar days late",
       "priority": "critical",
-      "revenue": "Customer continuity"
+      "revenue": "Supply continuity"
     }
   ],
   "purchasingIntelligence": null
