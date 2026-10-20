@@ -1,121 +1,126 @@
 {
-  "date": "2026-10-19",
-  "ts": "2026-10-19T07:10:00-04:00",
+  "date": "2026-10-20",
+  "ts": "2026-10-20T07:09:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Send Price Transfer Aidan's broker contact details now, then request TR#47618's current exam, release, charges, and delivery status.",
+      "t": "START HERE: Approve and release the 100 kg Agua purchase for True Revival now, then give Michael one status reply covering Silgreen G and Magnolia fragrance.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Polo TR#47618's October 15 customs check-back is 4 calendar days past, and Price Transfer has been waiting since October 16 for Aidan's broker details. Price Transfer is waiting. Send: Here are my broker's contact details. Please coordinate directly and confirm TR#47618's current exam status, release status, charges, and expected delivery date today.",
+      "t": "ACT NOW 1: Aaron and Michael are waiting on three R&D ingredient holds reported 1 calendar day ago: Aidan's approval for 100 kg Agua for True Revival, 40 kg Silgreen G for Mothered, and 0.95 kg Magnolia fragrance for Lanely Talow's final sample. Send: Michael, the 100 kg Agua is approved for release today. SOCRI confirmed 40 kg Silgreen G is in U.S. stock and I am closing the DDP total; please source the 0.95 kg Magnolia fragrance today and confirm each ETA back to Aaron.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Buffman's October 4 ETA is 15 calendar days past and delivery remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Buffman shipment was delivered, provide proof of delivery, or send its current location and revised ETA today.",
+      "t": "ACT NOW 2: Roon Body's inputs were reported available, but Josh has waited 4 calendar days for the immediate 1,500-unit production timeline. Josh is waiting. Send: Josh, I am locking the immediate 1,500 unit run into the next available floor slot now and will send you firm start and completion dates today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: LMC Ecoslim's October 15 estimated ship date is 4 calendar days past and shipment status remains unverified. PLL may be waiting for the material. Send: Please confirm whether the Ecoslim shipment has left, provide tracking, and confirm its delivery date today.",
+      "t": "ACT NOW 3: Price Transfer has waited 4 calendar days for Aidan's broker contact while Polo container EMCU8614105 still has no verified release. Price Transfer and Polo are waiting. Send: Roxi, the broker contact is [NAME, EMAIL, PHONE]. Please confirm the current exam status, release status, charges, and earliest pickup time today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Unblock Price Transfer first, then verify Buffman delivery and obtain LMC Ecoslim tracking.",
-    "Scheduled: 4 other known follow-up items remain below the Act Now cutoff; the nearest dated milestone is already past, with J&J's October 9 visit result still unverified.",
-    "Noise: 1 known Sam-lane item; broader noise count unavailable.",
-    "Source gap: Current POs, supplier and QC files, inventory, shipment tracking, production exceptions, WhatsApp, and CRM task results remain unavailable. Missing data is not zero."
+    "Recommendation: Clear the three ingredient holds first, commit Roon Body's floor dates second, then release Polo's customs coordination.",
+    "Displaced: TALOVA's request for 500 additional lip balms and proof of delivery is now 11 calendar days old, but the new production and R&D ingredient holds are the more direct floor blocker.",
+    "Scheduled: 9 other verified operational follow-ups remain below the Act Now cutoff; the nearest action is receiving and physically testing the Kanmine facial-pad samples reported delivered October 12.",
+    "Noise: 40 new Outlook messages were below the operational cutoff.",
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing and Email were connected and the fresh requests routed, but neither returned a reply during this run. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Price Transfer is waiting for broker details while Polo TR#47618's customs check-back is 4 days late. Buffman delivery is unverified 15 days after ETA. LMC Ecoslim is 4 days past its estimated ship date with no verified shipment status.",
+  "signal": "Three ingredient decisions are holding R&D work, Roon Body still needs a production commitment, and Price Transfer still needs Polo's broker contact.",
   "redflags": [
-    "Polo TR#47618's customs check-back is 4 calendar days late and Price Transfer is waiting for Aidan's broker details.",
-    "Buffman delivery remains unverified 15 calendar days after ETA.",
-    "LMC Ecoslim is 4 calendar days past its estimated ship date with no verified shipment status."
+    "True Revival's 100 kg Agua is waiting on Aidan's approval, while Mothered and Lanely Talow also have ingredient holds.",
+    "Roon Body has waited 4 calendar days for the immediate 1,500-unit production timeline.",
+    "Price Transfer has waited 4 calendar days for the broker contact while Polo container EMCU8614105 remains without a verified release."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "1 known Sam-lane item; broader count unavailable from current source results.",
+  "noise": "40 new Outlook messages were below the operational cutoff.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Send Price Transfer the broker contact details and close the Polo customs status gap.",
+      "top_task": "Approve and release the 100 kg Agua purchase for True Revival.",
       "tasks": [
-        "Send Price Transfer broker details and confirm Polo TR#47618 status",
-        "Verify Buffman delivery",
-        "Obtain LMC Ecoslim tracking"
+        "Clear the True Revival, Mothered, and Lanely Talow ingredient holds",
+        "Commit Roon Body's start and completion dates",
+        "Send Polo's broker contact and confirm container status"
       ],
-      "notes": "Four other known follow-up items remain below the Act Now cutoff. Broader purchasing risk is unverified because current operational records are unavailable."
+      "notes": "Nine other verified operational follow-ups remain below the Act Now cutoff. CRM, WhatsApp, and fresh lane replies are unavailable."
     }
   },
   "revenueActions": [
     {
+      "title": "Clear three R&D ingredient holds",
+      "why": "Aaron and Michael are waiting on Aidan's Agua approval, Silgreen G closure, and Magnolia fragrance sourcing.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Approve the 100 kg Agua release, close the Silgreen G DDP total, and assign the 0.95 kg Magnolia fragrance sourcing today.",
+      "owner": "Aidan",
+      "timing": "1 calendar day waiting",
+      "value": "R&D and production continuity"
+    },
+    {
+      "title": "Commit Roon Body production dates",
+      "why": "All inputs were reported available and Josh has waited 4 calendar days for the immediate 1,500-unit timeline.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Lock the next floor slot and send firm start and completion dates today.",
+      "owner": "Aidan",
+      "timing": "4 calendar days waiting",
+      "value": "Sold-job fulfillment"
+    },
+    {
       "title": "Unblock Polo customs coordination",
-      "why": "TR#47618's October 15 check-back is 4 calendar days late, and Price Transfer has been waiting since October 16 for broker details.",
+      "why": "Price Transfer has waited 4 calendar days for broker details and container EMCU8614105 still has no verified release.",
       "est_value": "UNVERIFIED",
-      "next_step": "Send broker details and obtain current exam, release, charges, and delivery status today.",
+      "next_step": "Send the broker contact and obtain exam, release, charges, and pickup status today.",
       "owner": "Aidan",
-      "timing": "4 calendar days late",
-      "value": "Supply continuity"
-    },
-    {
-      "title": "Verify Buffman delivery",
-      "why": "The shipment is 15 calendar days past its stated ETA and delivery remains unverified.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Obtain proof of delivery or the current location and revised ETA today.",
-      "owner": "Aidan",
-      "timing": "15 calendar days late",
-      "value": "Supply continuity"
-    },
-    {
-      "title": "Obtain LMC Ecoslim tracking",
-      "why": "The October 15 estimated ship date is 4 calendar days past and shipment status remains unverified.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Confirm shipment, tracking, and delivery date today.",
-      "owner": "Aidan",
-      "timing": "4 calendar days past estimated ship date",
+      "timing": "4 calendar days waiting",
       "value": "Supply continuity"
     }
   ],
   "pipelineStat": {
-    "note": "Current purchasing records are unavailable for broader verification. Missing data is not zero.",
+    "note": "CRM, WhatsApp, current purchasing records, and fresh lane replies are unavailable. Missing data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
-    "long_lead_items": [],
-    "unverified_raw_material_prices": [],
+    "long_lead_items": [
+      "SOCRI estimates in-stock Silgreen G normally ready for dispatch around two weeks after payment"
+    ],
+    "unverified_raw_material_prices": [
+      "Silgreen G DDP total pending"
+    ],
     "overdue_purchasing_tasks": [
-      "Polo TR#47618 customs check-back, 4 calendar days late",
-      "Buffman delivery confirmation, 15 calendar days past ETA",
-      "LMC Ecoslim tracking, 4 calendar days past estimated ship date"
+      "True Revival Agua approval and Mothered/Lanely Talow ingredient holds",
+      "Roon Body production timeline, 4 calendar days waiting",
+      "Polo broker contact and customs status, 4 calendar days waiting"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-19T07:10:00-04:00"
+    "last_verified": "2026-10-20T07:09:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Send broker details and confirm Polo TR#47618 status",
-      "why": "Price Transfer is waiting and the customs check-back is 4 calendar days late.",
+      "title": "Clear three R&D ingredient holds",
+      "why": "True Revival needs Aidan's Agua approval, Mothered needs Silgreen G, and Lanely Talow needs Magnolia fragrance for its final sample.",
       "owner": "Aidan",
-      "due": "4 calendar days late",
+      "due": "1 calendar day waiting",
       "priority": "critical",
-      "revenue": "Supply continuity"
+      "revenue": "R&D and production continuity"
     },
     {
       "rank": 2,
-      "title": "Verify Buffman delivery",
-      "why": "The October 4 ETA passed and delivery remains unverified.",
+      "title": "Commit Roon Body production dates",
+      "why": "Inputs are available and Josh is waiting for the immediate 1,500-unit timeline.",
       "owner": "Aidan",
-      "due": "15 calendar days late",
+      "due": "4 calendar days waiting",
       "priority": "critical",
-      "revenue": "Supply continuity"
+      "revenue": "Sold-job fulfillment"
     },
     {
       "rank": 3,
-      "title": "Obtain LMC Ecoslim tracking",
-      "why": "The October 15 estimated ship date passed and shipment status remains unverified.",
+      "title": "Send Polo's broker contact and confirm container status",
+      "why": "Price Transfer is waiting and the customs release remains unverified.",
       "owner": "Aidan",
-      "due": "4 calendar days late",
+      "due": "4 calendar days waiting",
       "priority": "critical",
       "revenue": "Supply continuity"
     }
