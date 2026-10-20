@@ -1,6 +1,6 @@
 {
   "date": "2026-10-20",
-  "ts": "2026-10-20T07:09:00-04:00",
+  "ts": "2026-10-20T07:12:00-04:00",
   "brief": [
     {
       "t": "START HERE: Approve and release the 100 kg Agua purchase for True Revival now, then give Michael one status reply covering Silgreen G and Magnolia fragrance.",
@@ -15,23 +15,23 @@
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Price Transfer has waited 4 calendar days for Aidan's broker contact while Polo container EMCU8614105 still has no verified release. Price Transfer and Polo are waiting. Send: Roxi, the broker contact is [NAME, EMAIL, PHONE]. Please confirm the current exam status, release status, charges, and earliest pickup time today.",
+      "t": "ACT NOW 3: Buffman/Polo's 4PL ETA is 16 calendar days overdue with no delivery update, and Price Transfer has waited 4 calendar days for Aidan's broker contact while container EMCU8614105 still has no verified release. Price Transfer, Polo, and Buffman are waiting. Send: Roxi, the broker contact is [NAME, EMAIL, PHONE]. Please confirm the current exam, release, delivery, charges, and earliest pickup status today.",
       "hot": true
     }
   ],
   "next": [
     "Recommendation: Clear the three ingredient holds first, commit Roon Body's floor dates second, then release Polo's customs coordination.",
     "Displaced: TALOVA's request for 500 additional lip balms and proof of delivery is now 11 calendar days old, but the new production and R&D ingredient holds are the more direct floor blocker.",
-    "Scheduled: 9 other verified operational follow-ups remain below the Act Now cutoff; the nearest action is receiving and physically testing the Kanmine facial-pad samples reported delivered October 12.",
+    "Scheduled: 9 other verified operational follow-ups remain below the Act Now cutoff; the nearest physical action is receiving and testing the Kanmine facial-pad samples, while Buffman/Polo's 4PL delivery is now 16 calendar days past ETA and unverified.",
     "Noise: 40 new Outlook messages were below the operational cutoff.",
-    "Source gaps: CRM and WhatsApp browser sessions are signed out. Purchasing and Email were connected and the fresh requests routed, but neither returned a reply during this run. Missing data is not zero."
+    "Source gaps: CRM and WhatsApp browser sessions are signed out. Email returned a fresh status. Purchasing returned blocked because current PO, supplier/QC, inventory, inbound, and production-exception records are unavailable, not zero."
   ],
   "kb": [],
   "signal": "Three ingredient decisions are holding R&D work, Roon Body still needs a production commitment, and Price Transfer still needs Polo's broker contact.",
   "redflags": [
     "True Revival's 100 kg Agua is waiting on Aidan's approval, while Mothered and Lanely Talow also have ingredient holds.",
     "Roon Body has waited 4 calendar days for the immediate 1,500-unit production timeline.",
-    "Price Transfer has waited 4 calendar days for the broker contact while Polo container EMCU8614105 remains without a verified release."
+    "Buffman/Polo's 4PL ETA is 16 calendar days overdue; Price Transfer has waited 4 calendar days for the broker contact and container EMCU8614105 remains without verified release or delivery."
   ],
   "team": [],
   "pipeline": null,
@@ -46,7 +46,7 @@
         "Commit Roon Body's start and completion dates",
         "Send Polo's broker contact and confirm container status"
       ],
-      "notes": "Nine other verified operational follow-ups remain below the Act Now cutoff. CRM, WhatsApp, and fresh lane replies are unavailable."
+      "notes": "Nine other verified operational follow-ups remain below the Act Now cutoff. CRM and WhatsApp are signed out. Email status is current; purchasing source records are unavailable, not zero."
     }
   },
   "revenueActions": [
@@ -70,16 +70,16 @@
     },
     {
       "title": "Unblock Polo customs coordination",
-      "why": "Price Transfer has waited 4 calendar days for broker details and container EMCU8614105 still has no verified release.",
+      "why": "Buffman/Polo's 4PL ETA is 16 calendar days overdue, Price Transfer has waited 4 calendar days for broker details, and container EMCU8614105 still has no verified release or delivery.",
       "est_value": "UNVERIFIED",
       "next_step": "Send the broker contact and obtain exam, release, charges, and pickup status today.",
       "owner": "Aidan",
-      "timing": "4 calendar days waiting",
+      "timing": "16 calendar days past ETA; broker details 4 calendar days waiting",
       "value": "Supply continuity"
     }
   ],
   "pipelineStat": {
-    "note": "CRM, WhatsApp, current purchasing records, and fresh lane replies are unavailable. Missing data is not zero.",
+    "note": "CRM and WhatsApp are signed out. Email status is current. Current purchasing PO, supplier/QC, inventory, inbound, and production-exception records are unavailable, not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
@@ -91,10 +91,10 @@
     "overdue_purchasing_tasks": [
       "True Revival Agua approval and Mothered/Lanely Talow ingredient holds",
       "Roon Body production timeline, 4 calendar days waiting",
-      "Polo broker contact and customs status, 4 calendar days waiting"
+      "Buffman/Polo 4PL delivery, 16 calendar days past ETA; Polo broker contact, 4 calendar days waiting"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-20T07:09:00-04:00"
+    "last_verified": "2026-10-20T07:12:00-04:00"
   },
   "topTasks": [
     {
@@ -118,9 +118,9 @@
     {
       "rank": 3,
       "title": "Send Polo's broker contact and confirm container status",
-      "why": "Price Transfer is waiting and the customs release remains unverified.",
+      "why": "Buffman/Polo's 4PL delivery is 16 calendar days past ETA, Price Transfer is waiting for the broker contact, and customs release remains unverified.",
       "owner": "Aidan",
-      "due": "4 calendar days waiting",
+      "due": "16 calendar days past ETA; broker details 4 calendar days waiting",
       "priority": "critical",
       "revenue": "Supply continuity"
     }
