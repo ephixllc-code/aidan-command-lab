@@ -1,128 +1,128 @@
 {
-  "date": "2026-10-20",
-  "ts": "2026-10-20T07:12:00-04:00",
+  "date": "2026-10-21",
+  "ts": "2026-10-21T07:03:00-04:00",
   "brief": [
     {
-      "t": "START HERE: Approve and release the 100 kg Agua purchase for True Revival now, then give Michael one status reply covering Silgreen G and Magnolia fragrance.",
+      "t": "START HERE: Pay Polo 4PL's exam-fee invoice for container EMCU8614105 now and email Erik the receipt so he can release the shipment and arrange pickup.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Aaron and Michael are waiting on three R&D ingredient holds reported 1 calendar day ago: Aidan's approval for 100 kg Agua for True Revival, 40 kg Silgreen G for Mothered, and 0.95 kg Magnolia fragrance for Lanely Talow's final sample. Send: Michael, the 100 kg Agua is approved for release today. SOCRI confirmed 40 kg Silgreen G is in U.S. stock and I am closing the DDP total; please source the 0.95 kg Magnolia fragrance today and confirm each ETA back to Aaron.",
+      "t": "ACT NOW 1: Polo 4PL required the exam-fee payment yesterday to release container EMCU8614105, and the shipment is still held at the exam site. Erik, Polo, and Buffman are waiting. Send: Erik, payment is being completed now. I will forward the receipt today. Please confirm release and the earliest pickup time as soon as accounting clears it.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Roon Body's inputs were reported available, but Josh has waited 4 calendar days for the immediate 1,500-unit production timeline. Josh is waiting. Send: Josh, I am locking the immediate 1,500 unit run into the next available floor slot now and will send you firm start and completion dates today.",
+      "t": "ACT NOW 2: TALOVA sent five new Amazon FBA label sets with a tight shipping window yesterday and separately identified five prior shipments still showing as not shipped. Marcello is waiting, while the earlier request for 500 additional lip balms and proof of delivery for 15,000 units is now 13 calendar days old. Send: Marcello, I have the five new label sets and the five shipments showing open. I am reconciling inventory and shipment status now and will send confirmed ship dates and tracking today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Buffman/Polo's 4PL ETA is 16 calendar days overdue with no delivery update, and Price Transfer has waited 4 calendar days for Aidan's broker contact while container EMCU8614105 still has no verified release. Price Transfer, Polo, and Buffman are waiting. Send: Roxi, the broker contact is [NAME, EMAIL, PHONE]. Please confirm the current exam, release, delivery, charges, and earliest pickup status today.",
+      "t": "ACT NOW 3: Roon Body's inputs were reported available, but Josh has waited 5 calendar days for the immediate 1,500-unit production timeline. Josh is waiting. Send: Josh, I am locking the immediate 1,500 unit run into the next available floor slot now and will send you firm start and completion dates today.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Clear the three ingredient holds first, commit Roon Body's floor dates second, then release Polo's customs coordination.",
-    "Displaced: TALOVA's request for 500 additional lip balms and proof of delivery is now 11 calendar days old, but the new production and R&D ingredient holds are the more direct floor blocker.",
-    "Scheduled: 9 other verified operational follow-ups remain below the Act Now cutoff; the nearest physical action is receiving and testing the Kanmine facial-pad samples, while Buffman/Polo's 4PL delivery is now 16 calendar days past ETA and unverified.",
-    "Noise: 40 new Outlook messages were below the operational cutoff.",
-    "Source gaps: CRM and WhatsApp browser sessions are signed out. Email returned a fresh status. Purchasing returned blocked because current PO, supplier/QC, inventory, inbound, and production-exception records are unavailable, not zero."
+    "Recommendation: Release Polo's container first, reconcile and ship TALOVA second, then commit Roon Body's floor dates.",
+    "Displaced: True Revival's Agua approval remains unverified, but Magnolia fragrance was delivered and SOCRI confirmed 40 kg Silgreen G in U.S. stock; the live shipment holds above are more immediate.",
+    "Scheduled: 13 other verified operational follow-ups remain below the Act Now cutoff; the nearest overdue item is the Michigan annual report notice received yesterday.",
+    "Noise: 34 new Outlook messages were below the operational cutoff.",
+    "Source gaps: CRM and WhatsApp browser sessions remain signed out. Purchasing and Email were connected and received fresh requests, but neither had returned a fresh reply during this run. Missing data is not zero."
   ],
   "kb": [],
-  "signal": "Three ingredient decisions are holding R&D work, Roon Body still needs a production commitment, and Price Transfer still needs Polo's broker contact.",
+  "signal": "Polo's container needs immediate exam-fee payment, TALOVA has time-sensitive Amazon shipments, and Roon Body still needs a production commitment.",
   "redflags": [
-    "True Revival's 100 kg Agua is waiting on Aidan's approval, while Mothered and Lanely Talow also have ingredient holds.",
-    "Roon Body has waited 4 calendar days for the immediate 1,500-unit production timeline.",
-    "Buffman/Polo's 4PL ETA is 16 calendar days overdue; Price Transfer has waited 4 calendar days for the broker contact and container EMCU8614105 remains without verified release or delivery."
+    "Container EMCU8614105 remains held at the exam site pending payment and receipt confirmation.",
+    "TALOVA has five new tight-window FBA label sets and five prior shipments showing as not shipped.",
+    "Roon Body has waited 5 calendar days for the immediate 1,500-unit production timeline."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "40 new Outlook messages were below the operational cutoff.",
+  "noise": "34 new Outlook messages were below the operational cutoff.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Approve and release the 100 kg Agua purchase for True Revival.",
+      "top_task": "Pay Polo 4PL's exam-fee invoice and send the receipt.",
       "tasks": [
-        "Clear the True Revival, Mothered, and Lanely Talow ingredient holds",
-        "Commit Roon Body's start and completion dates",
-        "Send Polo's broker contact and confirm container status"
+        "Release container EMCU8614105 from the exam site",
+        "Reconcile and ship TALOVA's open Amazon shipments",
+        "Commit Roon Body's start and completion dates"
       ],
-      "notes": "Nine other verified operational follow-ups remain below the Act Now cutoff. CRM and WhatsApp are signed out. Email status is current; purchasing source records are unavailable, not zero."
+      "notes": "Thirteen other verified operational follow-ups remain below the Act Now cutoff. CRM and WhatsApp are signed out. Outlook is current; fresh Purchasing and Email lane replies were not yet available."
     }
   },
   "revenueActions": [
     {
-      "title": "Clear three R&D ingredient holds",
-      "why": "Aaron and Michael are waiting on Aidan's Agua approval, Silgreen G closure, and Magnolia fragrance sourcing.",
+      "title": "Release Polo's container",
+      "why": "Polo 4PL required the exam-fee payment yesterday before container EMCU8614105 can be released and pickup arranged.",
       "est_value": "UNVERIFIED",
-      "next_step": "Approve the 100 kg Agua release, close the Silgreen G DDP total, and assign the 0.95 kg Magnolia fragrance sourcing today.",
+      "next_step": "Pay the exam-fee invoice, send Erik the receipt, and obtain release and pickup confirmation today.",
       "owner": "Aidan",
-      "timing": "1 calendar day waiting",
-      "value": "R&D and production continuity"
+      "timing": "Payment required 1 calendar day ago",
+      "value": "Supply continuity"
+    },
+    {
+      "title": "Clear TALOVA's Amazon shipment backlog",
+      "why": "Five new FBA label sets have a tight window and five prior shipments are still showing as not shipped.",
+      "est_value": "UNVERIFIED",
+      "next_step": "Reconcile inventory and all ten shipment files, then send confirmed ship dates and tracking today.",
+      "owner": "Aidan",
+      "timing": "New labels 1 calendar day waiting; original replenishment request 13 calendar days old",
+      "value": "Customer stock and fulfillment continuity"
     },
     {
       "title": "Commit Roon Body production dates",
-      "why": "All inputs were reported available and Josh has waited 4 calendar days for the immediate 1,500-unit timeline.",
+      "why": "Inputs were reported available and Josh has waited 5 calendar days for the immediate 1,500-unit timeline.",
       "est_value": "UNVERIFIED",
       "next_step": "Lock the next floor slot and send firm start and completion dates today.",
       "owner": "Aidan",
-      "timing": "4 calendar days waiting",
+      "timing": "5 calendar days waiting",
       "value": "Sold-job fulfillment"
-    },
-    {
-      "title": "Unblock Polo customs coordination",
-      "why": "Buffman/Polo's 4PL ETA is 16 calendar days overdue, Price Transfer has waited 4 calendar days for broker details, and container EMCU8614105 still has no verified release or delivery.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Send the broker contact and obtain exam, release, charges, and pickup status today.",
-      "owner": "Aidan",
-      "timing": "16 calendar days past ETA; broker details 4 calendar days waiting",
-      "value": "Supply continuity"
     }
   ],
   "pipelineStat": {
-    "note": "CRM and WhatsApp are signed out. Email status is current. Current purchasing PO, supplier/QC, inventory, inbound, and production-exception records are unavailable, not zero.",
+    "note": "CRM and WhatsApp are signed out. Outlook status is current. Fresh Purchasing and Email lane replies were not available during this run. Missing purchasing, CRM, and WhatsApp data is not zero.",
     "open_purchase_orders": "UNVERIFIED",
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [
-      "SOCRI estimates in-stock Silgreen G normally ready for dispatch around two weeks after payment"
+      "Container EMCU8614105 is held pending exam-fee payment and receipt confirmation"
     ],
     "unverified_raw_material_prices": [
       "Silgreen G DDP total pending"
     ],
     "overdue_purchasing_tasks": [
-      "True Revival Agua approval and Mothered/Lanely Talow ingredient holds",
-      "Roon Body production timeline, 4 calendar days waiting",
-      "Buffman/Polo 4PL delivery, 16 calendar days past ETA; Polo broker contact, 4 calendar days waiting"
+      "Polo exam-fee payment and container release, required yesterday",
+      "TALOVA open Amazon shipments and replenishment follow-through",
+      "Roon Body production timeline, 5 calendar days waiting"
     ],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-20T07:12:00-04:00"
+    "last_verified": "2026-10-21T07:03:00-04:00"
   },
   "topTasks": [
     {
       "rank": 1,
-      "title": "Clear three R&D ingredient holds",
-      "why": "True Revival needs Aidan's Agua approval, Mothered needs Silgreen G, and Lanely Talow needs Magnolia fragrance for its final sample.",
+      "title": "Pay Polo's exam fee and release the container",
+      "why": "Container EMCU8614105 cannot be released from the exam site until payment is confirmed.",
       "owner": "Aidan",
-      "due": "1 calendar day waiting",
+      "due": "Payment required yesterday",
       "priority": "critical",
-      "revenue": "R&D and production continuity"
+      "revenue": "Supply continuity"
     },
     {
       "rank": 2,
-      "title": "Commit Roon Body production dates",
-      "why": "Inputs are available and Josh is waiting for the immediate 1,500-unit timeline.",
+      "title": "Reconcile and ship TALOVA's Amazon orders",
+      "why": "Five new label sets have a tight window and five prior shipments remain open.",
       "owner": "Aidan",
-      "due": "4 calendar days waiting",
+      "due": "Today",
       "priority": "critical",
-      "revenue": "Sold-job fulfillment"
+      "revenue": "Customer stock and fulfillment continuity"
     },
     {
       "rank": 3,
-      "title": "Send Polo's broker contact and confirm container status",
-      "why": "Buffman/Polo's 4PL delivery is 16 calendar days past ETA, Price Transfer is waiting for the broker contact, and customs release remains unverified.",
+      "title": "Commit Roon Body production dates",
+      "why": "Inputs are available and Josh is waiting for the immediate 1,500-unit timeline.",
       "owner": "Aidan",
-      "due": "16 calendar days past ETA; broker details 4 calendar days waiting",
+      "due": "5 calendar days waiting",
       "priority": "critical",
-      "revenue": "Supply continuity"
+      "revenue": "Sold-job fulfillment"
     }
   ],
   "purchasingIntelligence": null
