@@ -1,124 +1,41 @@
 {
-  "date": "2026-10-21",
-  "ts": "2026-10-21T07:04:00-04:00",
+  "date": "2026-10-22",
+  "ts": "2026-10-22T07:06:00-04:00",
   "brief": [
-    {
-      "t": "START HERE: Verify payment for container EMCU8614105 and forward the receipt to Erik now so release can proceed.",
-      "hot": true
-    },
-    {
-      "t": "ACT NOW 1: Erik Babayan is waiting 1 calendar day for payment confirmation needed to release container EMCU8614105. Send: Erik, I am verifying the payment now and will forward the receipt today so you can confirm release and earliest pickup.",
-      "hot": true
-    },
-    {
-      "t": "ACT NOW 2: Michael Abbo has waited 2 calendar days for Aidan's approval or status on 100 kg Agua for True Revival; Silgreen G, Cheriosa 62, and Magnolia remain ingredient dependencies. Send: Michael, I am closing the 100 kg Agua decision now and will send you the approval status and current ETA for Silgreen G, Cheriosa 62, and Magnolia today.",
-      "hot": true
-    },
-    {
-      "t": "ACT NOW 3: Armenak Shahbazian is waiting on the Buffman shipment, whose October 4 ETA is now 17 calendar days late with no verified delivery update. Send: Armenak, please confirm the shipment's current location, release status, carrier, tracking, and firm delivery date today.",
-      "hot": true
-    }
+    {"t":"START HERE: Open Polo's October 20 exam-fee invoice, verify whether it was paid, and send Erik the receipt or a payment decision today.","hot":true},
+    {"t":"ACT NOW 1: Release container EMCU8614105. Erik's October 20 payment deadline is 2 calendar days past; no newer payment or release confirmation was found. Send: Erik, I am checking the exam fee payment now and will confirm the receipt or payment timing today; please confirm release and earliest pickup once accounting clears it.","hot":true},
+    {"t":"ACT NOW 2: Reconcile TALOVA's FBA shipments. Marcello has waited 2 calendar days on new labels and shipments showing open, and 14 days since his original replenishment request. A USPS pickup of 60 pieces yesterday is not proof these FBA shipments shipped. Send: Marcello, I am matching the open shipments to our inventory and carrier scans now and will send confirmed ship dates and tracking today.","hot":true},
+    {"t":"ACT NOW 3: Close the ingredient gaps with Michael and Aaron, 3 calendar days after their October 19 request. Agua approval and Silgreen G landed timing remain unverified; Cheirosa 62 was ordered yesterday, not received. Magnolia's delivery notice lists only 8 oz against the requested 0.95 kg; verify identity and usable quantity before treating the hold as cleared. Send: Michael, I am closing the Agua decision and Silgreen delivery timing today; Cheirosa 62 is ordered, and I need Aaron to confirm the Magnolia identity and usable quantity against the 0.95 kg requirement.","hot":true}
   ],
   "next": [
-    "Recommendation: Release EMCU8614105 first, close the Agua and ingredient status second, then force a firm Buffman delivery update.",
-    "Scheduled: 1 other verified operational follow-up remains below the Act Now cutoff; review the October 20 Wendy Zhang draft requesting readable tracking and confirmation of 40 Option B pads.",
-    "Noise: Count unavailable because the Email lane returned a signal summary rather than a full message count.",
-    "Source gaps: Purchasing returned blocked because current PO, supplier/QC, inventory, inbound, and production-exception records are unavailable, not zero. CRM and WhatsApp were not reverified in this inbound result; their last known state was signed out."
+    "Recommendation: Verify Polo payment first, reconcile TALOVA second, then close the ingredient decisions without assuming ordered or carrier-delivered means available to Production.",
+    "Displaced: Roon Body's 1,500-unit timeline request is 6 calendar days old; today's documented ingredient shortages take the third slot because they directly block lab or production readiness.",
+    "Scheduled: 17 active CRM tasks, including 15 past their displayed due dates, remain below these three priorities. Nearest dated task is October 22: give Sam technical feasibility inputs for Ashley's haircare request; customer pricing stays with Sam. Counts describe this CRM task view, not the entire operational backlog.",
+    "Noise: 30 of 42 new Outlook messages were below the operational review cutoff.",
+    "Sources: Outlook inbox and Sent Items reviewed; Aidan's named CRM session is now signed in and tasks and purchase orders were read. WhatsApp browser session signed out. Purchasing and Email status requests were routed; no matching fresh reply was available at publication. Older unread-mail search was capped at 50, so older backlog coverage is partial."
   ],
   "kb": [],
-  "signal": "Container EMCU8614105 needs payment proof for release, True Revival still needs the 100 kg Agua decision, and Buffman's shipment is 17 days past ETA.",
+  "signal": "Verify Polo release payment, recover TALOVA FBA shipment visibility, and reconcile ingredient approvals and Magnolia quantity.",
   "redflags": [
-    "Container EMCU8614105 may remain held until payment is verified and the receipt is forwarded.",
-    "True Revival's 100 kg Agua decision remains open while Silgreen G, Cheriosa 62, and Magnolia remain dependencies.",
-    "Buffman's shipment is 17 calendar days past its October 4 ETA without a verified delivery update."
+    "Polo's exam-fee deadline was October 20; payment and release are unverified.",
+    "TALOVA's new labels and open shipments have no verified matched dispatch or tracking update.",
+    "Magnolia delivery notice is for 8 oz, not the requested 0.95 kg; identity, physical receipt, and usable quantity need confirmation."
   ],
   "team": [],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "Count unavailable from the Email lane's signal-only summary.",
-  "teamMembers": {
-    "aidan": {
-      "display_name": "Aidan",
-      "top_task": "Verify payment and forward the receipt for container EMCU8614105.",
-      "tasks": [
-        "Release container EMCU8614105",
-        "Close the 100 kg Agua and ingredient status",
-        "Obtain Buffman's firm delivery status"
-      ],
-      "notes": "One other verified operational follow-up remains below the Act Now cutoff. Purchasing records are unavailable, not zero. CRM and WhatsApp were not reverified and were last known signed out."
-    }
-  },
+  "noise": "30 of 42 new Outlook messages below the operational cutoff.",
+  "teamMembers": {"aidan":{"display_name":"Aidan","top_task":"Verify Polo's exam-fee payment and send Erik the receipt or payment timing.","tasks":["Verify Polo payment and release","Reconcile TALOVA FBA shipment tracking","Close ingredient approvals and Magnolia quantity"],"notes":"CRM signed in as Aidan; 17 active tasks, 15 past due. WhatsApp signed out. No matched fresh status reply yet."}},
   "revenueActions": [
-    {
-      "title": "Release container EMCU8614105",
-      "why": "Payment was due October 20 for release, and Erik is waiting for verification and the receipt.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Verify payment, forward the receipt, and obtain release and earliest pickup confirmation today.",
-      "owner": "Aidan",
-      "timing": "1 calendar day waiting",
-      "value": "Supply continuity"
-    },
-    {
-      "title": "Close True Revival's Agua decision",
-      "why": "Michael is waiting for approval or status on 100 kg Agua, with three other ingredient dependencies still open.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Issue the Agua decision and give Michael verified status for Silgreen G, Cheriosa 62, and Magnolia today.",
-      "owner": "Aidan",
-      "timing": "2 calendar days waiting",
-      "value": "R&D and production continuity"
-    },
-    {
-      "title": "Recover Buffman's overdue shipment",
-      "why": "The October 4 ETA is 17 calendar days late without a verified delivery update.",
-      "est_value": "UNVERIFIED",
-      "next_step": "Obtain current location, release status, carrier, tracking, and a firm delivery date today.",
-      "owner": "Aidan",
-      "timing": "17 calendar days past ETA",
-      "value": "Supply continuity"
-    }
+    {"title":"Verify Polo payment and release","why":"October 20 exam-fee deadline passed; payment and release unverified.","est_value":"UNVERIFIED","next_step":"Check payment records, forward existing receipt or decide payment timing, and obtain release confirmation today.","owner":"Aidan","timing":"2 calendar days past payment deadline","value":"Supply continuity"},
+    {"title":"Reconcile TALOVA FBA shipments","why":"New FBA labels and items showing unshipped require inventory and carrier-scan reconciliation.","est_value":"UNVERIFIED","next_step":"Match each shipment to physical inventory and carrier scans; send confirmed tracking or ship dates today.","owner":"Aidan","timing":"2 calendar days waiting on October 20 requests","value":"Fulfillment continuity"},
+    {"title":"Close ingredient decisions and Magnolia quantity","why":"Agua approval and Silgreen timing remain unverified; 8 oz Magnolia delivery notice does not establish 0.95 kg availability.","est_value":"UNVERIFIED","next_step":"Give Michael the Agua decision and Silgreen timing; have Aaron verify Magnolia identity and usable quantity today.","owner":"Aidan","timing":"3 calendar days since October 19 ingredient request","value":"R&D and production readiness"}
   ],
-  "pipelineStat": {
-    "note": "Email returned current signal. Purchasing PO, supplier/QC, inventory, inbound, and production-exception records are unavailable, not zero. CRM and WhatsApp were not reverified and were last known signed out.",
-    "open_purchase_orders": "UNVERIFIED",
-    "open_purchase_orders_value": "UNVERIFIED",
-    "long_lead_items": [],
-    "unverified_raw_material_prices": [],
-    "overdue_purchasing_tasks": [
-      "Container EMCU8614105 payment verification and release, 1 calendar day waiting",
-      "True Revival 100 kg Agua decision and ingredient status, 2 calendar days waiting",
-      "Buffman shipment, 17 calendar days past ETA"
-    ],
-    "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-21T07:04:00-04:00"
-  },
+  "pipelineStat": {"note":"CRM purchase-order table read: 23 historical POs; 11 marked Received and 12 in other statuses. Delivery-date cells are blank; physical receipt and live-job dependencies are not inferred. No prices or customer deal values included.","open_purchase_orders":12,"open_purchase_orders_value":"UNVERIFIED","long_lead_items":[],"unverified_raw_material_prices":[],"overdue_purchasing_tasks":["Polo exam fee: deadline October 20","Ingredient status request: October 19"],"suppliers_awaiting_response":"UNVERIFIED","last_verified":"2026-10-22T07:06:00-04:00"},
   "topTasks": [
-    {
-      "rank": 1,
-      "title": "Release container EMCU8614105",
-      "why": "Payment verification and the receipt are needed for release.",
-      "owner": "Aidan",
-      "due": "1 calendar day waiting",
-      "priority": "critical",
-      "revenue": "Supply continuity"
-    },
-    {
-      "rank": 2,
-      "title": "Close the 100 kg Agua and ingredient status",
-      "why": "Michael is waiting on the Agua decision while Silgreen G, Cheriosa 62, and Magnolia remain dependencies.",
-      "owner": "Aidan",
-      "due": "2 calendar days waiting",
-      "priority": "critical",
-      "revenue": "R&D and production continuity"
-    },
-    {
-      "rank": 3,
-      "title": "Obtain Buffman's firm delivery status",
-      "why": "The shipment is 17 calendar days past its October 4 ETA.",
-      "owner": "Aidan",
-      "due": "17 calendar days past ETA",
-      "priority": "critical",
-      "revenue": "Supply continuity"
-    }
+    {"rank":1,"title":"Verify Polo payment and release","why":"Exam-fee payment and receipt are needed for release.","owner":"Aidan","due":"October 20; 2 calendar days past deadline","priority":"critical","revenue":"Supply continuity"},
+    {"rank":2,"title":"Reconcile TALOVA FBA shipments","why":"Tight-window labels and prior shipments showing open need verified tracking.","owner":"Aidan","due":"Today; 2 calendar days waiting","priority":"critical","revenue":"Fulfillment continuity"},
+    {"rank":3,"title":"Close ingredient decisions and Magnolia quantity","why":"Resolve approval, delivery and usable-quantity gaps before calling lab inputs available.","owner":"Aidan","due":"Today; 3 calendar days since request","priority":"critical","revenue":"R&D and production readiness"}
   ],
   "purchasingIntelligence": null
 }
