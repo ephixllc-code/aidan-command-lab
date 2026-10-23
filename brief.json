@@ -1,6 +1,6 @@
 {
   "date": "2026-10-23",
-  "ts": "2026-10-23T11:04:29.826Z",
+  "ts": "2026-10-23T11:08:04.068Z",
   "brief": [
     {
       "t": "START HERE: Walk to Ron and Aaron and ask for today's Mothered separation and viscosity results before anyone scales up.",
@@ -11,7 +11,7 @@
       "hot": true
     },
     {
-      "t": "ACT NOW 2: TALOVA needs both material clarification and shipment reconciliation. Michael reported ingredients not meeting expectations yesterday; Marcello has waited 3 calendar days since October 20 for tight-window FBA labels and shipments showing unshipped. Send: Aaron, please identify the TALOVA ingredient concerns and affected batches today so I can reconcile usable inventory and give Marcello verified shipment dates and tracking.",
+      "t": "ACT NOW 2: TALOVA needs both material clarification and shipment reconciliation. Michael reported ingredients not meeting expectations yesterday; Marcello has waited 3 calendar days since October 20 for tight-window FBA labels and shipments showing unshipped. Send: Aaron, please identify the TALOVA ingredient concerns and affected batches today so I can reconcile usable inventory and give Sam verified shipment dates and tracking for his customer reply.",
       "hot": true
     },
     {
@@ -24,7 +24,7 @@
     "Displaced: The earlier ingredient-approval bundle leaves the top three because yesterday's direct lab update establishes a current Mothered quality gate; the older Agua, Silgreen and Magnolia closure statuses remain unverified, not resolved.",
     "Scheduled: 17 active CRM task records, including 16 with displayed dates before today; these are records requiring reconciliation, not 16 independently verified unfinished jobs. Nearest displayed due date is October 22 for Ashley's technical feasibility input to Sam. Customer pricing remains with Sam. Yesterday's Hassell count update reports a response sent although its CRM task remains active.",
     "Noise: 19 marketing, social or automated non-operational messages suppressed from 52 new inbound messages reviewed.",
-    "Sources: Fresh Outlook inbound and Sent Items, unread backlog sample, and Aidan's signed-in CRM task view reviewed. WhatsApp browser session signed out. Purchasing and Email connected; fresh requests routed under cmd_20261023_0700_et_status. Reply status is recorded in the run state. No orders, payments, CRM edits or customer emails executed. No matching fresh status reply was available at publication."
+    "Sources: Same-day saved brief records fresh Outlook and Aidan CRM review; WhatsApp browser session signed out. Both lane results now reconciled under cmd_20261023_0700_et_status. Email confirms pending Polo rail ingate, no payment receipt or TALOVA shipping proof found, and no recent substantive drafts. Missing email proof does not establish nonpayment or nonshipment. Purchasing reports no fresh source records; prior ingredient holds remain unverified, not cleared. No orders, payments, CRM edits or customer emails executed."
   ],
   "kb": [],
   "signal": "Mothered quality gate today; TALOVA ingredient concerns and open FBA shipments; Polo awaiting a rail-yard appointment.",
@@ -117,5 +117,38 @@
       "revenue": "Supply continuity"
     }
   ],
-  "purchasingIntelligence": null
+  "purchasingIntelligence": null,
+  "laneResults": {
+    "request_id": "cmd_20261023_0700_et_status",
+    "email": {
+      "status": "completed",
+      "summary": "Oct 23: Polo EMCU8614105 pending rail ingate per Oct 22; Oct 20 payment deadline passed, receipt/release unverified. TALOVA FBA shipping proof not found; no firm ship-by date, customer follow-up belongs to Sam. No recent substantive drafts found. Wendy corrected tracking after Aidan’s 01:19 follow-up; delivery confirmation pending. ECOORI sample offer has no dispatch date. Read-only review; no emails sent or changed."
+    },
+    "purchasing": {
+      "received_at": "2026-10-23T07:02:00-04:00",
+      "source": "aidan-command-lab",
+      "intent": "agent_result",
+      "request_id": "cmd_20261023_0700_et_status",
+      "routed_to": "purchasing",
+      "status": "blocked",
+      "summary": "BLOCKED Oct 23 07:02 ET: no purchasing connection, uploads or fresh source evidence. Agua 100kg, Silgreen G 40kg, Magnolia 0.95kg, Cheirosa62 and Polo EMCU8614105 payment/release cannot be revalidated; quantities are request labels, not verified. Supplier/COA/SDS, production/R&D holds and sold-job risks unavailable, not zero. Aidan: supply dated PO/QC, quantity, approval and release/payment records today. No verified live threat to escalate; no purchase/payment made.",
+      "consultant_disposition": "Recorded purchasing-lane source gap for Oct 23 brief reconciliation. Missing data is not zero; historical issues are not confirmed cleared. No conclusion that live threats are absent. Quantities remain unverified request labels. This completion does not itself authorize purchases, payments or outbound messages.",
+      "callback_status": "not_attempted",
+      "callback_note": "This is an incoming lane result rather than a new consultant command; no result was redispatched, avoiding a routing loop."
+    }
+  },
+  "followUpEvidence": {
+    "kanmine": {
+      "source": "Email lane Outlook review Oct 23",
+      "tracking": "1Z9Y45380491811962",
+      "quantity": "120 Option B samples confirmed in Wendy thread",
+      "sides": "Textured and untextured sides confirmed",
+      "delivery": "Unconfirmed"
+    },
+    "ecoori": {
+      "source": "Email lane Outlook review Oct 23",
+      "sample_offer": "100 g Natori PDRN 10L and 5 g Natori PDRN 95",
+      "dispatch_date": null
+    }
+  }
 }
