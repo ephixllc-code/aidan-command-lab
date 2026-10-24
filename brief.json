@@ -1,6 +1,6 @@
 {
   "date": "2026-10-24",
-  "ts": "2026-10-24T11:03:40.382Z",
+  "ts": "2026-10-24T11:08:17.879Z",
   "brief": [
     {
       "t": "START HERE: Open the IPFS cancellation notice and check payment records, then contact the existing LIMN broker contact to verify coverage and the cure balance.",
@@ -24,7 +24,7 @@
     "Displaced: Mothered and Polo leave the top three for the confirmed insurance notice and Oreka date conflict. Mothered independent procedure verification is planned for next week, not complete; Polo rail appointment remains unconfirmed.",
     "Scheduled: 19 active Aidan CRM task records, 17 dated before today, 1 due October 26 and 1 undated; completion is unverified. Nearest upcoming deadline: validate the reported 21 ingredient shortages for Men’s Moisturizer, Monday October 26. Customer pricing remains with Sam.",
     "Noise: 19 non-operational messages suppressed from 41 new inbound messages.",
-    "Fresh Outlook inbound, Sent Items, unread sample and signed-in Aidan CRM tasks reviewed. WhatsApp browser session signed out, known unresolved gap. Purchasing and Email connected; status requests routed under cmd_20261024_0700_et_status; no matching fresh reply at publication. Oreka deadline risk and insurance notice routed to Email for Sam escalation; actual send not verified. No purchases, payments, customer messages or CRM changes made. Older unread coverage partial."
+    "Both lane reports received under cmd_20261024_0700_et_status. Email completed a read-only mailbox review; no recent substantive draft found. Purchasing blocked: no fresh supplier/PO/QC records; missing evidence is not zero or clearance. Mothered draft process remains unverified, independent verifier/date unassigned in mailbox evidence, and the requested October 23 ingredient-order date is 1 day past; Sam owns customer contact. Polo payment receipt and rail appointment remain unverified; do not pay twice. CRM and WhatsApp findings above are from the original morning review, not rechecked in this reconciliation. Insurance/Oreka escalation was previously routed to Email; actual send remains unverified. No purchases, payments, customer messages or CRM changes made."
   ],
   "kb": [],
   "signal": "Insurance cancellation prevention; Oreka ingredient ETA conflicts with Canada sample window; TALOVA salvage and independent quality verification.",
@@ -120,5 +120,16 @@
       "revenue": "Operational continuity"
     }
   ],
-  "purchasingIntelligence": null
+  "purchasingIntelligence": null,
+  "laneReports": {
+    "request_id": "cmd_20261024_0700_et_status",
+    "purchasing": {
+      "status": "blocked",
+      "summary": "BLOCKED Oct 24 07:02 ET: no purchasing connection, uploads or fresh records. Supplier/material/QC document risks, TALOVA ingredient/batch impact and Polo EMCU8614105 rail appointment unverified; closures/owners unknown, not cleared. Mothered viscosity/separation gate belongs to QC/R&D; Oct23 due date is request-only. FBA status belongs to fulfillment; sold-job commitment decisions to Sam. Aidan: provide dated supplier/QC and carrier records today. No purchases/payments."
+    },
+    "email": {
+      "status": "completed",
+      "summary": "Oct24: Mothered draft/QC gate unverified; requested Oct23 ingredient-order date passed. TALOVA shipment proof absent; Sam owns customer contact. Polo pending rail appointment; Oct20 payment receipt unverified. IPFS installment due Oct13; $941.41 cure by Nov5 5pm Central or cancellation. No recent substantive draft found; AAL asks Stearic Acid grade, undated. Mailbox evidence only; no messages sent or changed. Full dated report attached."
+    }
+  }
 }
