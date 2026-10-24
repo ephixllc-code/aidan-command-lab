@@ -1,6 +1,13 @@
 {
-  "request_id": "cmd_pad_kanmine_20261019_0938",
+  "request_id": "cmd_20261024_0700_et_status",
   "status": "completed",
-  "routed_to": "email",
-  "summary": "Follow up sent to Wendy Zhang in the existing Kanmine cosmetic pad thread. The message asks her to confirm shipment today, provide the carrier and tracking number, and verify that the package contains 40 Option B pads with one textured side and one smooth side. The PLL text signature was used because the approved logo file was unavailable."
+  "lane": "consultant",
+  "result": "Email lane reports both follow-ups sent and verified in Sent Items: Mibelle at 07:13:19 EDT for earlier dispatch, November 3 date clarification and payment application; trusted broker Jake at 07:13:25 EDT for IPFS payment/coverage/cure verification. Supplier acknowledged advance payment October 14; application and balance still await confirmation. Neither shipment timing nor insurance clearance is confirmed. No payment, purchase, extra cost or customer email authorized. Sam escalation remains undelivered: Aidan switchboard supports consultant, purchasing and email only, no Sam target. Aidan must raise the sample-window risk and insurance warning with Sam through an approved human channel.",
+  "escalation": {
+    "owner": "Sam",
+    "status": "human_handoff_required",
+    "deliveryToSamConfirmed": false,
+    "next_action": "Aidan: raise the documented Oreka sample-window risk and insurance warning with Sam today. No Sam route exists on Aidan switchboard."
+  },
+  "ts": "2026-10-24T11:14:35.417Z"
 }
