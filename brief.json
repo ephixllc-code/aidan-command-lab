@@ -1,13 +1,13 @@
 {
   "date": "2026-10-26",
-  "ts": "2026-10-26T11:03:58.445Z",
+  "ts": "2026-10-26T11:10:18.804Z",
   "brief": [
     {
       "t": "START HERE: Open your known AT&T account ending 0434 and check payment or arrangement status before any service suspension.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Confirm AT&T service protection now. October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated. Send internally: Please check AT&T account ending 0434 now and confirm the affected service, whether payment or an arrangement is already in place, and the approved action needed to prevent suspension.",
+      "t": "ACT NOW 1: Confirm AT&T service protection now. October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated. Send internally: Please check AT&T account ending 0434 now and confirm the affected service, whether payment or an arrangement is already in place, and the approved action needed to prevent suspension. Notice authenticity is unverified. Check only through the known official account or trusted phone number, not email links; neither suspension nor nonpayment is confirmed.",
       "hot": true
     },
     {
@@ -15,7 +15,7 @@
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Resolve Oreka’s sample-window conflict. Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified. Send internally: Michael and Evelyn, please confirm a feasible Oreka sample plan today because the November 3 ingredient date conflicts with Nadia’s November 1 Canada window; I will raise the unresolved timing risk with Sam.",
+      "t": "ACT NOW 3: Resolve Oreka’s sample-window conflict. Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified. Send internally: Michael and Evelyn, please confirm a feasible Oreka sample plan today because the November 3 ingredient date conflicts with Nadia’s November 1 Canada window; I will raise the unresolved timing risk with Sam. Supplier confirmation is November 3 under FCA Mahwah; whether that means pickup availability, shipment or arrival remains unresolved. Required Canada sample arrival is before November 1, not merely by November 1. October 14 supplier email reports advance payment received; no additional payment authorized.",
       "hot": true
     }
   ],
@@ -25,14 +25,16 @@
     "Scheduled: 19 active CRM records: 17 dated before today, 1 due today and 1 undated; completion remains unverified. Nearest deadline is today’s Men’s Moisturizer validation, elevated above. Other operational follow-through remains queued; customer pricing stays with Sam.",
     "Noise: 11 non-operational messages suppressed from 16 new inbound messages.",
     "Outlook new inbound, Sent Items and 50-message older-unread sample reviewed; older unread coverage partial. CRM freshly reviewed, signed in as Aidan, My Tasks filter value 3, read-only. WhatsApp signed out at QR login; known unresolved gap, not renotified. Purchasing and Email connected and requests routed under cmd_20261026_0700_et_status. No sends, purchases, payments or CRM edits authorized or made this run.",
-    "No matching fresh agent reply at publication. Requests are routed; no timeout is claimed."
+    "Lane reports received: both responses under cmd_20261026_0700_et_status. Email read-only review reports no newer Mibelle or Jake reply and no fresh substantive drafts. Purchasing remains blocked without dated source evidence; no production or QC readiness is cleared. Original CRM, WhatsApp and noise counts remain from this morning’s review, not rechecked in this reconciliation. No new sends, drafts, payments, purchases or CRM edits.",
+    "CORRECTION to October 25 Polo report: the claimed October 6 $602.91 payment was not supported. Retrieved evidence showed only October 5 intent to go to the bank October 6, not a receipt or payment confirmation. Actual payment remains unverified. Latest October 22 carrier update says rail ingate awaiting an appointment. Obtain current rail status and trusted payment evidence; do not infer nonpayment.",
+    "Other verified-email follow-through, outside the capped Act Now list: IPFS notice $941.41, original installment due October 13 (13 days past); conditional cure deadline November 5 at 5 PM Central / 6 PM Eastern, payment and coverage unconfirmed. Amazon decline notice lists $148.39 and cancellation October 28; inspect the order directly. Weston awaits test results with no stated deadline. No extra outreach authorized."
   ],
   "kb": [],
   "signal": "Service continuity, production ingredient validation, Oreka sample deadline.",
   "redflags": [
-    "October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated.",
+    "October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated. Notice authenticity is unverified. Check only through the known official account or trusted phone number, not email links; neither suspension nor nonpayment is confirmed.",
     "Aidan’s active CRM task for Men’s Moisturizer is due today, October 26: confirm whether the system-reported 21 ingredient shortages are accurate. This is a reported shortage count, not a verified physical shortage. Production timing and affected quantities remain unverified.",
-    "Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified."
+    "Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified. Supplier confirmation is November 3 under FCA Mahwah; whether that means pickup availability, shipment or arrival remains unresolved. Required Canada sample arrival is before November 1, not merely by November 1. October 14 supplier email reports advance payment received; no additional payment authorized."
   ],
   "team": [],
   "pipeline": null,
@@ -53,7 +55,7 @@
   "revenueActions": [
     {
       "title": "Confirm AT&T service protection now",
-      "why": "October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated.",
+      "why": "October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated. Notice authenticity is unverified. Check only through the known official account or trusted phone number, not email links; neither suspension nor nonpayment is confirmed.",
       "owner": "Aidan with accounting",
       "timing": "Today, October 26; warning 2 days old, original due date unknown",
       "next_step": "Open the known AT&T account ending 0434 independently and reconcile payment/arrangement status before approving any cure. Do not pay through an email link or duplicate payment.",
@@ -73,7 +75,7 @@
     },
     {
       "title": "Resolve Oreka’s sample-window conflict",
-      "why": "Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified.",
+      "why": "Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified. Supplier confirmation is November 3 under FCA Mahwah; whether that means pickup availability, shipment or arrival remains unresolved. Required Canada sample arrival is before November 1, not merely by November 1. October 14 supplier email reports advance payment received; no additional payment authorized.",
       "owner": "Aidan with Michael, Evelyn and Sam",
       "timing": "Today, October 26; client reply task 12 days overdue; Canada window ends November 1",
       "next_step": "Meet Michael and Evelyn to establish a feasible sample plan today and raise the documented timing conflict with Sam directly. Supplier followups remain draft-only; do not duplicate the existing inquiry.",
@@ -96,7 +98,7 @@
     {
       "rank": 1,
       "title": "Confirm AT&T service protection now",
-      "why": "October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated.",
+      "why": "October 24 suspension warning is 2 days old. It lists $114.55 past due and $222.98 total, with immediate payment requested. Payment/arrangement status and affected service remain unverified; no exact suspension cutoff is stated. Notice authenticity is unverified. Check only through the known official account or trusted phone number, not email links; neither suspension nor nonpayment is confirmed.",
       "owner": "Aidan with accounting",
       "due": "Today, October 26; warning 2 days old, original due date unknown",
       "priority": "critical",
@@ -114,12 +116,23 @@
     {
       "rank": 3,
       "title": "Resolve Oreka’s sample-window conflict",
-      "why": "Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified.",
+      "why": "Michael’s October 23 ingredient-update request is 3 days old; Nadia’s CRM reply task due October 14 is 12 days overdue. Previously reviewed SenoCellTec confirmation shows November 3 against her November 1 Canada window. October24 expedite inquiry is verified in Sent Items; no newer Mibelle reply found. No feasible revised plan is verified. Supplier confirmation is November 3 under FCA Mahwah; whether that means pickup availability, shipment or arrival remains unresolved. Required Canada sample arrival is before November 1, not merely by November 1. October 14 supplier email reports advance payment received; no additional payment authorized.",
       "owner": "Aidan with Michael, Evelyn and Sam",
       "due": "Today, October 26; client reply task 12 days overdue; Canada window ends November 1",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
-  "purchasingIntelligence": null
+  "purchasingIntelligence": null,
+  "laneReports": {
+    "request_id": "cmd_20261026_0700_et_status",
+    "purchasing": {
+      "status": "blocked",
+      "summary": "BLOCKED Oct26: no connections/uploads/fresh records. COA/SDS, threatened runs, Magnolia/TALOVA/Mothered readiness, Polo rail, owners/closures unverified. Request-only: Oreka Nov3 vs Canada Nov1; Men’s Moisturizer 21 shortages, validation due today. Aidan: obtain dated inventory/shortage, supplier, QC and carrier evidence today; escalate verified sold-job threats to Sam. QC/R&D own quality release. Unknown is not cleared. No outreach, purchases, payments or CRM edits."
+    },
+    "email": {
+      "status": "completed",
+      "summary": "Oct26: No fresh substantive drafts; no Mibelle/Jake replies. Escalate Oreka to Aidan/Sam: Nov3 date conflicts with before-Nov1 sample need. IPFS $941.41 cure Nov5 5pm CT; AT&T $114.55 overdue/$222.98 total warning, authenticity/payment unverified. Amazon $148.39 cancellation Oct28. Weston requests test results, undated. Polo rail stalled; correction: prior Oct6 payment claim unsupported, payment unverified. No outreach, drafts or mailbox changes."
+    }
+  }
 }
