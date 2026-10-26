@@ -1,9 +1,9 @@
 {
-  "request_id": "cmd_email_signature_tone_1793031055193_asset_recovery",
+  "request_id": "cmd_fix_signature_1793031390791",
   "status": "blocked",
   "lane": "consultant",
   "agent": "Aidan Consultant Agent",
-  "text": "Signature recovery remains blocked. Email reports the approved logo was recovered, but the historical horizontal signature image has outdated/incomplete details and cannot replace the current approved signature. The approved full signature artifact and a supported image-delivery method remain missing. Four supplier drafts remain unchanged and held, not ready for approval. No supplier emails or repeat texts sent. No further unchanged recovery request dispatched.",
-  "result": "Signature recovery remains blocked. Email reports the approved logo was recovered, but the historical horizontal signature image has outdated/incomplete details and cannot replace the current approved signature. The approved full signature artifact and a supported image-delivery method remain missing. Four supplier drafts remain unchanged and held, not ready for approval. No supplier emails or repeat texts sent. No further unchanged recovery request dispatched.",
-  "ts": "2026-10-26T16:17:54.623Z"
+  "text": "Email confirms all four supplier replies remain unchanged and not approval-ready. Available Outlook draft tools cannot embed the approved logo with inline image metadata. Approved logo is recovered; quoted supplier images and historical content IDs are not substitutes. Mibelle also needs duplicate text signatures replaced. Email lane owns draft correction; Consultant will not bypass that ownership or use Outlook browser access without explicit authorization. Next action: authorize Outlook browser access or connect an inline-image-capable API. Preserve recipients, reply text, history and attachments; verify saved content and rendering before marking ready. No supplier emails, draft changes, repeat texts or unchanged redispatches.",
+  "result": "Email confirms all four supplier replies remain unchanged and not approval-ready. Available Outlook draft tools cannot embed the approved logo with inline image metadata. Approved logo is recovered; quoted supplier images and historical content IDs are not substitutes. Mibelle also needs duplicate text signatures replaced. Email lane owns draft correction; Consultant will not bypass that ownership or use Outlook browser access without explicit authorization. Next action: authorize Outlook browser access or connect an inline-image-capable API. Preserve recipients, reply text, history and attachments; verify saved content and rendering before marking ready. No supplier emails, draft changes, repeat texts or unchanged redispatches.",
+  "ts": "2026-10-26T16:19:21.992Z"
 }

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "ts": "2026-10-26T16:17:54.623Z",
+  "ts": "2026-10-26T16:19:21.992Z",
   "brief": [
     {
       "t": "START HERE: Open your known AT&T account ending 0434 and check payment or arrangement status before any service suspension.",
@@ -28,7 +28,7 @@
     "Morning lane report superseded by the October 26 11:55 EDT Email report: four unsent supplier replies exist but are held pending approved signature correction; Mibelle and Jake have replied. Purchasing remains blocked without dated source evidence. CRM, WhatsApp and noise counts remain from the morning review, not refreshed at noon. No supplier emails sent, purchases, payments or CRM edits reported.",
     "CORRECTION to October 25 Polo report: the claimed October 6 $602.91 payment was not supported. Retrieved evidence showed only October 5 intent to go to the bank October 6, not a receipt or payment confirmation. Actual payment remains unverified. Latest October 22 carrier update says rail ingate awaiting an appointment. Obtain current rail status and trusted payment evidence; do not infer nonpayment.",
     "Other verified-email follow-through, outside the capped Act Now list: IPFS notice $941.41, original installment due October 13 (13 days past); conditional cure deadline November 5 at 5 PM Central / 6 PM Eastern, payment and coverage unconfirmed. Amazon decline notice lists $148.39 and cancellation October 28; inspect the order directly. Weston awaits test results with no stated deadline. No extra outreach authorized.",
-    "SIGNATURE RECOVERY UPDATE: Signature recovery remains blocked. Email reports the approved logo was recovered, but the historical horizontal signature image has outdated/incomplete details and cannot replace the current approved signature. The approved full signature artifact and a supported image-delivery method remain missing. Four supplier drafts remain unchanged and held, not ready for approval. No supplier emails or repeat texts sent. No further unchanged recovery request dispatched."
+    "SIGNATURE CAPABILITY UPDATE: Email confirms all four supplier replies remain unchanged and not approval-ready. Available Outlook draft tools cannot embed the approved logo with inline image metadata. Approved logo is recovered; quoted supplier images and historical content IDs are not substitutes. Mibelle also needs duplicate text signatures replaced. Email lane owns draft correction; Consultant will not bypass that ownership or use Outlook browser access without explicit authorization. Next action: authorize Outlook browser access or connect an inline-image-capable API. Preserve recipients, reply text, history and attachments; verify saved content and rendering before marking ready. No supplier emails, draft changes, repeat texts or unchanged redispatches."
   ],
   "kb": [],
   "signal": "Service continuity, production ingredient validation, Oreka sample deadline.",
@@ -132,15 +132,52 @@
       "summary": "BLOCKED Oct26: no connections/uploads/fresh records. COA/SDS, threatened runs, Magnolia/TALOVA/Mothered readiness, Polo rail, owners/closures unverified. Request-only: Oreka Nov3 vs Canada Nov1; Men’s Moisturizer 21 shortages, validation due today. Aidan: obtain dated inventory/shortage, supplier, QC and carrier evidence today; escalate verified sold-job threats to Sam. QC/R&D own quality release. Unknown is not cleared. No outreach, purchases, payments or CRM edits."
     },
     "email": {
-      "request_id": "cmd_email_signature_tone_1793031055193_asset_recovery",
+      "source": "aidan-command-lab",
+      "intent": "agent_result",
+      "request_id": "cmd_fix_signature_1793031390791",
+      "routed_to": "email",
       "status": "blocked",
-      "summary": "Approved logo saved; original sent horizontal signature recovered. It is a raster with COO, no street address and an older logo treatment, so it does not meet the full approved details. Still needed: accessible approved full signature HTML/artifact plus a working hosted image or supported inline-image mechanism. Current Outlook tools lack inline/CID parameters. Four drafts unchanged; nothing sent, resent or texted. No new logo requested.",
-      "approved_logo_recovered": true,
-      "original_signature_recovered": true,
+      "summary": "Confirmed all four active replies lack the approved signature; none corrected. Outlook draft tools cannot set inline image/contentId metadata. Please have Consultant apply the approved signature through authorized Outlook access, or arrange inline-capable API/browser authorization and provide approved full HTML. Approved logo is recovered. Mibelle also has duplicated text signatures; TRI-K images are quoted supplier images only. No sends, changes or texts; no rendering claim.",
+      "corrected_subjects": [],
+      "blocked_drafts": [
+        {
+          "id": "AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq_QAAAA==",
+          "subject": "RE: Stearic Acid",
+          "bodyType": "text",
+          "isDraft": true,
+          "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq%2BQAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+        },
+        {
+          "id": "AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq_AAAAA==",
+          "subject": "RE: Introduction: Mibelle + Private Label Labs",
+          "bodyType": "text",
+          "isDraft": true,
+          "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq%2BAAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+        },
+        {
+          "id": "AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq_gAAAA==",
+          "subject": "RE: BioLichen CosmosPreserve",
+          "bodyType": "text",
+          "isDraft": true,
+          "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq%2BgAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+        },
+        {
+          "id": "AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq_wAAAA==",
+          "subject": "RE: . TRI-K . follow up on some samples... visit December 21/22",
+          "bodyType": "html",
+          "isDraft": true,
+          "webLink": "https://outlook.office365.com/owa/?ItemID=AQMkADY5NDc1NzE4LTliODYtNDc5Yi05NzQ3LWI3M2JjZGU2NDhiYwBGAAADS8yTR67Bp0aOBf2Sb0IMngcAMF21tlLLvUSbMBpmdvAf9AAAAgEPAAAAMF21tlLLvUSbMBpmdvAf9AACCCtq%2BwAAAA%3D%3D&exvsurl=1&viewmodel=ReadMessageItem"
+        }
+      ],
+      "consultant_help_requested": true,
+      "required_help": "Apply exact approved full signature with a genuinely embedded logo through authorized Outlook access. Alternatively provide approved full HTML and an inline-capable API connection, or explicit browser authorization. Current create/update tools only expose ordinary attachments, not isInline/contentId. Do not use quoted supplier images or copy a historical cid. Preserve current content, recipients, history and attachments; re-read and visually verify before claiming repaired. Mibelle currently contains duplicate text contact blocks which need replacement, not another appended block.",
+      "approved_logo_path": "/tasklet/threads/a_dj2a7kz8s84923sf05j3/work/signature-assets/PLL White Background.png",
+      "historical_signature_path": "/tasklet/threads/a_dj2a7kz8s84923sf05j3/work/signature-assets/original-sent-signature.png",
       "drafts_modified": false,
       "emails_sent": false,
       "notifications_sent": false,
-      "consultant_disposition": "Hold drafts. Do not repeat prior notification or loop unchanged recovery requests."
+      "rendering_verified": false,
+      "consultant_disposition": "Email confirms all four supplier replies remain unchanged and not approval-ready. Available Outlook draft tools cannot embed the approved logo with inline image metadata. Approved logo is recovered; quoted supplier images and historical content IDs are not substitutes. Mibelle also needs duplicate text signatures replaced. Email lane owns draft correction; Consultant will not bypass that ownership or use Outlook browser access without explicit authorization. Next action: authorize Outlook browser access or connect an inline-image-capable API. Preserve recipients, reply text, history and attachments; verify saved content and rendering before marking ready. No supplier emails, draft changes, repeat texts or unchanged redispatches."
     }
   }
 }
