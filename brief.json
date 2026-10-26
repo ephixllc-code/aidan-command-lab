@@ -1,6 +1,6 @@
 {
   "date": "2026-10-26",
-  "ts": "2026-10-26T16:15:07.147Z",
+  "ts": "2026-10-26T16:17:54.623Z",
   "brief": [
     {
       "t": "START HERE: Open your known AT&T account ending 0434 and check payment or arrangement status before any service suspension.",
@@ -28,7 +28,7 @@
     "Morning lane report superseded by the October 26 11:55 EDT Email report: four unsent supplier replies exist but are held pending approved signature correction; Mibelle and Jake have replied. Purchasing remains blocked without dated source evidence. CRM, WhatsApp and noise counts remain from the morning review, not refreshed at noon. No supplier emails sent, purchases, payments or CRM edits reported.",
     "CORRECTION to October 25 Polo report: the claimed October 6 $602.91 payment was not supported. Retrieved evidence showed only October 5 intent to go to the bank October 6, not a receipt or payment confirmation. Actual payment remains unverified. Latest October 22 carrier update says rail ingate awaiting an appointment. Obtain current rail status and trusted payment evidence; do not infer nonpayment.",
     "Other verified-email follow-through, outside the capped Act Now list: IPFS notice $941.41, original installment due October 13 (13 days past); conditional cure deadline November 5 at 5 PM Central / 6 PM Eastern, payment and coverage unconfirmed. Amazon decline notice lists $148.39 and cancellation October 28; inspect the order directly. Weston awaits test results with no stated deadline. No extra outreach authorized.",
-    "SIGNATURE REVIEW UPDATE: Four supplier drafts exist but are HELD, not ready for approval: Mibelle, AAL Care, Dermeco and TRI-K lack the required approved horizontal signature. No drafts changed or emails sent. Consultant verified the approved logo is accessible and supplied its exact bytes and approved contact details to Email through Command Lab for recovery. Signature correction is pending, not complete. The earlier summary text was successfully sent once; do not repeat it or treat Email’s separate phone-verification report as proof that Consultant texting is unavailable."
+    "SIGNATURE RECOVERY UPDATE: Signature recovery remains blocked. Email reports the approved logo was recovered, but the historical horizontal signature image has outdated/incomplete details and cannot replace the current approved signature. The approved full signature artifact and a supported image-delivery method remain missing. Four supplier drafts remain unchanged and held, not ready for approval. No supplier emails or repeat texts sent. No further unchanged recovery request dispatched."
   ],
   "kb": [],
   "signal": "Service continuity, production ingredient validation, Oreka sample deadline.",
@@ -132,16 +132,15 @@
       "summary": "BLOCKED Oct26: no connections/uploads/fresh records. COA/SDS, threatened runs, Magnolia/TALOVA/Mothered readiness, Polo rail, owners/closures unverified. Request-only: Oreka Nov3 vs Canada Nov1; Men’s Moisturizer 21 shortages, validation due today. Aidan: obtain dated inventory/shortage, supplier, QC and carrier evidence today; escalate verified sold-job threats to Sam. QC/R&D own quality release. Unknown is not cleared. No outreach, purchases, payments or CRM edits."
     },
     "email": {
-      "request_id": "cmd_email_signature_tone_1793031055193",
+      "request_id": "cmd_email_signature_tone_1793031055193_asset_recovery",
       "status": "blocked",
-      "summary": "Prior comprehensive tone analysis and original sent examples located and reviewed; workflow updated. Four pending supplier drafts checked but held: both approved signature/logo paths are inaccessible and no approved local copy exists. Please provide accessible approved assets. No invented signature, draft changes, sends or resends. Text not triggered because no drafts changed; existing phone verification blocker remains.",
-      "consultant_followup": {
-        "request_id": "cmd_email_signature_tone_1793031055193_asset_recovery",
-        "dispatch_status": 202,
-        "approved_logo_verified": true,
-        "signature_correction": "pending",
-        "prior_summary_text": "sent once, message em_2n0x9m64x9bd4ga461n9"
-      }
+      "summary": "Approved logo saved; original sent horizontal signature recovered. It is a raster with COO, no street address and an older logo treatment, so it does not meet the full approved details. Still needed: accessible approved full signature HTML/artifact plus a working hosted image or supported inline-image mechanism. Current Outlook tools lack inline/CID parameters. Four drafts unchanged; nothing sent, resent or texted. No new logo requested.",
+      "approved_logo_recovered": true,
+      "original_signature_recovered": true,
+      "drafts_modified": false,
+      "emails_sent": false,
+      "notifications_sent": false,
+      "consultant_disposition": "Hold drafts. Do not repeat prior notification or loop unchanged recovery requests."
     }
   }
 }

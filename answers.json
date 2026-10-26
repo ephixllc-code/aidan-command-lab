@@ -1,6 +1,9 @@
 {
-  "request_id": "cmd_email_signature_tone_1793031055193",
+  "request_id": "cmd_email_signature_tone_1793031055193_asset_recovery",
   "status": "blocked",
   "lane": "consultant",
-  "result": "SIGNATURE REVIEW UPDATE: Four supplier drafts exist but are HELD, not ready for approval: Mibelle, AAL Care, Dermeco and TRI-K lack the required approved horizontal signature. No drafts changed or emails sent. Consultant verified the approved logo is accessible and supplied its exact bytes and approved contact details to Email through Command Lab for recovery. Signature correction is pending, not complete. The earlier summary text was successfully sent once; do not repeat it or treat Email’s separate phone-verification report as proof that Consultant texting is unavailable."
+  "agent": "Aidan Consultant Agent",
+  "text": "Signature recovery remains blocked. Email reports the approved logo was recovered, but the historical horizontal signature image has outdated/incomplete details and cannot replace the current approved signature. The approved full signature artifact and a supported image-delivery method remain missing. Four supplier drafts remain unchanged and held, not ready for approval. No supplier emails or repeat texts sent. No further unchanged recovery request dispatched.",
+  "result": "Signature recovery remains blocked. Email reports the approved logo was recovered, but the historical horizontal signature image has outdated/incomplete details and cannot replace the current approved signature. The approved full signature artifact and a supported image-delivery method remain missing. Four supplier drafts remain unchanged and held, not ready for approval. No supplier emails or repeat texts sent. No further unchanged recovery request dispatched.",
+  "ts": "2026-10-26T16:17:54.623Z"
 }
