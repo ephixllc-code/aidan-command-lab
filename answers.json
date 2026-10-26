@@ -1,6 +1,6 @@
 {
-  "request_id": "cmd_email_draft_only_1793030156142",
-  "status": "completed",
+  "request_id": "cmd_email_signature_tone_1793031055193",
+  "status": "blocked",
   "lane": "consultant",
-  "result": "Recorded four unsent supplier reply drafts. Approval summary text sent once to verified Aidan Mobile. Mibelle reply confirms Nov 3 estimated PLL arrival, still conflicting with Canada arrival before Nov 1; expedite draft awaits approval. Jake directs Aidan to IPFS. Draft-only remains in force. Customer correspondence and pricing remain Sam-owned. No emails sent, purchases, payments or CRM edits."
+  "result": "SIGNATURE REVIEW UPDATE: Four supplier drafts exist but are HELD, not ready for approval: Mibelle, AAL Care, Dermeco and TRI-K lack the required approved horizontal signature. No drafts changed or emails sent. Consultant verified the approved logo is accessible and supplied its exact bytes and approved contact details to Email through Command Lab for recovery. Signature correction is pending, not complete. The earlier summary text was successfully sent once; do not repeat it or treat Email’s separate phone-verification report as proof that Consultant texting is unavailable."
 }
