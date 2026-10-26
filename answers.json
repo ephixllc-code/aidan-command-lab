@@ -1,13 +1,6 @@
 {
-  "request_id": "cmd_20261024_0700_et_status",
+  "request_id": "cmd_email_draft_only_1793030156142",
   "status": "completed",
   "lane": "consultant",
-  "result": "Email lane reports both follow-ups sent and verified in Sent Items: Mibelle at 07:13:19 EDT for earlier dispatch, November 3 date clarification and payment application; trusted broker Jake at 07:13:25 EDT for IPFS payment/coverage/cure verification. Supplier acknowledged advance payment October 14; application and balance still await confirmation. Neither shipment timing nor insurance clearance is confirmed. No payment, purchase, extra cost or customer email authorized. Sam escalation remains undelivered: Aidan switchboard supports consultant, purchasing and email only, no Sam target. Aidan must raise the sample-window risk and insurance warning with Sam through an approved human channel.",
-  "escalation": {
-    "owner": "Sam",
-    "status": "human_handoff_required",
-    "deliveryToSamConfirmed": false,
-    "next_action": "Aidan: raise the documented Oreka sample-window risk and insurance warning with Sam today. No Sam route exists on Aidan switchboard."
-  },
-  "ts": "2026-10-24T11:14:35.417Z"
+  "result": "Recorded four unsent supplier reply drafts. Approval summary text sent once to verified Aidan Mobile. Mibelle reply confirms Nov 3 estimated PLL arrival, still conflicting with Canada arrival before Nov 1; expedite draft awaits approval. Jake directs Aidan to IPFS. Draft-only remains in force. Customer correspondence and pricing remain Sam-owned. No emails sent, purchases, payments or CRM edits."
 }
