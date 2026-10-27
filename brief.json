@@ -1,6 +1,6 @@
 {
   "date": "2026-10-27",
-  "ts": "2026-10-27T11:05:59.232Z",
+  "ts": "2026-10-27T11:07:49.343Z",
   "brief": [
     {
       "t": "START HERE: Ask Evelyn for the Cheirosa 62 and Zinc Oxide lot numbers, then retrieve their matching COAs.",
@@ -24,7 +24,7 @@
     "Displaced: COA retrieval and production reconciliation take priority over the unverified AT&T warning. AT&T remains unresolved, not cleared. Oreka changes from waiting for a supplier reply to resolving destination and the actual finished-sample plan.",
     "Scheduled: 21 active Aidan CRM tasks:18 past-dated,1 due today,1 dueOctober29 and1 undated. Beyond the elevated actions,19 other CRM records remain. Nearest other deadline:today; customer quote/deposit handoff belongs to Sam, not an agent pricing edit.",
     "Noise: 31 promotional/non-operational messages suppressed from 81 new inbound messages.",
-    "Outlook new inbound collected in two non-overlapping time ranges, Sent Items reviewed, older unread limited to50-message sample. CRM freshly reviewed signed in as Aidan, My Tasks filter3, no edits. WhatsApp remains signed out at QR login; known gap. Purchasing/Email connected and status requests each returned202 under cmd_20261027_0700_et_status. Purchasing review returned through Consultant inbound at07:04ET: blocked on missing lot/SKU/receipt/COA/QC records, BOM/run dates, usable stock/allocations and PO balances. Its own source access is missing; Consultant Outlook and CRM remain available. No actual production stop or stock shortage confirmed. Purchasing proposes9am evidence checkpoint, not an agreed deadline. Original Mibelle offer and delivery identity were independently retrieved by Consultant; approved destination and finished-sample route still unconfirmed. Email status reply remains pending; routed is not acknowledgment. No sends, payments or purchases made this run."
+    "Outlook new inbound collected in two non-overlapping time ranges, Sent Items reviewed, older unread limited to50-message sample. CRM freshly reviewed signed in as Aidan, My Tasks filter3, no edits. WhatsApp remains signed out at QR login; known gap. Purchasing/Email connected and status requests each returned202 under cmd_20261027_0700_et_status. Purchasing review returned through Consultant inbound at07:04ET: blocked on missing lot/SKU/receipt/COA/QC records, BOM/run dates, usable stock/allocations and PO balances. Its own source access is missing; Consultant Outlook and CRM remain available. No actual production stop or stock shortage confirmed. Purchasing proposes9am evidence checkpoint, not an agreed deadline. Original Mibelle offer and delivery identity were independently retrieved by Consultant; approved destination and finished-sample route still unconfirmed. Email review returned07:06ET: six current unsent supplier drafts verified, signature hold persists; five RFQs already in Sent Items, not pending approval and must not be recreated. No send/modify by Email this run; sender not established. Mibelle awaits verified ship-to; raw ingredient versus finished-sample destination must be resolved internally first. Jake replied to contact IPFS directly: payment application/coverage unverified, notice cutoffNovember5 17:00Central, original installment dueOctober13,14 days past. Polo release/rail timing and production impact unverified. Big Kelp sample offer is not shipment authorization. Targeted review, not exhaustive inbox audit. No sends, payments or purchases made this run."
   ],
   "kb": [],
   "signal": "R&D documentation, production stock reconciliation, Oreka sample delivery.",
@@ -39,6 +39,12 @@
       "status": "evidence review delivered; execution blocked on underlying lot/stock/PO records",
       "request_id": "cmd_20261027_0700_et_status",
       "evidence": "/tasklet/threads/a_7hg52h0hcemqas4c2gt2/work/purchasing-review-2026-10-27.md"
+    },
+    {
+      "agent": "email",
+      "status": "targeted review delivered; six unsent drafts verified but signature hold; five RFQs verified sent, no duplicate creation",
+      "request_id": "cmd_20261027_0700_et_status",
+      "evidence": "/tasklet/threads/a_7hg52h0hcemqas4c2gt2/work/email-review-2026-10-27.md"
     }
   ],
   "pipeline": null,
