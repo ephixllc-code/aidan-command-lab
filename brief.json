@@ -1,6 +1,6 @@
 {
   "date": "2026-10-28",
-  "ts": "2026-10-28T11:05:44.927Z",
+  "ts": "2026-10-28T11:06:53.142Z",
   "brief": [
     {
       "t": "START HERE: Open Men’s Moisturizer with Evelyn and reconcile usable stock against the October 30 run.",
@@ -23,7 +23,7 @@
     "Recommendation: Validate Friday’s run first, then secure Oreka’s delivery and Evelyn’s COAs.",
     "Scheduled: 19 other active CRM records; nearest dated deadline tomorrow, October29. 21 active total,19 past-dated and1 undated; stale completion records need reconciliation, not assumed incomplete work.",
     "Noise: 31 messages suppressed from 94 new inbound.",
-    "Fresh Outlook94 new inbound deduplicated; Sent Items reviewed; older unread50-message sample only. CRM signed in Aidan; MyTasks filter3 and project51 materials reviewed, no edits. WhatsApp signed out QR, known unresolved gap. Purchasing and Email reviews returned via inbound owner under cmd_20261028_0700_et_status. Purchasing initial missing-sheet/task/rail assertions superseded by Consultant evidence; exact lot/COA, physical stock/allocations/openPO and approved run/transport still unverified. Supplemental evidence202 routed for Purchasing revision, not yet verified reviewed. Email verified six unsent substantive drafts; none fully approval-ready due signature/rendering and relevant dependencies. Five existingRFQs plus laterBioYoung4kg inquiry verified Sent; not recreated, sender not identified. BigKelp supplier says sample shipped, not carrier acceptance or receipt. Glenn revised NeoSyno quote supersedes original and COA attachments exist, QC acceptance not established. Polo alternatives await all-in cost and milestone decision; no booking. CHRobinson supplier claims1335.98 across3invoices, oldestAug12(77days); Sam already aware, finance validation/hold/livejob impact unverified. R&D done reports do not clear production or shipping. No newly proven mandatory Sam escalation. No sends, payments, purchases or CRM edits."
+    "Fresh Outlook94 new inbound deduplicated; Sent Items reviewed; older unread50-message sample only. CRM signed in Aidan; MyTasks filter3 and project51 materials reviewed, no edits. WhatsApp signed out QR, known unresolved gap. Purchasing and Email reviews returned via inbound owner under cmd_20261028_0700_et_status. Purchasing initial missing-sheet/task/rail assertions superseded by Consultant evidence; exact lot/COA, physical stock/allocations/openPO and approved run/transport still unverified. Purchasing corrected review returned07:05ET after reviewing Consultant CRM table and eight emails:16 listed needs versus21of25 banner still requires full25-material reconciliation; no buy quantities inferred. Remaining owners: Aidan/Purchasing stock and linked orders/receipts; QC lot-matched documentation; Production live run approval/assignee; Michael/Evelyn/Ron sample tests and shipping approval. Email verified six unsent substantive drafts; none fully approval-ready due signature/rendering and relevant dependencies. Five existingRFQs plus laterBioYoung4kg inquiry verified Sent; not recreated, sender not identified. BigKelp supplier says sample shipped, not carrier acceptance or receipt. Glenn revised NeoSyno quote supersedes original and COA attachments exist, QC acceptance not established. Polo alternatives await all-in cost and milestone decision; no booking. CHRobinson supplier claims1335.98 across3invoices, oldestAug12(77days); Sam already aware, finance validation/hold/livejob impact unverified. R&D done reports do not clear production or shipping. No newly proven mandatory Sam escalation. No sends, payments, purchases or CRM edits."
   ],
   "kb": [],
   "signal": "Production readiness, finished-sample delivery and lot-matched QC documentation.",
@@ -35,9 +35,9 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "evidence review delivered; supplemental CRM/email evidence routed for changed findings; remaining physical stock/lot/PO verification blocked",
+      "status": "corrected evidence review delivered after reviewing CRM material table and eight emails; full25-material reconciliation, physical stock/lot/PO/run/transport verification still blocked",
       "request_id": "cmd_20261028_0700_et_status",
-      "evidence": "/tasklet/threads/a_7hg52h0hcemqas4c2gt2/work/purchasing-review-2026-10-28.md"
+      "evidence": "/tasklet/threads/a_0vaygv9y9e9ak88m77v7/work/purchasing-review-2026-10-28-source-correction.md"
     },
     {
       "agent": "email",
