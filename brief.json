@@ -1,6 +1,6 @@
 {
   "date": "2026-10-28",
-  "ts": "2026-10-28T11:04:18.098Z",
+  "ts": "2026-10-28T11:05:44.927Z",
   "brief": [
     {
       "t": "START HERE: Open Men’s Moisturizer with Evelyn and reconcile usable stock against the October 30 run.",
@@ -23,7 +23,7 @@
     "Recommendation: Validate Friday’s run first, then secure Oreka’s delivery and Evelyn’s COAs.",
     "Scheduled: 19 other active CRM records; nearest dated deadline tomorrow, October29. 21 active total,19 past-dated and1 undated; stale completion records need reconciliation, not assumed incomplete work.",
     "Noise: 31 messages suppressed from 94 new inbound.",
-    "Fresh Outlook94-message collection deduplicated from capped search plus earlier interval; Sent Items reviewed, older unread50-message sample only. CRM signed in Aidan; MyTasks filter3, project51 materials read, no edits. WhatsApp signed out QR. Purchasing and Email connected; each status dispatch202 at07:02ET under cmd_20261028_0700_et_status; no substantive reply received at publication. Routing is not acknowledgment or working. Inbound owner supplied project51 evidence and requested relay; no competing dispatch. No sends, purchases, payments or CRM edits."
+    "Fresh Outlook94 new inbound deduplicated; Sent Items reviewed; older unread50-message sample only. CRM signed in Aidan; MyTasks filter3 and project51 materials reviewed, no edits. WhatsApp signed out QR, known unresolved gap. Purchasing and Email reviews returned via inbound owner under cmd_20261028_0700_et_status. Purchasing initial missing-sheet/task/rail assertions superseded by Consultant evidence; exact lot/COA, physical stock/allocations/openPO and approved run/transport still unverified. Supplemental evidence202 routed for Purchasing revision, not yet verified reviewed. Email verified six unsent substantive drafts; none fully approval-ready due signature/rendering and relevant dependencies. Five existingRFQs plus laterBioYoung4kg inquiry verified Sent; not recreated, sender not identified. BigKelp supplier says sample shipped, not carrier acceptance or receipt. Glenn revised NeoSyno quote supersedes original and COA attachments exist, QC acceptance not established. Polo alternatives await all-in cost and milestone decision; no booking. CHRobinson supplier claims1335.98 across3invoices, oldestAug12(77days); Sam already aware, finance validation/hold/livejob impact unverified. R&D done reports do not clear production or shipping. No newly proven mandatory Sam escalation. No sends, payments, purchases or CRM edits."
   ],
   "kb": [],
   "signal": "Production readiness, finished-sample delivery and lot-matched QC documentation.",
@@ -35,13 +35,15 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "routed; response pending",
-      "request_id": "cmd_20261028_0700_et_status"
+      "status": "evidence review delivered; supplemental CRM/email evidence routed for changed findings; remaining physical stock/lot/PO verification blocked",
+      "request_id": "cmd_20261028_0700_et_status",
+      "evidence": "/tasklet/threads/a_7hg52h0hcemqas4c2gt2/work/purchasing-review-2026-10-28.md"
     },
     {
       "agent": "email",
-      "status": "routed; response pending",
-      "request_id": "cmd_20261028_0700_et_status"
+      "status": "targeted review delivered; six saved unsent drafts verified, none fully approval-ready; no sends/modifications",
+      "request_id": "cmd_20261028_0700_et_status",
+      "evidence": "/tasklet/threads/a_dj2a7kz8s84923sf05j3/work/brief-2026-10-28.md"
     }
   ],
   "pipeline": null,
