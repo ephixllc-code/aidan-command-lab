@@ -1,94 +1,93 @@
 {
-  "date": "2026-10-28",
-  "ts": "2026-10-28T11:06:53.142Z",
+  "date": "2026-10-29",
+  "ts": "2026-10-29T11:04:38.413Z",
   "brief": [
     {
-      "t": "START HERE: Open Men’s Moisturizer with Evelyn and reconcile usable stock against the October 30 run.",
+      "t": "START HERE: Open Men’s Moisturizer with Michael and confirm whether tomorrow’s recorded production date is real.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Validate Men’s Moisturizer before Friday’s recorded run. CRM project51 lists October30 production, only2 days away, but remains Sample Batching and has no production assignee. Its21-of25 shortage flag and16 needed purchasing lines require reconciliation; blank ordered/QC/released columns are not proof of zero stock. Aidan’s validation task dueOctober26 is2 days overdue. Send internally: Evelyn, please review the Men’s Moisturizer stock and incoming orders with me today and confirm who owns the October 30 run and whether that date is still realistic.",
+      "t": "ACT NOW 1: Reconcile Men’s Moisturizer before tomorrow. CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof. Send internally: Michael and Evelyn, please confirm the sample approval and whether tomorrow’s Men’s Moisturizer run is actually scheduled, then check usable stock and incoming orders with me today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Confirm Oreka’s QC and finished-sample shipping plan. Nikkie reports her task handled, but Ron still reported Oreka R&D inprogress yesterday. The lab agenda requires physical, viscosity and pH results before shipment consideration. No verified shipping approval, actual dispatch or tracking; Mibelle’s latest request is still for a Canada address. Nadia’s response task dueOctober14 is14days overdue; arrival needed beforeNovember1. Send internally: Michael and Evelyn, please send the Oreka test results, shipping approval and delivery plan today so we can confirm Nadia will receive the finished samples in Canada before November 1.",
+      "t": "ACT NOW 2: Verify Oreka’s finished-sample delivery plan. Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked. Send internally: Michael and Steve, please confirm Oreka’s finished samples, QC release, exact shipping addresses and delivery date today so we can give Nadia a confirmed answer before her Canada window closes.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Retrieve Evelyn’s lot-matched Bulk Apothecary COAs. Evelyn’s October26 request for Cheirosa62 and Zinc Oxide COAs is2days old. No matching COAs or affected-job release deadline found; a production stop is not confirmed. Send internally: Evelyn, please send the Cheirosa 62 and Zinc Oxide lot numbers and the job that needs them so I can get you the matching COAs today.",
+      "t": "ACT NOW 3: Replace dirty lab cleaning cloths before further use. Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven. Send internally: Evelyn and Ron, please stop using the dirty cloths, confirm clean approved supplies are physically available, and check whether any equipment or batches need review before the next run.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Validate Friday’s run first, then secure Oreka’s delivery and Evelyn’s COAs.",
-    "Scheduled: 19 other active CRM records; nearest dated deadline tomorrow, October29. 21 active total,19 past-dated and1 undated; stale completion records need reconciliation, not assumed incomplete work.",
-    "Noise: 31 messages suppressed from 94 new inbound.",
-    "Fresh Outlook94 new inbound deduplicated; Sent Items reviewed; older unread50-message sample only. CRM signed in Aidan; MyTasks filter3 and project51 materials reviewed, no edits. WhatsApp signed out QR, known unresolved gap. Purchasing and Email reviews returned via inbound owner under cmd_20261028_0700_et_status. Purchasing initial missing-sheet/task/rail assertions superseded by Consultant evidence; exact lot/COA, physical stock/allocations/openPO and approved run/transport still unverified. Purchasing corrected review returned07:05ET after reviewing Consultant CRM table and eight emails:16 listed needs versus21of25 banner still requires full25-material reconciliation; no buy quantities inferred. Remaining owners: Aidan/Purchasing stock and linked orders/receipts; QC lot-matched documentation; Production live run approval/assignee; Michael/Evelyn/Ron sample tests and shipping approval. Email verified six unsent substantive drafts; none fully approval-ready due signature/rendering and relevant dependencies. Five existingRFQs plus laterBioYoung4kg inquiry verified Sent; not recreated, sender not identified. BigKelp supplier says sample shipped, not carrier acceptance or receipt. Glenn revised NeoSyno quote supersedes original and COA attachments exist, QC acceptance not established. Polo alternatives await all-in cost and milestone decision; no booking. CHRobinson supplier claims1335.98 across3invoices, oldestAug12(77days); Sam already aware, finance validation/hold/livejob impact unverified. R&D done reports do not clear production or shipping. No newly proven mandatory Sam escalation. No sends, payments, purchases or CRM edits."
+    "Recommendation: Confirm tomorrow’s run, settle Oreka’s delivery, and fix the cleaning-supply gap before equipment reuse.",
+    "Scheduled: 21 other active CRM records; nearest task deadline todayOctober29. 23 active total,20 pastdated,1dueToday,1Oct30,1undated; stale tasks need completion reconciliation.",
+    "Noise: 41 messages suppressed from 76 new inbound.",
+    "Lot-COA follow-up leaves the top three for the direct sanitation concern; the huddle says QC nearly done, not documented release.",
+    "WhatsApp QR signedout. Fresh Outlook and AidanCRM reviewed; olderunread50-message sample partial. Purchasing and Email status requests routed202 under cmd_20261029_0700_et_status at07:02ET; results pending. No supplier sends,purchases,payments or CRM edits thisrun. Customer pricing stays withSam. New order confirmations not logged to avoid duplicating ongoing order-entry workflow; physicalreceipt unverified."
   ],
   "kb": [],
-  "signal": "Production readiness, finished-sample delivery and lot-matched QC documentation.",
+  "signal": "Confirm production readiness, finished-sample delivery and immediate sanitation controls.",
   "redflags": [
-    "CRM project51 lists October30 production, only2 days away, but remains Sample Batching and has no production assignee. Its21-of25 shortage flag and16 needed purchasing lines require reconciliation; blank ordered/QC/released columns are not proof of zero stock. Aidan’s validation task dueOctober26 is2 days overdue.",
-    "Nikkie reports her task handled, but Ron still reported Oreka R&D inprogress yesterday. The lab agenda requires physical, viscosity and pH results before shipment consideration. No verified shipping approval, actual dispatch or tracking; Mibelle’s latest request is still for a Canada address. Nadia’s response task dueOctober14 is14days overdue; arrival needed beforeNovember1.",
-    "Evelyn’s October26 request for Cheirosa62 and Zinc Oxide COAs is2days old. No matching COAs or affected-job release deadline found; a production stop is not confirmed."
+    "CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof.",
+    "Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked.",
+    "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "corrected evidence review delivered after reviewing CRM material table and eight emails; full25-material reconciliation, physical stock/lot/PO/run/transport verification still blocked",
-      "request_id": "cmd_20261028_0700_et_status",
-      "evidence": "/tasklet/threads/a_0vaygv9y9e9ak88m77v7/work/purchasing-review-2026-10-28-source-correction.md"
+      "status": "routed; substantive result pending",
+      "request_id": "cmd_20261029_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "targeted review delivered; six saved unsent drafts verified, none fully approval-ready; no sends/modifications",
-      "request_id": "cmd_20261028_0700_et_status",
-      "evidence": "/tasklet/threads/a_dj2a7kz8s84923sf05j3/work/brief-2026-10-28.md"
+      "status": "routed; substantive result pending",
+      "request_id": "cmd_20261029_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "31 noise messages suppressed from 94 new inbound.",
+  "noise": "41 noise messages suppressed from 76 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Validate Men’s Moisturizer before Friday’s recorded run",
+      "top_task": "Reconcile Men’s Moisturizer before tomorrow",
       "tasks": [
-        "Validate Men’s Moisturizer before Friday’s recorded run",
-        "Confirm Oreka’s QC and finished-sample shipping plan",
-        "Retrieve Evelyn’s lot-matched Bulk Apothecary COAs"
+        "Reconcile Men’s Moisturizer before tomorrow",
+        "Verify Oreka’s finished-sample delivery plan",
+        "Replace dirty lab cleaning cloths before further use"
       ],
-      "notes": "Customer pricing and customer/deal/quote changes remain outside this lane."
+      "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
     {
-      "title": "Validate Men’s Moisturizer before Friday’s recorded run",
-      "why": "CRM project51 lists October30 production, only2 days away, but remains Sample Batching and has no production assignee. Its21-of25 shortage flag and16 needed purchasing lines require reconciliation; blank ordered/QC/released columns are not proof of zero stock. Aidan’s validation task dueOctober26 is2 days overdue.",
-      "owner": "Aidan with Evelyn, Warehouse and Production; Sam if October30 cannot be protected",
-      "timing": "Today October28; validation2days overdue; CRM production dateOctober30 requires confirmation",
-      "next_step": "Reconcile approved formula/run quantity, usable stock/allocations and confirmed receipts; name production owner and confirm or correct October30 with the human owner.",
-      "send": "Evelyn, please review the Men’s Moisturizer stock and incoming orders with me today and confirm who owns the October 30 run and whether that date is still realistic.",
+      "title": "Reconcile Men’s Moisturizer before tomorrow",
+      "why": "CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof.",
+      "owner": "Aidan with Michael, Evelyn and Production; Sam if a live commitment is threatened",
+      "timing": "Today October29; validation3days overdue; recorded productionOctober30 unconfirmed",
+      "next_step": "Confirm customer approval and actual production commitment, assign a human owner, reconcile usable stock/allocations and open orders before buying or scheduling.",
+      "send": "Michael and Evelyn, please confirm the sample approval and whether tomorrow’s Men’s Moisturizer run is actually scheduled, then check usable stock and incoming orders with me today.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Confirm Oreka’s QC and finished-sample shipping plan",
-      "why": "Nikkie reports her task handled, but Ron still reported Oreka R&D inprogress yesterday. The lab agenda requires physical, viscosity and pH results before shipment consideration. No verified shipping approval, actual dispatch or tracking; Mibelle’s latest request is still for a Canada address. Nadia’s response task dueOctober14 is14days overdue; arrival needed beforeNovember1.",
-      "owner": "Aidan with Michael, Evelyn, Ron and Purchasing; Sam for unresolved deadline risk",
-      "timing": "Today October28; task14days overdue; Canada arrival beforeNovember1",
-      "next_step": "Get actual QC/release evidence and an approved ingredient-to-finished-sample route; do not infer whole-project completion from one person’s task completion.",
-      "send": "Michael and Evelyn, please send the Oreka test results, shipping approval and delivery plan today so we can confirm Nadia will receive the finished samples in Canada before November 1.",
+      "title": "Verify Oreka’s finished-sample delivery plan",
+      "why": "Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked.",
+      "owner": "Aidan with Michael, Steve/Fulfillment and Evelyn",
+      "timing": "Today October29; response15days overdue; Canada window beforeNovember1",
+      "next_step": "Verify actual finished samples/QC release, exact destinations/quantities and feasible delivery; correct Nadia’s expectation if her window cannot be met.",
+      "send": "Michael and Steve, please confirm Oreka’s finished samples, QC release, exact shipping addresses and delivery date today so we can give Nadia a confirmed answer before her Canada window closes.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Retrieve Evelyn’s lot-matched Bulk Apothecary COAs",
-      "why": "Evelyn’s October26 request for Cheirosa62 and Zinc Oxide COAs is2days old. No matching COAs or affected-job release deadline found; a production stop is not confirmed.",
-      "owner": "Aidan with Purchasing, Evelyn and QC",
-      "timing": "Today October28; request2days old with no stated due date",
-      "next_step": "Get exact SKU/grade and received lot numbers, retrieve matching COAs, establish QC owner and release need date.",
-      "send": "Evelyn, please send the Cheirosa 62 and Zinc Oxide lot numbers and the job that needs them so I can get you the matching COAs today.",
+      "title": "Replace dirty lab cleaning cloths before further use",
+      "why": "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven.",
+      "owner": "Aidan with Evelyn and QC/Ron",
+      "timing": "Before next equipment cleaning todayOctober29; request1day old",
+      "next_step": "Have QC establish a clean approved interim cleaning method, confirm physical cloth availability and identify whether any affected equipment/batches need review; do not wait for next week’s Ecolab call.",
+      "send": "Evelyn and Ron, please stop using the dirty cloths, confirm clean approved supplies are physically available, and check whether any equipment or batches need review before the next run.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -96,41 +95,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Validate Men’s Moisturizer before Friday’s recorded run",
-      "why": "CRM project51 lists October30 production, only2 days away, but remains Sample Batching and has no production assignee. Its21-of25 shortage flag and16 needed purchasing lines require reconciliation; blank ordered/QC/released columns are not proof of zero stock. Aidan’s validation task dueOctober26 is2 days overdue.",
-      "owner": "Aidan with Evelyn, Warehouse and Production; Sam if October30 cannot be protected",
-      "due": "Today October28; validation2days overdue; CRM production dateOctober30 requires confirmation",
+      "title": "Reconcile Men’s Moisturizer before tomorrow",
+      "why": "CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof.",
+      "owner": "Aidan with Michael, Evelyn and Production; Sam if a live commitment is threatened",
+      "due": "Today October29; validation3days overdue; recorded productionOctober30 unconfirmed",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Confirm Oreka’s QC and finished-sample shipping plan",
-      "why": "Nikkie reports her task handled, but Ron still reported Oreka R&D inprogress yesterday. The lab agenda requires physical, viscosity and pH results before shipment consideration. No verified shipping approval, actual dispatch or tracking; Mibelle’s latest request is still for a Canada address. Nadia’s response task dueOctober14 is14days overdue; arrival needed beforeNovember1.",
-      "owner": "Aidan with Michael, Evelyn, Ron and Purchasing; Sam for unresolved deadline risk",
-      "due": "Today October28; task14days overdue; Canada arrival beforeNovember1",
+      "title": "Verify Oreka’s finished-sample delivery plan",
+      "why": "Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked.",
+      "owner": "Aidan with Michael, Steve/Fulfillment and Evelyn",
+      "due": "Today October29; response15days overdue; Canada window beforeNovember1",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Retrieve Evelyn’s lot-matched Bulk Apothecary COAs",
-      "why": "Evelyn’s October26 request for Cheirosa62 and Zinc Oxide COAs is2days old. No matching COAs or affected-job release deadline found; a production stop is not confirmed.",
-      "owner": "Aidan with Purchasing, Evelyn and QC",
-      "due": "Today October28; request2days old with no stated due date",
+      "title": "Replace dirty lab cleaning cloths before further use",
+      "why": "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven.",
+      "owner": "Aidan with Evelyn and QC/Ron",
+      "due": "Before next equipment cleaning todayOctober29; request1day old",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "19 other active CRM records; nearest dated deadline tomorrow, October29. 21 active total,19 past-dated and1 undated; stale completion records need reconciliation, not assumed incomplete work.",
+    "note": "21 other active CRM records; nearest task deadline todayOctober29. 23 active total,20 pastdated,1dueToday,1Oct30,1undated; stale tasks need completion reconciliation.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-28T11:04:18.098Z"
+    "last_verified": "2026-10-29T11:04:38.414Z"
   },
   "purchasingIntelligence": null
 }
