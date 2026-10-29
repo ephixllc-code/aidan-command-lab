@@ -1,6 +1,6 @@
 {
   "date": "2026-10-29",
-  "ts": "2026-10-29T11:05:02.383Z",
+  "ts": "2026-10-29T11:06:33.762Z",
   "brief": [
     {
       "t": "START HERE: Ask Evelyn and Ron to replace the dirty cleaning cloths with clean approved supplies before equipment is cleaned again.",
@@ -24,7 +24,7 @@
     "Scheduled: 21 other active CRM records; nearest task deadline todayOctober29. 23 active total,20 pastdated,1dueToday,1Oct30,1undated; stale tasks need completion reconciliation.",
     "Noise: 41 messages suppressed from 76 new inbound.",
     "Lot-COA follow-up leaves the top three for the direct sanitation concern; the huddle says QC nearly done, not documented release.",
-    "WhatsApp QR signedout. Fresh Outlook and AidanCRM reviewed; olderunread50-message sample partial. Purchasing and Email status requests routed202 under cmd_20261029_0700_et_status at07:02ET; Purchasing evidence review returned; physicalstock/lot/QC/run/shippingclearance still blocked. Email result pending. No supplier sends,purchases,payments or CRM edits thisrun. Customer pricing stays withSam. New order confirmations not logged to avoid duplicating ongoing order-entry workflow; physicalreceipt unverified."
+    "WhatsApp QR signedout. Fresh Outlook and AidanCRM reviewed; olderunread50-message sample partial. Purchasing and Email status requests routed202 under cmd_20261029_0700_et_status at07:02ET; Purchasing evidence review returned; physicalstock/lot/QC/run/shippingclearance still blocked. Email evidence review returned; six drafts still signature-held, no repeat notification. No supplier sends,purchases,payments or CRM edits thisrun. Customer pricing stays withSam. New order confirmations not logged to avoid duplicating ongoing order-entry workflow; physicalreceipt unverified."
   ],
   "kb": [],
   "signal": "Confirm production readiness, finished-sample delivery and immediate sanitation controls.",
@@ -37,12 +37,14 @@
     {
       "agent": "purchasing",
       "status": "evidence review delivered; operational readiness unverified",
-      "request_id": "cmd_20261029_0700_et_status"
+      "request_id": "cmd_20261029_0700_et_status",
+      "evidence": "/tasklet/threads/a_0vaygv9y9e9ak88m77v7/work/purchasing-review-2026-10-29.md"
     },
     {
       "agent": "email",
-      "status": "routed; substantive result pending",
-      "request_id": "cmd_20261029_0700_et_status"
+      "status": "read-only evidence review delivered; six drafts remain unsent and signature-held, not newly approval-ready",
+      "request_id": "cmd_20261029_0700_et_status",
+      "evidence": "/tasklet/threads/a_7hg52h0hcemqas4c2gt2/work/email-result-20261029.json"
     }
   ],
   "pipeline": null,
