@@ -1,42 +1,42 @@
 {
   "date": "2026-10-29",
-  "ts": "2026-10-29T11:04:38.413Z",
+  "ts": "2026-10-29T11:05:02.383Z",
   "brief": [
     {
-      "t": "START HERE: Open Men’s Moisturizer with Michael and confirm whether tomorrow’s recorded production date is real.",
+      "t": "START HERE: Ask Evelyn and Ron to replace the dirty cleaning cloths with clean approved supplies before equipment is cleaned again.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Reconcile Men’s Moisturizer before tomorrow. CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof. Send internally: Michael and Evelyn, please confirm the sample approval and whether tomorrow’s Men’s Moisturizer run is actually scheduled, then check usable stock and incoming orders with me today.",
+      "t": "ACT NOW 1: Replace dirty lab cleaning cloths before further use. Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven. Send internally: Evelyn and Ron, please stop using the dirty cloths, confirm clean approved supplies are physically available, and check whether any equipment or batches need review before the next run.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Verify Oreka’s finished-sample delivery plan. Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked. Send internally: Michael and Steve, please confirm Oreka’s finished samples, QC release, exact shipping addresses and delivery date today so we can give Nadia a confirmed answer before her Canada window closes.",
+      "t": "ACT NOW 2: Reconcile Men’s Moisturizer before tomorrow. CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof. Send internally: Michael and Evelyn, please confirm the sample approval and whether tomorrow’s Men’s Moisturizer run is actually scheduled, then check usable stock and incoming orders with me today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Replace dirty lab cleaning cloths before further use. Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven. Send internally: Evelyn and Ron, please stop using the dirty cloths, confirm clean approved supplies are physically available, and check whether any equipment or batches need review before the next run.",
+      "t": "ACT NOW 3: Verify Oreka’s finished-sample delivery plan. Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked. Send internally: Michael and Steve, please confirm Oreka’s finished samples, QC release, exact shipping addresses and delivery date today so we can give Nadia a confirmed answer before her Canada window closes.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Confirm tomorrow’s run, settle Oreka’s delivery, and fix the cleaning-supply gap before equipment reuse.",
+    "Recommendation: Contain the cleaning issue first, confirm tomorrow’s recorded run second, then settle Oreka’s delivery.",
     "Scheduled: 21 other active CRM records; nearest task deadline todayOctober29. 23 active total,20 pastdated,1dueToday,1Oct30,1undated; stale tasks need completion reconciliation.",
     "Noise: 41 messages suppressed from 76 new inbound.",
     "Lot-COA follow-up leaves the top three for the direct sanitation concern; the huddle says QC nearly done, not documented release.",
-    "WhatsApp QR signedout. Fresh Outlook and AidanCRM reviewed; olderunread50-message sample partial. Purchasing and Email status requests routed202 under cmd_20261029_0700_et_status at07:02ET; results pending. No supplier sends,purchases,payments or CRM edits thisrun. Customer pricing stays withSam. New order confirmations not logged to avoid duplicating ongoing order-entry workflow; physicalreceipt unverified."
+    "WhatsApp QR signedout. Fresh Outlook and AidanCRM reviewed; olderunread50-message sample partial. Purchasing and Email status requests routed202 under cmd_20261029_0700_et_status at07:02ET; Purchasing evidence review returned; physicalstock/lot/QC/run/shippingclearance still blocked. Email result pending. No supplier sends,purchases,payments or CRM edits thisrun. Customer pricing stays withSam. New order confirmations not logged to avoid duplicating ongoing order-entry workflow; physicalreceipt unverified."
   ],
   "kb": [],
   "signal": "Confirm production readiness, finished-sample delivery and immediate sanitation controls.",
   "redflags": [
+    "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven.",
     "CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof.",
-    "Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked.",
-    "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven."
+    "Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "routed; substantive result pending",
+      "status": "evidence review delivered; operational readiness unverified",
       "request_id": "cmd_20261029_0700_et_status"
     },
     {
@@ -51,16 +51,26 @@
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Reconcile Men’s Moisturizer before tomorrow",
+      "top_task": "Replace dirty lab cleaning cloths before further use",
       "tasks": [
+        "Replace dirty lab cleaning cloths before further use",
         "Reconcile Men’s Moisturizer before tomorrow",
-        "Verify Oreka’s finished-sample delivery plan",
-        "Replace dirty lab cleaning cloths before further use"
+        "Verify Oreka’s finished-sample delivery plan"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
+    {
+      "title": "Replace dirty lab cleaning cloths before further use",
+      "why": "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven.",
+      "owner": "Aidan with Evelyn and QC/Ron",
+      "timing": "Before next equipment cleaning todayOctober29; request1day old",
+      "next_step": "Have QC establish a clean approved interim cleaning method, confirm physical cloth availability and identify whether any affected equipment/batches need review; do not wait for next week’s Ecolab call.",
+      "send": "Evelyn and Ron, please stop using the dirty cloths, confirm clean approved supplies are physically available, and check whether any equipment or batches need review before the next run.",
+      "est_value": "UNVERIFIED",
+      "value": "Operational continuity"
+    },
     {
       "title": "Reconcile Men’s Moisturizer before tomorrow",
       "why": "CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof.",
@@ -80,21 +90,20 @@
       "send": "Michael and Steve, please confirm Oreka’s finished samples, QC release, exact shipping addresses and delivery date today so we can give Nadia a confirmed answer before her Canada window closes.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
-    },
-    {
-      "title": "Replace dirty lab cleaning cloths before further use",
-      "why": "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven.",
-      "owner": "Aidan with Evelyn and QC/Ron",
-      "timing": "Before next equipment cleaning todayOctober29; request1day old",
-      "next_step": "Have QC establish a clean approved interim cleaning method, confirm physical cloth availability and identify whether any affected equipment/batches need review; do not wait for next week’s Ecolab call.",
-      "send": "Evelyn and Ron, please stop using the dirty cloths, confirm clean approved supplies are physically available, and check whether any equipment or batches need review before the next run.",
-      "est_value": "UNVERIFIED",
-      "value": "Operational continuity"
     }
   ],
   "topTasks": [
     {
       "rank": 1,
+      "title": "Replace dirty lab cleaning cloths before further use",
+      "why": "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven.",
+      "owner": "Aidan with Evelyn and QC/Ron",
+      "due": "Before next equipment cleaning todayOctober29; request1day old",
+      "priority": "high",
+      "revenue": "Operational continuity"
+    },
+    {
+      "rank": 2,
       "title": "Reconcile Men’s Moisturizer before tomorrow",
       "why": "CRM project51 still records October30 production, Sample Batching, no assignee and0/7preflight. Michael’s October28 huddle instead says sample sent and awaiting customer response; this is verbal, not verified approval. Aidan’s shortage-validation task dueOctober26 is3days overdue. New supplier orders are not usable-stock proof.",
       "owner": "Aidan with Michael, Evelyn and Production; Sam if a live commitment is threatened",
@@ -103,20 +112,11 @@
       "revenue": "Operational continuity"
     },
     {
-      "rank": 2,
+      "rank": 3,
       "title": "Verify Oreka’s finished-sample delivery plan",
       "why": "Nadia’s response task is15days overdue, with Canada arrival needed beforeNovember1. Nikkie clarified October28 that done was an assumption because the task disappeared, not completion proof. Mibelle says raw ingredient scheduled FedExGround October28,tracking879370662656; this does not establish carrier acceptance, arrival or finished-sample shipment. Michael’s huddle reports similarly named Aurica samples awaiting fulfillment addresses; identity must be checked.",
       "owner": "Aidan with Michael, Steve/Fulfillment and Evelyn",
       "due": "Today October29; response15days overdue; Canada window beforeNovember1",
-      "priority": "high",
-      "revenue": "Operational continuity"
-    },
-    {
-      "rank": 3,
-      "title": "Replace dirty lab cleaning cloths before further use",
-      "why": "Evelyn’s direct October28 request reports beakers being cleaned with dirty, stained microfiber towels. Request1day old, no agreed due date. Amazon microfiber order/shipping notice is not PLL receipt or a validated cleaning process. No contaminated batch is proven.",
-      "owner": "Aidan with Evelyn and QC/Ron",
-      "due": "Before next equipment cleaning todayOctober29; request1day old",
       "priority": "high",
       "revenue": "Operational continuity"
     }
