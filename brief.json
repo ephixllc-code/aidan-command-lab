@@ -1,6 +1,6 @@
 {
   "date": "2026-10-30",
-  "ts": "2026-10-30T11:05:11.775Z",
+  "ts": "2026-10-30T11:07:07.318Z",
   "brief": [
     {
       "t": "START HERE: Ask Ron and Aaron for the Talova trial results and sanitation sign-off before today’s proposed filling.",
@@ -11,7 +11,7 @@
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Men’s Moisturizer: reconcile today’s production date. Validation due October 26 is 4 days overdue. CRM still shows Sample Batching, no assignee and 0/7 pre-flight despite today’s production date. The 21-of-25 shortage banner and unlinked orders do not establish physical shortages or an approved run. Send internally: Michael and Evelyn, please confirm the sample approval and whether today’s Men’s Moisturizer run is real, then reconcile usable stock and linked incoming orders with me before scheduling it.",
+      "t": "ACT NOW 2: BioYoung: correct the invoice identity and destination before payment. Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled. Send internally: Please check BioYoung PI NJ0087490 against PO 2026-0028 and confirm the intended buyer, ship-to and quantity before any payment or release; it currently lists Clearwater, Florida rather than PLL.",
       "hot": true
     },
     {
@@ -20,28 +20,28 @@
     }
   ],
   "next": [
-    "Recommendation: Verify Talova’s safe start first, settle Atlas’s date second, then give Nadia a confirmed delivery answer.",
-    "Scheduled: 21 other active CRM records; nearest dated deadline today, October 30. Completion status needs reconciliation; customer pricing belongs to Sam.",
+    "Recommendation: Verify Talova’s safe start, prevent a misdirected BioYoung payment or shipment, then settle Nadia’s delivery.",
+    "Scheduled: 22 other active CRM records; nearest dated deadline today, October 30. Completion status needs reconciliation; customer pricing belongs to Sam.",
     "Noise: 39 messages suppressed from 78 new inbound.",
-    "The standalone cleaning-supply item is folded into Talova readiness. Amazon reports microfiber delivery; PLL receipt and safe cleaning use remain unverified.",
-    "WhatsApp signed out. Purchasing and Email requests routed; substantive replies pending. Older unread coverage partial. No sends, purchases, payments or CRM edits this run."
+    "Men’s Moisturizer leaves the top three for the verified BioYoung invoice mismatch, not because today’s recorded run or the 4-day-overdue material validation is cleared. Cleaning-supply verification is folded into Talova readiness.",
+    "WhatsApp signed out. Email returned its source review. Purchasing returned an access-limited review; a one-time evidence supplement is awaiting review. Older unread coverage partial. No sends, purchases, payments or CRM edits this run."
   ],
   "kb": [],
   "signal": "Verify safe production readiness and finished-sample delivery. No shipment or release promises without proof.",
   "redflags": [
     "Michael’s October 29 plan proposed filling today, conditional on verified cleaning, successful trials and release. Results and the exact linked project/batch remain unconfirmed; 5,000 boxes need an assigned lead. Talova Face/Body Balm’s separate CRM completion date is 16 days past, not proof the trial is that project.",
-    "Validation due October 26 is 4 days overdue. CRM still shows Sample Batching, no assignee and 0/7 pre-flight despite today’s production date. The 21-of-25 shortage banner and unlinked orders do not establish physical shortages or an approved run.",
+    "Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled.",
     "Nadia’s reply task is 16 days overdue. CRM still shows sample batching. Mibelle now says the ingredient shipped October 29, but ingredient tracking does not prove finished samples are QC-approved, shipped or able to arrive in Canada before November 1."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "routed; substantive result pending",
+      "status": "review returned; source access gap; evidence supplement review pending",
       "request_id": "cmd_20261030_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "routed; substantive result pending",
+      "status": "substantive source review returned; BioYoung PI mismatch verified; no sends",
       "request_id": "cmd_20261030_0700_et_status"
     }
   ],
@@ -54,7 +54,7 @@
       "top_task": "Talova: verify trial-to-fill readiness today",
       "tasks": [
         "Talova: verify trial-to-fill readiness today",
-        "Men’s Moisturizer: reconcile today’s production date",
+        "BioYoung: correct the invoice identity and destination before payment",
         "Oreka: confirm finished-sample delivery before November 1"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
@@ -71,11 +71,11 @@
       "value": "Operational continuity"
     },
     {
-      "title": "Men’s Moisturizer: reconcile today’s production date",
-      "why": "Validation due October 26 is 4 days overdue. CRM still shows Sample Batching, no assignee and 0/7 pre-flight despite today’s production date. The 21-of-25 shortage banner and unlinked orders do not establish physical shortages or an approved run.",
-      "owner": "Aidan / Michael / Evelyn / Production",
-      "timing": "Recorded production October 30; validation 4 days overdue",
-      "send": "Michael and Evelyn, please confirm the sample approval and whether today’s Men’s Moisturizer run is real, then reconcile usable stock and linked incoming orders with me before scheduling it.",
+      "title": "BioYoung: correct the invoice identity and destination before payment",
+      "why": "Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled.",
+      "owner": "Aidan / Purchasing / Finance",
+      "timing": "Invoice received 1 day ago; reconcile before payment or release",
+      "send": "Please check BioYoung PI NJ0087490 against PO 2026-0028 and confirm the intended buyer, ship-to and quantity before any payment or release; it currently lists Clearwater, Florida rather than PLL.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
@@ -101,10 +101,10 @@
     },
     {
       "rank": 2,
-      "title": "Men’s Moisturizer: reconcile today’s production date",
-      "why": "Validation due October 26 is 4 days overdue. CRM still shows Sample Batching, no assignee and 0/7 pre-flight despite today’s production date. The 21-of-25 shortage banner and unlinked orders do not establish physical shortages or an approved run.",
-      "owner": "Aidan / Michael / Evelyn / Production",
-      "due": "Recorded production October 30; validation 4 days overdue",
+      "title": "BioYoung: correct the invoice identity and destination before payment",
+      "why": "Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled.",
+      "owner": "Aidan / Purchasing / Finance",
+      "due": "Invoice received 1 day ago; reconcile before payment or release",
       "priority": "high",
       "revenue": "Operational continuity"
     },
@@ -119,14 +119,14 @@
     }
   ],
   "pipelineStat": {
-    "note": "21 other active CRM records; nearest dated deadline today, October 30. Completion status needs reconciliation; customer pricing belongs to Sam.",
+    "note": "22 other active CRM records; nearest dated deadline today, October 30. Completion status needs reconciliation; customer pricing belongs to Sam.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-30T11:05:11.775Z"
+    "last_verified": "2026-10-30T11:07:07.319Z"
   },
   "purchasingIntelligence": null
 }
