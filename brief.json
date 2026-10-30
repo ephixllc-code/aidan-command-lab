@@ -1,6 +1,6 @@
 {
   "date": "2026-10-30",
-  "ts": "2026-10-30T11:07:07.318Z",
+  "ts": "2026-10-30T11:07:29.757Z",
   "brief": [
     {
       "t": "START HERE: Ask Ron and Aaron for the Talova trial results and sanitation sign-off before today’s proposed filling.",
@@ -24,7 +24,7 @@
     "Scheduled: 22 other active CRM records; nearest dated deadline today, October 30. Completion status needs reconciliation; customer pricing belongs to Sam.",
     "Noise: 39 messages suppressed from 78 new inbound.",
     "Men’s Moisturizer leaves the top three for the verified BioYoung invoice mismatch, not because today’s recorded run or the 4-day-overdue material validation is cleared. Cleaning-supply verification is folded into Talova readiness.",
-    "WhatsApp signed out. Email returned its source review. Purchasing returned an access-limited review; a one-time evidence supplement is awaiting review. Older unread coverage partial. No sends, purchases, payments or CRM edits this run."
+    "WhatsApp signed out. Both team source reviews returned; Purchasing’s source-access gap is resolved, not operational readiness. Physical receipt, lot/QC release and finished-sample delivery remain unverified. Older unread coverage partial. No sends, purchases, payments or CRM edits this run."
   ],
   "kb": [],
   "signal": "Verify safe production readiness and finished-sample delivery. No shipment or release promises without proof.",
@@ -36,7 +36,7 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "review returned; source access gap; evidence supplement review pending",
+      "status": "source supplement reviewed; operational readiness remains unverified; no actions taken",
       "request_id": "cmd_20261030_0700_et_status"
     },
     {
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-30T11:07:07.319Z"
+    "last_verified": "2026-10-30T11:07:29.757Z"
   },
   "purchasingIntelligence": null
 }
