@@ -1,90 +1,90 @@
 {
-  "date": "2026-10-30",
-  "ts": "2026-10-30T11:07:29.757Z",
+  "date": "2026-10-31",
+  "ts": "2026-10-31T11:04:09.456Z",
   "brief": [
     {
-      "t": "START HERE: Ask Ron and Aaron for the Talova trial results and sanitation sign-off before today’s proposed filling.",
+      "t": "START HERE: Open the 5 kg NatureInBottle sea buckthorn seed oil order with Evelyn and confirm it matches her production request.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Talova: verify trial-to-fill readiness today. Michael’s October 29 plan proposed filling today, conditional on verified cleaning, successful trials and release. Results and the exact linked project/batch remain unconfirmed; 5,000 boxes need an assigned lead. Talova Face/Body Balm’s separate CRM completion date is 16 days past, not proof the trial is that project. Send internally: Ron and Aaron, please send yesterday’s Talova trial results and sanitation sign-off, confirm the batch and QC approval, and have Michael assign today’s filling and packing lead before we start.",
+      "t": "ACT NOW 1: Sea buckthorn: confirm the existing order and arrival. Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order. Send internally: Evelyn and Michael, please match the 5 kg seed oil order to your request and confirm the project, specification and latest usable-arrival date today before we buy anything else.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: BioYoung: correct the invoice identity and destination before payment. Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled. Send internally: Please check BioYoung PI NJ0087490 against PO 2026-0028 and confirm the intended buyer, ship-to and quantity before any payment or release; it currently lists Clearwater, Florida rather than PLL.",
+      "t": "ACT NOW 2: Talova: verify what actually finished yesterday. Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49. Send internally: Ron and Evelyn, please send yesterday's Talova batch results, cleaning sign-off and finished quantity, then have Michael confirm today's remaining owner and handoff.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Oreka: confirm finished-sample delivery before November 1. Nadia’s reply task is 16 days overdue. CRM still shows sample batching. Mibelle now says the ingredient shipped October 29, but ingredient tracking does not prove finished samples are QC-approved, shipped or able to arrive in Canada before November 1. Send internally: Michael and Steve, please confirm Oreka’s finished samples, QC release and a delivery plan before Nadia leaves Canada; if that window is no longer feasible, give me the revised plan today.",
+      "t": "ACT NOW 3: Oreka: close Nadia's delivery loop today. Nadia's response task is 17 days overdue. Her Canada window ends tomorrow, November 1. CRM still shows sample batching; no verified finished-sample QC release or delivery. Mibelle raw-material tracking is not finished-sample shipment proof. Send internally: Michael and Steve, please confirm Oreka's finished samples and delivery status today; if Canada is no longer feasible, give me the revised destination and date for Nadia.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Verify Talova’s safe start, prevent a misdirected BioYoung payment or shipment, then settle Nadia’s delivery.",
-    "Scheduled: 22 other active CRM records; nearest dated deadline today, October 30. Completion status needs reconciliation; customer pricing belongs to Sam.",
-    "Noise: 39 messages suppressed from 78 new inbound.",
-    "Men’s Moisturizer leaves the top three for the verified BioYoung invoice mismatch, not because today’s recorded run or the 4-day-overdue material validation is cleared. Cleaning-supply verification is folded into Talova readiness.",
-    "WhatsApp signed out. Both team source reviews returned; Purchasing’s source-access gap is resolved, not operational readiness. Physical receipt, lot/QC release and finished-sample delivery remain unverified. Older unread coverage partial. No sends, purchases, payments or CRM edits this run."
+    "Recommendation: Reconcile the oil already bought, verify Talova's actual output, then give Nadia a confirmed delivery plan.",
+    "Scheduled: 22 other active CRM records; nearest recorded deadline October 30, 1 day past. Future task dates need reconciliation.",
+    "Noise: 27 messages suppressed from 59 new inbound.",
+    "Displaced: BioYoung leaves the top three because a corrected PI has arrived; attachment verification, quantity, payment and dispatch still need reconciliation.",
+    "WhatsApp signed out. Outlook unread review capped at 50 older messages; not an exhaustive audit. Team reviews pending. No sends, purchases, payments or CRM edits this run."
   ],
   "kb": [],
   "signal": "Verify safe production readiness and finished-sample delivery. No shipment or release promises without proof.",
   "redflags": [
-    "Michael’s October 29 plan proposed filling today, conditional on verified cleaning, successful trials and release. Results and the exact linked project/batch remain unconfirmed; 5,000 boxes need an assigned lead. Talova Face/Body Balm’s separate CRM completion date is 16 days past, not proof the trial is that project.",
-    "Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled.",
-    "Nadia’s reply task is 16 days overdue. CRM still shows sample batching. Mibelle now says the ingredient shipped October 29, but ingredient tracking does not prove finished samples are QC-approved, shipped or able to arrive in Canada before November 1."
+    "Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order.",
+    "Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49.",
+    "Nadia's response task is 17 days overdue. Her Canada window ends tomorrow, November 1. CRM still shows sample batching; no verified finished-sample QC release or delivery. Mibelle raw-material tracking is not finished-sample shipment proof."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "source supplement reviewed; operational readiness remains unverified; no actions taken",
-      "request_id": "cmd_20261030_0700_et_status"
+      "status": "routed; substantive result pending",
+      "request_id": "cmd_20261031_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "substantive source review returned; BioYoung PI mismatch verified; no sends",
-      "request_id": "cmd_20261030_0700_et_status"
+      "status": "routed; substantive result pending",
+      "request_id": "cmd_20261031_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "39 noise messages suppressed from 78 new inbound.",
+  "noise": "27 noise messages suppressed from 59 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Talova: verify trial-to-fill readiness today",
+      "top_task": "Sea buckthorn: confirm the existing order and arrival",
       "tasks": [
-        "Talova: verify trial-to-fill readiness today",
-        "BioYoung: correct the invoice identity and destination before payment",
-        "Oreka: confirm finished-sample delivery before November 1"
+        "Sea buckthorn: confirm the existing order and arrival",
+        "Talova: verify what actually finished yesterday",
+        "Oreka: close Nadia's delivery loop today"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
     {
-      "title": "Talova: verify trial-to-fill readiness today",
-      "why": "Michael’s October 29 plan proposed filling today, conditional on verified cleaning, successful trials and release. Results and the exact linked project/batch remain unconfirmed; 5,000 boxes need an assigned lead. Talova Face/Body Balm’s separate CRM completion date is 16 days past, not proof the trial is that project.",
-      "owner": "Aidan / Michael / Ron / Aaron / Warehouse",
-      "timing": "Today October 30; plan reported 1 day ago",
-      "send": "Ron and Aaron, please send yesterday’s Talova trial results and sanitation sign-off, confirm the batch and QC approval, and have Michael assign today’s filling and packing lead before we start.",
+      "title": "Sea buckthorn: confirm the existing order and arrival",
+      "why": "Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order.",
+      "send": "Evelyn and Michael, please match the 5 kg seed oil order to your request and confirm the project, specification and latest usable-arrival date today before we buy anything else.",
+      "owner": "Aidan, Evelyn, Michael",
+      "timing": "Request October 30; 1 day old; confirm today",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "BioYoung: correct the invoice identity and destination before payment",
-      "why": "Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled.",
-      "owner": "Aidan / Purchasing / Finance",
-      "timing": "Invoice received 1 day ago; reconcile before payment or release",
-      "send": "Please check BioYoung PI NJ0087490 against PO 2026-0028 and confirm the intended buyer, ship-to and quantity before any payment or release; it currently lists Clearwater, Florida rather than PLL.",
+      "title": "Talova: verify what actually finished yesterday",
+      "why": "Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49.",
+      "send": "Ron and Evelyn, please send yesterday's Talova batch results, cleaning sign-off and finished quantity, then have Michael confirm today's remaining owner and handoff.",
+      "owner": "Ron, Evelyn, Michael",
+      "timing": "Yesterday's plan; recorded completion October 14, 17 days past",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Oreka: confirm finished-sample delivery before November 1",
-      "why": "Nadia’s reply task is 16 days overdue. CRM still shows sample batching. Mibelle now says the ingredient shipped October 29, but ingredient tracking does not prove finished samples are QC-approved, shipped or able to arrive in Canada before November 1.",
-      "owner": "Aidan / Michael / Evelyn / Steve",
-      "timing": "Today October 30; arrival before November 1; response 16 days overdue",
-      "send": "Michael and Steve, please confirm Oreka’s finished samples, QC release and a delivery plan before Nadia leaves Canada; if that window is no longer feasible, give me the revised plan today.",
+      "title": "Oreka: close Nadia's delivery loop today",
+      "why": "Nadia's response task is 17 days overdue. Her Canada window ends tomorrow, November 1. CRM still shows sample batching; no verified finished-sample QC release or delivery. Mibelle raw-material tracking is not finished-sample shipment proof.",
+      "send": "Michael and Steve, please confirm Oreka's finished samples and delivery status today; if Canada is no longer feasible, give me the revised destination and date for Nadia.",
+      "owner": "Michael, Steve, Aidan",
+      "timing": "Task October 14; 17 days overdue; Canada window ends November 1",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Talova: verify trial-to-fill readiness today",
-      "why": "Michael’s October 29 plan proposed filling today, conditional on verified cleaning, successful trials and release. Results and the exact linked project/batch remain unconfirmed; 5,000 boxes need an assigned lead. Talova Face/Body Balm’s separate CRM completion date is 16 days past, not proof the trial is that project.",
-      "owner": "Aidan / Michael / Ron / Aaron / Warehouse",
-      "due": "Today October 30; plan reported 1 day ago",
+      "title": "Sea buckthorn: confirm the existing order and arrival",
+      "why": "Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order.",
+      "owner": "Aidan, Evelyn, Michael",
+      "due": "Request October 30; 1 day old; confirm today",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "BioYoung: correct the invoice identity and destination before payment",
-      "why": "Email read pro forma NJ0087490: one 1 kg pack at $279.99 is billed/shipped to Private Label Beauty and Wellness in Clearwater, Florida—not PLL Farmington Hills. PO 2026-0028 was sent October 29. Payment and dispatch remain unverified; this is not the earlier 4 kg inquiry fulfilled.",
-      "owner": "Aidan / Purchasing / Finance",
-      "due": "Invoice received 1 day ago; reconcile before payment or release",
+      "title": "Talova: verify what actually finished yesterday",
+      "why": "Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49.",
+      "owner": "Ron, Evelyn, Michael",
+      "due": "Yesterday's plan; recorded completion October 14, 17 days past",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Oreka: confirm finished-sample delivery before November 1",
-      "why": "Nadia’s reply task is 16 days overdue. CRM still shows sample batching. Mibelle now says the ingredient shipped October 29, but ingredient tracking does not prove finished samples are QC-approved, shipped or able to arrive in Canada before November 1.",
-      "owner": "Aidan / Michael / Evelyn / Steve",
-      "due": "Today October 30; arrival before November 1; response 16 days overdue",
+      "title": "Oreka: close Nadia's delivery loop today",
+      "why": "Nadia's response task is 17 days overdue. Her Canada window ends tomorrow, November 1. CRM still shows sample batching; no verified finished-sample QC release or delivery. Mibelle raw-material tracking is not finished-sample shipment proof.",
+      "owner": "Michael, Steve, Aidan",
+      "due": "Task October 14; 17 days overdue; Canada window ends November 1",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "22 other active CRM records; nearest dated deadline today, October 30. Completion status needs reconciliation; customer pricing belongs to Sam.",
+    "note": "22 other active CRM records; nearest recorded deadline October 30, 1 day past. Future task dates need reconciliation.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-30T11:07:29.757Z"
+    "last_verified": "2026-10-31T11:04:09.456Z"
   },
   "purchasingIntelligence": null
 }
