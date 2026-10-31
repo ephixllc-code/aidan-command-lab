@@ -1,17 +1,17 @@
 {
   "date": "2026-10-31",
-  "ts": "2026-10-31T11:05:55.907Z",
+  "ts": "2026-10-31T11:07:16.615Z",
   "brief": [
     {
-      "t": "START HERE: Open the 5 kg NatureInBottle sea buckthorn seed oil order with Evelyn and confirm it matches her production request.",
+      "t": "START HERE: Forward the Optiphen Plus COA to Sam and QC and ask them to match the lot and resolve the conflicting entries before clearance.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Sea buckthorn: confirm the existing order and arrival. Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order. Send internally: Evelyn and Michael, please match the 5 kg seed oil order to your request and confirm the project, specification and latest usable-arrival date today before we buy anything else.",
+      "t": "ACT NOW 1: Optiphen Plus COA: resolve document exception before clearance. Email visually checked order320092 Optiphen Plus COA batch0002751898-18586: acid value5.9 versus specification25.0–37.5; phenol29.7ppm versus maximum6ppm. New finding today from documents received yesterday. These entries may be a document error, not a proven tested-lot failure, PLL receipt or production block. QC must match actual lots and determine disposition; separate PE9010 gap remains. Send internally: Sam and QC, please review the Optiphen Plus COA for batch 0002751898-18586 today, match it to our material and confirm disposition; the listed results conflict with its specifications, so please do not treat this document as cleared.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Talova: verify what actually finished yesterday. Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49. Send internally: Ron and Evelyn, please send yesterday's Talova batch results, cleaning sign-off and finished quantity, then have Michael confirm today's remaining owner and handoff.",
+      "t": "ACT NOW 2: Sea buckthorn: confirm the existing order and arrival. Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order. Send internally: Evelyn and Michael, please match the 5 kg seed oil order to your request and confirm the project, specification and latest usable-arrival date today before we buy anything else.",
       "hot": true
     },
     {
@@ -20,28 +20,28 @@
     }
   ],
   "next": [
-    "Recommendation: Reconcile the oil already bought, verify Talova's actual output, then give Nadia a confirmed delivery plan.",
+    "Recommendation: Escalate the COA exception first, reconcile the seed-oil order second, then confirm Nadia’s delivery plan.",
     "Scheduled: 22 other active CRM records; nearest recorded deadline October 30, 1 day past. Future task dates need reconciliation.",
     "Noise: 27 messages suppressed from 59 new inbound.",
-    "Displaced: BioYoung leaves the top three because a corrected PI has arrived; attachment verification, quantity, payment and dispatch still need reconciliation.",
-    "WhatsApp signed out. Purchasing reviewed supplied original messages; project/specification, payment linkage, dispatch, receipt and QC remain unverified. Email review pending. Older unread coverage capped at50; not exhaustive. No sends, purchases, payments or CRM edits this run."
+    "Displaced: Talova output reconciliation leaves the top three for the new COA exception—not because completion, sanitation or QC release is verified. BioYoung corrected PI was visually reviewed by Email: PLL Farmington bill/ship address now correct; 1kg quantity, payment and dispatch still need reconciliation.",
+    "WhatsApp signed out. Both team reviews returned; Email inspected supplier PDFs, Purchasing reviewed original message text. Physical receipt, lot-matching, release, payment and delivery remain unverified. Targeted inbox review, not exhaustive. No sends, spending or CRM edits this run."
   ],
   "kb": [],
   "signal": "Verify safe production readiness and finished-sample delivery. No shipment or release promises without proof.",
   "redflags": [
+    "Email visually checked order320092 Optiphen Plus COA batch0002751898-18586: acid value5.9 versus specification25.0–37.5; phenol29.7ppm versus maximum6ppm. New finding today from documents received yesterday. These entries may be a document error, not a proven tested-lot failure, PLL receipt or production block. QC must match actual lots and determine disposition; separate PE9010 gap remains.",
     "Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order.",
-    "Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49.",
     "Nadia's response task is 17 days overdue. Her Canada window ends tomorrow, November 1. CRM still shows sample batching; no verified finished-sample QC release or delivery. Mibelle raw-material tracking is not finished-sample shipment proof."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Original-message review returned; attachment and operational readiness gaps remain",
+      "status": "Source-repair review returned; no operational readiness inferred",
       "request_id": "cmd_20261031_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Substantive review pending",
+      "status": "Original-message and visual supplier-document review returned; COA exception and corrected PI verified in documents",
       "request_id": "cmd_20261031_0700_et_status"
     }
   ],
@@ -51,10 +51,10 @@
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Sea buckthorn: confirm the existing order and arrival",
+      "top_task": "Optiphen Plus COA: resolve document exception before clearance",
       "tasks": [
+        "Optiphen Plus COA: resolve document exception before clearance",
         "Sea buckthorn: confirm the existing order and arrival",
-        "Talova: verify what actually finished yesterday",
         "Oreka: close Nadia's delivery loop today"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
@@ -62,20 +62,20 @@
   },
   "revenueActions": [
     {
+      "title": "Optiphen Plus COA: resolve document exception before clearance",
+      "why": "Email visually checked order320092 Optiphen Plus COA batch0002751898-18586: acid value5.9 versus specification25.0–37.5; phenol29.7ppm versus maximum6ppm. New finding today from documents received yesterday. These entries may be a document error, not a proven tested-lot failure, PLL receipt or production block. QC must match actual lots and determine disposition; separate PE9010 gap remains.",
+      "send": "Sam and QC, please review the Optiphen Plus COA for batch 0002751898-18586 today, match it to our material and confirm disposition; the listed results conflict with its specifications, so please do not treat this document as cleared.",
+      "owner": "Aidan to escalate to Sam and QC; QC determines disposition",
+      "timing": "New exception today; document received October30,1day old;before clearance/use",
+      "est_value": "UNVERIFIED",
+      "value": "Operational continuity"
+    },
+    {
       "title": "Sea buckthorn: confirm the existing order and arrival",
       "why": "Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order.",
       "send": "Evelyn and Michael, please match the 5 kg seed oil order to your request and confirm the project, specification and latest usable-arrival date today before we buy anything else.",
       "owner": "Aidan, Evelyn, Michael",
       "timing": "Request October 30; 1 day old; confirm today",
-      "est_value": "UNVERIFIED",
-      "value": "Operational continuity"
-    },
-    {
-      "title": "Talova: verify what actually finished yesterday",
-      "why": "Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49.",
-      "send": "Ron and Evelyn, please send yesterday's Talova batch results, cleaning sign-off and finished quantity, then have Michael confirm today's remaining owner and handoff.",
-      "owner": "Ron, Evelyn, Michael",
-      "timing": "Yesterday's plan; recorded completion October 14, 17 days past",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
@@ -92,19 +92,19 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Sea buckthorn: confirm the existing order and arrival",
-      "why": "Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order.",
-      "owner": "Aidan, Evelyn, Michael",
-      "due": "Request October 30; 1 day old; confirm today",
+      "title": "Optiphen Plus COA: resolve document exception before clearance",
+      "why": "Email visually checked order320092 Optiphen Plus COA batch0002751898-18586: acid value5.9 versus specification25.0–37.5; phenol29.7ppm versus maximum6ppm. New finding today from documents received yesterday. These entries may be a document error, not a proven tested-lot failure, PLL receipt or production block. QC must match actual lots and determine disposition; separate PE9010 gap remains.",
+      "owner": "Aidan to escalate to Sam and QC; QC determines disposition",
+      "due": "New exception today; document received October30,1day old;before clearance/use",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Talova: verify what actually finished yesterday",
-      "why": "Michael's October 30 meeting assigns Tolova Phase B and production-area cleaning to Evelyn. Trial, sanitation, completed quantity and QC release remain unverified. CRM #49 has an October 14 expected completion date, 17 days past, and no recorded finished output; this does not prove nothing was made. Confirm the exact project/batch before linking the meeting to #49.",
-      "owner": "Ron, Evelyn, Michael",
-      "due": "Yesterday's plan; recorded completion October 14, 17 days past",
+      "title": "Sea buckthorn: confirm the existing order and arrival",
+      "why": "Michael and Evelyn have waited 1 day for 3.2 kg more to continue production. NatureInBottle order 1793377149822 already covers 5 kg seed oil; a $283.32 PayPal payment notice exists. Dispatch, arrival, project linkage and QC release remain unverified. Talova #49 instead lists berry/fruit oil; do not substitute or place a duplicate order.",
+      "owner": "Aidan, Evelyn, Michael",
+      "due": "Request October 30; 1 day old; confirm today",
       "priority": "high",
       "revenue": "Operational continuity"
     },
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-10-31T11:05:55.907Z"
+    "last_verified": "2026-10-31T11:07:16.615Z"
   },
   "purchasingIntelligence": null
 }
