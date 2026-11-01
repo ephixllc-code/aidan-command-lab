@@ -1,6 +1,6 @@
 {
   "date": "2026-11-01",
-  "ts": "2026-11-01T12:03:40.506Z",
+  "ts": "2026-11-01T12:05:10.396Z",
   "brief": [
     {
       "t": "START HERE: Open the Optiphen Plus COA with Ron/QC and Sam; confirm the lot and document exception before treating it as cleared.",
@@ -15,7 +15,7 @@
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Reset Nadia's sample delivery plan. Nadia's Canada window reaches Nov 1 today; her response task is 18 days overdue. No finished-sample QC release or delivery proof found. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination before arranging anything further. Send internally: Michael and Steve, please confirm Oreka's finished-sample status and Nadia's current delivery address today, then give me a realistic dispatch and arrival date.",
+      "t": "ACT NOW 3: Reset Nadia's sample delivery plan. Nadia requested Canada delivery before Nov 1; that requested window has passed without searched finished-sample QC, onward-shipping or arrival evidence. Her response task is 18 days overdue. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination; do not assume she is still in Canada. Send internally: Michael and Steve, please confirm Oreka's finished-sample status and Nadia's current delivery address today, then give me a realistic dispatch and arrival date.",
       "hot": true
     }
   ],
@@ -24,24 +24,24 @@
     "Scheduled: 22 other active CRM tasks; nearest recorded deadline Oct 30 (2 days past). Next dated checkpoint: Nov 2 Shopify billing retry.",
     "Noise: 13 messages suppressed from 15 new inbound.",
     "Top three unchanged; missing clearance is not evidence of failure or a new purchase authorization.",
-    "WhatsApp signed out. Older unread coverage partial (latest 50 plus targeted searches). Purchasing review returned; Email review pending. No sends, spending, payments or CRM edits."
+    "WhatsApp signed out. Both team evidence reviews returned; no operational clearance verified. Older unread coverage partial. No sends, spending, payments or CRM edits."
   ],
   "kb": [],
   "signal": "Verify safe production readiness and finished-sample delivery. No shipment or release promises without proof.",
   "redflags": [
     "Yesterday's Email visual review flagged acid value 5.9 versus 25.0–37.5 and phenol 29.7 ppm versus maximum 6 for batch 0002751898-18586. No newer resolution found. This is a document exception, not proven failed material, receipt or production stoppage.",
     "Michael and Evelyn's request is 2 days old: 3.2 kg additional sea buckthorn seed oil was requested. NatureInBottle's existing 5 kg order and payment notice are verified; no dispatch or arrival found. Talova49 lists berry/fruit oil, not seed oil. Project/specification/allocation remain unconfirmed. Do not reorder or substitute.",
-    "Nadia's Canada window reaches Nov 1 today; her response task is 18 days overdue. No finished-sample QC release or delivery proof found. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination before arranging anything further."
+    "Nadia requested Canada delivery before Nov 1; that requested window has passed without searched finished-sample QC, onward-shipping or arrival evidence. Her response task is 18 days overdue. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination; do not assume she is still in Canada."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "evidence review returned; no fresh operational clearance",
+      "status": "substantive evidence review returned; operational clearance unverified",
       "request_id": "cmd_20261101_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "routed; substantive result pending",
+      "status": "substantive evidence review returned; operational clearance unverified",
       "request_id": "cmd_20261101_0700_et_status"
     }
   ],
@@ -81,7 +81,7 @@
     },
     {
       "title": "Reset Nadia's sample delivery plan",
-      "why": "Nadia's Canada window reaches Nov 1 today; her response task is 18 days overdue. No finished-sample QC release or delivery proof found. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination before arranging anything further.",
+      "why": "Nadia requested Canada delivery before Nov 1; that requested window has passed without searched finished-sample QC, onward-shipping or arrival evidence. Her response task is 18 days overdue. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination; do not assume she is still in Canada.",
       "send": "Michael and Steve, please confirm Oreka's finished-sample status and Nadia's current delivery address today, then give me a realistic dispatch and arrival date.",
       "owner": "Aidan, Michael, Steve",
       "timing": "Today, Nov 1; response task 18 days overdue",
@@ -111,7 +111,7 @@
     {
       "rank": 3,
       "title": "Reset Nadia's sample delivery plan",
-      "why": "Nadia's Canada window reaches Nov 1 today; her response task is 18 days overdue. No finished-sample QC release or delivery proof found. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination before arranging anything further.",
+      "why": "Nadia requested Canada delivery before Nov 1; that requested window has passed without searched finished-sample QC, onward-shipping or arrival evidence. Her response task is 18 days overdue. Mibelle's ingredient shipment is not the finished sample. Confirm her current destination; do not assume she is still in Canada.",
       "owner": "Aidan, Michael, Steve",
       "due": "Today, Nov 1; response task 18 days overdue",
       "priority": "high",
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-01T12:03:40.506Z"
+    "last_verified": "2026-11-01T12:05:10.396Z"
   },
   "purchasingIntelligence": null
 }
