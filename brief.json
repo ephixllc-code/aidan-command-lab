@@ -1,6 +1,6 @@
 {
   "date": "2026-11-03",
-  "ts": "2026-11-03T12:07:17.391Z",
+  "ts": "2026-11-03T12:08:09.536Z",
   "brief": [
     {
       "t": "START HERE: Call Sam, Aaron and Ron to settle Talova’s safe filling plan before promising a completion date.",
@@ -24,7 +24,7 @@
     "Scheduled: 24 other active CRM tasks; nearest dated task November 4. No calendar events returned for November 3–4.",
     "Noise: 55 messages suppressed from 72 new inbound.",
     "Displaced: seed-oil reconciliation, not cleared; Talova’s newly documented filling blocker is more immediate. CRM now links the existing 5 kg seed order to Delphos House, not Talova’s berry oil.",
-    "WhatsApp signed out; older unread coverage partial. Email review returned. Purchasing source-gap review returned; original-body supplement pending. Proposed human owners are not accepted assignments. No sends, spending, payments or CRM edits."
+    "WhatsApp signed out; older unread coverage partial. Both team reviews returned; operational clearance remains unverified. Proposed human owners are not accepted assignments. No sends, spending, payments or CRM edits."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
@@ -36,7 +36,7 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "source-gap review returned; one-time original-body supplement pending",
+      "status": "substantive original-body supplement completed; attachments/live CRM not independently reviewed; not operational clearance",
       "request_id": "cmd_20261103_0700_et_status"
     },
     {
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-03T12:07:17.391Z"
+    "last_verified": "2026-11-03T12:08:09.537Z"
   },
   "purchasingIntelligence": null
 }
