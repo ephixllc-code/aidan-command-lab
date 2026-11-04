@@ -1,6 +1,6 @@
 {
   "date": "2026-11-04",
-  "ts": "2026-11-04T12:04:56.853Z",
+  "ts": "2026-11-04T12:08:16.735Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron about the reported Talova hot-oil splash and unsafe-transfer concerns before the affected method is used again.",
@@ -24,7 +24,7 @@
     "Scheduled: 23 other active CRM tasks; nearest dated task November 5, SmoothCrack production/fulfillment. Equipment window today is reported, not confirmed.",
     "Noise: 37 messages suppressed from 61 new inbound.",
     "Displaced: Optiphen COA reconciliation—not cleared. The new reported splash and today’s equipment-readiness dependency take priority; do not infer a failed or received lot.",
-    "WhatsApp signed out; older unread and capped targeted searches partial. No sends, spending, payments or CRM edits. Team review status pending."
+    "WhatsApp signed out; older unread and capped targeted searches partial. Both team reviews returned; operational clearance and accepted owners remain unverified. No sends, spending, payments or CRM edits."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
@@ -36,12 +36,12 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "routed; substantive return pending",
+      "status": "substantive original-body source supplement completed; attachments/live CRM not independently reviewed; no operational clearance",
       "request_id": "cmd_20261104_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "routed; substantive return pending",
+      "status": "substantive original-mail and attachment review completed; no operational clearance",
       "request_id": "cmd_20261104_0700_et_status"
     }
   ],
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-04T12:04:56.853Z"
+    "last_verified": "2026-11-04T12:08:16.736Z"
   },
   "purchasingIntelligence": null
 }
