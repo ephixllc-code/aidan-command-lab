@@ -1,6 +1,6 @@
 {
   "date": "2026-11-05",
-  "ts": "2026-11-05T12:16:22.879Z",
+  "ts": "2026-11-05T12:17:38.815Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to verify a safe Talova transfer method before the affected method is used again.",
@@ -24,7 +24,7 @@
     "Scheduled: Current CRM task count unavailable: CRM browser session signed out. Nearest verified calendar commitment is today at 9:30 AM Eastern.",
     "Noise: 35 messages suppressed from 77 new inbound.",
     "Displaced: equipment commissioning checks, not cleared; the new formula/label discrepancy takes priority.",
-    "CRM browser session signed out; Aidan must reconnect. WhatsApp signed out. Older unread and targeted historical searches partial. No sends, purchases, payments or CRM edits. Operational acceptance and clearance remain unverified. Purchasing original-body supplement result pending. Email substantive review returned; top priorities unchanged, operational clearance unverified. Existing CRM reconnect alert was already texted November4; no duplicate alert."
+    "CRM browser session signed out; Aidan must reconnect. WhatsApp signed out. Older unread and targeted historical searches partial. No sends, purchases, payments or CRM edits. Operational acceptance and clearance remain unverified. Both substantive reviews returned; top priorities unchanged, human acceptance and operational clearance unverified. Existing CRM reconnect alert was already texted November4; no duplicate alert."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
@@ -36,7 +36,7 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "Initial carried review returned source-blocked; one original-body supplement routed, source-reviewed return not yet received. Not operational clearance.",
+      "status": "Ten embedded original bodies reviewed after one source supplement; research completed, attachments not inspected, operational clearance blocked/unverified.",
       "request_id": "cmd_20261105_0700_et_status"
     },
     {
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-05T12:16:22.879Z"
+    "last_verified": "2026-11-05T12:17:38.816Z"
   },
   "purchasingIntelligence": null
 }
