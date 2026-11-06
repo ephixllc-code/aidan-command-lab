@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "ts": "2026-11-06T12:04:24.666Z",
+  "ts": "2026-11-06T12:08:02.047Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to confirm a safe Talova recovery method before the affected transfer method is used again.",
@@ -24,7 +24,7 @@
     "Scheduled: Current CRM task count unavailable. No events returned by Aidan's calendar for November 6–8; not proof that no off-calendar commitments exist.",
     "Noise: 31 messages suppressed from 66 new inbound.",
     "Prior equipment commissioning checks remain uncleared; no new evidence displaces yesterday's top three.",
-    "CRM browser session signed out; WhatsApp signed out. Older unread coverage partial; targeted searches can reach the 50-message limit. Team substantive results pending; no sends, spend, payments or CRM edits."
+    "CRM browser session signed out; WhatsApp signed out. Older unread coverage partial; targeted searches can reach the 50-message limit. Both team source reviews returned; operational clearance and accepted owners remain unverified. No sends, spend, payments or CRM edits."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
@@ -36,12 +36,12 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "routed; substantive result pending",
+      "status": "Seven original bodies reviewed after one source supplement; research complete; attachments not independently inspected; operational clearance unverified.",
       "request_id": "cmd_20261106_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "routed; substantive result pending",
+      "status": "Direct originals and copper/BioYoung attachments reviewed; research complete, not operational clearance. Existing draft holds unchanged.",
       "request_id": "cmd_20261106_0700_et_status"
     }
   ],
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-06T12:04:24.666Z"
+    "last_verified": "2026-11-06T12:08:02.047Z"
   },
   "purchasingIntelligence": null
 }
