@@ -1,6 +1,6 @@
 {
   "date": "2026-11-07",
-  "ts": "2026-11-07T12:03:58.592Z",
+  "ts": "2026-11-07T12:06:07.836Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to confirm the safe Talova recovery method and named decision owner before the affected transfer method is used again.",
@@ -24,7 +24,7 @@
     "Scheduled: Current CRM task count unavailable. Two calendar events in the next 72 hours; nearest Monday, November 9 at 9:30 AM Eastern. No calendar events returned for today or Sunday; off-calendar commitments remain possible.",
     "Noise: 22 messages suppressed from 32 new inbound.",
     "New customer timing and component requests do not establish readiness or clear the three higher-risk gates; prior equipment commissioning checks remain uncleared.",
-    "CRM browser session signed out; WhatsApp signed out. Older unread coverage partial; targeted searches are not an exhaustive audit. Team reviews pending. No sends, spending, payments or CRM edits."
+    "CRM browser session signed out; WhatsApp signed out. Older unread coverage partial; targeted searches are not exhaustive. Both team research reviews returned; operational clearance and accepted owners unverified. No sends, spending, payments or CRM edits."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
@@ -36,12 +36,12 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "routed; substantive result pending",
+      "status": "Ten selected original bodies and sent metadata reviewed; no attachments/live stock/PO inspection; research complete, not operational clearance.",
       "request_id": "cmd_20261107_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "routed; substantive result pending",
+      "status": "Ten supplied originals plus direct Outlook searches and Sent/draft readbacks; research complete, no attachment inspection or operational clearance.",
       "request_id": "cmd_20261107_0700_et_status"
     }
   ],
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-07T12:03:58.592Z"
+    "last_verified": "2026-11-07T12:06:07.836Z"
   },
   "purchasingIntelligence": null
 }
