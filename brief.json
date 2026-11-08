@@ -1,6 +1,6 @@
 {
   "date": "2026-11-08",
-  "ts": "2026-11-08T12:03:30.750Z",
+  "ts": "2026-11-08T12:07:44.335Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to confirm Talova's safe recovery method and the person authorized to approve it.",
@@ -36,12 +36,12 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "routed; substantive result pending",
+      "status": "Research complete:13 embedded original records and attributed quote text;no live Outlook or binary inspection;no operational clearance",
       "request_id": "cmd_20261108_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "routed; substantive result pending",
+      "status": "Research complete:supplied originals/quote text plus direct Aidan Outlook searches,Shannon and existing unsent draft readbacks;not independent PDF audit or operational clearance",
       "request_id": "cmd_20261108_0700_et_status"
     }
   ],
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-08T12:03:30.751Z"
+    "last_verified": "2026-11-08T12:07:44.335Z"
   },
   "purchasingIntelligence": null
 }
