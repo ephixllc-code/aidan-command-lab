@@ -1,90 +1,90 @@
 {
-  "date": "2026-11-07",
-  "ts": "2026-11-07T12:06:07.836Z",
+  "date": "2026-11-08",
+  "ts": "2026-11-08T12:03:30.750Z",
   "brief": [
     {
-      "t": "START HERE: Call Sam and Ron to confirm the safe Talova recovery method and named decision owner before the affected transfer method is used again.",
+      "t": "START HERE: Call Sam and Ron to confirm Talova's safe recovery method and the person authorized to approve it.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Talova: obtain a safe recovery decision. The splash report is 4 days old. Michael's November 5 review still had no qualified execution method. Safe-transfer controls, equipment limits, trial evidence, tallow suitability, staffing and disposition of approximately 200 suspect units remain unverified; those units are not confirmed rejects. Send internally: Sam, Ron and Aaron, please name the decision owner, review the incident and trial evidence, and record the approved safe recovery method today before Michael commits staffing or a completion date.",
+      "t": "ACT NOW 1: Talova: obtain safe recovery approval. Splash reported November 3, five days ago. No later safe-transfer, equipment-limit, trial/CAPA or suspect-unit disposition clearance found in targeted Outlook review. Michael's November 5 summary still described no satisfactory execution method. Report age is not a promised completion deadline; approximately 200 suspect units are not established rejects. Send internally: Sam, Ron and Aaron, please name the approver and record the safe recovery method, supporting trial results and suspect-unit disposition today before Michael commits staffing or a completion date.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Aloe and Tallow: record containment and label reconciliation. Evelyn's formula/label discrepancy report is 3 days old. No later reconciliation was found. Laura's statement that she has not created the SmoothCrack label does not resolve the label on Rachel's samples, the ingredient discrepancy or rosehip claims. Send internally: Sam, Evelyn, Aaron and Laura, please match the actual sample formula to Rachel's label, identify affected samples and stock, and record today's containment and authorized customer-response decision.",
+      "t": "ACT NOW 2: Aloe and Tallow: reconcile formula and label. Evelyn reported the formula/label discrepancy November 4, four days ago. No verified reconciliation or containment found. Laura's statement that she did not create the SmoothCrack label does not resolve Rachel's samples; affected stock and claims remain unknown. Send internally: Sam, Evelyn, Aaron and Laura, please match Rachel's actual sample formula to its label, identify affected samples and stock, and record the containment and authorized customer-response decision today.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: IPFS: obtain written payment and policy status. The original receipt cutoff passed November 5 at 6 PM Eastern, 2 calendar days ago; the later cancellation-eligible date passed yesterday. Neither establishes actual cancellation. The scheduled $941.41 plus $16 debit is not verified posted or applied; cure and coverage remain unknown. Send internally: Finance, please check the debit and applied balance now, contact IPFS or the broker for written cure and current policy-status confirmation, and do not submit a duplicate payment.",
+      "t": "ACT NOW 3: IPFS: verify applied payment and current coverage. Original receipt cutoff November 5 at 6 PM Eastern passed three calendar days ago. November 6 cancellation-eligible date is not proof of actual cancellation or extension. Scheduled $941.41 plus $16 debit remains unverified as posted/applied; no written cure or policy-status confirmation found. Send internally: Finance, please verify the debit and applied balance now, request written cure and current policy-status confirmation from IPFS or the broker, and do not pay twice.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Close the safe-recovery decision, label containment and written insurance status before making new production promises.",
-    "Scheduled: Current CRM task count unavailable. Two calendar events in the next 72 hours; nearest Monday, November 9 at 9:30 AM Eastern. No calendar events returned for today or Sunday; off-calendar commitments remain possible.",
-    "Noise: 22 messages suppressed from 32 new inbound.",
-    "New customer timing and component requests do not establish readiness or clear the three higher-risk gates; prior equipment commissioning checks remain uncleared.",
-    "CRM browser session signed out; WhatsApp signed out. Older unread coverage partial; targeted searches are not exhaustive. Both team research reviews returned; operational clearance and accepted owners unverified. No sends, spending, payments or CRM edits."
+    "Recommendation: Close these three decisions before making new production promises.",
+    "Scheduled: CRM task count unavailable. Four calendar events within the next 72 hours; nearest Monday, November 9, 9:30 AM Eastern. No Sunday event returned; calendar hasMore false.",
+    "Noise: 14 messages suppressed from 15 new inbound.",
+    "No new displacement today; equipment commissioning and Monday readiness dependencies remain unresolved, not cleared.",
+    "CRM browser session signed out and WhatsApp QR login verified again. Prior reconnect request remains unresolved, no duplicate notification sent. Older unread search capped at50; targeted searches are not an exhaustive audit. No sends, spending, payments, draft or CRM edits. Proposed human owners and escalation are not accepted assignments or proof of action."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
   "redflags": [
-    "The splash report is 4 days old. Michael's November 5 review still had no qualified execution method. Safe-transfer controls, equipment limits, trial evidence, tallow suitability, staffing and disposition of approximately 200 suspect units remain unverified; those units are not confirmed rejects.",
-    "Evelyn's formula/label discrepancy report is 3 days old. No later reconciliation was found. Laura's statement that she has not created the SmoothCrack label does not resolve the label on Rachel's samples, the ingredient discrepancy or rosehip claims.",
-    "The original receipt cutoff passed November 5 at 6 PM Eastern, 2 calendar days ago; the later cancellation-eligible date passed yesterday. Neither establishes actual cancellation. The scheduled $941.41 plus $16 debit is not verified posted or applied; cure and coverage remain unknown."
+    "Splash reported November 3, five days ago. No later safe-transfer, equipment-limit, trial/CAPA or suspect-unit disposition clearance found in targeted Outlook review. Michael's November 5 summary still described no satisfactory execution method. Report age is not a promised completion deadline; approximately 200 suspect units are not established rejects.",
+    "Evelyn reported the formula/label discrepancy November 4, four days ago. No verified reconciliation or containment found. Laura's statement that she did not create the SmoothCrack label does not resolve Rachel's samples; affected stock and claims remain unknown.",
+    "Original receipt cutoff November 5 at 6 PM Eastern passed three calendar days ago. November 6 cancellation-eligible date is not proof of actual cancellation or extension. Scheduled $941.41 plus $16 debit remains unverified as posted/applied; no written cure or policy-status confirmation found."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Ten selected original bodies and sent metadata reviewed; no attachments/live stock/PO inspection; research complete, not operational clearance.",
-      "request_id": "cmd_20261107_0700_et_status"
+      "status": "routed; substantive result pending",
+      "request_id": "cmd_20261108_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Ten supplied originals plus direct Outlook searches and Sent/draft readbacks; research complete, no attachment inspection or operational clearance.",
-      "request_id": "cmd_20261107_0700_et_status"
+      "status": "routed; substantive result pending",
+      "request_id": "cmd_20261108_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "22 noise messages suppressed from 32 new inbound.",
+  "noise": "14 noise messages suppressed from 15 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Talova: obtain a safe recovery decision",
+      "top_task": "Talova: obtain safe recovery approval",
       "tasks": [
-        "Talova: obtain a safe recovery decision",
-        "Aloe and Tallow: record containment and label reconciliation",
-        "IPFS: obtain written payment and policy status"
+        "Talova: obtain safe recovery approval",
+        "Aloe and Tallow: reconcile formula and label",
+        "IPFS: verify applied payment and current coverage"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
     {
-      "title": "Talova: obtain a safe recovery decision",
-      "why": "The splash report is 4 days old. Michael's November 5 review still had no qualified execution method. Safe-transfer controls, equipment limits, trial evidence, tallow suitability, staffing and disposition of approximately 200 suspect units remain unverified; those units are not confirmed rejects.",
-      "send": "Sam, Ron and Aaron, please name the decision owner, review the incident and trial evidence, and record the approved safe recovery method today before Michael commits staffing or a completion date.",
-      "owner": "Aidan to human Sam, Ron, Aaron and Michael; acceptance unverified",
-      "timing": "Today, November 7; incident report 4 days old",
+      "title": "Talova: obtain safe recovery approval",
+      "why": "Splash reported November 3, five days ago. No later safe-transfer, equipment-limit, trial/CAPA or suspect-unit disposition clearance found in targeted Outlook review. Michael's November 5 summary still described no satisfactory execution method. Report age is not a promised completion deadline; approximately 200 suspect units are not established rejects.",
+      "owner": "Aidan to human Sam, Ron and Aaron/designated safety-QC approver; proposed owners, acceptance unverified",
+      "timing": "Today, before further affected-method use or recovery promises",
+      "send": "Sam, Ron and Aaron, please name the approver and record the safe recovery method, supporting trial results and suspect-unit disposition today before Michael commits staffing or a completion date.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Aloe and Tallow: record containment and label reconciliation",
-      "why": "Evelyn's formula/label discrepancy report is 3 days old. No later reconciliation was found. Laura's statement that she has not created the SmoothCrack label does not resolve the label on Rachel's samples, the ingredient discrepancy or rosehip claims.",
-      "send": "Sam, Evelyn, Aaron and Laura, please match the actual sample formula to Rachel's label, identify affected samples and stock, and record today's containment and authorized customer-response decision.",
-      "owner": "Aidan to human Sam, Evelyn, Aaron and Laura; acceptance unverified",
-      "timing": "Today, November 7; discrepancy report 3 days old",
+      "title": "Aloe and Tallow: reconcile formula and label",
+      "why": "Evelyn reported the formula/label discrepancy November 4, four days ago. No verified reconciliation or containment found. Laura's statement that she did not create the SmoothCrack label does not resolve Rachel's samples; affected stock and claims remain unknown.",
+      "owner": "Aidan to human Sam, Evelyn, Aaron and Laura; proposed owners, acceptance unverified",
+      "timing": "Today, before further affected release",
+      "send": "Sam, Evelyn, Aaron and Laura, please match Rachel's actual sample formula to its label, identify affected samples and stock, and record the containment and authorized customer-response decision today.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "IPFS: obtain written payment and policy status",
-      "why": "The original receipt cutoff passed November 5 at 6 PM Eastern, 2 calendar days ago; the later cancellation-eligible date passed yesterday. Neither establishes actual cancellation. The scheduled $941.41 plus $16 debit is not verified posted or applied; cure and coverage remain unknown.",
-      "send": "Finance, please check the debit and applied balance now, contact IPFS or the broker for written cure and current policy-status confirmation, and do not submit a duplicate payment.",
-      "owner": "Aidan/finance with IPFS and broker; acceptance unverified",
-      "timing": "Now, November 7; original cutoff 2 calendar days past",
+      "title": "IPFS: verify applied payment and current coverage",
+      "why": "Original receipt cutoff November 5 at 6 PM Eastern passed three calendar days ago. November 6 cancellation-eligible date is not proof of actual cancellation or extension. Scheduled $941.41 plus $16 debit remains unverified as posted/applied; no written cure or policy-status confirmation found.",
+      "owner": "Aidan/finance with IPFS or broker; accepted owner unverified",
+      "timing": "Check now; obtain written confirmation at first reachable contact",
+      "send": "Finance, please verify the debit and applied balance now, request written cure and current policy-status confirmation from IPFS or the broker, and do not pay twice.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Talova: obtain a safe recovery decision",
-      "why": "The splash report is 4 days old. Michael's November 5 review still had no qualified execution method. Safe-transfer controls, equipment limits, trial evidence, tallow suitability, staffing and disposition of approximately 200 suspect units remain unverified; those units are not confirmed rejects.",
-      "owner": "Aidan to human Sam, Ron, Aaron and Michael; acceptance unverified",
-      "due": "Today, November 7; incident report 4 days old",
+      "title": "Talova: obtain safe recovery approval",
+      "why": "Splash reported November 3, five days ago. No later safe-transfer, equipment-limit, trial/CAPA or suspect-unit disposition clearance found in targeted Outlook review. Michael's November 5 summary still described no satisfactory execution method. Report age is not a promised completion deadline; approximately 200 suspect units are not established rejects.",
+      "owner": "Aidan to human Sam, Ron and Aaron/designated safety-QC approver; proposed owners, acceptance unverified",
+      "due": "Today, before further affected-method use or recovery promises",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Aloe and Tallow: record containment and label reconciliation",
-      "why": "Evelyn's formula/label discrepancy report is 3 days old. No later reconciliation was found. Laura's statement that she has not created the SmoothCrack label does not resolve the label on Rachel's samples, the ingredient discrepancy or rosehip claims.",
-      "owner": "Aidan to human Sam, Evelyn, Aaron and Laura; acceptance unverified",
-      "due": "Today, November 7; discrepancy report 3 days old",
+      "title": "Aloe and Tallow: reconcile formula and label",
+      "why": "Evelyn reported the formula/label discrepancy November 4, four days ago. No verified reconciliation or containment found. Laura's statement that she did not create the SmoothCrack label does not resolve Rachel's samples; affected stock and claims remain unknown.",
+      "owner": "Aidan to human Sam, Evelyn, Aaron and Laura; proposed owners, acceptance unverified",
+      "due": "Today, before further affected release",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "IPFS: obtain written payment and policy status",
-      "why": "The original receipt cutoff passed November 5 at 6 PM Eastern, 2 calendar days ago; the later cancellation-eligible date passed yesterday. Neither establishes actual cancellation. The scheduled $941.41 plus $16 debit is not verified posted or applied; cure and coverage remain unknown.",
-      "owner": "Aidan/finance with IPFS and broker; acceptance unverified",
-      "due": "Now, November 7; original cutoff 2 calendar days past",
+      "title": "IPFS: verify applied payment and current coverage",
+      "why": "Original receipt cutoff November 5 at 6 PM Eastern passed three calendar days ago. November 6 cancellation-eligible date is not proof of actual cancellation or extension. Scheduled $941.41 plus $16 debit remains unverified as posted/applied; no written cure or policy-status confirmation found.",
+      "owner": "Aidan/finance with IPFS or broker; accepted owner unverified",
+      "due": "Check now; obtain written confirmation at first reachable contact",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "Current CRM task count unavailable. Two calendar events in the next 72 hours; nearest Monday, November 9 at 9:30 AM Eastern. No calendar events returned for today or Sunday; off-calendar commitments remain possible.",
+    "note": "CRM task count unavailable. Four calendar events within the next 72 hours; nearest Monday, November 9, 9:30 AM Eastern. No Sunday event returned; calendar hasMore false.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-07T12:06:07.836Z"
+    "last_verified": "2026-11-08T12:03:30.751Z"
   },
   "purchasingIntelligence": null
 }
