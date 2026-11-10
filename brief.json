@@ -1,6 +1,6 @@
 {
   "date": "2026-11-10",
-  "ts": "2026-11-10T12:08:01.743Z",
+  "ts": "2026-11-10T12:09:41.574Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to name Talova’s safety approver and confirm the authorized recovery method.",
@@ -11,7 +11,7 @@
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Lice Sisters preservative request needs technical correction. Evelyn’s request yesterday implies 1.0% Liquid Germall Plus: 1.2 kg in 120 kg. The named supplier publishes 0.1–0.5% suggested use. This is a potential formula/specification error, not proof material was added. Send internally: Ron, Aaron and Evelyn, please reconcile the exact preservative, approved formula and supplier use limits today before purchase or addition; keep the 2–3 kg buying buffer separate from batch dosage.",
+      "t": "ACT NOW 2: Lice Sisters preservative request needs technical correction. Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch. Send internally: Ron, Aaron and Evelyn, please reconcile the exact preservative, approved formula and supplier use limits today before purchase or addition; keep the 2–3 kg buying buffer separate from batch dosage.",
       "hot": true
     },
     {
@@ -30,18 +30,18 @@
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
   "redflags": [
     "Splash reported November 3, 7 days ago. Michael’s latest relevant summary has no approved safe method; trial evidence, equipment limits and suspect-unit disposition remain unverified.",
-    "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus: 1.2 kg in 120 kg. The named supplier publishes 0.1–0.5% suggested use. This is a potential formula/specification error, not proof material was added.",
+    "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch.",
     "Evelyn’s discrepancy report is 6 days old. Laura’s clarification does not reconcile Rachel’s actual samples, formula, label or claims."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Initial research returned; recovered preservative source supplement review pending. No independent live stock/PO or attachments; not operational clearance.",
+      "status": "Corrected research complete:11 selected embedded originals plus Sent metadata; recovered Evelyn dose/body included. No independent live stock/PO or attachment inspection; not operational clearance.",
       "request_id": "cmd_20261110_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Substantive review pending; source correction routed under same request.",
+      "status": "Research complete: direct bounded Outlook/Sent/draft readbacks and historical Repel XLSM inspection without macros. No current stock, human approval or operational clearance.",
       "request_id": "cmd_20261110_0700_et_status"
     }
   ],
@@ -72,7 +72,7 @@
     },
     {
       "title": "Lice Sisters preservative request needs technical correction",
-      "why": "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus: 1.2 kg in 120 kg. The named supplier publishes 0.1–0.5% suggested use. This is a potential formula/specification error, not proof material was added.",
+      "why": "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch.",
       "send": "Ron, Aaron and Evelyn, please reconcile the exact preservative, approved formula and supplier use limits today before purchase or addition; keep the 2–3 kg buying buffer separate from batch dosage.",
       "owner": "Aidan to Ron, Aaron and Evelyn; acceptance unverified",
       "timing": "Today, November 10; before purchasing or batch addition",
@@ -102,7 +102,7 @@
     {
       "rank": 2,
       "title": "Lice Sisters preservative request needs technical correction",
-      "why": "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus: 1.2 kg in 120 kg. The named supplier publishes 0.1–0.5% suggested use. This is a potential formula/specification error, not proof material was added.",
+      "why": "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch.",
       "owner": "Aidan to Ron, Aaron and Evelyn; acceptance unverified",
       "due": "Today, November 10; before purchasing or batch addition",
       "priority": "high",
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-10T12:08:01.744Z"
+    "last_verified": "2026-11-10T12:09:41.574Z"
   },
   "purchasingIntelligence": null
 }
