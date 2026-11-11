@@ -1,61 +1,61 @@
 {
-  "date": "2026-11-10",
-  "ts": "2026-11-10T12:09:41.574Z",
+  "date": "2026-11-11",
+  "ts": "2026-11-11T12:10:24.327Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to name Talova’s safety approver and confirm the authorized recovery method.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Talova safe recovery remains unverified. Splash reported November 3, 7 days ago. Michael’s latest relevant summary has no approved safe method; trial evidence, equipment limits and suspect-unit disposition remain unverified. Send internally: Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before Michael commits staffing or completion.",
+      "t": "ACT NOW 1: Talova safe recovery remains unverified. Splash reported November 3, 8 days ago. No later safe-method approval, accepted trial evidence or suspect-unit disposition was found in the bounded review. Send internally: Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before affected-method reuse or a completion promise.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Lice Sisters preservative request needs technical correction. Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch. Send internally: Ron, Aaron and Evelyn, please reconcile the exact preservative, approved formula and supplier use limits today before purchase or addition; keep the 2–3 kg buying buffer separate from batch dosage.",
+      "t": "ACT NOW 2: Roon November 18 start needs a material and sanitation checkpoint. Evelyn’s inventory report yesterday flags nine shortages, plus uncertain gross-weight stock and an unfilled microsilica stock field. The inspected sheet totals 188 kg, while the body cites a 10,200-unit planning allowance. Gattefosse received a PO but needs address confirmation; Estogel payment confirmation was sent, not applied/ship proof. Ecolab asks about November 20 versus the projected November 18 start; sanitation, capper trial and usable materials are not released. Send internally: Michael, Evelyn and Aaron, please reconcile released stock and existing orders against the approved Roon quantity today, name each shortage’s owner and ETA, and confirm the sanitation and capper-trial gates before reaffirming November 18.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Aloe and Tallow formula-label containment remains unverified. Evelyn’s discrepancy report is 6 days old. Laura’s clarification does not reconcile Rachel’s actual samples, formula, label or claims. Send internally: Sam, Evelyn, Aaron and Laura, please match Rachel’s sample formula to its label, identify affected samples and stock, and record the containment and authorized customer-response decision today.",
+      "t": "ACT NOW 3: Lice Sisters preservative conflict remains unresolved. Evelyn’s November 9 request is 2 days old: 1.2 kg in 120 kg implies 1%. The historical Repel sheet also lists 1%, versus the named supplier’s suggested 0.1–0.5%. This is an unresolved formula/specification conflict, not proof of an executed nonconforming batch and not authority to choose a replacement dose. Send internally: Ron, Aaron and Evelyn, please reconcile the exact preservative, current approved formula and supplier use limits today before purchase or addition; keep the 2–3 kg buying buffer separate from batch dosage.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve these safety and formula decisions before purchasing against the new preservative request or making production promises.",
-    "Scheduled: CRM task count unavailable. Four calendar events within 72 hours; nearest today 10:30 AM Eastern, overlapping a 10:45 AM event.",
-    "Noise: 38 messages suppressed from 60 new inbound.",
-    "Displaced: IPFS is not cleared. The new production-dose exception takes its top-three slot; the November 5 cutoff passed and settlement, cure and current coverage remain unverified. Do not pay twice.",
-    "CRM browser session signed out; WhatsApp signed out. Older unread coverage partial. No sends, spending, payments, draft edits or CRM edits. Proposed owners are not accepted assignments."
+    "Recommendation: Close the safety and preservative decisions, and obtain a dated Roon readiness checkpoint before repeating production dates.",
+    "Scheduled: CRM task count unavailable. Two calendar events within 72 hours; nearest today at 5 PM Eastern.",
+    "Noise: 43 messages suppressed from 78 new inbound.",
+    "Displaced: Aloe and Tallow remains unresolved; Roon’s new documented shortages against the November 18 commitment take its top-three slot. IPFS also remains uncleared; no duplicate payment.",
+    "CRM browser session signed out; WhatsApp signed out. Older unread coverage and targeted searches are bounded, not exhaustive. No sends, spending, payments, draft edits or CRM edits by this review. Proposed human owners are not accepted assignments. Source: Aidan Outlook originals and two-page Roon PDF; calendar; both team research returns, not operational clearance."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
   "redflags": [
-    "Splash reported November 3, 7 days ago. Michael’s latest relevant summary has no approved safe method; trial evidence, equipment limits and suspect-unit disposition remain unverified.",
-    "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch.",
-    "Evelyn’s discrepancy report is 6 days old. Laura’s clarification does not reconcile Rachel’s actual samples, formula, label or claims."
+    "Splash reported November 3, 8 days ago. No later safe-method approval, accepted trial evidence or suspect-unit disposition was found in the bounded review.",
+    "Evelyn’s inventory report yesterday flags nine shortages, plus uncertain gross-weight stock and an unfilled microsilica stock field. The inspected sheet totals 188 kg, while the body cites a 10,200-unit planning allowance. Gattefosse received a PO but needs address confirmation; Estogel payment confirmation was sent, not applied/ship proof. Ecolab asks about November 20 versus the projected November 18 start; sanitation, capper trial and usable materials are not released.",
+    "Evelyn’s November 9 request is 2 days old: 1.2 kg in 120 kg implies 1%. The historical Repel sheet also lists 1%, versus the named supplier’s suggested 0.1–0.5%. This is an unresolved formula/specification conflict, not proof of an executed nonconforming batch and not authority to choose a replacement dose."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Corrected research complete:11 selected embedded originals plus Sent metadata; recovered Evelyn dose/body included. No independent live stock/PO or attachment inspection; not operational clearance.",
-      "request_id": "cmd_20261110_0700_et_status"
+      "status": "Research delivered on 12 embedded original bodies; no independent connected Outlook/Sent/CRM/lot or attachment inspection. Consultant attachment findings attributed. No operational clearance or accepted owners.",
+      "request_id": "cmd_20261111_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Research complete: direct bounded Outlook/Sent/draft readbacks and historical Repel XLSM inspection without macros. No current stock, human approval or operational clearance.",
-      "request_id": "cmd_20261110_0700_et_status"
+      "status": "Research delivered with direct Sent/draft readbacks and independent Gattefosse PO0031 PDF text inspection. 50 draft readbacks capped, not mailbox total; no rendering or approval-ready claim. No operational clearance.",
+      "request_id": "cmd_20261111_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "38 noise messages suppressed from 60 new inbound.",
+  "noise": "43 noise messages suppressed from 78 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
       "top_task": "Talova safe recovery remains unverified",
       "tasks": [
         "Talova safe recovery remains unverified",
-        "Lice Sisters preservative request needs technical correction",
-        "Aloe and Tallow formula-label containment remains unverified"
+        "Roon November 18 start needs a material and sanitation checkpoint",
+        "Lice Sisters preservative conflict remains unresolved"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
@@ -63,28 +63,28 @@
   "revenueActions": [
     {
       "title": "Talova safe recovery remains unverified",
-      "why": "Splash reported November 3, 7 days ago. Michael’s latest relevant summary has no approved safe method; trial evidence, equipment limits and suspect-unit disposition remain unverified.",
-      "send": "Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before Michael commits staffing or completion.",
+      "why": "Splash reported November 3, 8 days ago. No later safe-method approval, accepted trial evidence or suspect-unit disposition was found in the bounded review.",
+      "send": "Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before affected-method reuse or a completion promise.",
       "owner": "Aidan to human Sam, Ron and Aaron; acceptance unverified",
-      "timing": "Today, November 10; before affected-method reuse",
+      "timing": "Today, November 11; before affected-method reuse",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Lice Sisters preservative request needs technical correction",
-      "why": "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch.",
-      "send": "Ron, Aaron and Evelyn, please reconcile the exact preservative, approved formula and supplier use limits today before purchase or addition; keep the 2–3 kg buying buffer separate from batch dosage.",
+      "title": "Roon November 18 start needs a material and sanitation checkpoint",
+      "why": "Evelyn’s inventory report yesterday flags nine shortages, plus uncertain gross-weight stock and an unfilled microsilica stock field. The inspected sheet totals 188 kg, while the body cites a 10,200-unit planning allowance. Gattefosse received a PO but needs address confirmation; Estogel payment confirmation was sent, not applied/ship proof. Ecolab asks about November 20 versus the projected November 18 start; sanitation, capper trial and usable materials are not released.",
+      "send": "Michael, Evelyn and Aaron, please reconcile released stock and existing orders against the approved Roon quantity today, name each shortage’s owner and ETA, and confirm the sanitation and capper-trial gates before reaffirming November 18.",
+      "owner": "Aidan to Production, Evelyn and Aaron/QC; acceptance unverified",
+      "timing": "Today, November 11; projected start November 18 is 7 days away, requested trial November 17 is 6 days away",
+      "est_value": "UNVERIFIED",
+      "value": "Operational continuity"
+    },
+    {
+      "title": "Lice Sisters preservative conflict remains unresolved",
+      "why": "Evelyn’s November 9 request is 2 days old: 1.2 kg in 120 kg implies 1%. The historical Repel sheet also lists 1%, versus the named supplier’s suggested 0.1–0.5%. This is an unresolved formula/specification conflict, not proof of an executed nonconforming batch and not authority to choose a replacement dose.",
+      "send": "Ron, Aaron and Evelyn, please reconcile the exact preservative, current approved formula and supplier use limits today before purchase or addition; keep the 2–3 kg buying buffer separate from batch dosage.",
       "owner": "Aidan to Ron, Aaron and Evelyn; acceptance unverified",
-      "timing": "Today, November 10; before purchasing or batch addition",
-      "est_value": "UNVERIFIED",
-      "value": "Operational continuity"
-    },
-    {
-      "title": "Aloe and Tallow formula-label containment remains unverified",
-      "why": "Evelyn’s discrepancy report is 6 days old. Laura’s clarification does not reconcile Rachel’s actual samples, formula, label or claims.",
-      "send": "Sam, Evelyn, Aaron and Laura, please match Rachel’s sample formula to its label, identify affected samples and stock, and record the containment and authorized customer-response decision today.",
-      "owner": "Aidan to human Sam, Evelyn, Aaron and Laura; acceptance unverified",
-      "timing": "Today, November 10; before further release",
+      "timing": "Today, November 11; before purchasing or batch addition",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -93,40 +93,40 @@
     {
       "rank": 1,
       "title": "Talova safe recovery remains unverified",
-      "why": "Splash reported November 3, 7 days ago. Michael’s latest relevant summary has no approved safe method; trial evidence, equipment limits and suspect-unit disposition remain unverified.",
+      "why": "Splash reported November 3, 8 days ago. No later safe-method approval, accepted trial evidence or suspect-unit disposition was found in the bounded review.",
       "owner": "Aidan to human Sam, Ron and Aaron; acceptance unverified",
-      "due": "Today, November 10; before affected-method reuse",
+      "due": "Today, November 11; before affected-method reuse",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Lice Sisters preservative request needs technical correction",
-      "why": "Evelyn’s request yesterday implies 1.0% Liquid Germall Plus. Email inspected the historical Repel v1.1 sheet: it also lists 1%, with no lot/release date and micro submission NO. Named-supplier suggested use is 0.1–0.5%; this is an unresolved formula/specification conflict, not just an arithmetic typo or proven executed batch.",
-      "owner": "Aidan to Ron, Aaron and Evelyn; acceptance unverified",
-      "due": "Today, November 10; before purchasing or batch addition",
+      "title": "Roon November 18 start needs a material and sanitation checkpoint",
+      "why": "Evelyn’s inventory report yesterday flags nine shortages, plus uncertain gross-weight stock and an unfilled microsilica stock field. The inspected sheet totals 188 kg, while the body cites a 10,200-unit planning allowance. Gattefosse received a PO but needs address confirmation; Estogel payment confirmation was sent, not applied/ship proof. Ecolab asks about November 20 versus the projected November 18 start; sanitation, capper trial and usable materials are not released.",
+      "owner": "Aidan to Production, Evelyn and Aaron/QC; acceptance unverified",
+      "due": "Today, November 11; projected start November 18 is 7 days away, requested trial November 17 is 6 days away",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Aloe and Tallow formula-label containment remains unverified",
-      "why": "Evelyn’s discrepancy report is 6 days old. Laura’s clarification does not reconcile Rachel’s actual samples, formula, label or claims.",
-      "owner": "Aidan to human Sam, Evelyn, Aaron and Laura; acceptance unverified",
-      "due": "Today, November 10; before further release",
+      "title": "Lice Sisters preservative conflict remains unresolved",
+      "why": "Evelyn’s November 9 request is 2 days old: 1.2 kg in 120 kg implies 1%. The historical Repel sheet also lists 1%, versus the named supplier’s suggested 0.1–0.5%. This is an unresolved formula/specification conflict, not proof of an executed nonconforming batch and not authority to choose a replacement dose.",
+      "owner": "Aidan to Ron, Aaron and Evelyn; acceptance unverified",
+      "due": "Today, November 11; before purchasing or batch addition",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "CRM task count unavailable. Four calendar events within 72 hours; nearest today 10:30 AM Eastern, overlapping a 10:45 AM event.",
+    "note": "CRM task count unavailable. Two calendar events within 72 hours; nearest today at 5 PM Eastern.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-10T12:09:41.574Z"
+    "last_verified": "2026-11-11T12:10:24.327Z"
   },
   "purchasingIntelligence": null
 }
