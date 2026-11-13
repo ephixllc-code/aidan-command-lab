@@ -1,90 +1,90 @@
 {
-  "date": "2026-11-12",
-  "ts": "2026-11-12T12:11:08.077Z",
+  "date": "2026-11-13",
+  "ts": "2026-11-13T12:08:19.383Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to confirm Talova’s safety approver and authorized recovery method.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Talova safe recovery remains unverified. November 3 splash report is 9 days old. No later safe-method approval, accepted trial evidence or suspect-unit disposition found in bounded sources; lack of clearance is not proof no work occurred. Send internally: Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before affected-method reuse or a completion promise.",
+      "t": "ACT NOW 1: Talova — splash reported 10 days ago. Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources. Send internally: Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before affected-method reuse or a completion promise.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Use today’s 9 AM Ecolab call to resolve Roon readiness dates. Projected November 18 start is 6 days away. Ecolab’s sample delivery is only conditionally targeted by November 20; recommendations are not approved sanitation. Estogel stock is pending and payment application needs reconciliation. New material orders do not clear nine-shortage, capper-trial or usable-lot gates. Send internally: Michael and Aaron, join the 9 AM Ecolab call with the equipment-cleaning requirements and record the sanitation, released-material and capper-trial gates today before we reaffirm November 18.",
+      "t": "ACT NOW 2: Roon — revised November 17 trial is 4 days away. Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. Send internally: Michael, Evelyn and Aaron, please reconcile Josh’s revised November 17 scope against released stock, sanitation and capper readiness today, then confirm the achievable trial and December schedule before we accept it.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Heritage shipment request needs a verified owner and callback. Joseph’s November 10 request is 2 days old; he followed up urgently yesterday after failed phone/contact attempts. He says a PO is waiting on the dock. Physical stock, exact PO, QC release and shipping authority are not verified; a callback is not a dispatch promise. Send internally: Sam and Steve, please identify Joseph’s Heritage PO, verify stock, QC and shipping readiness, and give him a callback today before promising dispatch.",
+      "t": "ACT NOW 3: Heritage — shipment request is 3 days old. Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification. Send internally: Sam and Steve, please identify Joseph’s Heritage PO, verify stock, QC and shipping readiness, and give him a callback today before promising dispatch.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Close the safety decision, leave the 9 AM call with a QA-owned readiness checkpoint, and restore the Heritage callback before promising shipment.",
-    "Scheduled: Two calendar events within 72 hours; nearest today at 9 AM Eastern. CRM task count unavailable.",
-    "Noise: 37 messages suppressed from 66 new inbound.",
-    "Displaced: Germall’s unresolved formula gate moves below the top three for Heritage’s urgent waiting-shipment claim and failed callback path. The 1% versus supplier-suggested 0.1–0.5% conflict remains uncleared; reported ordering is not permission to add. No alternate dose prescribed. Other carried holds remain tracked, not cleared or noise.",
-    "CRM browser session signed out; WhatsApp signed out. Older unread coverage and targeted searches bounded, not exhaustive. No sends, spending, payments, draft edits or CRM edits by this review. Proposed human owners are not accepted assignments. Sources: Aidan Outlook originals/Sent, calendar and attributed prior attachment findings; team result scope recorded separately."
+    "Recommendation: Resolve safety and the revised Roon trial gates today; use the 10:30 Halls visit to pin down water readiness, not just installation.",
+    "Scheduled: No primary-calendar events in the next 72 hours; mail-accepted Halls visit today at 10:30 AM Eastern. CRM My Tasks: 29 active, 24 dated overdue, 1 due today, 2 later and 2 undated; dashboard overdue badge differs.",
+    "Noise: 41 messages suppressed from 67 new inbound.",
+    "Germall remains below the top three, not cleared: historical 1% conflicts with supplier guidance; no approved addition. Roon’s old November 18 projection is superseded by the customer’s revised recap, not an accepted PLL release.",
+    "CRM access restored and read directly as Aidan. WhatsApp remains QR-signed-out. Older unread coverage is partial; targeted searches bounded, with an Ecolab search error. No sends, purchases, payments or CRM edits by this review."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
   "redflags": [
-    "November 3 splash report is 9 days old. No later safe-method approval, accepted trial evidence or suspect-unit disposition found in bounded sources; lack of clearance is not proof no work occurred.",
-    "Projected November 18 start is 6 days away. Ecolab’s sample delivery is only conditionally targeted by November 20; recommendations are not approved sanitation. Estogel stock is pending and payment application needs reconciliation. New material orders do not clear nine-shortage, capper-trial or usable-lot gates.",
-    "Joseph’s November 10 request is 2 days old; he followed up urgently yesterday after failed phone/contact attempts. He says a PO is waiting on the dock. Physical stock, exact PO, QC release and shipping authority are not verified; a callback is not a dispatch promise."
+    "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources.",
+    "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof.",
+    "Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Revised research delivered on20 anchored authored excerpts plus completeNov10huddle after source transport repair. No independent mailbox/attachment review or all66message review; prior attachment findings attributed. No operational clearance or accepted owners.",
-      "request_id": "cmd_20261112_0700_et_status"
+      "status": "Initial source-blocked return; revised original-content review pending after single accepted repair. No operational clearance.",
+      "request_id": "cmd_20261113_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Bounded mailbox/draft research delivered with33 evidence entries and actual Sent/full50recent draft readbacks. No new attachments independently inspected; no operational clearance or approval-ready claim.",
-      "request_id": "cmd_20261112_0700_et_status"
+      "status": "Bounded mailbox/Sent research and39 saved draft bodies read back; Gatte confirmation/PO PDFs text-inspected. No edits, approval-ready draft or operational clearance. Roon packout remains Consultant direct inspection.",
+      "request_id": "cmd_20261113_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "37 noise messages suppressed from 66 new inbound.",
+  "noise": "41 noise messages suppressed from 67 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Talova safe recovery remains unverified",
+      "top_task": "Talova — splash reported 10 days ago",
       "tasks": [
-        "Talova safe recovery remains unverified",
-        "Use today’s 9 AM Ecolab call to resolve Roon readiness dates",
-        "Heritage shipment request needs a verified owner and callback"
+        "Talova — splash reported 10 days ago",
+        "Roon — revised November 17 trial is 4 days away",
+        "Heritage — shipment request is 3 days old"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
     {
-      "title": "Talova safe recovery remains unverified",
-      "why": "November 3 splash report is 9 days old. No later safe-method approval, accepted trial evidence or suspect-unit disposition found in bounded sources; lack of clearance is not proof no work occurred.",
+      "title": "Talova — splash reported 10 days ago",
+      "why": "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources.",
+      "owner": "Aidan to human Sam, Ron and Aaron/QC",
+      "timing": "Today, November 13; incident November 3",
       "send": "Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before affected-method reuse or a completion promise.",
-      "owner": "Aidan to human Sam, Ron and Aaron; acceptance unverified",
-      "timing": "Today, November 12; before affected-method reuse",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Use today’s 9 AM Ecolab call to resolve Roon readiness dates",
-      "why": "Projected November 18 start is 6 days away. Ecolab’s sample delivery is only conditionally targeted by November 20; recommendations are not approved sanitation. Estogel stock is pending and payment application needs reconciliation. New material orders do not clear nine-shortage, capper-trial or usable-lot gates.",
-      "send": "Michael and Aaron, join the 9 AM Ecolab call with the equipment-cleaning requirements and record the sanitation, released-material and capper-trial gates today before we reaffirm November 18.",
-      "owner": "Aidan with Michael and Aaron/QC, Ecolab; technical-owner acceptance unverified",
-      "timing": "Today, November 12, 9 AM Eastern call; November 17 requested trial in 5 days and projected start November 18 in 6 days",
+      "title": "Roon — revised November 17 trial is 4 days away",
+      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof.",
+      "owner": "Aidan with Michael, Evelyn, Ron and Aaron/QC",
+      "timing": "Readiness checkpoint today; requested visit November 17 at 3 PM",
+      "send": "Michael, Evelyn and Aaron, please reconcile Josh’s revised November 17 scope against released stock, sanitation and capper readiness today, then confirm the achievable trial and December schedule before we accept it.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Heritage shipment request needs a verified owner and callback",
-      "why": "Joseph’s November 10 request is 2 days old; he followed up urgently yesterday after failed phone/contact attempts. He says a PO is waiting on the dock. Physical stock, exact PO, QC release and shipping authority are not verified; a callback is not a dispatch promise.",
+      "title": "Heritage — shipment request is 3 days old",
+      "why": "Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification.",
+      "owner": "Aidan to human Sam and Steve/fulfillment",
+      "timing": "Today, November 13; initial request November 10",
       "send": "Sam and Steve, please identify Joseph’s Heritage PO, verify stock, QC and shipping readiness, and give him a callback today before promising dispatch.",
-      "owner": "Aidan to human Sam and Steve/fulfillment; acceptance unverified",
-      "timing": "Today, November 12; original request November 10, urgent follow-up November 11",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Talova safe recovery remains unverified",
-      "why": "November 3 splash report is 9 days old. No later safe-method approval, accepted trial evidence or suspect-unit disposition found in bounded sources; lack of clearance is not proof no work occurred.",
-      "owner": "Aidan to human Sam, Ron and Aaron; acceptance unverified",
-      "due": "Today, November 12; before affected-method reuse",
+      "title": "Talova — splash reported 10 days ago",
+      "why": "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources.",
+      "owner": "Aidan to human Sam, Ron and Aaron/QC",
+      "due": "Today, November 13; incident November 3",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Use today’s 9 AM Ecolab call to resolve Roon readiness dates",
-      "why": "Projected November 18 start is 6 days away. Ecolab’s sample delivery is only conditionally targeted by November 20; recommendations are not approved sanitation. Estogel stock is pending and payment application needs reconciliation. New material orders do not clear nine-shortage, capper-trial or usable-lot gates.",
-      "owner": "Aidan with Michael and Aaron/QC, Ecolab; technical-owner acceptance unverified",
-      "due": "Today, November 12, 9 AM Eastern call; November 17 requested trial in 5 days and projected start November 18 in 6 days",
+      "title": "Roon — revised November 17 trial is 4 days away",
+      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof.",
+      "owner": "Aidan with Michael, Evelyn, Ron and Aaron/QC",
+      "due": "Readiness checkpoint today; requested visit November 17 at 3 PM",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Heritage shipment request needs a verified owner and callback",
-      "why": "Joseph’s November 10 request is 2 days old; he followed up urgently yesterday after failed phone/contact attempts. He says a PO is waiting on the dock. Physical stock, exact PO, QC release and shipping authority are not verified; a callback is not a dispatch promise.",
-      "owner": "Aidan to human Sam and Steve/fulfillment; acceptance unverified",
-      "due": "Today, November 12; original request November 10, urgent follow-up November 11",
+      "title": "Heritage — shipment request is 3 days old",
+      "why": "Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification.",
+      "owner": "Aidan to human Sam and Steve/fulfillment",
+      "due": "Today, November 13; initial request November 10",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "Two calendar events within 72 hours; nearest today at 9 AM Eastern. CRM task count unavailable.",
+    "note": "No primary-calendar events in the next 72 hours; mail-accepted Halls visit today at 10:30 AM Eastern. CRM My Tasks: 29 active, 24 dated overdue, 1 due today, 2 later and 2 undated; dashboard overdue badge differs.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-12T12:11:08.077Z"
+    "last_verified": "2026-11-13T12:08:19.383Z"
   },
   "purchasingIntelligence": null
 }
