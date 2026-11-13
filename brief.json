@@ -1,6 +1,6 @@
 {
   "date": "2026-11-13",
-  "ts": "2026-11-13T12:08:19.383Z",
+  "ts": "2026-11-13T12:09:51.727Z",
   "brief": [
     {
       "t": "START HERE: Call Sam and Ron to confirm Talova’s safety approver and authorized recovery method.",
@@ -11,7 +11,7 @@
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Roon — revised November 17 trial is 4 days away. Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. Send internally: Michael, Evelyn and Aaron, please reconcile Josh’s revised November 17 scope against released stock, sanitation and capper readiness today, then confirm the achievable trial and December schedule before we accept it.",
+      "t": "ACT NOW 2: Roon — revised November 17 trial is 4 days away. Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation. Send internally: Michael, Evelyn and Aaron, please reconcile Josh’s revised November 17 scope against released stock, sanitation and capper readiness today, then confirm the achievable trial and December schedule before we accept it.",
       "hot": true
     },
     {
@@ -30,13 +30,13 @@
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
   "redflags": [
     "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources.",
-    "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof.",
+    "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation.",
     "Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Initial source-blocked return; revised original-content review pending after single accepted repair. No operational clearance.",
+      "status": "Revised research delivered on4 owner-transported authored extracts; no independent mailbox/attachment review or comprehensive material reconciliation. Consultant CRM/PDF and Email originals supersede narrower source gaps. No operational clearance or accepted owners.",
       "request_id": "cmd_20261113_0700_et_status"
     },
     {
@@ -72,7 +72,7 @@
     },
     {
       "title": "Roon — revised November 17 trial is 4 days away",
-      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof.",
+      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation.",
       "owner": "Aidan with Michael, Evelyn, Ron and Aaron/QC",
       "timing": "Readiness checkpoint today; requested visit November 17 at 3 PM",
       "send": "Michael, Evelyn and Aaron, please reconcile Josh’s revised November 17 scope against released stock, sanitation and capper readiness today, then confirm the achievable trial and December schedule before we accept it.",
@@ -102,7 +102,7 @@
     {
       "rank": 2,
       "title": "Roon — revised November 17 trial is 4 days away",
-      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof.",
+      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation.",
       "owner": "Aidan with Michael, Evelyn, Ron and Aaron/QC",
       "due": "Readiness checkpoint today; requested visit November 17 at 3 PM",
       "priority": "high",
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-13T12:08:19.383Z"
+    "last_verified": "2026-11-13T12:09:51.728Z"
   },
   "purchasingIntelligence": null
 }
