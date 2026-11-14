@@ -1,90 +1,90 @@
 {
-  "date": "2026-11-13",
-  "ts": "2026-11-13T12:09:51.727Z",
+  "date": "2026-11-14",
+  "ts": "2026-11-14T12:06:37.775Z",
   "brief": [
     {
-      "t": "START HERE: Call Sam and Ron to confirm Talova’s safety approver and authorized recovery method.",
+      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to verify Silk Factor’s lot location and authorized release status.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Talova — splash reported 10 days ago. Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources. Send internally: Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before affected-method reuse or a completion promise.",
+      "t": "ACT NOW 1: Silk Factor — reconcile release today. Yesterday’s signed internal waiver covers 26 kg awaiting microbial results. Luke’s approval fields are blank; the document also says released and contains conflicting dates. Actual shipment is unverified. Send internally: Aaron and Evelyn, please confirm lots 1110128/1111128 locations and any shipments, reconcile Luke’s acceptance, test results and waiver dates with Sam today, and document authorized disposition before further release.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Roon — revised November 17 trial is 4 days away. Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation. Send internally: Michael, Evelyn and Aaron, please reconcile Josh’s revised November 17 scope against released stock, sanitation and capper readiness today, then confirm the achievable trial and December schedule before we accept it.",
+      "t": "ACT NOW 2: Talova — incident reported 11 days ago. Safe-method approval, trial evidence and suspect-unit disposition remain unverified in the available records. Send internally: Sam, Ron and Aaron, please record the safety approver, safe recovery method, trial evidence and suspect-unit disposition today before affected-method reuse or a completion promise.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Heritage — shipment request is 3 days old. Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification. Send internally: Sam and Steve, please identify Joseph’s Heritage PO, verify stock, QC and shipping readiness, and give him a callback today before promising dispatch.",
+      "t": "ACT NOW 3: Roon — November 17 trial is 3 days away. Ecolab’s initial instructions still depend on engineering answers and safe chemistry handling; sample chemicals and pumps are not verified received. Acticire remains scheduled to ship after the trial. Send internally: Michael and Aaron, please reconcile the November 17 trial materials and capper readiness, obtain engineering’s cleaning answers and QA/safety’s approved method, and confirm an achievable trial scope before accepting the date.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve safety and the revised Roon trial gates today; use the 10:30 Halls visit to pin down water readiness, not just installation.",
-    "Scheduled: No primary-calendar events in the next 72 hours; mail-accepted Halls visit today at 10:30 AM Eastern. CRM My Tasks: 29 active, 24 dated overdue, 1 due today, 2 later and 2 undated; dashboard overdue badge differs.",
-    "Noise: 41 messages suppressed from 67 new inbound.",
-    "Germall remains below the top three, not cleared: historical 1% conflicts with supplier guidance; no approved addition. Roon’s old November 18 projection is superseded by the customer’s revised recap, not an accepted PLL release.",
-    "CRM access restored and read directly as Aidan. WhatsApp remains QR-signed-out. Older unread coverage is partial; targeted searches bounded, with an Ecolab search error. No sends, purchases, payments or CRM edits by this review."
+    "Recommendation: Resolve Silk Factor’s actual disposition first; do not treat an unsigned client acceptance or pending microbial results as clearance.",
+    "Scheduled: 3 calendar events within 72 hours; nearest Monday November 16 at 9:30 AM Eastern. CRM My Tasks Active: 28 total, 23 dated overdue, none due today, 1 dated November 16 within the next 48 calendar hours; dashboard overdue badge 19 differs.",
+    "Noise: 24 messages suppressed from 65 new inbound.",
+    "Heritage displaced, not cleared: Silk Factor’s newly documented release contradiction takes its slot. Other prior safety, formula, insurance and fulfillment gates remain unresolved.",
+    "CRM authenticated; WhatsApp signed out. Older unread coverage partial. Purchasing research delivered on two transported original bodies plus attributed Consultant inspections, not independent attachment review. Email substantive return pending. No external email, purchases, payments, drafts or CRM changes. Text safety alert was not delivered: texting is paused pending a reply from Aidan."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
   "redflags": [
-    "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources.",
-    "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation.",
-    "Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification."
+    "Yesterday’s signed internal waiver covers 26 kg awaiting microbial results. Luke’s approval fields are blank; the document also says released and contains conflicting dates. Actual shipment is unverified.",
+    "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in the available records.",
+    "Ecolab’s initial instructions still depend on engineering answers and safe chemistry handling; sample chemicals and pumps are not verified received. Acticire remains scheduled to ship after the trial."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Revised research delivered on4 owner-transported authored extracts; no independent mailbox/attachment review or comprehensive material reconciliation. Consultant CRM/PDF and Email originals supersede narrower source gaps. No operational clearance or accepted owners.",
-      "request_id": "cmd_20261113_0700_et_status"
+      "status": "Substantive supplement delivered: two transported authored originals plus attributed Consultant inspections, no independent Purchasing PDF/mailbox audit. Proposed human owners only, not operational clearance.",
+      "request_id": "cmd_20261114_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Bounded mailbox/Sent research and39 saved draft bodies read back; Gatte confirmation/PO PDFs text-inspected. No edits, approval-ready draft or operational clearance. Roon packout remains Consultant direct inspection.",
-      "request_id": "cmd_20261113_0700_et_status"
+      "status": "requested; substantive return pending",
+      "request_id": "cmd_20261114_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "41 noise messages suppressed from 67 new inbound.",
+  "noise": "24 noise messages suppressed from 65 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Talova — splash reported 10 days ago",
+      "top_task": "Silk Factor — reconcile release today",
       "tasks": [
-        "Talova — splash reported 10 days ago",
-        "Roon — revised November 17 trial is 4 days away",
-        "Heritage — shipment request is 3 days old"
+        "Silk Factor — reconcile release today",
+        "Talova — incident reported 11 days ago",
+        "Roon — November 17 trial is 3 days away"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
     {
-      "title": "Talova — splash reported 10 days ago",
-      "why": "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources.",
-      "owner": "Aidan to human Sam, Ron and Aaron/QC",
-      "timing": "Today, November 13; incident November 3",
-      "send": "Sam, Ron and Aaron, please name the approver and record the safe recovery method, trial results and suspect-unit disposition today before affected-method reuse or a completion promise.",
+      "title": "Silk Factor — reconcile release today",
+      "why": "Yesterday’s signed internal waiver covers 26 kg awaiting microbial results. Luke’s approval fields are blank; the document also says released and contains conflicting dates. Actual shipment is unverified.",
+      "send": "Aaron and Evelyn, please confirm lots 1110128/1111128 locations and any shipments, reconcile Luke’s acceptance, test results and waiver dates with Sam today, and document authorized disposition before further release.",
+      "owner": "Aidan → human Sam, Aaron and Evelyn; Luke acceptance to be verified",
+      "timing": "Today; waiver dated November 13, 1 day old",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Roon — revised November 17 trial is 4 days away",
-      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation.",
-      "owner": "Aidan with Michael, Evelyn, Ron and Aaron/QC",
-      "timing": "Readiness checkpoint today; requested visit November 17 at 3 PM",
-      "send": "Michael, Evelyn and Aaron, please reconcile Josh’s revised November 17 scope against released stock, sanitation and capper readiness today, then confirm the achievable trial and December schedule before we accept it.",
+      "title": "Talova — incident reported 11 days ago",
+      "why": "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in the available records.",
+      "send": "Sam, Ron and Aaron, please record the safety approver, safe recovery method, trial evidence and suspect-unit disposition today before affected-method reuse or a completion promise.",
+      "owner": "Aidan → human Sam, Ron and Aaron",
+      "timing": "Today; November 3 incident 11 days old, no invented contractual due date",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Heritage — shipment request is 3 days old",
-      "why": "Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification.",
-      "owner": "Aidan to human Sam and Steve/fulfillment",
-      "timing": "Today, November 13; initial request November 10",
-      "send": "Sam and Steve, please identify Joseph’s Heritage PO, verify stock, QC and shipping readiness, and give him a callback today before promising dispatch.",
+      "title": "Roon — November 17 trial is 3 days away",
+      "why": "Ecolab’s initial instructions still depend on engineering answers and safe chemistry handling; sample chemicals and pumps are not verified received. Acticire remains scheduled to ship after the trial.",
+      "send": "Michael and Aaron, please reconcile the November 17 trial materials and capper readiness, obtain engineering’s cleaning answers and QA/safety’s approved method, and confirm an achievable trial scope before accepting the date.",
+      "owner": "Aidan → Michael, Aaron, engineering and QA/safety",
+      "timing": "Today readiness checkpoint; customer-recap trial November 17 at 3 PM Eastern, not accepted PLL release",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Talova — splash reported 10 days ago",
-      "why": "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in reviewed sources.",
-      "owner": "Aidan to human Sam, Ron and Aaron/QC",
-      "due": "Today, November 13; incident November 3",
+      "title": "Silk Factor — reconcile release today",
+      "why": "Yesterday’s signed internal waiver covers 26 kg awaiting microbial results. Luke’s approval fields are blank; the document also says released and contains conflicting dates. Actual shipment is unverified.",
+      "owner": "Aidan → human Sam, Aaron and Evelyn; Luke acceptance to be verified",
+      "due": "Today; waiver dated November 13, 1 day old",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Roon — revised November 17 trial is 4 days away",
-      "why": "Josh now recaps a 3 PM visit, 150 units per scent plus 5 kg bulk, with the 10K run moved to the week of December 1 and shipment by December 4. Acticire is scheduled to ship November 19; trial stock, sanitation and capper readiness need proof. The 5 kg allocation basis needs confirmation.",
-      "owner": "Aidan with Michael, Evelyn, Ron and Aaron/QC",
-      "due": "Readiness checkpoint today; requested visit November 17 at 3 PM",
+      "title": "Talova — incident reported 11 days ago",
+      "why": "Safe-method approval, trial evidence and suspect-unit disposition remain unverified in the available records.",
+      "owner": "Aidan → human Sam, Ron and Aaron",
+      "due": "Today; November 3 incident 11 days old, no invented contractual due date",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Heritage — shipment request is 3 days old",
-      "why": "Joseph’s November 11 urgent callback remains unclosed in reviewed sources; his claim that a PO is waiting on the dock still needs verification.",
-      "owner": "Aidan to human Sam and Steve/fulfillment",
-      "due": "Today, November 13; initial request November 10",
+      "title": "Roon — November 17 trial is 3 days away",
+      "why": "Ecolab’s initial instructions still depend on engineering answers and safe chemistry handling; sample chemicals and pumps are not verified received. Acticire remains scheduled to ship after the trial.",
+      "owner": "Aidan → Michael, Aaron, engineering and QA/safety",
+      "due": "Today readiness checkpoint; customer-recap trial November 17 at 3 PM Eastern, not accepted PLL release",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "No primary-calendar events in the next 72 hours; mail-accepted Halls visit today at 10:30 AM Eastern. CRM My Tasks: 29 active, 24 dated overdue, 1 due today, 2 later and 2 undated; dashboard overdue badge differs.",
+    "note": "3 calendar events within 72 hours; nearest Monday November 16 at 9:30 AM Eastern. CRM My Tasks Active: 28 total, 23 dated overdue, none due today, 1 dated November 16 within the next 48 calendar hours; dashboard overdue badge 19 differs.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-13T12:09:51.728Z"
+    "last_verified": "2026-11-14T12:06:37.775Z"
   },
   "purchasingIntelligence": null
 }
