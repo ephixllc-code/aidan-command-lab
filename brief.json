@@ -1,6 +1,6 @@
 {
   "date": "2026-11-14",
-  "ts": "2026-11-14T12:06:37.775Z",
+  "ts": "2026-11-14T12:08:11.066Z",
   "brief": [
     {
       "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to verify Silk Factor’s lot location and authorized release status.",
@@ -24,7 +24,7 @@
     "Scheduled: 3 calendar events within 72 hours; nearest Monday November 16 at 9:30 AM Eastern. CRM My Tasks Active: 28 total, 23 dated overdue, none due today, 1 dated November 16 within the next 48 calendar hours; dashboard overdue badge 19 differs.",
     "Noise: 24 messages suppressed from 65 new inbound.",
     "Heritage displaced, not cleared: Silk Factor’s newly documented release contradiction takes its slot. Other prior safety, formula, insurance and fulfillment gates remain unresolved.",
-    "CRM authenticated; WhatsApp signed out. Older unread coverage partial. Purchasing research delivered on two transported original bodies plus attributed Consultant inspections, not independent attachment review. Email substantive return pending. No external email, purchases, payments, drafts or CRM changes. Text safety alert was not delivered: texting is paused pending a reply from Aidan."
+    "CRM authenticated; WhatsApp signed out. Older unread coverage partial. Both team reviews returned, not operational clearance. Purchasing reviewed four transported authored originals plus attributed Consultant inspections; Email independently inspected original bodies, Silk waiver and Culligan documents, with bounded mailbox/draft coverage. No external email, purchases, payments, drafts or CRM changes. Text safety alert was not delivered: texting is paused pending a reply from Aidan."
   ],
   "kb": [],
   "signal": "Protect safe production and insurance continuity. No shipment or release promises without proof.",
@@ -36,12 +36,12 @@
   "team": [
     {
       "agent": "purchasing",
-      "status": "Substantive supplement delivered: two transported authored originals plus attributed Consultant inspections, no independent Purchasing PDF/mailbox audit. Proposed human owners only, not operational clearance.",
+      "status": "Repaired substantive review delivered: four transported authored originals plus attributed Consultant inspections, no independent Purchasing PDF/mailbox audit. Proposed human owners only, not operational clearance.",
       "request_id": "cmd_20261114_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "requested; substantive return pending",
+      "status": "Substantive live original/Sent review, independent visual Silk/Culligan document inspection and 50 bounded draft readbacks delivered. No edits, approval-ready claims, accepted human owners or operational clearance.",
       "request_id": "cmd_20261114_0700_et_status"
     }
   ],
@@ -126,7 +126,7 @@
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-14T12:06:37.775Z"
+    "last_verified": "2026-11-14T12:08:11.066Z"
   },
   "purchasingIntelligence": null
 }
