@@ -1,90 +1,90 @@
 {
-  "date": "2026-11-18",
-  "ts": "2026-11-18T12:08:36.782Z",
+  "date": "2026-11-19",
+  "ts": "2026-11-19T12:08:26.045Z",
   "brief": [
     {
-      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to reconcile Silk Factor's actual location and authorized disposition before further fulfillment.",
+      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to locate both Silk Factor lots and confirm authorized disposition before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Silk Factor: reconcile new batch records before fulfillment. New records for both lots assert release but leave mandatory production/QC signatures blank and conflict on release/QA and expiry dates. They do not supply microbial results, client acceptance or actual shipment identity for the 26 kg waiver. Send internally: Aaron, Evelyn and Ron, confirm both lots' locations and shipments, then reconcile the new batch records, microbial results, Luke's acceptance and signed disposition with Sam today before further fulfillment.",
+      "t": "ACT NOW 1: Silk Factor: reconcile controlled disposition. Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots. Send internally: Aaron, Evelyn and Ron, locate both lots, identify any shipments and reconcile the batch records, microbial results and Luke's acceptance with Sam today, then document authorized disposition before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Morning Glory: approve safe formula before next samples. Evelyn says the cooling ingredient already exceeds the supplier-recommended use level; James requests stronger cooling only within safe limits. His Version 3 attachment is not current controlled approval or a verified safe-use limit. No further increase, newer-lot switch or fragrance addition is approved by that request. Send internally: Ron, Aaron and Evelyn, reconcile the controlled formula and supplier safe-use documentation with Sam today, record the approved cooling and fragrance limits, and approve the next samples before any increase or lot change.",
+      "t": "ACT NOW 2: Morning Glory: approve safe formula before more samples. Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots. Send internally: Ron, Aaron and Evelyn, reconcile the controlled formula with supplier safe-use documentation and Sam today, then record approved limits before another sample, increase or lot change.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Lice Sisters: secure approved water for remaining Nit Glue batches. Production requested 220 kg, roughly 60 gallons, to complete remaining batches; the written arithmetic gives 217 kg, so confirm rather than silently reduce. Historical CRM water and today's contracted Culligan installation do not prove suitable released supply for this requirement. Repel's preservative gate remains separate. Send internally: Michael, Evelyn and Aaron, confirm the 220 kg requirement, water specification and existing supply today, then give me the exact purchase request and needed-by time for authorization without duplicating an order.",
+      "t": "ACT NOW 3: Lice Sisters: secure suitable water for remaining batches. Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water. Send internally: Michael, Evelyn and Aaron, confirm quantity, water specification, existing supply and needed-by time today, then give me the exact purchase request for authorization without duplicating an order.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve Silk Factor's physical disposition first, then secure a documented safe Morning Glory formula and suitable water for Lice Sisters.",
-    "Scheduled: One calendar event within 72 hours, nearest tomorrow November 19 at 10 AM Eastern (tentative). CRM My Tasks: 25 active, 20 strictly dated overdue, 2 due today November 18, 2 future, 1 undated. Proposed Oiana 1 PM today in mail is not a verified accepted calendar event.",
-    "Noise: 36 messages suppressed from 71 new inbound.",
-    "Morning Glory's explicit above-recommended-use concern displaces Roon's post-visit follow-through from the top three, not from follow-through; yesterday's visit outcome, lot codes, QC readiness and later-week shipment remain unverified. Other carried gates, including Talova, remain unresolved unless specifically evidenced.",
-    "WhatsApp remains signed out; reconnect Aidan's phone. Older unread coverage partial. Existing texting pause unchanged. Outlook originals/Sent and nine new documents text/cell inspected; only signed Culligan page 1 visually inspected; Morning Glory video not inspected. Both team evidence reviews returned, not human operational clearance. No sends, spending, payments, draft or CRM edits by this review."
+    "Recommendation: Resolve Silk Factor's physical disposition first, then secure the Morning Glory safety decision and suitable production water.",
+    "Scheduled: One calendar event within 72 hours: today November 19 at 10 AM Eastern, tentative. CRM My Tasks: 28 active, 24 strictly dated overdue, none due today, 2 future and 2 undated; nearest dated task tomorrow November 20.",
+    "Noise: 31 messages suppressed from 55 new inbound.",
+    "Top three unchanged. Other operational follow-through remains open; suppression is not clearance.",
+    "WhatsApp remains signed out; reconnect Aidan's phone. Older unread coverage is partial. Bounded fresh Outlook/CRM/calendar review does not establish human action or operational clearance. Existing texting pause unchanged. No sends, spending, payments, draft or CRM edits by this review."
   ],
   "kb": [],
   "signal": "Protect controlled product release, safe formulation and production continuity. No shipment or release promises without proof.",
   "redflags": [
-    "New records for both lots assert release but leave mandatory production/QC signatures blank and conflict on release/QA and expiry dates. They do not supply microbial results, client acceptance or actual shipment identity for the 26 kg waiver.",
-    "Evelyn says the cooling ingredient already exceeds the supplier-recommended use level; James requests stronger cooling only within safe limits. His Version 3 attachment is not current controlled approval or a verified safe-use limit. No further increase, newer-lot switch or fragrance addition is approved by that request.",
-    "Production requested 220 kg, roughly 60 gallons, to complete remaining batches; the written arithmetic gives 217 kg, so confirm rather than silently reduce. Historical CRM water and today's contracted Culligan installation do not prove suitable released supply for this requirement. Repel's preservative gate remains separate."
+    "Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots.",
+    "Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots.",
+    "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Revised evidence assessment returned after one source repair; Evelyn authored original assessed directly, BMR/Culligan/customer findings owner-attributed. No independent mailbox/CRM/PDF verification or human clearance.",
-      "request_id": "cmd_20261118_0700_et_status"
+      "status": "Revised evidence review returned after one source repair: two supplied Oreka originals assessed directly, other findings owner-attributed. No independent mailbox/CRM/attachment verification or human operational clearance.",
+      "request_id": "cmd_20261119_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Connected Outlook evidence review returned; new Silk workbooks independently corroborated, four documents text-inspected; 39 current-year drafts unchanged and unsent. Broader searches capped, not exhaustive; no human clearance.",
-      "request_id": "cmd_20261118_0700_et_status"
+      "status": "Connected Outlook evidence review returned: 20 exact-source records, 39 current-year full draft readbacks unchanged and unsent; new register cell-text inspected. Bounded searches; no physical, payment, CRM or QA verification.",
+      "request_id": "cmd_20261119_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "36 noise messages suppressed from 71 new inbound.",
+  "noise": "31 noise messages suppressed from 55 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Silk Factor: reconcile new batch records before fulfillment",
+      "top_task": "Silk Factor: reconcile controlled disposition",
       "tasks": [
-        "Silk Factor: reconcile new batch records before fulfillment",
-        "Morning Glory: approve safe formula before next samples",
-        "Lice Sisters: secure approved water for remaining Nit Glue batches"
+        "Silk Factor: reconcile controlled disposition",
+        "Morning Glory: approve safe formula before more samples",
+        "Lice Sisters: secure suitable water for remaining batches"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
     {
-      "title": "Silk Factor: reconcile new batch records before fulfillment",
+      "title": "Silk Factor: reconcile controlled disposition",
       "owner": "Aidan → human Sam, Aaron, Evelyn, Ron and Luke",
-      "timing": "Today November 18; November 13 discrepancy 5 days old",
-      "why": "New records for both lots assert release but leave mandatory production/QC signatures blank and conflict on release/QA and expiry dates. They do not supply microbial results, client acceptance or actual shipment identity for the 26 kg waiver.",
-      "send": "Aaron, Evelyn and Ron, confirm both lots' locations and shipments, then reconcile the new batch records, microbial results, Luke's acceptance and signed disposition with Sam today before further fulfillment.",
+      "timing": "Today November 19; discrepancy raised November 13, 6 days old",
+      "why": "Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots.",
+      "send": "Aaron, Evelyn and Ron, locate both lots, identify any shipments and reconcile the batch records, microbial results and Luke's acceptance with Sam today, then document authorized disposition before further fulfillment.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Morning Glory: approve safe formula before next samples",
+      "title": "Morning Glory: approve safe formula before more samples",
       "owner": "Aidan → human Sam, Ron, Aaron/QC and Evelyn",
-      "timing": "Flagged November 17, 1 day old; before another sample or batch",
-      "why": "Evelyn says the cooling ingredient already exceeds the supplier-recommended use level; James requests stronger cooling only within safe limits. His Version 3 attachment is not current controlled approval or a verified safe-use limit. No further increase, newer-lot switch or fragrance addition is approved by that request.",
-      "send": "Ron, Aaron and Evelyn, reconcile the controlled formula and supplier safe-use documentation with Sam today, record the approved cooling and fragrance limits, and approve the next samples before any increase or lot change.",
+      "timing": "Flagged November 17, 2 days old; before another sample or batch",
+      "why": "Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots.",
+      "send": "Ron, Aaron and Evelyn, reconcile the controlled formula with supplier safe-use documentation and Sam today, then record approved limits before another sample, increase or lot change.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Lice Sisters: secure approved water for remaining Nit Glue batches",
+      "title": "Lice Sisters: secure suitable water for remaining batches",
       "owner": "Aidan, Michael, Evelyn and Aaron/QC",
-      "timing": "Requested November 16, 2 days old; needed-by time unverified",
-      "why": "Production requested 220 kg, roughly 60 gallons, to complete remaining batches; the written arithmetic gives 217 kg, so confirm rather than silently reduce. Historical CRM water and today's contracted Culligan installation do not prove suitable released supply for this requirement. Repel's preservative gate remains separate.",
-      "send": "Michael, Evelyn and Aaron, confirm the 220 kg requirement, water specification and existing supply today, then give me the exact purchase request and needed-by time for authorization without duplicating an order.",
+      "timing": "Requested November 16, 3 days old; needed-by time unverified",
+      "why": "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water.",
+      "send": "Michael, Evelyn and Aaron, confirm quantity, water specification, existing supply and needed-by time today, then give me the exact purchase request for authorization without duplicating an order.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Silk Factor: reconcile new batch records before fulfillment",
-      "why": "New records for both lots assert release but leave mandatory production/QC signatures blank and conflict on release/QA and expiry dates. They do not supply microbial results, client acceptance or actual shipment identity for the 26 kg waiver.",
+      "title": "Silk Factor: reconcile controlled disposition",
+      "why": "Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots.",
       "owner": "Aidan → human Sam, Aaron, Evelyn, Ron and Luke",
-      "due": "Today November 18; November 13 discrepancy 5 days old",
+      "due": "Today November 19; discrepancy raised November 13, 6 days old",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Morning Glory: approve safe formula before next samples",
-      "why": "Evelyn says the cooling ingredient already exceeds the supplier-recommended use level; James requests stronger cooling only within safe limits. His Version 3 attachment is not current controlled approval or a verified safe-use limit. No further increase, newer-lot switch or fragrance addition is approved by that request.",
+      "title": "Morning Glory: approve safe formula before more samples",
+      "why": "Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots.",
       "owner": "Aidan → human Sam, Ron, Aaron/QC and Evelyn",
-      "due": "Flagged November 17, 1 day old; before another sample or batch",
+      "due": "Flagged November 17, 2 days old; before another sample or batch",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Lice Sisters: secure approved water for remaining Nit Glue batches",
-      "why": "Production requested 220 kg, roughly 60 gallons, to complete remaining batches; the written arithmetic gives 217 kg, so confirm rather than silently reduce. Historical CRM water and today's contracted Culligan installation do not prove suitable released supply for this requirement. Repel's preservative gate remains separate.",
+      "title": "Lice Sisters: secure suitable water for remaining batches",
+      "why": "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water.",
       "owner": "Aidan, Michael, Evelyn and Aaron/QC",
-      "due": "Requested November 16, 2 days old; needed-by time unverified",
+      "due": "Requested November 16, 3 days old; needed-by time unverified",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "One calendar event within 72 hours, nearest tomorrow November 19 at 10 AM Eastern (tentative). CRM My Tasks: 25 active, 20 strictly dated overdue, 2 due today November 18, 2 future, 1 undated. Proposed Oiana 1 PM today in mail is not a verified accepted calendar event.",
+    "note": "One calendar event within 72 hours: today November 19 at 10 AM Eastern, tentative. CRM My Tasks: 28 active, 24 strictly dated overdue, none due today, 2 future and 2 undated; nearest dated task tomorrow November 20.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-18T12:08:36.782Z"
+    "last_verified": "2026-11-19T12:08:26.045Z"
   },
   "purchasingIntelligence": null
 }
