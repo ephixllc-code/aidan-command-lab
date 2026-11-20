@@ -1,59 +1,59 @@
 {
-  "date": "2026-11-19",
-  "ts": "2026-11-19T12:08:26.045Z",
+  "date": "2026-11-20",
+  "ts": "2026-11-20T12:12:04.760Z",
   "brief": [
     {
-      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to locate both Silk Factor lots and confirm authorized disposition before further fulfillment.",
+      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to locate both Silk Factor lots and reconcile today's shipping paperwork before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Silk Factor: reconcile controlled disposition. Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots. Send internally: Aaron, Evelyn and Ron, locate both lots, identify any shipments and reconcile the batch records, microbial results and Luke's acceptance with Sam today, then document authorized disposition before further fulfillment.",
+      "t": "ACT NOW 1: Silk Factor: reconcile lots, release and shipping paperwork. New shipping paperwork lists 61 Silk Factor units across 37 orders but does not identify the affected lots or prove shipment. Signed disposition, microbial results and client acceptance remain unverified. Send internally: Aaron, Evelyn and Ron, match the 37 order slips to physical stock, actual carrier scans and both lots with Sam today, then document microbial results, Luke's acceptance and authorized disposition before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Morning Glory: approve safe formula before more samples. Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots. Send internally: Ron, Aaron and Evelyn, reconcile the controlled formula with supplier safe-use documentation and Sam today, then record approved limits before another sample, increase or lot change.",
+      "t": "ACT NOW 2: Morning Glory: approve safe formula before more samples. Evelyn's above-recommended-use report still lacks a verified safety disposition. Stronger-cooling feedback is not approval to increase the ingredient or change lots. Send internally: Ron, Aaron and Evelyn, reconcile the controlled formula with supplier safe-use documentation and Sam today, then record approved limits before another sample, increase or lot change.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Lice Sisters: secure suitable water for remaining batches. Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water. Send internally: Michael, Evelyn and Aaron, confirm quantity, water specification, existing supply and needed-by time today, then give me the exact purchase request for authorization without duplicating an order.",
+      "t": "ACT NOW 3: Lice Sisters: secure suitable water for remaining batches. Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; the signed contract does not establish usable water. Send internally: Michael, Evelyn and Aaron, confirm quantity, water specification, existing supply and needed-by time today, then give me the exact purchase request for authorization without duplicating an order.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve Silk Factor's physical disposition first, then secure the Morning Glory safety decision and suitable production water.",
-    "Scheduled: One calendar event within 72 hours: today November 19 at 10 AM Eastern, tentative. CRM My Tasks: 28 active, 24 strictly dated overdue, none due today, 2 future and 2 undated; nearest dated task tomorrow November 20.",
-    "Noise: 31 messages suppressed from 55 new inbound.",
+    "Recommendation: Resolve Silk Factor's physical traceability and authorized disposition first, then secure the formula-safety decision and suitable production water.",
+    "Scheduled: No calendar events in the next 72 hours. Fresh CRM My Tasks: 28 active, 23 dated overdue, one due today November 20, two future and two undated; nearest deadline today.",
+    "Noise: 40 messages suppressed from 70 new inbound.",
     "Top three unchanged. Other operational follow-through remains open; suppression is not clearance.",
-    "WhatsApp remains signed out; reconnect Aidan's phone. Older unread coverage is partial. Bounded fresh Outlook/CRM/calendar review does not establish human action or operational clearance. Existing texting pause unchanged. No sends, spending, payments, draft or CRM edits by this review."
+    "CRM access restored and current task/material views checked read-only. WhatsApp remains signed out; reconnect Aidan's phone. Member reconnection email corrected after restoring CRM; texting remains paused. Older unread coverage is partial. Evidence review is not human operational clearance. No supplier/customer sends, spending, payments, draft or CRM edits by this review."
   ],
   "kb": [],
   "signal": "Protect controlled product release, safe formulation and production continuity. No shipment or release promises without proof.",
   "redflags": [
-    "Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots.",
-    "Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots.",
-    "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water."
+    "New shipping paperwork lists 61 Silk Factor units across 37 orders but does not identify the affected lots or prove shipment. Signed disposition, microbial results and client acceptance remain unverified.",
+    "Evelyn's above-recommended-use report still lacks a verified safety disposition. Stronger-cooling feedback is not approval to increase the ingredient or change lots.",
+    "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; the signed contract does not establish usable water."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Revised evidence review returned after one source repair: two supplied Oreka originals assessed directly, other findings owner-attributed. No independent mailbox/CRM/attachment verification or human operational clearance.",
-      "request_id": "cmd_20261119_0700_et_status"
+      "status": "Revised evidence review returned after one source repair: five supplied authored excerpts assessed; other findings owner-attributed. No independent mailbox/attachment/physical verification or human operational clearance.",
+      "request_id": "cmd_20261120_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Connected Outlook evidence review returned: 20 exact-source records, 39 current-year full draft readbacks unchanged and unsent; new register cell-text inspected. Bounded searches; no physical, payment, CRM or QA verification.",
-      "request_id": "cmd_20261119_0700_et_status"
+      "status": "Substantive connected-Outlook full report returned and accessible: reports 39 current-year full draft readbacks unchanged and unsent; original-index/readback transport still partial. Bounded searches, no physical/payment/QA clearance or direct CRM verification.",
+      "request_id": "cmd_20261120_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "31 noise messages suppressed from 55 new inbound.",
+  "noise": "40 noise messages suppressed from 70 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Silk Factor: reconcile controlled disposition",
+      "top_task": "Silk Factor: reconcile lots, release and shipping paperwork",
       "tasks": [
-        "Silk Factor: reconcile controlled disposition",
+        "Silk Factor: reconcile lots, release and shipping paperwork",
         "Morning Glory: approve safe formula before more samples",
         "Lice Sisters: secure suitable water for remaining batches"
       ],
@@ -62,19 +62,19 @@
   },
   "revenueActions": [
     {
-      "title": "Silk Factor: reconcile controlled disposition",
+      "title": "Silk Factor: reconcile lots, release and shipping paperwork",
       "owner": "Aidan → human Sam, Aaron, Evelyn, Ron and Luke",
-      "timing": "Today November 19; discrepancy raised November 13, 6 days old",
-      "why": "Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots.",
-      "send": "Aaron, Evelyn and Ron, locate both lots, identify any shipments and reconcile the batch records, microbial results and Luke's acceptance with Sam today, then document authorized disposition before further fulfillment.",
+      "timing": "Today November 20; discrepancy raised November 13, 7 days old",
+      "why": "New shipping paperwork lists 61 Silk Factor units across 37 orders but does not identify the affected lots or prove shipment. Signed disposition, microbial results and client acceptance remain unverified.",
+      "send": "Aaron, Evelyn and Ron, match the 37 order slips to physical stock, actual carrier scans and both lots with Sam today, then document microbial results, Luke's acceptance and authorized disposition before further fulfillment.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
       "title": "Morning Glory: approve safe formula before more samples",
       "owner": "Aidan → human Sam, Ron, Aaron/QC and Evelyn",
-      "timing": "Flagged November 17, 2 days old; before another sample or batch",
-      "why": "Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots.",
+      "timing": "Flagged November 17, 3 days old; before another sample or batch",
+      "why": "Evelyn's above-recommended-use report still lacks a verified safety disposition. Stronger-cooling feedback is not approval to increase the ingredient or change lots.",
       "send": "Ron, Aaron and Evelyn, reconcile the controlled formula with supplier safe-use documentation and Sam today, then record approved limits before another sample, increase or lot change.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
@@ -82,8 +82,8 @@
     {
       "title": "Lice Sisters: secure suitable water for remaining batches",
       "owner": "Aidan, Michael, Evelyn and Aaron/QC",
-      "timing": "Requested November 16, 3 days old; needed-by time unverified",
-      "why": "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water.",
+      "timing": "Requested November 16, 4 days old; needed-by time unverified",
+      "why": "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; the signed contract does not establish usable water.",
       "send": "Michael, Evelyn and Aaron, confirm quantity, water specification, existing supply and needed-by time today, then give me the exact purchase request for authorization without duplicating an order.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Silk Factor: reconcile controlled disposition",
-      "why": "Reviewed batch records have blank mandatory signatures and conflicting dates; microbial results, client acceptance and shipment linkage remain unverified. Today's amended ingredient invoice does not clear those finished lots.",
+      "title": "Silk Factor: reconcile lots, release and shipping paperwork",
+      "why": "New shipping paperwork lists 61 Silk Factor units across 37 orders but does not identify the affected lots or prove shipment. Signed disposition, microbial results and client acceptance remain unverified.",
       "owner": "Aidan → human Sam, Aaron, Evelyn, Ron and Luke",
-      "due": "Today November 19; discrepancy raised November 13, 6 days old",
+      "due": "Today November 20; discrepancy raised November 13, 7 days old",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
       "title": "Morning Glory: approve safe formula before more samples",
-      "why": "Evelyn's report that the cooling ingredient exceeds supplier-recommended use remains without a verified safety disposition. The customer's stronger-cooling request is not approval to increase it or change lots.",
+      "why": "Evelyn's above-recommended-use report still lacks a verified safety disposition. Stronger-cooling feedback is not approval to increase the ingredient or change lots.",
       "owner": "Aidan → human Sam, Ron, Aaron/QC and Evelyn",
-      "due": "Flagged November 17, 2 days old; before another sample or batch",
+      "due": "Flagged November 17, 3 days old; before another sample or batch",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
       "title": "Lice Sisters: secure suitable water for remaining batches",
-      "why": "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; a signed contract is not usable water.",
+      "why": "Production requested 220 kg, roughly 60 gallons; its arithmetic gives 217 kg. Suitable received supply and Culligan commissioning/QA acceptance remain unverified; the signed contract does not establish usable water.",
       "owner": "Aidan, Michael, Evelyn and Aaron/QC",
-      "due": "Requested November 16, 3 days old; needed-by time unverified",
+      "due": "Requested November 16, 4 days old; needed-by time unverified",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "One calendar event within 72 hours: today November 19 at 10 AM Eastern, tentative. CRM My Tasks: 28 active, 24 strictly dated overdue, none due today, 2 future and 2 undated; nearest dated task tomorrow November 20.",
+    "note": "No calendar events in the next 72 hours. Fresh CRM My Tasks: 28 active, 23 dated overdue, one due today November 20, two future and two undated; nearest deadline today.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-19T12:08:26.045Z"
+    "last_verified": "2026-11-20T12:12:04.760Z"
   },
   "purchasingIntelligence": null
 }
