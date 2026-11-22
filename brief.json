@@ -1,90 +1,90 @@
 {
-  "date": "2026-11-21",
-  "ts": "2026-11-21T12:10:41.010Z",
+  "date": "2026-11-22",
+  "ts": "2026-11-22T12:09:52.679Z",
   "brief": [
     {
-      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to reconcile both Silk Factor lots against the newly signed waiver and actual shipments.",
+      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to reconcile both Silk Factor lots and actual shipments before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Silk Factor: client signature obtained; QA and traceability still open. Discrepancy 8 days old. New completed waiver visibly includes Luke’s client signature for both lots, superseding the missing-acceptance claim. Microbial results, conflicting dates, batch-record gaps and 61-unit/37-order shipment linkage remain unverified. Send internally: Aaron, Evelyn and Ron, reconcile both lots, actual shipments, microbial results and batch records against Luke’s signed waiver with Sam today, then document authorized disposition before further fulfillment.",
+      "t": "ACT NOW 1: Silk Factor: signed waiver is not final QA disposition. Discrepancy 9 days old. Luke’s client signature is verified; microbial results, conflicting dates, batch-record gaps and linkage of 61 units across 37 orders to the two lots remain unverified. No new clearing evidence found in today’s bounded review. Send internally: Aaron, Evelyn and Ron, reconcile both lots, actual shipments, microbial results and batch records against Luke’s signed waiver with Sam today, then document authorized disposition before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Morning Glory: formulation-safety decision still needed. Concern raised 4 days ago. Evelyn’s above-recommended-use report has no verified safety disposition; stronger-cooling feedback does not authorize an increase. Send internally: Ron, Aaron and Evelyn, reconcile the controlled formula and supplier safe-use documentation with Sam today, then record approved limits before another sample, increase or lot change.",
+      "t": "ACT NOW 2: Morning Glory: resolve the above-use-limit report. Concern raised 5 days ago. Evelyn’s above-recommended-use report still has no verified safety disposition; customer feedback does not authorize an increase. Send internally: Ron, Aaron and Evelyn, reconcile the controlled formula and supplier safe-use documentation with Sam today, then record approved limits before another sample, increase or lot change.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Hunter November 24 audit: controlled documents and realistic readiness. Audit is 3 days away. First status was due yesterday at 4 PM; completion is unverified. Fresh CRM says machinery is not operational and installation starts November 23; no Tuesday validation or weekend staffing is assumed. November 25 document dates need transparent reconciliation. Send internally: Ron and Evelyn, I’ll post the actual approved masters, evidence locations, missing resources and realistic dates on master 1138 today; reconcile November 25 document dates without backdating and keep installation, cleaning verification, training and product release gated.",
+      "t": "ACT NOW 3: Hunter audit Tuesday: evidence-backed status before installation. Audit November 24 is 2 days away. First status was due November 20 at 4 PM, 2 calendar days ago; completion remains unverified. CRM says installation starts tomorrow, not that machinery is commissioned or validated. Weekend staffing is not assumed. Send internally: Ron and Evelyn, confirm the current master-1138 status and missing evidence today; I’ll provide my approved-document and resource status, resolve November 25 dates transparently, and keep commissioning, cleaning verification, training and release gated.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Close Silk’s physical disposition first, then the formula-safety decision and an evidence-backed audit status. Do not promise operational machinery by Tuesday.",
-    "Scheduled: 2 tentative calendar events within 72 hours; nearest Monday November 23 at 9:30 AM Eastern. Fresh My Tasks: 14 active, 8 dated overdue, none due today, 4 future and 2 undated. Nearest task due November 23.",
-    "Noise: 34 messages suppressed from 54 new inbound.",
-    "Hunter audit readiness displaces Lice Sisters water because the November 24 deadline is now explicit; the 220-versus-217 kg water dependency remains open, not cleared.",
-    "CRM authenticated as Aidan; Purchasing 39 Needed / 17 open orders / 0 in QC / 54 Raw Materials. Starwest now recorded In Raw Materials, not independently verified physical QA/allocation. WhatsApp still signed out; older unread email capped and partial. No supplier/customer sends, spending, payments or operational record edits. Both substantive team reviews returned; Purchasing assessed four supplied originals plus attributed owner findings. Email independently reviewed Outlook; 15 full supplier draft readbacks and 39 inventory entries transported, other 24 full bodies not transported; rendering untested. Review is not operational clearance."
+    "Recommendation: Resolve Silk’s physical disposition first, then formula safety and a truthful audit-readiness status before Monday’s installation.",
+    "Scheduled: 3 tentative calendar events within 72 hours; nearest Monday November 23 at 9:30 AM Eastern. Fresh My Tasks: 14 active, 8 dated overdue, none due today, 4 future and 2 undated; nearest due November 23. Hunter’s first-update request is overdue separately from the task’s November 24 due date.",
+    "Noise: 10 messages suppressed from 12 new inbound.",
+    "Top three unchanged. Lice Sisters water and other unresolved operational gates remain open, not cleared.",
+    "CRM authenticated as Aidan; Purchasing 39 Needed / 17 open orders / 0 in QC / 54 Raw Materials. Database stages do not establish physical lot/QA release or allocation. WhatsApp remains signed out; older unread email coverage capped and partial. Fresh inbox 12 messages; no fresh Sent returned; five targeted fresh searches found no clearing updates, not proof none exists. No sends, purchases, payments or operational record edits. Both substantive team reviews returned within ten minutes. Purchasing assessed one supplied original plus owner-attributed CRM findings, not independent physical/mailbox verification. Email independently reviewed Outlook: 39 full draft fetches/unchanged reported locally; 39 inventory entries and six safe authored originals transported; no full unchanged supplier draft bodies transported today and no rendering verification. Review is not operational clearance."
   ],
   "kb": [],
   "signal": "Protect controlled product release, safe formulation and production continuity. No shipment or release promises without proof.",
   "redflags": [
-    "Discrepancy 8 days old. New completed waiver visibly includes Luke’s client signature for both lots, superseding the missing-acceptance claim. Microbial results, conflicting dates, batch-record gaps and 61-unit/37-order shipment linkage remain unverified.",
-    "Concern raised 4 days ago. Evelyn’s above-recommended-use report has no verified safety disposition; stronger-cooling feedback does not authorize an increase.",
-    "Audit is 3 days away. First status was due yesterday at 4 PM; completion is unverified. Fresh CRM says machinery is not operational and installation starts November 23; no Tuesday validation or weekend staffing is assumed. November 25 document dates need transparent reconciliation."
+    "Discrepancy 9 days old. Luke’s client signature is verified; microbial results, conflicting dates, batch-record gaps and linkage of 61 units across 37 orders to the two lots remain unverified. No new clearing evidence found in today’s bounded review.",
+    "Concern raised 5 days ago. Evelyn’s above-recommended-use report still has no verified safety disposition; customer feedback does not authorize an increase.",
+    "Audit November 24 is 2 days away. First status was due November 20 at 4 PM, 2 calendar days ago; completion remains unverified. CRM says installation starts tomorrow, not that machinery is commissioned or validated. Weekend staffing is not assumed."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "status": "Revised review completed within collection window after one source repair: four supplied authored excerpts assessed, owner PDF/CRM findings attributed, no independent mailbox/physical verification or operational clearance.",
-      "request_id": "cmd_20261121_0700_et_status"
+      "status": "Revised substantive assessment complete after one same-request source repair; one supplied Amazon original assessed, other source findings owner-attributed. No physical/QA/operational clearance.",
+      "request_id": "cmd_20261122_0700_et_status"
     },
     {
       "agent": "email",
-      "status": "Connected Outlook review returned07:09ET;18changed safe originals,15full supplier draft readbacks and39draftinventory entries transported.39unchanged/isDraft source-lane verified;other24fullbodies nottransported/renderinguntested. No operational clearance.",
-      "request_id": "cmd_20261121_0700_et_status"
+      "status": "Connected Outlook review complete; six safe authored originals, 39 draft inventory entries transported. Lane reports 39 fresh full fetches unchanged/isDraft; unchanged full draft bodies not transported today; rendering untested.",
+      "request_id": "cmd_20261122_0700_et_status"
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "34 noise messages suppressed from 54 new inbound.",
+  "noise": "10 noise messages suppressed from 12 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Silk Factor: client signature obtained; QA and traceability still open",
+      "top_task": "Silk Factor: signed waiver is not final QA disposition",
       "tasks": [
-        "Silk Factor: client signature obtained; QA and traceability still open",
-        "Morning Glory: formulation-safety decision still needed",
-        "Hunter November 24 audit: controlled documents and realistic readiness"
+        "Silk Factor: signed waiver is not final QA disposition",
+        "Morning Glory: resolve the above-use-limit report",
+        "Hunter audit Tuesday: evidence-backed status before installation"
       ],
       "notes": "No customer pricing or customer/deal/quote edits."
     }
   },
   "revenueActions": [
     {
-      "title": "Silk Factor: client signature obtained; QA and traceability still open",
-      "why": "Discrepancy 8 days old. New completed waiver visibly includes Luke’s client signature for both lots, superseding the missing-acceptance claim. Microbial results, conflicting dates, batch-record gaps and 61-unit/37-order shipment linkage remain unverified.",
-      "owner": "Aidan → Sam, Aaron, Evelyn and Ron",
-      "timing": "Today, November 21, before further fulfillment",
+      "title": "Silk Factor: signed waiver is not final QA disposition",
+      "why": "Discrepancy 9 days old. Luke’s client signature is verified; microbial results, conflicting dates, batch-record gaps and linkage of 61 units across 37 orders to the two lots remain unverified. No new clearing evidence found in today’s bounded review.",
+      "owner": "Aidan → human Sam, Aaron, Evelyn and Ron",
+      "timing": "Today, November 22, before further fulfillment",
       "send": "Aaron, Evelyn and Ron, reconcile both lots, actual shipments, microbial results and batch records against Luke’s signed waiver with Sam today, then document authorized disposition before further fulfillment.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Morning Glory: formulation-safety decision still needed",
-      "why": "Concern raised 4 days ago. Evelyn’s above-recommended-use report has no verified safety disposition; stronger-cooling feedback does not authorize an increase.",
-      "owner": "Aidan → Sam, Ron, Aaron and Evelyn",
-      "timing": "Today, November 21, before another sample, increase or lot change",
+      "title": "Morning Glory: resolve the above-use-limit report",
+      "why": "Concern raised 5 days ago. Evelyn’s above-recommended-use report still has no verified safety disposition; customer feedback does not authorize an increase.",
+      "owner": "Aidan → human Sam, Ron, Aaron and Evelyn",
+      "timing": "Today, November 22, before another sample, increase or lot change",
       "send": "Ron, Aaron and Evelyn, reconcile the controlled formula and supplier safe-use documentation with Sam today, then record approved limits before another sample, increase or lot change.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Hunter November 24 audit: controlled documents and realistic readiness",
-      "why": "Audit is 3 days away. First status was due yesterday at 4 PM; completion is unverified. Fresh CRM says machinery is not operational and installation starts November 23; no Tuesday validation or weekend staffing is assumed. November 25 document dates need transparent reconciliation.",
-      "owner": "Aidan supports Ron’s master task 1138; Evelyn technical review; Aidan document approval; Ronald product release",
-      "timing": "Send status today; audit Tuesday November 24, hour unconfirmed",
-      "send": "Ron and Evelyn, I’ll post the actual approved masters, evidence locations, missing resources and realistic dates on master 1138 today; reconcile November 25 document dates without backdating and keep installation, cleaning verification, training and product release gated.",
+      "title": "Hunter audit Tuesday: evidence-backed status before installation",
+      "why": "Audit November 24 is 2 days away. First status was due November 20 at 4 PM, 2 calendar days ago; completion remains unverified. CRM says installation starts tomorrow, not that machinery is commissioned or validated. Weekend staffing is not assumed.",
+      "owner": "Aidan supports Ron’s master task 1138; Evelyn technical review; Aidan controlled-document approval; Ronald product release",
+      "timing": "Send actual status today; installation starts November 23; audit November 24, hour unconfirmed",
+      "send": "Ron and Evelyn, confirm the current master-1138 status and missing evidence today; I’ll provide my approved-document and resource status, resolve November 25 dates transparently, and keep commissioning, cleaning verification, training and release gated.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Silk Factor: client signature obtained; QA and traceability still open",
-      "why": "Discrepancy 8 days old. New completed waiver visibly includes Luke’s client signature for both lots, superseding the missing-acceptance claim. Microbial results, conflicting dates, batch-record gaps and 61-unit/37-order shipment linkage remain unverified.",
-      "owner": "Aidan → Sam, Aaron, Evelyn and Ron",
-      "due": "Today, November 21, before further fulfillment",
+      "title": "Silk Factor: signed waiver is not final QA disposition",
+      "why": "Discrepancy 9 days old. Luke’s client signature is verified; microbial results, conflicting dates, batch-record gaps and linkage of 61 units across 37 orders to the two lots remain unverified. No new clearing evidence found in today’s bounded review.",
+      "owner": "Aidan → human Sam, Aaron, Evelyn and Ron",
+      "due": "Today, November 22, before further fulfillment",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Morning Glory: formulation-safety decision still needed",
-      "why": "Concern raised 4 days ago. Evelyn’s above-recommended-use report has no verified safety disposition; stronger-cooling feedback does not authorize an increase.",
-      "owner": "Aidan → Sam, Ron, Aaron and Evelyn",
-      "due": "Today, November 21, before another sample, increase or lot change",
+      "title": "Morning Glory: resolve the above-use-limit report",
+      "why": "Concern raised 5 days ago. Evelyn’s above-recommended-use report still has no verified safety disposition; customer feedback does not authorize an increase.",
+      "owner": "Aidan → human Sam, Ron, Aaron and Evelyn",
+      "due": "Today, November 22, before another sample, increase or lot change",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Hunter November 24 audit: controlled documents and realistic readiness",
-      "why": "Audit is 3 days away. First status was due yesterday at 4 PM; completion is unverified. Fresh CRM says machinery is not operational and installation starts November 23; no Tuesday validation or weekend staffing is assumed. November 25 document dates need transparent reconciliation.",
-      "owner": "Aidan supports Ron’s master task 1138; Evelyn technical review; Aidan document approval; Ronald product release",
-      "due": "Send status today; audit Tuesday November 24, hour unconfirmed",
+      "title": "Hunter audit Tuesday: evidence-backed status before installation",
+      "why": "Audit November 24 is 2 days away. First status was due November 20 at 4 PM, 2 calendar days ago; completion remains unverified. CRM says installation starts tomorrow, not that machinery is commissioned or validated. Weekend staffing is not assumed.",
+      "owner": "Aidan supports Ron’s master task 1138; Evelyn technical review; Aidan controlled-document approval; Ronald product release",
+      "due": "Send actual status today; installation starts November 23; audit November 24, hour unconfirmed",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "2 tentative calendar events within 72 hours; nearest Monday November 23 at 9:30 AM Eastern. Fresh My Tasks: 14 active, 8 dated overdue, none due today, 4 future and 2 undated. Nearest task due November 23.",
+    "note": "3 tentative calendar events within 72 hours; nearest Monday November 23 at 9:30 AM Eastern. Fresh My Tasks: 14 active, 8 dated overdue, none due today, 4 future and 2 undated; nearest due November 23. Hunter’s first-update request is overdue separately from the task’s November 24 due date.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-21T12:10:41.010Z"
+    "last_verified": "2026-11-22T12:09:52.679Z"
   },
   "purchasingIntelligence": null
 }
