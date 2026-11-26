@@ -1,90 +1,90 @@
 {
-  "date": "2026-11-25",
-  "ts": "2026-11-25T12:10:03.332Z",
+  "date": "2026-11-26",
+  "ts": "2026-11-26T12:11:47.187Z",
   "brief": [
     {
-      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to reconcile both Silk Factor lots and actual shipments before further fulfillment.",
+      "t": "START HERE: Call Aaron and Evelyn, with Sam looped in, to reconcile both Silk Factor lots before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 1: Silk Factor — discrepancy 12 days old. Luke signed; microbial results, batch records, dates and lot-specific shipment traceability remain unresolved. Send internally: Aaron, Evelyn and Ron, reconcile both lots, shipments, microbial results and batch records with Sam today, then document authorized disposition before further fulfillment.",
+      "t": "ACT NOW 1: Silk Factor — discrepancy 13 days old. Luke signed; microbial results, batch-record conflicts and lot-specific shipment traceability remain unresolved. Send internally: Aaron, Evelyn and Ron, reconcile both lots, actual shipments, microbial results and batch records with Sam today; record authorized disposition before further fulfillment.",
       "hot": true
     },
     {
-      "t": "ACT NOW 2: Roon — six days to the requested December 1 run. A new one-week dispensing test started today cannot finish before December 1. Three refund reports include one off smell—not confirmed contamination; materials remain in QC. Send internally: Ron, Aaron and Evelyn, review affected lots and complaints with Sam today, verify when the approved R7 dispensing test actually started, and reconcile the full-week test and QC holds before any December 1 commitment.",
+      "t": "ACT NOW 2: Get existing COAs into Evelyn’s hands. Luke/Roon QC is blocked. The four FSS COA filenames already in Aidan’s November 19 inbox match Ron’s requested lots; Evelyn’s receipt and QA acceptance are unverified. Request is one day old, with no fixed deadline stated. Send internally: Evelyn and Ron, use the four FSS COAs in Heather’s November 19 email and the existing Lotioncrafter documents today; confirm Evelyn’s receipt and match contents to physical lots before QA disposition—do not request duplicates.",
       "hot": true
     },
     {
-      "t": "ACT NOW 3: Hunter — yesterday’s audit outcome unverified. Audit date was November 24; first status was due November 20 at 4 PM, five calendar days ago. Planned installation is not commissioning or release. Send internally: Ron and Evelyn, confirm whether yesterday’s audit occurred and record findings, master-1138 gaps, owners and recovery dates today; I’ll provide actual approved-document and resource status without backdating.",
+      "t": "ACT NOW 3: Roon — five days to requested December 1 run. Complaint disposition and approved R7 test timing remain unverified. A new full-week dispensing test today cannot finish before December 1; requested production is not PLL-approved. Send internally: Ron, Aaron and Evelyn, review affected lots and complaints with Sam today, verify the actual approved R7 test start and full-week test plan, and reconcile QC and operational holds before any December 1 commitment.",
       "hot": true
     }
   ],
   "next": [
-    "Recommendation: Resolve Silk’s physical disposition first, then Roon’s approved test and QC plan and Hunter’s actual audit outcome.",
-    "Scheduled: One tentative event within 72 hours; nearest tomorrow, November 26 at 10:00 AM Eastern. CRM: 17 active tasks, 12 overdue, none dated due today or within 48 hours.",
-    "Noise: 40 messages suppressed from 55 new inbound.",
-    "Top three unchanged. Other operational gates remain open; no safety or production release inferred.",
-    "WhatsApp remains signed out; older email coverage partial. New water drawings and COAs inspected—not installation, container-lot matching or QA approval. No sends, spending or operational record edits."
+    "Recommendation: Resolve Silk’s lot disposition first, then deliver matched existing COAs to QC and settle Roon’s test-versus-run decision.",
+    "Scheduled: One tentative event within 72 hours; nearest today at 10:00 AM Eastern—confirm attendance. CRM: 20 active tasks, 13 overdue, five future-dated, two undated; none dated due within 48 hours.",
+    "Noise: 40 messages suppressed from 51 new inbound.",
+    "The direct COA blockage displaces Hunter because it can unblock QC for two live jobs. Hunter is not cleared: November 24 audit outcome remains unverified; first status due November 20, six calendar days ago.",
+    "WhatsApp remains signed out; relinking required. Older unread coverage partial. No sends, spending or operational record edits; no QA or production release inferred. FSS attachment names verified, not PDF contents/physical lots. New formula/invoice attachments not inspected in this review."
   ],
   "kb": [],
-  "signal": "Protect controlled product release, safe formulation and production continuity. No shipment or release promises without proof.",
+  "signal": "Protect controlled release and unblock existing QC before buying or promising production.",
   "redflags": [
-    "Luke signed; microbial results, batch records, dates and lot-specific shipment traceability remain unresolved.",
-    "A new one-week dispensing test started today cannot finish before December 1. Three refund reports include one off smell—not confirmed contamination; materials remain in QC.",
-    "Audit date was November 24; first status was due November 20 at 4 PM, five calendar days ago. Planned installation is not commissioning or release."
+    "Luke signed; microbial results, batch-record conflicts and lot-specific shipment traceability remain unresolved.",
+    "Luke/Roon QC is blocked. The four FSS COA filenames already in Aidan’s November 19 inbox match Ron’s requested lots; Evelyn’s receipt and QA acceptance are unverified. Request is one day old, with no fixed deadline stated.",
+    "Complaint disposition and approved R7 test timing remain unverified. A new full-week dispensing test today cannot finish before December 1; requested production is not PLL-approved."
   ],
   "team": [
     {
       "agent": "purchasing",
-      "request_id": "cmd_20261125_0700_et_status",
-      "status": "Substantive revised assessment returned within ten minutes after ONE accepted compact source repair; five actual authored excerpts assessed, CRM owner-attributed, no independent mailbox/PDF/physical/QA verification. Owner direct LC/BA InQC quantities and eight new PDF inspections govern owner synthesis."
+      "request_id": "cmd_20261126_0700_et_status",
+      "status": "Revised substantive assessment returned within ten minutes after one compact source repair; two actual QC authored originals assessed. CRM owner-attributed; no independent mailbox, physical or PDF verification. Order1575 is an order number, not refund amount; printed Brehob quote validity does not reverse existing funded order."
     },
     {
       "agent": "email",
-      "request_id": "cmd_20261125_0700_et_status",
-      "status": "Connected-Outlook substantive report returned within ten minutes: 204 full messages reviewed,55 fresh,39 draft bodies compared unchanged including15 supplier bodies;39inventory+13safeoriginals transported,zero changed full-body draft readbacks,signature rendering not verified. Olderunread50capped; owner CRM supersedes stale LCOrdered carry."
+      "request_id": "cmd_20261126_0700_et_status",
+      "status": "Connected-Outlook substantive report returned within ten minutes:204 full bodies,52 fresh-body query basis distinct from owner51uniqueinbound; four matching FSS COA filenames found in Nov19 original.39drafts locally fully compared unchanged,15suppliercompared;39inventory/zero changedfullbodyreadbacks transported;signature rendering unverified. Olderunread two50capped samples."
     }
   ],
   "pipeline": null,
   "pipelineDeals": [],
-  "noise": "40 noise messages suppressed from 55 new inbound.",
+  "noise": "40 messages suppressed from 51 new inbound.",
   "teamMembers": {
     "aidan": {
       "display_name": "Aidan",
-      "top_task": "Silk Factor — discrepancy 12 days old",
+      "top_task": "Silk Factor — discrepancy 13 days old",
       "tasks": [
-        "Silk Factor — discrepancy 12 days old",
-        "Roon — six days to the requested December 1 run",
-        "Hunter — yesterday’s audit outcome unverified"
+        "Silk Factor — discrepancy 13 days old",
+        "Get existing COAs into Evelyn’s hands",
+        "Roon — five days to requested December 1 run"
       ],
-      "notes": "No customer pricing or customer/deal/quote edits."
+      "notes": "Supplier costs only. No customer/deal/quote edits or commercial commitments."
     }
   },
   "revenueActions": [
     {
-      "title": "Silk Factor — discrepancy 12 days old",
-      "why": "Luke signed; microbial results, batch records, dates and lot-specific shipment traceability remain unresolved.",
+      "title": "Silk Factor — discrepancy 13 days old",
+      "why": "Luke signed; microbial results, batch-record conflicts and lot-specific shipment traceability remain unresolved.",
       "owner": "Aidan with human Sam, Aaron, Evelyn and Ron",
-      "timing": "Today, November 25",
-      "send": "Aaron, Evelyn and Ron, reconcile both lots, shipments, microbial results and batch records with Sam today, then document authorized disposition before further fulfillment.",
+      "timing": "Today, November 26",
+      "send": "Aaron, Evelyn and Ron, reconcile both lots, actual shipments, microbial results and batch records with Sam today; record authorized disposition before further fulfillment.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     },
     {
-      "title": "Roon — six days to the requested December 1 run",
-      "why": "A new one-week dispensing test started today cannot finish before December 1. Three refund reports include one off smell—not confirmed contamination; materials remain in QC.",
+      "title": "Get existing COAs into Evelyn’s hands",
+      "why": "Luke/Roon QC is blocked. The four FSS COA filenames already in Aidan’s November 19 inbox match Ron’s requested lots; Evelyn’s receipt and QA acceptance are unverified. Request is one day old, with no fixed deadline stated.",
+      "owner": "Aidan with Evelyn and Ron",
+      "timing": "Today, November 26; request one calendar day old",
+      "send": "Evelyn and Ron, use the four FSS COAs in Heather’s November 19 email and the existing Lotioncrafter documents today; confirm Evelyn’s receipt and match contents to physical lots before QA disposition—do not request duplicates.",
+      "est_value": "UNVERIFIED",
+      "value": "Operational continuity"
+    },
+    {
+      "title": "Roon — five days to requested December 1 run",
+      "why": "Complaint disposition and approved R7 test timing remain unverified. A new full-week dispensing test today cannot finish before December 1; requested production is not PLL-approved.",
       "owner": "Aidan with human Sam, Ron, Aaron and Evelyn",
-      "timing": "Today, November 25; requested run December 1 not PLL-accepted",
-      "send": "Ron, Aaron and Evelyn, review affected lots and complaints with Sam today, verify when the approved R7 dispensing test actually started, and reconcile the full-week test and QC holds before any December 1 commitment.",
-      "est_value": "UNVERIFIED",
-      "value": "Operational continuity"
-    },
-    {
-      "title": "Hunter — yesterday’s audit outcome unverified",
-      "why": "Audit date was November 24; first status was due November 20 at 4 PM, five calendar days ago. Planned installation is not commissioning or release.",
-      "owner": "Aidan, Ron and Evelyn",
-      "timing": "Today, November 25",
-      "send": "Ron and Evelyn, confirm whether yesterday’s audit occurred and record findings, master-1138 gaps, owners and recovery dates today; I’ll provide actual approved-document and resource status without backdating.",
+      "timing": "Today, November 26; requested run December 1 not accepted",
+      "send": "Ron, Aaron and Evelyn, review affected lots and complaints with Sam today, verify the actual approved R7 test start and full-week test plan, and reconcile QC and operational holds before any December 1 commitment.",
       "est_value": "UNVERIFIED",
       "value": "Operational continuity"
     }
@@ -92,41 +92,41 @@
   "topTasks": [
     {
       "rank": 1,
-      "title": "Silk Factor — discrepancy 12 days old",
-      "why": "Luke signed; microbial results, batch records, dates and lot-specific shipment traceability remain unresolved.",
+      "title": "Silk Factor — discrepancy 13 days old",
+      "why": "Luke signed; microbial results, batch-record conflicts and lot-specific shipment traceability remain unresolved.",
       "owner": "Aidan with human Sam, Aaron, Evelyn and Ron",
-      "due": "Today, November 25",
+      "due": "Today, November 26",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 2,
-      "title": "Roon — six days to the requested December 1 run",
-      "why": "A new one-week dispensing test started today cannot finish before December 1. Three refund reports include one off smell—not confirmed contamination; materials remain in QC.",
-      "owner": "Aidan with human Sam, Ron, Aaron and Evelyn",
-      "due": "Today, November 25; requested run December 1 not PLL-accepted",
+      "title": "Get existing COAs into Evelyn’s hands",
+      "why": "Luke/Roon QC is blocked. The four FSS COA filenames already in Aidan’s November 19 inbox match Ron’s requested lots; Evelyn’s receipt and QA acceptance are unverified. Request is one day old, with no fixed deadline stated.",
+      "owner": "Aidan with Evelyn and Ron",
+      "due": "Today, November 26; request one calendar day old",
       "priority": "high",
       "revenue": "Operational continuity"
     },
     {
       "rank": 3,
-      "title": "Hunter — yesterday’s audit outcome unverified",
-      "why": "Audit date was November 24; first status was due November 20 at 4 PM, five calendar days ago. Planned installation is not commissioning or release.",
-      "owner": "Aidan, Ron and Evelyn",
-      "due": "Today, November 25",
+      "title": "Roon — five days to requested December 1 run",
+      "why": "Complaint disposition and approved R7 test timing remain unverified. A new full-week dispensing test today cannot finish before December 1; requested production is not PLL-approved.",
+      "owner": "Aidan with human Sam, Ron, Aaron and Evelyn",
+      "due": "Today, November 26; requested run December 1 not accepted",
       "priority": "high",
       "revenue": "Operational continuity"
     }
   ],
   "pipelineStat": {
-    "note": "One tentative event within 72 hours; nearest tomorrow, November 26 at 10:00 AM Eastern. CRM: 17 active tasks, 12 overdue, none dated due today or within 48 hours.",
+    "note": "One tentative event within 72 hours; nearest today at 10:00 AM Eastern—confirm attendance. CRM: 20 active tasks, 13 overdue, five future-dated, two undated; none dated due within 48 hours.",
     "open_purchase_orders": null,
     "open_purchase_orders_value": "UNVERIFIED",
     "long_lead_items": [],
     "unverified_raw_material_prices": [],
     "overdue_purchasing_tasks": [],
     "suppliers_awaiting_response": "UNVERIFIED",
-    "last_verified": "2026-11-25T12:10:03.332Z"
+    "last_verified": "2026-11-26T12:11:47.188Z"
   },
   "purchasingIntelligence": null
 }
